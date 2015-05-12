@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Skin 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- latest build -->
+    <link type="text/css" rel="stylesheet" href="skin.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
+</head>
+<body class="touch">
+
+    <div>
+        <header>
+    <div class="ebay-logo"></div>
+    <div class="left title">Skin 2.0</div>
+    <nav>
+        <ul>
+            <li>
+                <a class="active" href="#">Modules</a>
+            </li>
+            <li>
+                <a href="start.html">Getting Started</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="content">
+    <div role="main">
+        <div class="left-nav column">
+            <ul class="modules-nav">
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#core">Core</a></li>
+                <li><a href="#button">Button</a></li>
+                <li><a href="#box">Box</a></li>
+                <li><a href="#icon">Font icons</a></li>
+                <li><a href="#spinner">Spinner</a></li>
+                <li><a href="#dropdown">Dropdown Filter</a></li>
+                <li><a href="#tab">Tab</a></li>
+                <li><a href="#overlay">Overlay</a></li>
+                <li><a href="#listgroup">List group</a></li>
+            </ul>
+        </div>
+        <div class="right column">
+            <section id="intro">
+                <h2>Introduction</h2>
+                <hr/>
+
+                <p>Welcome to Skin 2.0. Skin has been rebuilt from ground up to support the new eBay design system named <strong>Vision Quest</strong> and is <strong>not backwards compatible</strong> with earlier <a href="http://go/skin">versions</a>.</p>
+
+                <p>Skin 2.0 is the CSS style guide for eBay, which should be used by both engineers and designers. It is in it's purest form a CSS framework with strong focus on accessibility and mobile web. Being exclusively a CSS toolkit means that isolated components that require JavaScript are not part of this project.</p>
+
+                <p>This project is operated under an open source model, you can find the code in <a href="https://github.corp.ebay.com/f2e/skin">github</a>. If you wish to contribute feel free to issue a pull request, but we would advise you to talk with us first, either through slack at <a href="http://ebayui.slack.com">ebayui.slack.com</a> or by sending an email to DL-ebay-skin@ebay.com. Finally if you want to file a bug, you can do so in the <a href="https://github.corp.ebay.com/f2e/skin/issues">issues section</a>.</p>
+
+                <h3>What is new in Skin 2.0</h3>
+
+                <h4>Accessibility</h4>
+                <p>Accessibility is at the heart of Skin. A widget must not only look like a certain type of widget, it must be detected and described like that widget too. Skin 1.x relied solely on classes to apply visual styles, but classes do not convey any semantic meaning to assistive technology (or search engines). In Skin 2 we now leverage fully semantic HTML and ARIA roles, states and properties to apply our styles, thus enforcing correct, accessible semantics.</p>
+
+                <h4>Mobile first</h4>
+                <p>With mobile traffic steadily increasing, we have built this version with a mobile first approach. Modules are compatible with desktop versions so don't be affraid to use them.
+
+
+            </section>
+
+            <section id="core">
+    <h2>Core</h2>
+    <hr/>
+
+    <p>The core section of Skin defines boilerplate to centralize common functionality that is re-used by other modules. For the most common use case of skin, which is in its compiled form (<span class="highlight">.css</span>) it is included a css normalize, base typographic elements and a collection of atomic styles. More advanced users may want to work directly with the <span class="highlight">.less</span> files, and for those core also provides a collection of usefull <span class="highlight">mixins.less</span> and <span class="highlight">variables.less</span>.</p> 
+
+    <h3>Normalize</h3>
+    <p><span class="highlight">normalize.css</span> is a customisable CSS file that makes browsers render all elements more consistently and in line with modern standards. Unlike a <span class="highlight">reset.css</span> <span class="highlight">normalize.css</span> will not reset browser default styles, it provides instead a default baseline to achieve cross browser consistency. If you want to know more about the differences between <span class="highlight">normalize.css</span> and <span class="highlight">reset.css</span> check this <a href="http://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css">answer on stackoverflow</a>.</p>
+
+    <h3>Typography</h3>
+    <p>Typography creates a unique look for the eBay brand by defining the style of common components links and headers. It provides all the necessary scaffolding for good typography without adding any aesthetics.</p>
+
+    <h3>Atoms</h3>
+    <style type="text/css">
+    .table,
+    .table-stripe,
+    .table-no-stripe {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    .table > thead > tr,
+    .table-stripe > thead > tr,
+    .table-no-stripe > thead > tr {
+        background-color: #f7f7f7;
+    }
+
+    .skin-table-atoms tr > td,
+    .skin-table-atoms tr > th {
+        text-align: left;
+        padding: 10px 10px;
+    }
+
+    .table-stripe > tbody > tr:nth-child(2n-1) {
+        background-color: #f7f7f7;        
+    }
+
+    .table-stripe > thead th {
+        background-color: #fff;
+    }
+
+    .table th,
+    .table-stripe th,
+    .table-no-stripe th {
+
+        background-color: #f7f7f7;
+        font-weight: bold;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .table th,
+    .table-stripe th,
+    .table-no-stripe th,
+    .table td,
+    .table-stripe td,
+    .table-no-stripe td {
+        line-height: 1.7em;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    table tr td:nth-child(2n - 1) {
+        font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        min-width: 90px;
+    }
+</style>
+<div id="atoms">
+
+    <p>Atomic CSS is a collection of drop in classes that provide minimal changes to your styles. They are used to extend the CSS properties of individual HTML DOM elements without impacting other DOM elements that share the same base styles. It is also typically suited for rapid prototyping when you want to quickly apply changes without having to modify the underlying CSS.</p>
+
+    <p>If used extensivelly Atomic CSS can be an anti pattern in web development. It can lead to readability and maintenance problems, therefore please exercise caution.</p>
+
+    <table class="table-stripe cntContainer skin-table-atoms">
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Properties</th>
+                <th>Class</th>
+                <th>Properties</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.clearfix</td>
+                <td>clearfix for floats</td>
+                <td>.capitalize</td>
+                <td>text-transform: capitalize</td>
+            </tr>
+            <tr>
+                <td>.hide</td>
+                <td>display: none</td>
+                <td>.hide-force</td>
+                <td>display: none !important</td>
+            </tr>
+            <tr>
+                <td>.show</td>
+                <td>display: block</td>
+                <td>.show-force</td>
+                <td>display: block !important</td>
+            </tr>
+            <tr>
+                <td>.hide-text</td>
+                <td>hides text of element</td>
+                <td>.white-bkg</td>
+                <td>background: #fff</td>
+            </tr>
+            <tr>
+                <td>.left</td>
+                <td>float: left</td>
+                <td>.right</td>
+                <td>float: right</td>
+            </tr>
+            <tr>
+                <td>.center</td>
+                <td>margin-left: auto; margin-right: auto;</td>
+                <td>.block</td>
+                <td>display: block</td>
+            </tr>
+            <tr>
+                <td>.inline</td>
+                <td>display: inline</td>
+                <td>.inline-block</td>
+                <td>display: inline-block</td>
+            </tr>
+            <tr>
+                <td>.clear</td>
+                <td>clear: both</td>
+                <td>.float-row</td>
+                <td>Wrap a series of divs, lis, sections or asides to float them side by side</td>
+            </tr>
+            <tr>
+                <td>.fluid</td>
+                <td>sets the width of an element to the width of its container</td>
+                <td>.fluid-image</td>
+                <td>sets max width of image to width of its container</td>
+            </tr>
+            <tr>
+                <td>.invisible</td>
+                <td>visibility: hidden</td>
+                <td>.absolute</td>
+                <td>position: absolute </td>
+            </tr>
+            <tr>
+                <td>.fixed</td>
+                <td>position: fixed</td>
+                <td>.uppercase</td>
+                <td>text-transform: uppercase</td>
+            </tr>
+            <tr>
+                <td>.pointer</td>
+                <td>cursor: pointer</td>
+                <td>.text-center</td>
+                <td>text-align: center</td>
+            </tr>
+            <tr>
+                <td>.full-width</td>
+                <td>width: 100%</td>
+                <td>.split</td>
+                <td>width: 50%</td>
+            </tr>
+            <tr>
+                <td>.z-index</td>
+                <td>position: relative; z-index: 1;</td>
+                <td>.x-small</td>
+                <td>font-size: .71em</td>
+            </tr>
+            <tr>
+                <td>.small</td>
+                <td>font-size: .86em</td>
+                <td>.medium</td>
+                <td>font-size: 1em</td>
+            </tr>
+            <tr>
+                <td>.large</td>
+                <td>font-size: 1.43 em</td>
+                <td>.x-large</td>
+                <td>font-size: 2.57 em</td>
+            </tr>
+            <tr>
+                <td>.border-box</td>
+                <td>box-sizing:border-box</td>
+                <td>.noscroll</td>
+                <td>position: fixed;overflow: hidden;top: 0;bottom: 0;left: 0;right: 0;</td>
+            </tr>
+            <tr>
+                 <td>.img-wrapper</td>
+                 <td>display: table-cell;text-align: center;vertical-align: middle;cursor: pointer;</td>
+                 <td>.clipped</td>
+                 <td>Element is clipped and visible to screen reader only</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</section>
+
+            <style type="text/css">
+    .icon-cart:before {
+        color: #fff;
+        font-size: .9rem;
+    }
+</style>
+<section id="button">
+    <h2>Buttons &amp; Links</h2>
+    <hr>
+
+    <p>Buttons are used to trigger form actions (e.g. submit, reset) or JavaScript actions. Links are used exclusively to navigate between destinations, which can be moving from one page to another or to another place in the same page using a hash <span class="highlight">href="#foobar"</span>.</p>
+
+    <p>There are two tags for creating buttons: <span class="highlight">&lt;button&gt;</span> (supports inner HTML) and <span class="highlight">&lt;input&gt;</span> (supports inner text only). Outside of forms, the <span class="highlight">&lt;button&gt;</span> is always recommended as it allows the flexibility of nesting useful things, such as icons.</p>
+
+    <p>Links always update the URL and therefore the <span class="highlight">HREF</span> attribute must contain a valid URL. There is only one tag to create links: <span class="highlight">&lt;a&gt;</span></p>
+
+    <p>Call to action (CTA) links are visually styled like buttons but behave like links. These trigger a <span class="highlight">GET</span> request, which means that they should always be idempotent. If you wish to trigger an action that chages data on the server, then you should use a form submit to trigger a <span class="highlight">POST</span> request.</p>
+
+    <p>Links are sometimes progressively enhanced into buttons using JavaScript. For example, to view the HREF targetinside of a modal overlay instead of performing a full page navigation. This technique is often reffered to as <a href="http://en.wikipedia.org/wiki/Hijax">hijax</a>.</p>
+
+    <h3>Default Button</h3>
+
+    <p>To create a Skin Button, use the standard selector <span class="highlight">.btn</span>. Use for this on all cases including: <span class="highlight">form</span> actions, primary page actions and any anchor or button element. When using a <span class="highlight">&lt;button&gt;</span> element, always specify a type. When using a <span class="highlight">&lt;a&gt;</span> element, always add <span class="highlight">role="button"</span> for accessibility.</p>
+
+    <div class="demo">
+        <button class="btn" type="button">Buy it Now</button>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h3>Primary Button</h3>
+
+    <p>To indicate that a button represents a primary action, add the <span class="highlight">.btn-prim</span> class name alongside <span class="highlight">.btn</span></p>
+
+    <div class="demo">
+        <button class="btn btn-prim" type="button">Buy it Now</button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h3>Secondary Button</h3>
+
+    <p>To indicate that a button represents a secondary action, add the <span class="highlight">.btn-secondary</span> classname alongside <span class="highlight">.btn</span></p>
+
+    <div class="demo">
+        <button class="btn btn-secondary" type="button">Buy it Now</button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-secondary&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h3>Active Button</h3>
+
+    <p>To style a button so that it appears "pressed", add the <span class="highlight">.active</span> classname alongside <span class="highlight">.btn</span> or <span class="highlight">.btn-prim</span>. If <span class="highlight">aria-pressed="true"</span> is used the button is a toggle button that is currently pressed</p>
+
+    <div class="demo">
+        <button class="btn active">Button</button>
+        <button class=" btn btn-prim active">Button</button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn active&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn-prim active&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h3>Buttons with different sizes</h3>
+
+    <h4>Small Button</h4>
+    <p>For smaller buttons add <span class="highlight">.btn-small</span> classname.</p>
+
+    <div class="demo">
+        <button class="btn btn-small" type="button">Buy it Now</button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-small&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h4>Medium Button</h4>
+    <p>The default is medium size buttons <span class="highlight">.btn</span>.</p>
+
+    <div class="demo">
+        <button class="btn" type="button">Buy it Now</button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h4>Large Button</h4>
+    <p>For larger buttons add <span class="highlight">.btn-large</span> classname.</p>
+
+    <div class="demo">
+        <button class="btn btn-large">Buy it Now</button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-large&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h3>Disabled Button</h3>
+
+    <p>To mark a button as disabled, add the  <span class="highlight">disabled</span> attribute. A disabled button is unusable and not clickable. To mark a call to action link as disabled, you must remove the HREF attribute.</p>
+
+    <div class="demo">
+        <button class="btn" disabled>Buy it Now</button>
+        <a class="btn btn-prim" role="button">Disabled</a>
+        <button class="btn btn-secondary" disabled>Save</button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-secondary&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h3>Buttons with icons</h3>
+
+    <p>Skin provides icon fonts. In the example below, we're using icon fonts span element within a skin button element or add the icon class to the button. To see all available icons please go to the <a href="#icon">Font Icon</a>section of this page.
+    </p>
+
+    <div class="demo">
+        <button class="btn btn-prim btn-small"><span class="icon icon-cart"></span> Add To Cart
+        </button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim btn-small&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon icon-cart&quot;</span><span class="nt">&gt;&lt;/span&gt;</span> Add To Cart
+<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h3>Regular link</h3>
+
+    <p>Regular links are also supported. You don't need to overwrite the base styles of the anchor tag manually. Skin does that for you.</p>
+    <div class="demo">
+        <a href="http://www.ebay.com">Visit Store</a>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Visit Store<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+    <h3>Button Link</h3>
+    <p>If you have a call to action and whish have a link styled has a button, you can do so as well.</p>
+    <div class="demo">
+        <a class="btn" href="http://www.ebay.com">View Item</a>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>View Item<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+    <h3>Block Button</h3>
+
+    <p>A block button spans the entire width of the parent element.</p>
+
+    <div class="demo">
+        <button class="btn btn-prim btn-block" type="button">Block Button</button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim btn-block&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Block Button<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <h3>Button Groups</h3>
+
+    <p>Wrap a series of buttons by nesting <span class="highlight">.btn</span> elements inside a <span class="highlight">.btn-group</span>.</p>
+
+    <div class="demo">
+        <div class="btn-group">
+            <button class="btn btn-prim btn-small" type="button">Add to cart</button>
+            <button class="btn btn-prim btn-small" type="button">Buy It Now</button>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim btn-small&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Add to cart<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim btn-small&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy It Now<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+
+            <style type="text/css">
+    .box {
+        margin: 20px;
+    }
+</style>
+<section id="box">
+    <h2>Box</h2>
+
+    <p>Use box as a multipurpouse tool to wrap other elements or groups of elements. </p>
+
+    <h3>Using box</h3>
+    <p>Box module wraps any skin module, our grid system or site contents page element with a <span class="highlight">class "box"</span> to create a box around the content of the markup within the div.</p>
+
+    <div style="width:80%" class="test">
+        <div class="box">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.  
+            </p>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+            <section id="icon">
+    <h2>Font icons</h2>
+    <hr/>
+
+    <p>Included the list of icons available in the font format.</p>
+
+    <p>Use them in buttons, navigation, or prepended form inputs.</p>
+
+    <h3>List of Font Icons Available</h3>
+
+    <div class="demo icons-demo">
+        <div class="icon-demo">
+            <span class="icon-alert" aria-label="alert"></span>
+            <span class="mls">icon-alert</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-arrow-down" aria-label="arrowDown"></span>
+            <span class="mls">icon-arrow-down</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-arrow-up" aria-label="arrowUp"></span>
+        <span
+            class="mls">icon-arrow-up</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-buying-null" aria-label="Buyingis empty"></span>
+            <span class="mls">icon-buying-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-cart" aria-label="cart"></span>
+            <span class="mls">icon-cart</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-cart-null" aria-label="cart is empty"></span>
+            <span class="mls">icon-cart-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-chevron-down" aria-label="chevronDown"></span>
+            <span class="mls">icon-chevron-down</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-chevron-left"></span>
+            <span class="mls">icon-chevron-left</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-chevron-right"></span>
+            <span class="mls">icon-chevron-right</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-chevron-up"></span>
+            <span class="mls">icon-chevron-up</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-close"></span>
+            <span class="mls">icon-close</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-error-null"></span>
+            <span class="mls">icon-error-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-feedback-negative"></span>
+            <span class="mls">icon-feedback-negative</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-feedback-neutral"></span>
+            <span class="mls">icon-feedback-neutral</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-feedback-null"></span>
+            <span class="mls">icon-feedback-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-feedback-positive"></span>
+            <span class="mls">icon-feedback-positive</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-follow"></span>
+            <span class="mls">icon-follow</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-forsale-null"></span>
+            <span class="mls">icon-forsale-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-gear" aria-label="gear"></span>
+            <span class="mls">icon-gear</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-images-null" aria-label="Image is empty"></span>
+            <span class="mls">icon-images-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-info"></span>
+            <span class="mls">icon-info</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-menu"></span>
+            <span class="mls">icon-menu</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-notifications"></span>
+            <span class="mls">icon-notifications</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-notifications-null"></span>
+        <span
+            class="mls">icon-notifications-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-profile"></span>
+            <span class="mls">icon-profile</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-search"></span>
+            <span class="mls">icon-search</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-search-null"></span>
+            <span class="mls">icon-search-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-sell"></span>
+            <span class="mls">icon-sell</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-sort"></span>
+            <span class="mls">icon-sort</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-star"></span>
+            <span class="mls">icon-star</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-success"></span>
+            <span class="mls">icon-success</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-success-circle"></span>
+            <span class="mls">icon-success-circle</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-view-expanded-list"></span>
+        <span
+            class="mls">icon-view-expanded-list</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-view-gallery"></span>
+            <span class="mls">icon-view-gallery</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-view-list"></span>
+            <span class="mls">icon-view-list</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-warning"></span>
+            <span class="mls">icon-warning</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-watching-null"></span>
+            <span class="mls">icon-watching-null</span>
+        </div>
+    </div>
+
+    <h3>Examples</h3>
+
+    <p>Use them in buttons, navigation, or prepended form inputs.</p>
+
+    <h3>Accessible icons</h3>
+
+    <p>To avoid unintended and confusing output in screen readers (particularly when icons are used purely for
+        decoration), we hide them with the aria-hidden="true" attribute.</p>
+
+    <p>If you're creating controls with no other text (such as a button that only contains an icon), you should always
+        provide alternative content to identify the purpose of the control, so that it will make sense to users of
+        assistive technologies. In this case, you could add an aria-label attribute on the control itself.</p>
+
+    <div class="demo">
+        <span class="icon-cart" aria-label="cart"></span>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-cart&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;cart&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+
+    <div class="demo">
+        <span class="icon-chevron-down" aria-hidden="true"></span>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-chevron-down&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+
+
+    <div class="demo">
+        <button type="button" class="btn btn-default" aria-label="sort">
+            <span class="icon-sort" aria-hidden="true"></span>
+            <span>Sort</span>
+        </button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;sort&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon icon-sort&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span&gt;</span>Sort<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+</section>
+
+            <section id="spinner">
+    <h2>Animated Spinner icon</h2>
+    <hr/>
+    <h3>Small spinner</h3>
+
+    <div class="demo">
+        <span class="spinner-small"></span>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner-small&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+
+    <h3>Large spinner</h3>
+
+    <div class="demo">
+        <span class="spinner-large"></span>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner-large&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+
+    <br/>
+    <br/>
+</section>
+
+            <style type="text/css">
+    .btn-full.btn {
+        border: 1px solid #eeeeee;
+    }
+
+    .dropdown-menu > [role=menu] {
+        border: 1px solid #eeeeee;
+    }
+</style>
+<section id="dropdown">
+    <h2>Dropdown Filter</h2>
+
+    <p>A dropdown allows a user to select a value from a series of options. </p>
+    <hr/>
+
+    <h3>Mobile Filter Collapsed</h3>
+
+    <p>Shown example for Single select dropdown filter. For button add attribute <span class="highlight">aria-expanded="false"</span>
+        boolean value and style div[role=menu] to hide/show the menu items.</p>
+
+    <div class="demo">
+        <div class="dropdown-menu">
+            <button aria-expanded="false" aria-haspopup="true" id="single-selection-dropdown-collapsed-button"
+                    aria-controls="single-selection-dropdown-collapsed-menu" type="button" class="btn btn-full">
+                Featured
+            </button>
+
+            <div role="menu" class="menu" id="single-selection-dropdown-collapsed-menu"
+                 aria-labelledby="single-selection-dropdown-collapsed-button">
+                <div role="menuitemradio" aria-checked="true" tabindex="-1">Featured</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Fashion</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Home & Garden</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Tech</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;single-selection-dropdown-collapsed-button&quot;</span>
+                <span class="na">aria-controls=</span><span class="s">&quot;single-selection-dropdown-collapsed-menu&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-full&quot;</span><span class="nt">&gt;</span>
+            Featured
+        <span class="nt">&lt;/button&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;single-selection-dropdown-collapsed-menu&quot;</span>
+             <span class="na">aria-labelledby=</span><span class="s">&quot;single-selection-dropdown-collapsed-button&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Home <span class="err">&amp;</span> Garden<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Mobile Filter Expanded</h3>
+
+    <p> The menuitems to the full width of the page(set to 100%).</p>
+
+    <div class="demo">
+        <div class="dropdown-menu">
+            <button aria-expanded="true" aria-haspopup="true" id="single-selection-dropdown-expanded-button"
+                    aria-controls="single-selection-dropdown-expanded-menu" type="button" class="btn btn-full" style="border-bottom: none">
+                Featured
+            </button>
+
+            <div role="menu" class="menu" id="single-selection-dropdown-expanded-menu"
+                 aria-labelledby="single-selection-dropdown-expanded-button">
+                <div role="menuitemradio" aria-checked="true" tabindex="-1">Featured</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Fashion</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Home & Garden</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Tech</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;single-selection-dropdown-expanded-button&quot;</span>
+                <span class="na">aria-controls=</span><span class="s">&quot;single-selection-dropdown-expanded-menu&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-full&quot;</span><span class="nt">&gt;</span>
+            Featured
+        <span class="nt">&lt;/button&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;single-selection-dropdown-expanded-menu&quot;</span>
+             <span class="na">aria-labelledby=</span><span class="s">&quot;single-selection-dropdown-expanded-button&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
+                Home <span class="err">&amp;</span> Garden
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+
+            <section id="tab">
+    <h2>Tab</h2>
+    <hr/>
+
+    <p>Only one <span class="highlight">tab</span> can be selected at
+        any time, using aria-selected="true". Selecting a tab will deselect all
+        other tabs.
+    </p>
+
+    <p>Only one <span class="highlight">tabpanel</span> can be visible
+        at any time, using aria-hidden="false", and it must correspond to the
+        currently selected tab. Showing a tabpanel will hide all other tabpanels.
+    </p>
+
+    <p>Tabs supports progressive enhancement. Before enhancement, the tabs are
+        functional as same page links. After enhancement to tabs (using
+        JavaScript to add ARIA roles, states &amp; properties) the links must
+        be disabled by removing the HREF attribute.</p>
+
+    <h3>Horizontal Tabs</h3>
+
+    <div class="demo">
+        <div class="tabs">
+            <ul role="tablist">
+                <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
+                    <a role="presentation">Tab 1</a>
+                </li>
+                <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
+                    <a role="presentation">Tab 2</a>
+                </li>
+                <li aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
+                    <a role="presentation">Tab 3</a>
+                </li>
+                <li aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4">
+                    <a role="presentation">Tab 4</a>
+                </li>
+            </ul>
+            <div>
+                <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">
+                    <h3 aria-hidden="true">Panel 1 Heading</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda culpa est nisi porro
+                        quae quidem ratione repellendus, temporibus. Assumenda atque dolor dolorem eligendi eveniet
+                        ipsam modi necessitatibus quos ut?</p>
+                </div>
+                <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">
+                    <h3 aria-hidden="true">Panel 2 Heading</h3>
+
+                    <p>Panel 2 Content</p>
+                </div>
+                <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">
+                    <h3 aria-hidden="true">Panel 3 Heading</h3>
+
+                    <p>Panel 3 Content</p>
+                </div>
+                <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">
+                    <h3 aria-hidden="true">Panel 4 Heading</h3>
+
+                    <p>Panel 4 Content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabs&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">role=</span><span class="s">&quot;tablist&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 1<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel2&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab2&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 2<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 3<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 4<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!-- panel1 heading &amp;amp; content --&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel2&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab2&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!-- panel2 heading &amp;amp; content --&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!-- panel3 heading &amp;amp; content --&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!-- panel4 heading &amp;amp; content --&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+
+            <style type="text/css">
+    .modal-title {
+        margin-top: 0;
+        padding-right: 1.25em;
+    }
+
+    #dialog-demo[role='dialog'] {
+        display: none;
+    }
+
+    [role=document] {
+        border: 1px solid #dddddd;
+    }
+
+    .modal-title {
+        text-align: center;
+    }
+
+    .modal_content {
+        text-align: center;
+        height: 120px;
+        vertical-align: middle;
+        display: table-cell;
+        width: 600px;
+        font-size: 24px;
+    }
+</style>
+
+<section id="overlay">
+    <h2 id="overlay">Overlay</h2>
+
+    <p>A modal displays content that temporarily blocks interactions with the main view of a site. Be sure to add
+        role="dialog" to <span class="highlight">.modal</span>, aria-labelledby="modal-label" attribute to reference the
+        modal title. When the dialog is in a hidden, closed state you must use display:none to prevent assistive technologies from accessing the overlay.</p>
+    <hr/>
+
+    <h3>Mobile Full width Modal</h3>
+
+    <p>Mobile web modal's are Full page overlays - full page like experience. The width is set to 100%.</p>
+
+    <!-- Modal Overlay -->
+    <h3>Tablet Modal</h3>
+
+    <p>Set max-width of 800px for the tablet web modals.</p>
+
+    <div class="demo">
+        <div role="document">
+            <h3 class="modal-title">Modal Title</h3>
+            <!-- <button class="icon-close" aria-label="Close Dialog"></button> -->
+            <!-- dialog content goes here -->
+            <div class="modal_content"> Modal content goes here</div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;modal&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;modal-label&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;document&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>Modal Title<span class="nt">&lt;/h2&gt;</span>
+            <span class="c">&lt;!-- dialog content goes here --&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;icon-close&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Close Dialog&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+
+            <section id="listgroup">
+    <h2>List group</h2>
+    <hr/>
+
+    <h3>Simple List Group</h3>
+
+    <p>List groups display different hierarchical lists of elements.</p>
+
+    <div class="demo">
+
+       <div class="list-group">
+                <div class="list">
+                    <a href="#" class="list-link">
+                        <span class="list-title">All Categories</span>
+                    </a>
+                </div>
+                <div class="list-item l1-list">
+                    <a href="#" class="l1-group">
+                        <span class="l1-title">Books</span>
+                    </a>
+                </div>
+
+                <ul class="list-group-items">
+                    <li class="list-item l2-list haschild">
+                        <a href="#" class="l2-group">
+                            <span class="list-name">Accessories</span>
+                        </a>
+                    </li>
+                    <li class="list-item l2-list">
+                        <a href="#" class="l2-group">
+                            <span class="list-name">Antiquarian & Collectible</span>
+                        </a>
+                    </li>
+                    <li class="list-item l2-list">
+                        <a href="#" class="l2-group">
+                            <span class="list-name">Audiobooks</span>
+                        </a>
+                    </li>
+                    <li class="list-item l2-list haschild">
+                        <a href="#" class="l2-group">
+                            <span class="list-name">Catalogs</span>
+                        </a>
+                    </li>
+                    <li class="list-item l2-list">
+                        <a href="#" class="l2-group">
+                            <span class="list-name">Children & Young Adults</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-group&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;list-link&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;list-title&quot;</span><span class="nt">&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-item l1-list&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;l1-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;l1-title&quot;</span><span class="nt">&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+
+                <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list-group-items&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-item l2-list haschild&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;l2-group&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;list-name&quot;</span><span class="nt">&gt;</span>Accessories<span class="nt">&lt;/span&gt;</span>
+                        <span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-item l2-list&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;l2-group&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;list-name&quot;</span><span class="nt">&gt;</span>Antiquarian <span class="err">&amp;</span> Collectible<span class="nt">&lt;/span&gt;</span>
+                        <span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-item l2-list&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;l2-group&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;list-name&quot;</span><span class="nt">&gt;</span>Audiobooks<span class="nt">&lt;/span&gt;</span>
+                        <span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-item l2-list haschild&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;l2-group&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;list-name&quot;</span><span class="nt">&gt;</span>Catalogs<span class="nt">&lt;/span&gt;</span>
+                        <span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-item l2-list&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;l2-group&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;list-name&quot;</span><span class="nt">&gt;</span>Children <span class="err">&amp;</span> Young Adults<span class="nt">&lt;/span&gt;</span>
+                        <span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/li&gt;</span>
+
+                <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <footer>
+   <div class="footer-content">
+       <div class="left">
+           <a href="https://github.corp.ebay.com/f2e/skin/issues">File a request</a>
+           <a href="mailto:dl-ebay-skin@ebay.com">Contact the team</a>
+       </div>
+       <div class="right">
+           <a href="https://github.corp.ebay.com/f2e/skin">View on Github</a>
+       </div>
+   </div>
+</footer>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

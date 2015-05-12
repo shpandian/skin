@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Skin 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- latest build -->
+    <link type="text/css" rel="stylesheet" href="skin.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
+</head>
+<body class="touch">
+
+    <div>
+        <header>
+    <div class="ebay-logo"></div>
+    <div class="left title">Skin 2.0</div>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Modules</a>
+            </li>
+            <li>
+                <a class="active" href="#">Getting Started</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div role="main">
+    <h2 id="step1">Step 1</h2>
+    <hr/>
+    <p>
+        Skin is distributed as a npm module <span class="highlight">skin-ebay</span>. If skin is not already installed in your project, install it using the below command
+        <div class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay --save</code></pre></div>
+    </p>
+
+    <h2 id="step2">Step 2</h2>
+    <hr/>
+    <p>
+        Include the required skin modules in <span class="highlight">optimizer.json</span> and you are good to go
+        <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;skin-ebay/core&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;skin-ebay/button&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;module.less&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;require: ./widget&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>        
+    </p>
+
+    <h2 id="list">Module List</h2>
+    <hr/>
+      <p> Here are the list of modules available now </p>
+    <ul class="skin-module-list">
+        <li>skin-ebay/core</li>
+        <li>skin-ebay/button</li>
+        <li>skin-ebay/box</li>
+        <li>skin-ebay/icon</li>
+        <li>skin-ebay/tab</li>
+        <li>skin-ebay/listgroup</li>
+        <li>skin-ebay/overlay</li>
+        <li>skin-ebay/dropdown</li>
+    </ul>  
+    <h2 id="cdn">Skin CDN</h2>
+    <hr/>
+    Coming soon
+</div>
+
+    </div>
+
+    <footer>
+   <div class="footer-content">
+       <div class="left">
+           <a href="https://github.corp.ebay.com/f2e/skin/issues">File a request</a>
+           <a href="mailto:dl-ebay-skin@ebay.com">Contact the team</a>
+       </div>
+       <div class="right">
+           <a href="https://github.corp.ebay.com/f2e/skin">View on Github</a>
+       </div>
+   </div>
+</footer>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
