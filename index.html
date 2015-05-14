@@ -350,11 +350,11 @@
 
     <div class="demo">
         <button class="btn" disabled>Buy it Now</button>
-        <a class="btn btn-prim" role="button">Disabled</a>
+        <a class="btn btn-prim btn--disabled" role="button">Disabled</a>
         <button class="btn btn-secondary" disabled>Save</button>
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim btn--disabled&quot;</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-secondary&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
     <h3>Buttons with icons</h3>
@@ -424,7 +424,7 @@
     <h3>Using box</h3>
     <p>Box module wraps any skin module, our grid system or site contents page element with a <span class="highlight">class "box"</span> to create a box around the content of the markup within the div.</p>
 
-    <div style="width:80%" class="test">
+    <div class="demo">
         <div class="box">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.  
@@ -599,6 +599,44 @@
             <span class="icon icon-watching-null"></span>
             <span class="mls">icon-watching-null</span>
         </div>
+        <div class="icon-demo">
+            <span class="icon icon-check" aria-label="check"></span>
+            <span class="mls"> icon-check</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon icon-arrow" aria-label="arrow"></span>
+            <span class="mls"> icon-arrow</span>
+        </div>
+
+        <div class="icon-demo">
+            <span class="icon icon-required" ></span>
+            <span class="mls"> icon-required</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon icon-email"></span>
+            <span class="mls"> icon-email</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon icon-minus" ></span>
+            <span class="mls"> icon-minus</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon icon-checkbox-active" ></span>
+            <span class="mls"> icon-checkbox-active</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon icon-radio-btn-inactive" ></span>
+            <span class="mls"> icon-radio-btn-inactive</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon icon-checkbox-inactive" ></span>
+            <span class="mls">icon-checkbox-inactive</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon icon-radio-btn-active" ></span>
+            <span class="mls"> icon-radio-btn-active</span>
+        </div>
+
     </div>
 
     <h3>Examples</h3>
@@ -848,6 +886,7 @@
     .dialog-title {
         margin-top: 0;
         padding-right: 1.25em;
+        border-bottom: 1px solid #dddddd;
     }
 
     #dialog-demo[role='dialog'] {
@@ -867,13 +906,13 @@
         height: 120px;
         vertical-align: middle;
         display: table-cell;
-        width: 600px;
+        width: 710px;
         font-size: 24px;
     }
 </style>
 
 <section id="dialog">
-    <h2 id="dialog">Dialog</h2>
+    <h2>Dialog</h2>
 
     <p>A dialog is a modal overlay that temporarily blocks interactions with the main view of a site. Be sure to add
         role="dialog" to <span class="highlight">.dialog</span>, aria-labelledby="dialog-label" attribute to reference the
@@ -901,7 +940,7 @@
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;document&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;h2&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
             <span class="c">&lt;!-- dialog content goes here --&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;icon-close&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Close Dialog&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;icon icon-close&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Close Dialog&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span></code></pre></div>
 </section>
@@ -1092,515 +1131,448 @@
 
             <style type="text/css">
     #focused-input {
-        outline: 0 none;
-        border-color: #0654BA;
+    outline: 0 none;
+    border-color: #0654BA;
     }
 </style>
 <section id="form">
     <h2>Form</h2>
-
     <p>A form displays a set of related user input fields in a structured way. A Form include fields, and fields always contain form elements, add classname <span class="highlight">.form </span>. Field themselves include: inputs, labels, selection dropdowns, textareas and message blocks. </p>
     <hr/>
-
     <p><b>You are required to add labels for all inputs for accessibility reasons. If you wish to prevent labels from being displayed, hide them with the .clipped class.</b></p>
-
     <h3>Elements</h3>
-
     <h3>Input field </h3>
-        <p> An field is a form element containing series of <b>input</b>  and <b>label</b> elements wrapped by an element that has the <span class="highlight">.field</span>class.</p>
-    <div class="demo">
-        
-         <div class="form">
-                    <div class="field">
-                        <label for="email">Email Address</label>
-                        <input id="email" type="email" placeholder="Email" name="email" />
-                    </div>
-        </div>
-    </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>Email Address<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Textarea </h3>
-        <p> A textarea uses the default form <b>textarea</b> element. Even textarea can be wrapped by an element that has the <span class="highlight">.field</span>class.</p></p>
-    <div class="demo">
-        
-         <div class="form">
-             <div class="field">
-                         <label for="textarea">User Text</label>
-                        <textarea id="textarea" placeholder="Description" name="textarea" aria-label="Enter description"></textarea>
-                </div>
-        </div>
-    </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;textarea&quot;</span><span class="nt">&gt;</span>User Text<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;textarea&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Description&quot;</span> <span class="na">name=</span><span class="s">&quot;textarea&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Enter description&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span></code></pre></div>
-    
-    <h3>Checkboxes</h3>
-        <p> Checkboxes are styled using font icons. To add a little animation to the checkboxes use <span class="highlight">.animation-bounce</span> classname to the parent div. The span or label element next to the input controls are custom styled. Checkboxes are for selecting one or several options in a list.</p>
-    
-        <h4>Default(stacked) Checkboxes</h4>    
-         <p>Add <span class="highlight">.checkbox</span> classname to the parent div for the set of controls. Add a <b>div</b> element on a series of checkboxes for vertically stacked controls. A checkbox disabled attribute will be styled appropriately with properties cursor: not-allowed and opacity.</p>
-
-         <p></p>
-
-    <div class="demo">
-        <div class="checkboxes checkboxes-animation-bounce">
-                       <fieldset>
-                            <legend>Vertical Checkboxes</legend>
-                            <div>
-                                <input id="checkbox-choice1" type="checkbox" value="1" name="checbox1" />
-                                <span></span>
-                                <label for="checkbox-choice1" class="custom-checkbox">Choice 1</label>
-
-                            </div>
-
-                            <div>
-                                <input id="checkbox-choice2" type="checkbox" value="2" name="checbox1" />
-                                <span></span>
-                                <label for="checkbox-choice2" class="custom-checkbox">Choice 2</label>
-
-                            </div>
-                            <div>
-                                <input id="checkbox-choice3" type="checkbox" value="3" name="checbox1" disabled/>
-                                <span></span>
-                                <label for="checkbox-choice3" class="custom-checkbox">Disabled Choice 3</label>
-
-                            </div>
-                        </fieldset>
-            </div>
-         </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkboxes checkboxes-animation-bounce&quot;</span><span class="nt">&gt;</span>
-                       <span class="nt">&lt;fieldset&gt;</span>
-                            <span class="nt">&lt;legend&gt;</span>Vertical Checkboxes<span class="nt">&lt;/legend&gt;</span>
-                            <span class="nt">&lt;div&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice1&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
-
-                            <span class="nt">&lt;/div&gt;</span>
-
-                            <span class="nt">&lt;div&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice2&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Choice 2<span class="nt">&lt;/label&gt;</span>
-
-                            <span class="nt">&lt;/div&gt;</span>
-                            <span class="nt">&lt;div&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice3&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="na">disabled</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice3&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Disabled Choice 3<span class="nt">&lt;/label&gt;</span>
-
-                            <span class="nt">&lt;/div&gt;</span>
-                        <span class="nt">&lt;/fieldset&gt;</span>
-                <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h4>Inline Checkboxes</h4> 
-
-        <p> Add a <b>span</b> element on a series of checkboxes for controls that appear on the same line. Please see the Semantic markup for inline checkboxes using span element on each input controls.</p>   
-    <div class="demo">
-        <div class="checkboxes checkboxes-animation-bounce">
-                        <fieldset>
-                            <legend>Horizontal checkboxes</legend>
-                            <span>
-                                <input id="checkbox-inline-choice1" type="checkbox" value="1" name="checbox1" />
-                                <label for="checkbox-inline-choice1">Choice 1</label>
-
-                            </span>
-                            <span>
-                                <input id="checkbox-inline-choice2" type="checkbox" value="2" name="checbox1" />
-                                <label for="checkbox-inline-choice2">Choice 2</label>
-
-                            </span>
-                            <span>
-                                <input id="checkbox-inline-choice3" type="checkbox" value="3" name="checbox1" />
-                                <label for="checkbox-inline-choice3">Choice 3</label>
-
-                            </span>
-                        </fieldset>
-                    </div>
-         </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkboxes checkboxes-animation-bounce&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;fieldset&gt;</span>
-                            <span class="nt">&lt;legend&gt;</span>Horizontal checkboxes<span class="nt">&lt;/legend&gt;</span>
-                            <span class="nt">&lt;span&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice1&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
-
-                            <span class="nt">&lt;/span&gt;</span>
-                            <span class="nt">&lt;span&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice2&quot;</span><span class="nt">&gt;</span>Choice 2<span class="nt">&lt;/label&gt;</span>
-
-                            <span class="nt">&lt;/span&gt;</span>
-                            <span class="nt">&lt;span&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice3&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice3&quot;</span><span class="nt">&gt;</span>Choice 3<span class="nt">&lt;/label&gt;</span>
-
-                            <span class="nt">&lt;/span&gt;</span>
-                        <span class="nt">&lt;/fieldset&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>RadioButtons </h3>
-        <p> Radiobuttons are custom styled forms of standard form radio controls with font icons. To add a little animation to the radiobuttons use <span class="highlight">.animation-bounce</span> classname to the parent div.</p>
-    
-        <h4>Default(stacked) Radiobuttons</h4>
-        <p>Add <span class="highlight">.radio-group</span> classname to the parent div for the set of controls.</p>
-            <div class="demo">
-                 <div class="radio-group radios-animation-bounce">
-                        <fieldset>
-                            <legend>Vertical Radio Buttons</legend>
-
-                            <div>
-                                <input id="radiolist1-input1" type="radio" value="1" name="radiolist1" />
-                                <span></span>
-                                <label for="radiolist1-input1" >Input 1</label>
-                            </div>
-                            <div>
-                                <input id="radiolist1-input2" type="radio" value="2" name="radiolist1" />
-                                <span ></span>
-                                <label for="radiolist1-input2" >Input 2</label>
-                            </div>
-                            <div>
-                                <input id="radiolist1-input3" type="radio" value="3" name="radiolist1" disabled/>
-                                <span></span>
-                                <label for="radiolist1-input3" >Disabled Input 3</label>
-                            </div>
-                        </fieldset>
-                    </div>
-             </div>
-             <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio-group radios-animation-bounce&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;fieldset&gt;</span>
-                            <span class="nt">&lt;legend&gt;</span>Vertical Radio Buttons<span class="nt">&lt;/legend&gt;</span>
-
-                            <span class="nt">&lt;div&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input1&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input1&quot;</span> <span class="nt">&gt;</span>Input 1<span class="nt">&lt;/label&gt;</span>
-                            <span class="nt">&lt;/div&gt;</span>
-                            <span class="nt">&lt;div&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input2&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;span</span> <span class="nt">&gt;&lt;/span&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input2&quot;</span> <span class="nt">&gt;</span>Input 2<span class="nt">&lt;/label&gt;</span>
-                            <span class="nt">&lt;/div&gt;</span>
-                            <span class="nt">&lt;div&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input3&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="na">disabled</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input3&quot;</span> <span class="nt">&gt;</span>Disabled Input 3<span class="nt">&lt;/label&gt;</span>
-                            <span class="nt">&lt;/div&gt;</span>
-                        <span class="nt">&lt;/fieldset&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span></code></pre></div>     
-    <h4>Inline Radiobuttons</h4>
-    <div class="demo">
-        <div class="radio-group radios-animation-bounce">
-                        <fieldset>
-                            <legend>Horizontal Radio Buttons</legend>
-                            <span>
-                            <input type="radio" name="radiogroup1" id="radiogroup1-option1" value="option1" />
-                            <label for="radiogroup1-option1" >Option 1</label>
-
-                        </span>
-                            <span>
-                               <input type="radio" name="radiogroup1" id="radiogroup1-option2" value="option2" />
-                               <label for="radiogroup1-option2">Option 2</label>
-                        </span>
-                            <span>
-                                <input type="radio" name="radiogroup1" id="radiogroup1-option3" value="option3"  />
-                                <label for="radiogroup1-option3">Option 3</label>
-                        </span>
-
-                        </fieldset>
-        </div>
-     </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio-group radios-animation-bounce&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;fieldset&gt;</span>
-                            <span class="nt">&lt;legend&gt;</span>Horizontal Radio Buttons<span class="nt">&lt;/legend&gt;</span>
-                            <span class="nt">&lt;span&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option1&quot;</span> <span class="na">value=</span><span class="s">&quot;option1&quot;</span> <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option1&quot;</span> <span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>
-
-                            <span class="nt">&lt;/span&gt;</span>
-                            <span class="nt">&lt;span&gt;</span>
-                               <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option2&quot;</span> <span class="na">value=</span><span class="s">&quot;option2&quot;</span> <span class="nt">/&gt;</span>
-                               <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option2&quot;</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/label&gt;</span>
-                             <span class="nt">&lt;/span&gt;</span>
-                            <span class="nt">&lt;span&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option3&quot;</span> <span class="na">value=</span><span class="s">&quot;option3&quot;</span>  <span class="nt">/&gt;</span>
-                                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option3&quot;</span><span class="nt">&gt;</span>Option 3<span class="nt">&lt;/label&gt;</span>
-                            <span class="nt">&lt;/span&gt;</span>
-
-                        <span class="nt">&lt;/fieldset&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span></code></pre></div>  
-
-    <h3>Select Dropdown </h3>
-        <p> Here we use the native select menus, but forms select elements is custom styled. Add <span class="highlight">.select</span> class to the parent div, which is styled to place the content arrowdown icon inside the select box. A selection dropdown is a type of dropdown designed for user selection.</p>
+    <p> An field is a form element containing series of <b>input</b>  and <b>label</b> elements wrapped by an element that has the <span class="highlight">.field</span>class.</p>
     <div class="demo">
         <div class="form">
-          <div class="field select">
-                        <label for="size-selection" class="clipped">Choose a size</label>
-                        <select id="size-selection">
-                            <option value="0" disabled selected>Choose a size</option>
-                            <option value="1">Small</option>
-                            <option value="2">Medium</option>
-                            <option value="3">Large</option>
-                            <option value="4">Extra Large</option>
-                        </select>
-
-                    </div>
-          </div>          
-    </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field select&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
-                        <span class="nt">&lt;/select&gt;</span>
-
-                    <span class="nt">&lt;/div&gt;</span>
-          <span class="nt">&lt;/div&gt;</span></code></pre></div>
-    <h3>Different States </h3>
-    <h4>Focus State</h4>
-        <p>We remove the default outline styles from all the form inputs and apply a border-color in its place for :focus. </p>
-    
-
-     <h4>Error</h4>
-        <p> Individual fields displaying an error state are styled using ARIA attribute <span class="highlight">aria-invalid="true"</span>. ARIA live region being polite incase of error message.</p>
-    <div class="demo">
-       <div class="form" >
-       <div class="field">
-                        <label for="EmailinputError1" class="clipped">Input with Error</label> 
-                        <input id="EmailinputError1" type="email" placeholder="Email" name="email" aria-invalid="true" aria-describedby="invalid-email" />
-                    </div>
-                    <span aria-live="polite" id="invalid-email">
-                        <p>Please Enter a valid Email Address</p>
-                    </span> 
-        </div>            
-    </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;EmailinputError1&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Input with Error<span class="nt">&lt;/label&gt;</span> 
-                        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;EmailinputError1&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-invalid=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-describedby=</span><span class="s">&quot;invalid-email&quot;</span> <span class="nt">/&gt;</span>
-                        
-                    <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;span</span> <span class="na">aria-live=</span><span class="s">&quot;polite&quot;</span> <span class="na">id=</span><span class="s">&quot;invalid-email&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;p&gt;</span>Please Enter a valid Email Address<span class="nt">&lt;/p&gt;</span>
-                    <span class="nt">&lt;/span&gt;</span>
-          <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h4>Disabled</h4>
-        <p> Individual fields that are disabled, Add the <span class="highlight">disabled</span> boolean attribute on an input to prevent user interactions. Disabled inputs appear lighter and add a <span class="highlight">not-allowed</span> cursor.</p>
-    <div class="demo">
-       <div class="form">
-             <div class="field">
-                        <label for="disabled-input" >Disabled Input</label> 
-                        <input id="disabled-input" type="text" placeholder="Disabled Text Input" name="disabled-input" disabled />
-            </div>
-             <h5>Disabled Select Menu</h5>
-            <div class="select disabled">
-                <label for="disabled-select" class="clipped">Disabled Select Menu</label> 
-                    <select id="disabled-select" disabled>
-                        <option value="0">Disabled select</option>
-                    </select>
-
-            </div>      
-        </div>            
-    </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;disabled-input&quot;</span> <span class="nt">&gt;</span>Disabled Input<span class="nt">&lt;/label&gt;</span> 
-                        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;disabled-input&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Disabled Text Input&quot;</span> <span class="na">name=</span><span class="s">&quot;disabled-input&quot;</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-
-
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;select disabled&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;disabled-select&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Disabled Select Menu<span class="nt">&lt;/label&gt;</span> 
-                    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;disabled-select&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>Disabled select<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;/select&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>      
-                
-        <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-     <h4>Readonly state</h4>
-        <p>Add the <span class="highlight">readonly </span> boolean attribute on an input to prevent modification of the input's value. </p>
-    
-
-    <h3>Variations</h3>
-
-    <h3>Required </h3>
-        <p> A field for which an input is mandatory.</p>
-    <div class="demo">
-       <div class="form">
-             <div class="field">
-                        <label for="email" class="clipped">Email</label>
-                        <input id="email" type="email" placeholder="Email (Required)" name="email" aria-required="true" />
-            </div>
-        </div>            
-    </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email (Required)&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-          <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Text fields with no Label</h3>
-     <p> All input fields with basically no labels must need to have label element, but then add the label class <b>".clipped"</b> to visually hide it.</p>
-    <div class="demo">
-       <div class="form"> 
-        <div class="field">
-            <label for="email" class="clipped">Email</label>
-            <input type="email" placeholder="Email" name="email" aria-label="enter email address">
-        </div>    
-       </div>   
-    </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span> 
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-             <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;enter email address&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>    
-       <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Top/Block Label</h3>
-     <p> A field with label display at the top of the input text box.</p>
-    <div class="demo">
-       <div class="form"> 
-        <div class="field">
-            <label for="email">Email Address</label>
+            <div class="field">
+                <label for="email">Email Address</label>
                 <input id="email" type="email" placeholder="Email" name="email" />
-            </div>  
-       </div>   
-    </div>    
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span> 
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>Email Address<span class="nt">&lt;/label&gt;</span>
             <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>   
-       <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Inline/Left Label</h3>
-        <p> A field can have its label next to instead of above it.</p>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h3>Textarea </h3>
+    <p> A textarea uses the default form <b>textarea</b> element. Even textarea can be wrapped by an element that has the <span class="highlight">.field</span>class.</p>
+    </p>
     <div class="demo">
-       <form class="form" novalidate>
-                    <div class="field input-inline">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" placeholder="Email" name="email" />
-                    </div>
-                </form>         
-    </div>    
+        <div class="form">
+            <div class="field">
+                <label for="textarea">User Text</label>
+                <textarea id="textarea" placeholder="Description" name="textarea" aria-label="Enter description"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;textarea&quot;</span><span class="nt">&gt;</span>User Text<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;textarea&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Description&quot;</span> <span class="na">name=</span><span class="s">&quot;textarea&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Enter description&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h3>Checkboxes</h3>
+    <p> Checkboxes are styled using font icons. To add a little animation to the checkboxes use <span class="highlight">.animation-bounce</span> classname to the parent div. The span or label element next to the input controls are custom styled. Checkboxes are for selecting one or several options in a list.</p>
+    <h4>Default(stacked) Checkboxes</h4>
+    <p>Add <span class="highlight">.checkbox</span> classname to the parent div for the set of controls. Add a <b>div</b> element on a series of checkboxes for vertically stacked controls. A checkbox disabled attribute will be styled appropriately with properties cursor: not-allowed and opacity.</p>
+    <p></p>
+    <div class="demo">
+        <div class="checkboxes checkboxes-animation-bounce">
+            <fieldset>
+                <legend>Vertical Checkboxes</legend>
+                <div>
+                    <input id="checkbox-choice1" type="checkbox" value="1" name="checbox1" />
+                    <label for="checkbox-choice1" class="custom-checkbox">Choice 1</label>
+                </div>
+                <div>
+                    <input id="checkbox-choice2" type="checkbox" value="2" name="checbox1" />
+                    <label for="checkbox-choice2" class="custom-checkbox">Choice 2</label>
+                </div>
+                <div>
+                    <input id="checkbox-choice3" type="checkbox" value="3" name="checbox1" disabled/>
+                    <label for="checkbox-choice3" class="custom-checkbox">Disabled Choice 3</label>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkboxes checkboxes-animation-bounce&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset&gt;</span>
+            <span class="nt">&lt;legend&gt;</span>Vertical Checkboxes<span class="nt">&lt;/legend&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice1&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice2&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Choice 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice3&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="na">disabled</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice3&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Disabled Choice 3<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h4>Inline Checkboxes</h4>
+    <p> Add a <b>span</b> element on a series of checkboxes for controls that appear on the same line. Please see the Semantic markup for inline checkboxes using span element on each input controls.</p>
+    <div class="demo">
+        <div class="checkboxes checkboxes-animation-bounce">
+            <fieldset>
+                <legend>Horizontal checkboxes</legend>
+                <span>
+                    <input id="checkbox-inline-choice1" type="checkbox" value="1" name="checbox1" />
+                    <label for="checkbox-inline-choice1">Choice 1</label>
+                </span>
+                <span>
+                    <input id="checkbox-inline-choice2" type="checkbox" value="2" name="checbox1" />
+                    <label for="checkbox-inline-choice2">Choice 2</label>
+                </span>
+                <span>
+                    <input id="checkbox-inline-choice3" type="checkbox" value="3" name="checbox1" />
+                    <label for="checkbox-inline-choice3">Choice 3</label>
+                </span>
+            </fieldset>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkboxes checkboxes-animation-bounce&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset&gt;</span>
+            <span class="nt">&lt;legend&gt;</span>Horizontal checkboxes<span class="nt">&lt;/legend&gt;</span>
+            <span class="nt">&lt;span&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice1&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;span&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice2&quot;</span><span class="nt">&gt;</span>Choice 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;span&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice3&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice3&quot;</span><span class="nt">&gt;</span>Choice 3<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h3>RadioButtons </h3>
+    <p> Radiobuttons are custom styled forms of standard form radio controls with font icons. To add a little animation to the radiobuttons use <span class="highlight">.animation-bounce</span> classname to the parent div.</p>
+    <h4>Default(stacked) Radiobuttons</h4>
+    <p>Add <span class="highlight">.radio-group</span> classname to the parent div for the set of controls.</p>
+    <div class="demo">
+        <div class="radio-group radios-animation-bounce">
+            <fieldset>
+                <legend>Vertical Radio Buttons</legend>
+                <div>
+                    <input id="radiolist1-input1" type="radio" value="1" name="radiolist1" />
+                    <span></span>
+                    <label for="radiolist1-input1" >Input 1</label>
+                </div>
+                <div>
+                    <input id="radiolist1-input2" type="radio" value="2" name="radiolist1" />
+                    <span ></span>
+                    <label for="radiolist1-input2" >Input 2</label>
+                </div>
+                <div>
+                    <input id="radiolist1-input3" type="radio" value="3" name="radiolist1" disabled/>
+                    <span></span>
+                    <label for="radiolist1-input3" >Disabled Input 3</label>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio-group radios-animation-bounce&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset&gt;</span>
+            <span class="nt">&lt;legend&gt;</span>Vertical Radio Buttons<span class="nt">&lt;/legend&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input1&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input1&quot;</span> <span class="nt">&gt;</span>Input 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input2&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;span</span> <span class="nt">&gt;&lt;/span&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input2&quot;</span> <span class="nt">&gt;</span>Input 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input3&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="na">disabled</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input3&quot;</span> <span class="nt">&gt;</span>Disabled Input 3<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>     
+    <h4>Inline Radiobuttons</h4>
+    <div class="demo">
+        <div class="radio-group radios-animation-bounce">
+            <fieldset>
+                <legend>Horizontal Radio Buttons</legend>
+                <span>
+                    <input type="radio" name="radiogroup1" id="radiogroup1-option1" value="option1" />
+                    <label for="radiogroup1-option1" >Option 1</label>
+                </span>
+                <span>
+                    <input type="radio" name="radiogroup1" id="radiogroup1-option2" value="option2" />
+                    <label for="radiogroup1-option2">Option 2</label>
+                </span>
+                <span>
+                    <input type="radio" name="radiogroup1" id="radiogroup1-option3" value="option3"  />
+                    <label for="radiogroup1-option3">Option 3</label>
+                </span>
+            </fieldset>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio-group radios-animation-bounce&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset&gt;</span>
+            <span class="nt">&lt;legend&gt;</span>Horizontal Radio Buttons<span class="nt">&lt;/legend&gt;</span>
+            <span class="nt">&lt;span&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option1&quot;</span> <span class="na">value=</span><span class="s">&quot;option1&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option1&quot;</span> <span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;span&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option2&quot;</span> <span class="na">value=</span><span class="s">&quot;option2&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option2&quot;</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;span&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option3&quot;</span> <span class="na">value=</span><span class="s">&quot;option3&quot;</span>  <span class="nt">/&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option3&quot;</span><span class="nt">&gt;</span>Option 3<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>  
+    <h3>Select Dropdown </h3>
+    <p> Here we use the native select menus, but forms select elements is custom styled. Add <span class="highlight">.select</span> class to the parent div, which is styled to place the content arrowdown icon inside the select box. A selection dropdown is a type of dropdown designed for user selection.</p>
+    <div class="demo">
+        <div class="form">
+            <div class="field select">
+                <label for="size-selection" class="clipped">Choose a size</label>
+                <select id="size-selection">
+                    <option value="0" disabled selected>Choose a size</option>
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field select&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h3>Different States </h3>
+    <h4>Focus State</h4>
+    <p>We remove the default outline styles from all the form inputs and apply a border-color in its place for :focus. </p>
+    <h4>Error</h4>
+    <p> Individual fields displaying an error state are styled using ARIA attribute <span class="highlight">aria-invalid="true"</span>. ARIA live region being polite incase of error message.</p>
+    <div class="demo">
+        <div class="form" >
+            <div class="field">
+                <label for="EmailinputError1" class="clipped">Input with Error</label> 
+                <input id="EmailinputError1" type="email" placeholder="Email" name="email" aria-invalid="true" aria-describedby="invalid-email" />
+            </div>
+            <span aria-live="polite" id="invalid-email">
+                <p>Please Enter a valid Email Address</p>
+            </span>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;EmailinputError1&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Input with Error<span class="nt">&lt;/label&gt;</span> 
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;EmailinputError1&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-invalid=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-describedby=</span><span class="s">&quot;invalid-email&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">aria-live=</span><span class="s">&quot;polite&quot;</span> <span class="na">id=</span><span class="s">&quot;invalid-email&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Please Enter a valid Email Address<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h4>Disabled</h4>
+    <p> Individual fields that are disabled, Add the <span class="highlight">disabled</span> boolean attribute on an input to prevent user interactions. Disabled inputs appear lighter and add a <span class="highlight">not-allowed</span> cursor.</p>
+    <div class="demo">
+        <div class="form">
+            <div class="field">
+                <label for="disabled-input" >Disabled Input</label> 
+                <input id="disabled-input" type="text" placeholder="Disabled Text Input" name="disabled-input" disabled />
+            </div>
+            <h5>Disabled Select Menu</h5>
+            <div class="select disabled">
+                <label for="disabled-select" class="clipped">Disabled Select Menu</label> 
+                <select id="disabled-select" disabled>
+                    <option value="0">Disabled select</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;disabled-input&quot;</span> <span class="nt">&gt;</span>Disabled Input<span class="nt">&lt;/label&gt;</span> 
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;disabled-input&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Disabled Text Input&quot;</span> <span class="na">name=</span><span class="s">&quot;disabled-input&quot;</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;select disabled&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;disabled-select&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Disabled Select Menu<span class="nt">&lt;/label&gt;</span> 
+            <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;disabled-select&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>Disabled select<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h4>Readonly state</h4>
+    <p>Add the <span class="highlight">readonly </span> boolean attribute on an input to prevent modification of the input's value. </p>
+    <h3>Variations</h3>
+    <h3>Required </h3>
+    <p> A field for which an input is mandatory.</p>
+    <div class="demo">
+        <div class="form">
+            <div class="field">
+                <label for="email" class="clipped">Email</label>
+                <input id="email" type="email" placeholder="Email (Required)" name="email" aria-required="true" />
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email (Required)&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h3>Text fields with no Label</h3>
+    <p> All input fields with basically no labels must need to have label element, but then add the label class <b>".clipped"</b> to visually hide it.</p>
+    <div class="demo">
+        <div class="form">
+            <div class="field">
+                <label for="email" class="clipped">Email</label>
+                <input type="email" placeholder="Email" name="email" aria-label="enter email address">
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;enter email address&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h3>Top/Block Label</h3>
+    <p> A field with label display at the top of the input text box.</p>
+    <div class="demo">
+        <div class="form">
+            <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" placeholder="Email" name="email" />
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>Email Address<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h3>Inline/Left Label</h3>
+    <p> A field can have its label next to instead of above it.</p>
+    <div class="demo">
+        <form class="form" novalidate>
+            <div class="field input-inline">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Email" name="email" />
+            </div>
+        </form>
+    </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span> <span class="na">novalidate</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field input-inline&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/form&gt;</span></code></pre></div>
-
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field input-inline&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span></code></pre></div>
     <h3>Text fields with Icon</h3>
     <p>You can also add icons to the input fields. 
         1) Add class <span class="highlight">.field-input-email</span> for the field with email input.
         2) Add class <span class="highlight">.field-input-username</span> for the field with username input.
         3) Add class <span class="highlight">.field-input-email</span> for the field with search field.
-         Please see the below examples.
+        Please see the below examples.
     </p>
     <div class="demo">
         <div class="form">
-                    <div class="field field-input-email">
-                        <label for="email" class="clipped">Email</label>
-                        <input id="email" type="email" placeholder="Email" name="email"  />
-                    </div>
-                     <div class="field field-input-username">
-                        <label for="username" class="clipped">Username</label>
-                        <input id="username" type="text" placeholder="Username" name="username" />
-                    </div>
-                    <div class="field field-input-search">
-                        <label for="search" class="clipped">Search</label>
-                        <input id="search" placeholder="Search text" type="text" name="search" >
-                    </div>
+            <div class="field field-input-email">
+                <label for="email" class="clipped">Email</label>
+                <input id="email" type="email" placeholder="Email" name="email"  />
+            </div>
+            <div class="field field-input-username">
+                <label for="username" class="clipped">Username</label>
+                <input id="username" type="text" placeholder="Username" name="username" />
+            </div>
+            <div class="field field-input-search">
+                <label for="search" class="clipped">Search</label>
+                <input id="search" placeholder="Search text" type="text" name="search" >
+            </div>
         </div>
     </div>
-        
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field field-input-email&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span>  <span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field field-input-username&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;username&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;username&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Username&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field field-input-search&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;search&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search text&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="nt">&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span></code></pre></div>   
-
-     <h3>Input Size small</h3>
-     <p>By default the form inputs are large size and the small inputs which has been styled using the class <span class="highlight">.input-small</span>. With the Multiple form elements which are smaller size drop the <span class="highlight">.form-small</span> class.</p>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field field-input-email&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span>  <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field field-input-username&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;username&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;username&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Username&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field field-input-search&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;search&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search text&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>   
+    <h3>Input Size small</h3>
+    <p>By default the form inputs are large size and the small inputs which has been styled using the class <span class="highlight">.input-small</span>. With the Multiple form elements which are smaller size drop the <span class="highlight">.form-small</span> class.</p>
     <div class="demo">
         <h5>Single small input field</h5>
         <div class="form">
-          <div class="field">
+            <div class="field">
                 <label for="password" class="clipped">Password</label>
                 <input class="input-small" id="password" type="password" placeholder="Password" name="company" aria-label="Enter password" />
             </div>
         </div>
-
         <h5>Multiple small input fields, small select</h5>
         <div class="form form-small">
-          <div class="field">
+            <div class="field">
                 <label for="phone" class="clipped">Phone></label>
                 <input id="phone" type="tel" placeholder="Enter telephone number" name="phone" />
             </div>
-              <div class="field select">
-                        <label for="size-selection" class="clipped">Choose a size</label>
-                        <select id="size-selection">
-                            <option value="0" disabled selected>Choose a size</option>
-                            <option value="1">Small</option>
-                            <option value="2">Medium</option>
-                            <option value="3">Large</option>
-                            <option value="4">Extra Large</option>
-                        </select>
-
-                </div>
+            <div class="field select">
+                <label for="size-selection" class="clipped">Choose a size</label>
+                <select id="size-selection">
+                    <option value="0" disabled selected>Choose a size</option>
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select>
+            </div>
         </div>
     </div>
-        
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;password&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;input-small&quot;</span> <span class="na">id=</span><span class="s">&quot;password&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Password&quot;</span> <span class="na">name=</span><span class="s">&quot;company&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Enter password&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;password&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;input-small&quot;</span> <span class="na">id=</span><span class="s">&quot;password&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Password&quot;</span> <span class="na">name=</span><span class="s">&quot;company&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Enter password&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form form-small&quot;</span><span class="nt">&gt;</span>
-           <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phone&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Phone&gt;<span class="nt">&lt;/label&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phone&quot;</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Enter telephone number&quot;</span> <span class="na">name=</span><span class="s">&quot;phone&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field select&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
-                        <span class="nt">&lt;/select&gt;</span>
-
-                <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span></code></pre></div>     
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form form-small&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phone&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Phone&gt;<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phone&quot;</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Enter telephone number&quot;</span> <span class="na">name=</span><span class="s">&quot;phone&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field select&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>     
 </section>
-
         </div>
     </div>
 </div>

@@ -632,6 +632,76 @@ a:focus {
   clear: both;
 }
 
+.clearfix:before,
+.float-row:before,
+.clearfix:after,
+.float-row:after {
+  display: table;
+  line-height: 0;
+  content: " ";
+}
+
+.clearfix:after,
+.float-row:after {
+  clear: both;
+}
+
+.clearfix:before,
+.float-row:before,
+.clearfix:after,
+.float-row:after {
+  display: table;
+  line-height: 0;
+  content: " ";
+}
+
+.clearfix:after,
+.float-row:after {
+  clear: both;
+}
+
+.clearfix:before,
+.float-row:before,
+.clearfix:after,
+.float-row:after {
+  display: table;
+  line-height: 0;
+  content: " ";
+}
+
+.clearfix:after,
+.float-row:after {
+  clear: both;
+}
+
+.clearfix:before,
+.float-row:before,
+.clearfix:after,
+.float-row:after {
+  display: table;
+  line-height: 0;
+  content: " ";
+}
+
+.clearfix:after,
+.float-row:after {
+  clear: both;
+}
+
+.clearfix:before,
+.float-row:before,
+.clearfix:after,
+.float-row:after {
+  display: table;
+  line-height: 0;
+  content: " ";
+}
+
+.clearfix:after,
+.float-row:after {
+  clear: both;
+}
+
 /*	CAPITALIZE - Mixin
 ------------------*/
 
@@ -910,7 +980,8 @@ a.btn:link {
 }
 
 .btn[disabled],
-fieldset[disabled] .btn {
+fieldset[disabled] .btn,
+.btn--disabled {
   color: #ffffff;
   cursor: not-allowed;
   background-color: #999999;
@@ -998,6 +1069,8 @@ a.btn-secondary:link {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
+/**/
+
 .icon {
   display: inline-block;
   font: normal normal normal 1.14rem "vq-icon-font";
@@ -1054,6 +1127,7 @@ a.btn-secondary:link {
 }
 
 .icon-chevron-up:before {
+  color: #c7c7cc;
   content: "\e609";
 }
 
@@ -1408,6 +1482,7 @@ a.btn-secondary:link {
   display: inline-block;
   font-family: "vq-icon-font";
   font-size: .714rem;
+  color: #c7c7cc;
   color: #ffffff;
   text-align: center;
   content: "\e609";
@@ -1471,6 +1546,8 @@ a.btn-secondary:link {
   display: inline-block;
   font-family: "vq-icon-font";
   font-size: .714rem;
+  color: #ffffff;
+  color: #c7c7cc;
   color: #b9b9b9;
   text-align: center;
   content: "\e606";
@@ -1478,6 +1555,19 @@ a.btn-secondary:link {
 
 .list-nav ul > li:last-child a {
   border-bottom: none;
+}
+
+/**/
+
+.mixin-icon-expanded,
+.mixin-icon-chevronup,
+.mixin-icon-chevrondown {
+  position: absolute;
+  display: inline-block;
+  font-family: "vq-icon-font";
+  font-size: .714rem;
+  color: #ffffff;
+  text-align: center;
 }
 
 .dialog[role=dialog] {
@@ -1553,6 +1643,8 @@ a.btn-secondary:link {
       -ms-transform: translateX(0);
           transform: translateX(0);
 }
+
+/**/
 
 /**/
 
@@ -1933,6 +2025,8 @@ a.btn-secondary:link {
   color: #bd1b1b;
 }
 
+/**/
+
 .field-input-search:before {
   color: #676767;
   content: "\e619";
@@ -1953,6 +2047,74 @@ a.btn-secondary:link {
   display: inline-block;
   font-family: "vq-icon-font";
   font-size: 0.45rem;
+  color: #676767;
+  color: #555555;
+  vertical-align: top;
+  content: "\e601";
+}
+
+.form .select.disabled:after {
+  color: #b5b5b5;
+}
+
+[class^="field-input"],
+[class*="field-input"] {
+  position: relative;
+}
+
+[class^="field-input"]:before,
+[class*="field-input"]:before {
+  position: absolute;
+  top: 1.2rem;
+  left: 1rem;
+  font-family: "vq-icon-font";
+  color: #999999;
+}
+
+[class^="field-input"] > input[type="email"],
+[class*="field-input"] > input[type="email"],
+[class^="field-input"] input[type="search"],
+[class*="field-input"] input[type="search"],
+[class^="field-input"] input[type="tel"],
+[class*="field-input"] input[type="tel"],
+[class^="field-input"] input[type="password"],
+[class*="field-input"] input[type="password"],
+[class^="field-input"] input[type="text"],
+[class*="field-input"] input[type="text"] {
+  padding-left: 2.5rem;
+}
+
+.field-input-email:before {
+  content: "\e629";
+}
+
+.field-input-username:before {
+  content: "\e618";
+}
+
+/**/
+
+.field-input-search:before {
+  color: #676767;
+  content: "\e619";
+}
+
+.form.form-small .select:after {
+  top: 1rem;
+}
+
+.form .select {
+  position: relative;
+}
+
+.form .select:after {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.3rem;
+  display: inline-block;
+  font-family: "vq-icon-font";
+  font-size: 0.45rem;
+  color: #676767;
   color: #555555;
   vertical-align: top;
   content: "\e601";
@@ -2180,10 +2342,34 @@ a.btn-secondary:link {
   }
 }
 
+@keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
 .checkboxes-animation-bounce input[type="checkbox"]:checked + label:before,
 .checkboxes-animation-bounce input[type="checkbox"]:checked + span:before {
   -webkit-animation: bounce 0.3s;
           animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
 }
 
 @keyframes bounce {
