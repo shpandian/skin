@@ -500,6 +500,14 @@ a:focus {
   text-decoration: underline;
 }
 
+@font-face {
+  font-family: "vq-icon-font";
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/vq-icon-font.eot');
+  src: url('fonts/vq-icon-font.eot?#iefix') format('embedded-opentype'), url('fonts/vq-icon-font.woff') format('woff'), url('fonts/vq-icon-font.ttf') format('truetype'), url('fonts/vq-icon-font.svg#vq-icon-font') format('svg');
+}
+
 /* ========================================
    Utility Classes & Mixins
    ======================================= */
@@ -798,6 +806,11 @@ a:focus {
   cursor: pointer;
 }
 
+.img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .clipped {
   position: absolute !important;
   width: 1px !important;
@@ -985,18 +998,9 @@ a.btn-secondary:link {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
-@font-face {
-  font-family: "vq-icon-font";
-  font-style: normal;
-  font-weight: normal;
-  src: url('fonts/vq-icon-font.eot');
-  src: url('fonts/vq-icon-font.eot?#iefix') format('embedded-opentype'), url('fonts/vq-icon-font.woff') format('woff'), url('fonts/vq-icon-font.ttf') format('truetype'), url('fonts/vq-icon-font.svg#vq-icon-font') format('svg');
-}
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+.icon {
   display: inline-block;
-  font: normal normal normal 1.14rem vq-icon-font;
+  font: normal normal normal 1.14rem "vq-icon-font";
   -webkit-font-smoothing: antialiased;
   line-height: 1;
   text-transform: none;
@@ -1050,7 +1054,6 @@ a.btn-secondary:link {
 }
 
 .icon-chevron-up:before {
-  color: #c7c7cc;
   content: "\e609";
 }
 
@@ -1259,28 +1262,6 @@ a.btn-secondary:link {
   }
 }
 
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
 .spinner-small {
   width: 30px;
   height: 30px;
@@ -1389,12 +1370,12 @@ a.btn-secondary:link {
 
 /**/
 
-.listgroup {
+.list-nav {
   position: relative;
   width: 100%;
 }
 
-.listgroup > div {
+.list-nav > div {
   display: inline-block;
   width: 100%;
   font-size: 0.85rem;
@@ -1406,61 +1387,64 @@ a.btn-secondary:link {
   background-color: #9a9a9a;
 }
 
-.listgroup > div > a {
+.list-nav > div > a {
   color: #ffffff;
   text-decoration: none;
 }
 
-.listgroup > div > a:hover {
+.list-nav > div > a:hover {
   text-decoration: none;
 }
 
-.listgroup > div:first-child > a span,
-.listgroup > div:nth-child(2) > a span {
+.list-nav > div:first-child > a span,
+.list-nav > div:nth-child(2) > a span {
   margin-left: 2.25rem;
 }
 
-.listgroup > div:first-child > a span:before,
-.listgroup > div:nth-child(2) > a span:before {
+.list-nav > div:first-child > a span:before,
+.list-nav > div:nth-child(2) > a span:before {
   position: absolute;
   left: .7rem;
   display: inline-block;
   font-family: "vq-icon-font";
   font-size: .714rem;
+  color: #ffffff;
   text-align: center;
   content: "\e609";
 }
 
-.listgroup > div:nth-child(2),
-.listgroup > div:nth-child(3) {
+.list-nav > div:nth-child(2),
+.list-nav > div:nth-child(3) {
+  color: #ffffff;
   background-color: #cccccc;
 }
 
-.listgroup > div:nth-child(2).listgroup_parentitem-expanded > a span {
+.list-nav > div:nth-child(2).list-nav__parentitem--expanded > a span {
   margin-left: 2.25rem;
 }
 
-.listgroup > div:nth-child(2).listgroup_parentitem-expanded > a span:before {
+.list-nav > div:nth-child(2).list-nav__parentitem--expanded > a span:before {
   position: absolute;
   display: inline-block;
   font-family: "vq-icon-font";
   font-size: .714rem;
   font-size: 1rem;
+  color: #ffffff;
   text-align: center;
   content: "\e62f";
 }
 
-.listgroup > div:nth-child(3) > a > span {
+.list-nav > div:nth-child(3) > a > span {
   margin-left: 2.25rem;
 }
 
-.listgroup ul {
+.list-nav ul {
   padding: 0;
   margin: 0;
   overflow: hidden;
 }
 
-.listgroup ul > li {
+.list-nav ul > li {
   position: relative;
   display: block;
   font-size: 0.85rem;
@@ -1471,7 +1455,7 @@ a.btn-secondary:link {
   background: #f0eeec;
 }
 
-.listgroup ul > li > a {
+.list-nav ul > li > a {
   position: relative;
   display: block;
   padding: .5rem 0;
@@ -1481,7 +1465,7 @@ a.btn-secondary:link {
   border-bottom: 1px solid #d7d5d4;
 }
 
-.listgroup ul > li.listgroup_childitem-haschildren a > span:after {
+.list-nav ul > li.list-nav__childitem--haschildren a > span:after {
   position: absolute;
   right: .5rem;
   display: inline-block;
@@ -1492,11 +1476,11 @@ a.btn-secondary:link {
   content: "\e606";
 }
 
-.listgroup ul > li:last-child a {
+.list-nav ul > li:last-child a {
   border-bottom: none;
 }
 
-.modal[role=dialog] {
+.dialog[role=dialog] {
   position: fixed;
   top: 0;
   left: 0;
@@ -1513,7 +1497,7 @@ a.btn-secondary:link {
   -webkit-overflow-scrolling: touch;
 }
 
-.modal[role=dialog] > [role=document] {
+.dialog[role=dialog] > [role=document] {
   position: relative;
   width: 100%;
   padding: 1.5rem;
@@ -1522,26 +1506,26 @@ a.btn-secondary:link {
   background: #f4f4f4;
 }
 
-.modal[role=dialog][aria-hidden="true"] {
+.dialog[role=dialog][aria-hidden="true"] {
   display: none;
 }
 
-.modal[role=dialog][aria-hidden="false"] {
+.dialog[role=dialog][aria-hidden="false"] {
   z-index: 100;
 }
 
 @media only screen and (min-width: 768px) {
-  .modal[role=dialog] {
+  .dialog[role=dialog] {
     background: rgba(0, 0, 0, 0.6);
   }
-  .modal[role=dialog] > [role=document] {
+  .dialog[role=dialog] > [role=document] {
     max-width: 800px;
     margin: auto;
   }
 }
 
-.modal-slideUp,
-.modal-slideDown {
+.dialog-slideUp,
+.dialog-slideDown {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -1549,14 +1533,14 @@ a.btn-secondary:link {
           transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
 }
 
-.modal-slideUp .open,
-.modal-slideDown .open {
+.dialog-slideUp .open,
+.dialog-slideDown .open {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
 }
 
-.modal-pushLeft {
+.dialog-pushLeft {
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
@@ -1564,7 +1548,7 @@ a.btn-secondary:link {
           transition: transform 0.5s, visibility 0s 0.5s;
 }
 
-.modal-pushLeft .open {
+.dialog-pushLeft .open {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
@@ -1572,13 +1556,13 @@ a.btn-secondary:link {
 
 /**/
 
-.dropdown-menu > .btn {
+.menu > .btn {
   padding: 0.75rem 1rem;
   font-size: 1.125rem;
   color: #000;
 }
 
-.dropdown-menu > .btn[aria-expanded="false"]:after {
+.menu > .btn:after {
   position: relative;
   top: 0.5rem;
   left: 0.2rem;
@@ -1586,25 +1570,23 @@ a.btn-secondary:link {
   font-size: 0.45rem;
   color: #555555;
   vertical-align: top;
+}
+
+.menu > .btn[aria-expanded="false"]:after {
+  color: #676767;
   content: "\e601";
 }
 
-.dropdown-menu > .btn[aria-expanded="true"]:after {
-  position: relative;
-  top: 0.5rem;
-  left: 0.2rem;
-  font-family: "vq-icon-font";
-  font-size: 0.45rem;
-  color: #555555;
-  vertical-align: top;
+.menu > .btn[aria-expanded="true"]:after {
+  color: #676767;
   content: "\e602";
 }
 
-.dropdown-menu > .btn[aria-expanded="true"] + [role=menu] {
+.menu > .btn[aria-expanded="true"] + [role=menu] {
   display: block;
 }
 
-.dropdown-menu > [role=menu] {
+.menu > [role=menu] {
   display: none;
   padding: 0;
   margin: 0;
@@ -1613,8 +1595,8 @@ a.btn-secondary:link {
   border-bottom: 1px solid #eeeeee;
 }
 
-.dropdown-menu > [role=menu] > [role=menuitemradio],
-.dropdown-menu > [role=menu] [role=menuitemcheckbox] {
+.menu > [role=menu] > [role=menuitemradio],
+.menu > [role=menu] [role=menuitemcheckbox] {
   position: relative;
   padding: 0.75rem 1rem;
   font-size: 1rem;
@@ -1622,50 +1604,51 @@ a.btn-secondary:link {
   cursor: pointer;
 }
 
-.dropdown-menu > [role=menu] > [role=menuitemradio]:first-child,
-.dropdown-menu > [role=menu] [role=menuitemcheckbox]:first-child {
+.menu > [role=menu] > [role=menuitemradio]:first-child,
+.menu > [role=menu] [role=menuitemcheckbox]:first-child {
   border-top: 0;
 }
 
-.dropdown-menu > [role=menu] > [role=menuitemradio]:before,
-.dropdown-menu > [role=menu] [role=menuitemcheckbox]:before {
+.menu > [role=menu] > [role=menuitemradio]:before,
+.menu > [role=menu] [role=menuitemcheckbox]:before {
   display: none;
 }
 
-.dropdown-menu > [role=menu] > [aria-checked=true] {
+.menu > [role=menu] > [aria-checked=true] {
   font-weight: 700;
 }
 
-.dropdown-menu > [role=menu] > [aria-checked=true]:after {
+.menu > [role=menu] > [aria-checked=true]:after {
   position: absolute;
   top: 1rem;
   right: 1rem;
   display: inline-block;
   font-family: "vq-icon-font";
+  color: #0654ba;
   color: #006699;
   content: "\e625";
 }
 
-.dropdown-menu-medium {
+.menu-medium {
   position: relative;
 }
 
-.dropdown-menu-medium > .btn {
+.menu-medium > .btn {
   padding: 0.75rem 7rem;
   font-size: 1.125rem;
   background: #eeeeee;
   border: 1px solid #ccc;
 }
 
-.dropdown-menu-medium > [role=menu] {
+.menu-medium > [role=menu] {
   position: absolute;
   left: 2rem;
   min-width: 225px;
   border-bottom: none;
 }
 
-.dropdown-menu-medium > [role=menu] > [role=menuitemradio],
-.dropdown-menu-medium > [role=menu] [role=menuitemcheckbox] {
+.menu-medium > [role=menu] > [role=menuitemradio],
+.menu-medium > [role=menu] [role=menuitemcheckbox] {
   padding: .75rem 2rem;
   border-top: none;
 }
@@ -1817,164 +1800,20 @@ a.btn-secondary:link {
   border-color: #ccc;
 }
 
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
-  color: #757575;
+.form input[disabled]::-webkit-input-placeholder {
+  color: #cccccc;
 }
 
-.form input:-moz-placeholder,
-.form textarea:-moz-placeholder {
-  color: #757575;
+.form input[disabled]:-moz-placeholder {
+  color: #cccccc;
 }
 
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
-  color: #757575;
+.form input[disabled]::-moz-placeholder {
+  color: #cccccc;
 }
 
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
-  color: #757575;
-}
-
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
-  color: #757575;
-}
-
-.form input:-moz-placeholder,
-.form textarea:-moz-placeholder {
-  color: #757575;
-}
-
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
-  color: #757575;
-}
-
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
-  color: #757575;
-}
-
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
-  color: #757575;
-}
-
-.form input:-moz-placeholder,
-.form textarea:-moz-placeholder {
-  color: #757575;
-}
-
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
-  color: #757575;
-}
-
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
-  color: #757575;
-}
-
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
-  color: #757575;
-}
-
-.form input:-moz-placeholder,
-.form textarea:-moz-placeholder {
-  color: #757575;
-}
-
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
-  color: #757575;
-}
-
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
-  color: #757575;
-}
-
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
-  color: #757575;
-}
-
-.form input:-moz-placeholder,
-.form textarea:-moz-placeholder {
-  color: #757575;
-}
-
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
-  color: #757575;
-}
-
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
-  color: #757575;
-}
-
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
-  color: #757575;
-}
-
-.form input:-moz-placeholder,
-.form textarea:-moz-placeholder {
-  color: #757575;
-}
-
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
-  color: #757575;
-}
-
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
-  color: #757575;
-}
-
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
-  color: #757575;
-}
-
-.form input:-moz-placeholder,
-.form textarea:-moz-placeholder {
-  color: #757575;
-}
-
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
-  color: #757575;
-}
-
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
-  color: #757575;
-}
-
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
-  color: #757575;
-}
-
-.form input:-moz-placeholder,
-.form textarea:-moz-placeholder {
-  color: #757575;
-}
-
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
-  color: #757575;
-}
-
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
-  color: #757575;
+.form input[disabled]:-ms-input-placeholder {
+  color: #cccccc;
 }
 
 .form select::-ms-expand {
@@ -1988,10 +1827,36 @@ a.btn-secondary:link {
           appearance: none;
 }
 
+.form select[disabled] {
+  color: #cccccc;
+}
+
 .form textarea {
   min-height: 200px;
   overflow: auto;
   resize: vertical;
+}
+
+.form ::-webkit-input-placeholder {
+  color: #757575;
+}
+
+.form :-moz-placeholder {
+  color: #757575;
+}
+
+.form ::-moz-placeholder {
+  color: #757575;
+}
+
+.form :-ms-input-placeholder {
+  color: #757575;
+}
+
+.form.form-small input,
+.form.form-small select {
+  padding: .625rem;
+  font-size: 0.75rem;
 }
 
 .form div > input.input-small {
@@ -2073,6 +1938,10 @@ a.btn-secondary:link {
   content: "\e619";
 }
 
+.form.form-small .select:after {
+  top: 1rem;
+}
+
 .form .select {
   position: relative;
 }
@@ -2087,6 +1956,10 @@ a.btn-secondary:link {
   color: #555555;
   vertical-align: top;
   content: "\e601";
+}
+
+.form .select.disabled:after {
+  color: #b5b5b5;
 }
 
 [class^="field-input"],
@@ -2120,8 +1993,12 @@ a.btn-secondary:link {
   content: "\e629";
 }
 
+.field-input-username:before {
+  content: "\e618";
+}
+
 .radio-group,
-.checkbox {
+.checkboxes {
   cursor: pointer;
   /* Show checked/selected item */
 
@@ -2130,77 +2007,69 @@ a.btn-secondary:link {
 }
 
 .radio-group > fieldset > span,
-.checkbox > fieldset > span {
+.checkboxes > fieldset > span {
   margin: 0 1.625rem 1rem 0;
 }
 
 .radio-group > fieldset > div,
-.checkbox > fieldset > div {
+.checkboxes > fieldset > div {
   margin-bottom: .625rem;
 }
 
 .radio-group label,
-.checkbox label {
+.checkboxes label {
   font-weight: normal;
   cursor: pointer;
 }
 
 .radio-group legend,
-.checkbox legend {
+.checkboxes legend {
   padding-bottom: .5rem;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
 
 .radio-group input[type=radio],
-.checkbox input[type=radio],
+.checkboxes input[type=radio],
 .radio-group input[type=checkbox],
-.checkbox input[type=checkbox] {
+.checkboxes input[type=checkbox] {
   position: absolute;
   z-index: 2;
   opacity: 0;
 }
 
 .radio-group input[type=radio][disabled],
-.checkbox input[type=radio][disabled],
+.checkboxes input[type=radio][disabled],
 .radio-group input[type=checkbox][disabled],
-.checkbox input[type=checkbox][disabled],
-.radio-group input[type=radio].disabled,
-.checkbox input[type=radio].disabled,
-.radio-group input[type=checkbox].disabled,
-.checkbox input[type=checkbox].disabled,
-fieldset[disabled] .radio-group input[type=radio],
-fieldset[disabled] .checkbox input[type=radio],
-fieldset[disabled] .radio-group input[type=checkbox],
-fieldset[disabled] .checkbox input[type=checkbox] {
+.checkboxes input[type=checkbox][disabled] {
   cursor: not-allowed;
 }
 
 .radio-group input[type=radio][disabled] + label,
-.checkbox input[type=radio][disabled] + label,
+.checkboxes input[type=radio][disabled] + label,
 .radio-group input[type=checkbox][disabled] + label,
-.checkbox input[type=checkbox][disabled] + label,
-.radio-group input[type=radio].disabled + label,
-.checkbox input[type=radio].disabled + label,
-.radio-group input[type=checkbox].disabled + label,
-.checkbox input[type=checkbox].disabled + label,
-fieldset[disabled] .radio-group input[type=radio] + label,
-fieldset[disabled] .checkbox input[type=radio] + label,
-fieldset[disabled] .radio-group input[type=checkbox] + label,
-fieldset[disabled] .checkbox input[type=checkbox] + label {
+.checkboxes input[type=checkbox][disabled] + label,
+.radio-group input[type=radio][disabled] + span,
+.checkboxes input[type=radio][disabled] + span,
+.radio-group input[type=checkbox][disabled] + span,
+.checkboxes input[type=checkbox][disabled] + span,
+.radio-group input[type=radio][disabled] + span + label,
+.checkboxes input[type=radio][disabled] + span + label,
+.radio-group input[type=checkbox][disabled] + span + label,
+.checkboxes input[type=checkbox][disabled] + span + label {
   cursor: not-allowed;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
 
 .radio-group input[type=radio] + label,
-.checkbox input[type=radio] + label,
+.checkboxes input[type=radio] + label,
 .radio-group input[type=checkbox] + label,
-.checkbox input[type=checkbox] + label,
+.checkboxes input[type=checkbox] + label,
 .radio-group input[type=radio] + span,
-.checkbox input[type=radio] + span,
+.checkboxes input[type=radio] + span,
 .radio-group input[type=checkbox] + span,
-.checkbox input[type=checkbox] + span {
+.checkboxes input[type=checkbox] + span {
   position: relative;
   padding-left: 1.5rem;
   font-size: .875rem;
@@ -2208,13 +2077,13 @@ fieldset[disabled] .checkbox input[type=checkbox] + label {
 }
 
 .radio-group input[type=radio] + label:before,
-.checkbox input[type=radio] + label:before,
+.checkboxes input[type=radio] + label:before,
 .radio-group input[type=checkbox] + label:before,
-.checkbox input[type=checkbox] + label:before,
+.checkboxes input[type=checkbox] + label:before,
 .radio-group input[type=radio] + span:before,
-.checkbox input[type=radio] + span:before,
+.checkboxes input[type=radio] + span:before,
 .radio-group input[type=checkbox] + span:before,
-.checkbox input[type=checkbox] + span:before {
+.checkboxes input[type=checkbox] + span:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -2225,27 +2094,27 @@ fieldset[disabled] .checkbox input[type=checkbox] + label {
 }
 
 .radio-group input[type="radio"] + label:before,
-.checkbox input[type="radio"] + label:before,
+.checkboxes input[type="radio"] + label:before,
 .radio-group input[type="radio"] + span:before,
-.checkbox input[type="radio"] + span:before {
+.checkboxes input[type="radio"] + span:before {
   content: "\e62b";
 }
 
 .radio-group input[type="checkbox"] + label:before,
-.checkbox input[type="checkbox"] + label:before,
+.checkboxes input[type="checkbox"] + label:before,
 .radio-group input[type="checkbox"] + span:before,
-.checkbox input[type="checkbox"] + span:before {
+.checkboxes input[type="checkbox"] + span:before {
   content: "\e62c";
 }
 
 .radio-group input[type="radio"]:checked + label:before,
-.checkbox input[type="radio"]:checked + label:before,
+.checkboxes input[type="radio"]:checked + label:before,
 .radio-group input[type="radio"]:checked + span:before,
-.checkbox input[type="radio"]:checked + span:before,
+.checkboxes input[type="radio"]:checked + span:before,
 .radio-group input[type="checkbox"]:checked + label:before,
-.checkbox input[type="checkbox"]:checked + label:before,
+.checkboxes input[type="checkbox"]:checked + label:before,
 .radio-group input[type="checkbox"]:checked + span:before,
-.checkbox input[type="checkbox"]:checked + span:before {
+.checkboxes input[type="checkbox"]:checked + span:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -2256,34 +2125,33 @@ fieldset[disabled] .checkbox input[type=checkbox] + label {
 }
 
 .radio-group input[type="radio"]:checked + label:before,
-.checkbox input[type="radio"]:checked + label:before,
+.checkboxes input[type="radio"]:checked + label:before,
 .radio-group input[type="radio"]:checked + span:before,
-.checkbox input[type="radio"]:checked + span:before {
+.checkboxes input[type="radio"]:checked + span:before {
   content: "\e62d";
 }
 
 .radio-group input[type="checkbox"]:checked + label:before,
-.checkbox input[type="checkbox"]:checked + label:before,
+.checkboxes input[type="checkbox"]:checked + label:before,
 .radio-group input[type="checkbox"]:checked + span:before,
-.checkbox input[type="checkbox"]:checked + span:before {
+.checkboxes input[type="checkbox"]:checked + span:before {
   content: "\e62a";
 }
 
 .radio-group input[type="radio"]:focus + label:before,
-.checkbox input[type="radio"]:focus + label:before,
+.checkboxes input[type="radio"]:focus + label:before,
 .radio-group input[type="radio"]:focus + span:before,
-.checkbox input[type="radio"]:focus + span:before,
+.checkboxes input[type="radio"]:focus + span:before,
 .radio-group input[type="checkbox"]:focus + label:before,
-.checkbox input[type="checkbox"]:focus + label:before,
+.checkboxes input[type="checkbox"]:focus + label:before,
 .radio-group input[type="checkbox"]:focus + span:before,
-.checkbox input[type="checkbox"]:focus + span:before {
+.checkboxes input[type="checkbox"]:focus + span:before {
   outline: 1px dotted #666;
+  outline: thin solid #666;
 }
 
-.animation-bounce input[type="radio"]:checked + label:before,
-.animation-bounce input[type="radio"]:checked + span:before,
-.animation-bounce input[type="checkbox"]:checked + label:before,
-.animation-bounce input[type="checkbox"]:checked + span:before {
+.radios-animation-bounce input[type="radio"]:checked + label:before,
+.radios-animation-bounce input[type="radio"]:checked + span:before {
   -webkit-animation: bounce 0.3s;
           animation: bounce 0.3s;
 }
@@ -2298,6 +2166,24 @@ fieldset[disabled] .checkbox input[type=checkbox] + label {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
   }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+.checkboxes-animation-bounce input[type="checkbox"]:checked + label:before,
+.checkboxes-animation-bounce input[type="checkbox"]:checked + span:before {
+  -webkit-animation: bounce 0.3s;
+          animation: bounce 0.3s;
 }
 
 @keyframes bounce {
