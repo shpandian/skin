@@ -260,10 +260,7 @@
 </section>
 
             <style type="text/css">
-    .icon-cart:before {
-        color: #fff;
-        font-size: .9rem;
-    }
+    
 </style>
 <section id="button">
     <h2>Buttons &amp; Links</h2>
@@ -363,11 +360,11 @@
     </p>
 
     <div class="demo">
-        <button class="btn btn-prim btn-small"><span class="icon icon-cart"></span> Add To Cart
+        <button class="btn btn-prim btn-small btn-cart"> Add To Cart
         </button>
     </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim btn-small&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon icon-cart&quot;</span><span class="nt">&gt;&lt;/span&gt;</span> Add To Cart
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-prim btn-small btn-cart&quot;</span><span class="nt">&gt;</span>
+    Add To Cart
 <span class="nt">&lt;/button&gt;</span></code></pre></div>
 
     <h3>Regular link</h3>
@@ -645,34 +642,36 @@
 
     <h3>Accessible icons</h3>
 
-    <p>To avoid unintended and confusing output in screen readers (particularly when icons are used purely for
-        decoration), we hide them with the aria-hidden="true" attribute.</p>
-
-    <p>If you're creating controls with no other text (such as a button that only contains an icon), you should always
+    <p>When creating controls with no text (such as a button that only contains an icon), you must always
         provide alternative content to identify the purpose of the control, so that it will make sense to users of
-        assistive technologies. In this case, you could add an aria-label attribute on the control itself.</p>
+        assistive technologies. These icons are called 'critical icons'. In this case, you could add an aria-label attribute on the control itself.</p>
 
     <div class="demo">
         <span class="icon icon-cart" aria-label="cart"></span>
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon icon-cart&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;cart&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
 
+
+    <p>Icons alongside text are called 'non-critical' icons. It is not necessary to repeat the adjacent text again for screen readers. The icon should be hidden using the
+        aria-hidden="true" attribute.</p>
+
+    <div class="demo">
+        <button type="button" class="btn btn-sort">
+            Sort
+        </button>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-sort&quot;</span><span class="nt">&gt;</span>
+        Sort
+    <span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+    <p>Icons used purely for decoration are also called 'non-critical' icons, and we can hide them with the
+        aria-hidden="true" attribute in order to avoid unintended and confusing
+        output in screen readers.</p>
+
     <div class="demo">
         <span class="icon icon-chevron-down" aria-hidden="true"></span>
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon icon-chevron-down&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
-
-
-    <div class="demo">
-        <button type="button" class="btn btn-default" aria-label="sort">
-            <span class="icon icon-sort" aria-hidden="true"></span>
-            <span>Sort</span>
-        </button>
-    </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;sort&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon icon-sort&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-        <span class="nt">&lt;span&gt;</span>Sort<span class="nt">&lt;/span&gt;</span>
-    <span class="nt">&lt;/button&gt;</span></code></pre></div>
 
 </section>
 
@@ -1163,15 +1162,15 @@
     <div class="demo">
         <div class="form">
             <div class="field">
-                <label for="textarea">User Text</label>
-                <textarea id="textarea" placeholder="Description" name="textarea" aria-label="Enter description"></textarea>
+                <label for="textarea">Description</label>
+                <textarea id="textarea" placeholder="Description" name="textarea"></textarea>
             </div>
         </div>
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;textarea&quot;</span><span class="nt">&gt;</span>User Text<span class="nt">&lt;/label&gt;</span>
-            <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;textarea&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Description&quot;</span> <span class="na">name=</span><span class="s">&quot;textarea&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Enter description&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;textarea&quot;</span><span class="nt">&gt;</span>Description<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;textarea&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Description&quot;</span> <span class="na">name=</span><span class="s">&quot;textarea&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span></code></pre></div>
     <h3>Checkboxes</h3>
@@ -1298,7 +1297,7 @@
                 <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input3&quot;</span> <span class="nt">&gt;</span>Disabled Input 3<span class="nt">&lt;/label&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/fieldset&gt;</span>
-    <span class="nt">&lt;/div&gt;</span></code></pre></div>     
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
     <h4>Inline Radiobuttons</h4>
     <div class="demo">
         <div class="radio-group radios-animation-bounce">
@@ -1335,7 +1334,7 @@
                 <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option3&quot;</span><span class="nt">&gt;</span>Option 3<span class="nt">&lt;/label&gt;</span>
             <span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;/fieldset&gt;</span>
-    <span class="nt">&lt;/div&gt;</span></code></pre></div>  
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
     <h3>Select Dropdown </h3>
     <p> Here we use the native select menus, but forms select elements is custom styled. Add <span class="highlight">.select</span> class to the parent div, which is styled to place the content arrowdown icon inside the select box. A selection dropdown is a type of dropdown designed for user selection.</p>
     <div class="demo">
@@ -1372,7 +1371,7 @@
     <div class="demo">
         <div class="form" >
             <div class="field">
-                <label for="EmailinputError1" class="clipped">Input with Error</label> 
+                <label for="EmailinputError1" class="clipped">Input with Error</label>
                 <input id="EmailinputError1" type="email" placeholder="Email" name="email" aria-invalid="true" aria-describedby="invalid-email" />
             </div>
             <span aria-live="polite" id="invalid-email">
@@ -1382,7 +1381,7 @@
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;EmailinputError1&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Input with Error<span class="nt">&lt;/label&gt;</span> 
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;EmailinputError1&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Input with Error<span class="nt">&lt;/label&gt;</span>
             <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;EmailinputError1&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-invalid=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-describedby=</span><span class="s">&quot;invalid-email&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;span</span> <span class="na">aria-live=</span><span class="s">&quot;polite&quot;</span> <span class="na">id=</span><span class="s">&quot;invalid-email&quot;</span><span class="nt">&gt;</span>
@@ -1394,12 +1393,12 @@
     <div class="demo">
         <div class="form">
             <div class="field">
-                <label for="disabled-input" >Disabled Input</label> 
+                <label for="disabled-input" >Disabled Input</label>
                 <input id="disabled-input" type="text" placeholder="Disabled Text Input" name="disabled-input" disabled />
             </div>
             <h5>Disabled Select Menu</h5>
             <div class="select disabled">
-                <label for="disabled-select" class="clipped">Disabled Select Menu</label> 
+                <label for="disabled-select" class="clipped">Disabled Select Menu</label>
                 <select id="disabled-select" disabled>
                     <option value="0">Disabled select</option>
                 </select>
@@ -1408,11 +1407,11 @@
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;disabled-input&quot;</span> <span class="nt">&gt;</span>Disabled Input<span class="nt">&lt;/label&gt;</span> 
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;disabled-input&quot;</span> <span class="nt">&gt;</span>Disabled Input<span class="nt">&lt;/label&gt;</span>
             <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;disabled-input&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Disabled Text Input&quot;</span> <span class="na">name=</span><span class="s">&quot;disabled-input&quot;</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;select disabled&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;disabled-select&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Disabled Select Menu<span class="nt">&lt;/label&gt;</span> 
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;disabled-select&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Disabled Select Menu<span class="nt">&lt;/label&gt;</span>
             <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;disabled-select&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>Disabled select<span class="nt">&lt;/option&gt;</span>
             <span class="nt">&lt;/select&gt;</span>
@@ -1443,14 +1442,14 @@
         <div class="form">
             <div class="field">
                 <label for="email" class="clipped">Email</label>
-                <input type="email" placeholder="Email" name="email" aria-label="enter email address">
+                <input type="email" placeholder="Email" name="email">
             </div>
         </div>
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;enter email address&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span></code></pre></div>
     <h3>Top/Block Label</h3>
@@ -1486,7 +1485,7 @@
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/form&gt;</span></code></pre></div>
     <h3>Text fields with Icon</h3>
-    <p>You can also add icons to the input fields. 
+    <p>You can also add icons to the input fields.
         1) Add class <span class="highlight">.field-input-email</span> for the field with email input.
         2) Add class <span class="highlight">.field-input-username</span> for the field with username input.
         3) Add class <span class="highlight">.field-input-email</span> for the field with search field.
@@ -1521,7 +1520,7 @@
             <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;search&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/label&gt;</span>
             <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search text&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="nt">&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span></code></pre></div>   
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
     <h3>Input Size small</h3>
     <p>By default the form inputs are large size and the small inputs which has been styled using the class <span class="highlight">.input-small</span>. With the Multiple form elements which are smaller size drop the <span class="highlight">.form-small</span> class.</p>
     <div class="demo">
@@ -1529,7 +1528,7 @@
         <div class="form">
             <div class="field">
                 <label for="password" class="clipped">Password</label>
-                <input class="input-small" id="password" type="password" placeholder="Password" name="company" aria-label="Enter password" />
+                <input class="input-small" id="password" type="password" placeholder="Password" name="company" />
             </div>
         </div>
         <h5>Multiple small input fields, small select</h5>
@@ -1553,7 +1552,7 @@
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;password&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;input-small&quot;</span> <span class="na">id=</span><span class="s">&quot;password&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Password&quot;</span> <span class="na">name=</span><span class="s">&quot;company&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Enter password&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;input-small&quot;</span> <span class="na">id=</span><span class="s">&quot;password&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Password&quot;</span> <span class="na">name=</span><span class="s">&quot;company&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form form-small&quot;</span><span class="nt">&gt;</span>
@@ -1571,8 +1570,9 @@
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
             <span class="nt">&lt;/select&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span></code></pre></div>     
+    <span class="nt">&lt;/div&gt;</span></code></pre></div>
 </section>
+
         </div>
     </div>
 </div>
