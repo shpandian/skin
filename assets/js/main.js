@@ -1,13 +1,35 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 var $ = require('jquery');
+
+var dialogWidget = function () {
+  
+    var closebox = $('.dialog__close');
+   $('#dialog-open').click(function(e){
+      e.preventDefault();
+      $('#dialog_window').attr('aria-hidden', 'false');
+       closebox.focus();
+    });
+    $('.dialog__close').click(function() {
+      $('#dialog_window').attr('aria-hidden', 'true');
+      $('#dialog-open').focus();
+    });
+
+};  
+
+module.exports = dialogWidget;
+},{"jquery":4}],2:[function(require,module,exports){
+'use strict';
+var $ = require('jquery');
 var navigationWidget = require('./navigationWidget');
+var dialogWidget = require('./dialogWidget');
 
 $(function () {
     navigationWidget();
+    dialogWidget();
 });
 
-},{"./navigationWidget":2,"jquery":3}],2:[function(require,module,exports){
+},{"./dialogWidget":1,"./navigationWidget":3,"jquery":4}],3:[function(require,module,exports){
 'use strict';
 var $ = require('jquery');
 
@@ -92,7 +114,7 @@ var NavigationWidget = function () {
 
 module.exports = NavigationWidget;
 
-},{"jquery":3}],3:[function(require,module,exports){
+},{"jquery":4}],4:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -9304,4 +9326,4 @@ return jQuery;
 
 }));
 
-},{}]},{},[1,2]);
+},{}]},{},[1,2,3]);
