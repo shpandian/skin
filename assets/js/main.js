@@ -91,7 +91,13 @@ var NavigationWidget = function () {
                 offsetTop: element.offsetTop
             };
         }).sort(function (a, b) {
-            return a.offsetTop > b.offsetTop;
+            if (a === b) {
+                return 0;
+              } else if (a.offsetTop > b.offsetTop) {
+                return 1;
+              } else {
+                return -1;
+              }
         });
     }
 

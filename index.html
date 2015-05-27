@@ -30,15 +30,15 @@
             <ul class="modules-nav">
                 <li><a href="#intro">Introduction</a></li>
                 <li><a href="#core">Core</a></li>
-                <li><a href="#button">Buttons &amp; Links</a></li>
                 <li><a href="#box">Box</a></li>
+                <li><a href="#button">Buttons &amp; Links</a></li>
+                <li><a href="#dialog">Dialog</a></li>
+                <li><a href="#form">Forms</a></li>
                 <li><a href="#icon">Icons</a></li>
                 <li><a href="#spinner">Spinner</a></li>
+                <li><a href="#listnav">List Nav</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#tabs">Tabs</a></li>
-                <li><a href="#dialog">Dialog</a></li>
-                <li><a href="#listnav">List Nav</a></li>
-                <li><a href="#form">Forms</a></li>
             </ul>
         </div>
         <div class="right column">
@@ -178,6 +178,35 @@
 
     <h3>Mixins</h3>
     <p>Advanced users may want to work directly with the <span class="highlight">.less</span> files, in this case Core also provides a collection of usefull <span class="highlight">mixins.less</span> and <span class="highlight">variables.less</span>.</p>
+
+</section>
+
+            <style type="text/css">
+    .box {
+        margin: 20px;
+    }
+</style>
+
+<section id="box">
+    <h2>Box</h2>
+    <hr />
+    <p>The <span class="highlight">box</span> class creates a bordered box around the content of any module or element.</p>
+    <div class="demo">
+        <div class="box">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.
+            </p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Vivamus convallis molestie erat, ut adipiscing risus blandit vel.
+        Vivamus luctus elementum lorem, eu sodales velit sagittis id.
+        Donec a est ligula, eget volutpat augue.
+    <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 </section>
 
@@ -340,463 +369,6 @@
 </section>
 
             <style type="text/css">
-    .box {
-        margin: 20px;
-    }
-</style>
-
-<section id="box">
-    <h2>Box</h2>
-    <hr />
-    <p>The <span class="highlight">box</span> class creates a bordered box around the content of any module or element.</p>
-    <div class="demo">
-        <div class="box">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.
-            </p>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Vivamus convallis molestie erat, ut adipiscing risus blandit vel.
-        Vivamus luctus elementum lorem, eu sodales velit sagittis id.
-        Donec a est ligula, eget volutpat augue.
-    <span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-</section>
-
-            <style>
-[class^="icon-"], [
-class*="icon-"] {
-    font-size: 1rem;
-}
-</style>
-<section id="icon">
-    <h2>Icons</h2>
-
-    <hr/>
-
-    <div class="demo icons-demo">
-        <div class="icon-demo">
-            <span class="icon-alert" aria-label="alert"></span>
-            <span class="mls">icon-alert</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-arrow-down" aria-label="arrowDown"></span>
-            <span class="mls">icon-arrow-down</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-arrow-up" aria-label="arrowUp"></span>
-        <span
-            class="mls">icon-arrow-up</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-buying-null" aria-label="Buyingis empty"></span>
-            <span class="mls">icon-buying-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-cart" aria-label="cart"></span>
-            <span class="mls">icon-cart</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-cart-null" aria-label="cart is empty"></span>
-            <span class="mls">icon-cart-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-chevron-down" aria-label="chevronDown"></span>
-            <span class="mls">icon-chevron-down</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-chevron-left"></span>
-            <span class="mls">icon-chevron-left</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-chevron-right"></span>
-            <span class="mls">icon-chevron-right</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-chevron-up"></span>
-            <span class="mls">icon-chevron-up</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-close"></span>
-            <span class="mls">icon-close</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-error-null"></span>
-            <span class="mls">icon-error-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-feedback-negative"></span>
-            <span class="mls">icon-feedback-negative</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-feedback-neutral"></span>
-            <span class="mls">icon-feedback-neutral</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-feedback-null"></span>
-            <span class="mls">icon-feedback-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-feedback-positive"></span>
-            <span class="mls">icon-feedback-positive</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-follow"></span>
-            <span class="mls">icon-follow</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-forsale-null"></span>
-            <span class="mls">icon-forsale-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-gear" aria-label="gear"></span>
-            <span class="mls">icon-gear</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-images-null" aria-label="Image is empty"></span>
-            <span class="mls">icon-images-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-info"></span>
-            <span class="mls">icon-info</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-menu"></span>
-            <span class="mls">icon-menu</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-notifications"></span>
-            <span class="mls">icon-notifications</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-notifications-null"></span>
-        <span
-            class="mls">icon-notifications-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-profile"></span>
-            <span class="mls">icon-profile</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-search"></span>
-            <span class="mls">icon-search</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-search-null"></span>
-            <span class="mls">icon-search-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-sell"></span>
-            <span class="mls">icon-sell</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-sort"></span>
-            <span class="mls">icon-sort</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-star"></span>
-            <span class="mls">icon-star</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-success"></span>
-            <span class="mls">icon-success</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-success-circle"></span>
-            <span class="mls">icon-success-circle</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-view-expanded-list"></span>
-        <span
-            class="mls">icon-view-expanded-list</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-view-gallery"></span>
-            <span class="mls">icon-view-gallery</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-view-list"></span>
-            <span class="mls">icon-view-list</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-warning"></span>
-            <span class="mls">icon-warning</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-watching-null"></span>
-            <span class="mls">icon-watching-null</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-check" aria-label="check"></span>
-            <span class="mls"> icon-check</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-arrow" aria-label="arrow"></span>
-            <span class="mls"> icon-arrow</span>
-        </div>
-
-        <div class="icon-demo">
-            <span class="icon-required" ></span>
-            <span class="mls"> icon-required</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-email"></span>
-            <span class="mls"> icon-email</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-minus" ></span>
-            <span class="mls"> icon-minus</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-checkbox-active" ></span>
-            <span class="mls"> icon-checkbox-active</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-radio-btn-inactive" ></span>
-            <span class="mls"> icon-radio-btn-inactive</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-checkbox-inactive" ></span>
-            <span class="mls">icon-checkbox-inactive</span>
-        </div>
-        <div class="icon-demo">
-            <span class="icon-radio-btn-active" ></span>
-            <span class="mls"> icon-radio-btn-active</span>
-        </div>
-
-    </div>
-
-    <h3>Critical Icons and Accessibility</h3>
-    <p>A control that contains no visible text, and only an icon, is called a critical icon. An accessible label must be provided for assistive technology to identify the purpose of the control. The <span class="highlight">aria-label</span> property can be used for this purpose</p>
-    <div class="demo">
-        <span class="icon-cart" aria-label="Cart" />
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-cart&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Cart&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
-
-    <!--
-    <h3>Non-Critical Icons</h3>
-    <p>Icons alongside text are called 'non-critical' icons. It is not necessary to repeat the adjacent text again for screen readers. The icon should be hidden using the <span class="highlight">aria-hidden</span> state.</p>
-    <div class="demo">
-        <button type="button" class="btn btn--sort">Sort</button>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--sort&quot;</span><span class="nt">&gt;</span>Sort<span class="nt">&lt;/button&gt;</span></code></pre></div>
-
-    <p>Icons used purely for decoration are also called 'non-critical' icons, and we can hide them with the <span class="highlight">aria-hidden</span> state in order to avoid unintended and confusing output in screen readers.</p>
-    <div class="demo">
-        <span class="icon-chevron-down" aria-hidden="true"></span>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-chevron-down&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
-    -->
-
-</section>
-
-            <section id="spinner">
-    <h2>Spinner</h2>
-    <hr/>
-    <h3>Small Spinner</h3>
-
-    <div class="demo">
-        <span class="spinner-small"></span>
-    </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner-small&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
-
-    <h3>Large Spinner</h3>
-
-    <div class="demo">
-        <span class="spinner-large"></span>
-    </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner-large&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
-
-    <br/>
-    <br/>
-</section>
-
-            <style type="text/css">
-    .btn--full.btn {
-        border: 1px solid #eeeeee;
-    }
-
-    .menu > [role=menu] {
-        border: 1px solid #eeeeee;
-    }
-</style>
-
-<section id="menu">
-    <h2>Menu</h2>
-    <hr/>
-    <p>A popup menu that allows a user to select from a series of options. A menu can contain button options, radio options or checkbox options.</p>
-
-    <h3>Menu Collapsed</h3>
-
-    <p>Set <span class="highlight">aria-expanded</span> state to false on popup button to hide menu.</p>
-
-    <div class="demo">
-        <div class="menu">
-            <button aria-expanded="false" aria-haspopup="true" id="menu-button-1" aria-controls="menu-list-1" type="button" class="btn btn--full">
-                Featured
-            </button>
-
-            <div role="menu" id="menu-list-1" aria-labelledby="menu-button-1">
-                <div role="menuitemradio" aria-checked="true" tabindex="-1">Featured</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Fashion</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Home & Garden</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Tech</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-button&quot;</span>
-            <span class="na">aria-controls=</span><span class="s">&quot;menu-list&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--full&quot;</span><span class="nt">&gt;</span>
-        Featured
-    <span class="nt">&lt;/button&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-list&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu-button&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Home <span class="ni">&amp;amp;</span> Garden<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Menu Expanded</h3>
-
-    <p>Set <span class="highlight">aria-expanded</span> state to true on popup button to show menu.</p>
-
-    <div class="demo">
-        <div class="menu">
-            <button aria-expanded="true" aria-haspopup="true" id="menu-button-2" aria-controls="menu-items-2" type="button" class="btn btn--full" style="border-bottom: none">
-                Featured
-            </button>
-
-            <div role="menu" id="menu-items-2" aria-labelledby="menu-button-2">
-                <div role="menuitemradio" aria-checked="true" tabindex="-1">Featured</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Fashion</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Home &amp; Garden</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Tech</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-button&quot;</span>
-            <span class="na">aria-controls=</span><span class="s">&quot;menu-items&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--full&quot;</span><span class="nt">&gt;</span>
-        Featured
-    <span class="nt">&lt;/button&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-items&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu-button&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Home <span class="ni">&amp;amp;</span> Garden<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-</section>
-
-            <section id="tabs">
-    <h2>Tabs</h2>
-    <hr/>
-
-    <p>Only one <span class="highlight">tab</span> can be selected at
-        any time, using aria-selected="true". Selecting a tab will deselect all
-        other tabs.
-    </p>
-
-    <p>Only one <span class="highlight">tabpanel</span> can be visible
-        at any time, using aria-hidden="false", and it must correspond to the
-        currently selected tab. Showing a tabpanel will hide all other tabpanels.
-    </p>
-
-    <p>Tabs supports progressive enhancement. Before enhancement, the tabs are
-        functional as same page links. After enhancement to tabs (using
-        JavaScript to add ARIA roles, states &amp; properties) the links must
-        be disabled by removing the HREF attribute.</p>
-
-    <h3>Horizontal Tabs</h3>
-
-    <div class="demo">
-        <div class="tabs">
-            <ul role="tablist">
-                <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
-                    <a role="presentation">Tab 1</a>
-                </li>
-                <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
-                    <a role="presentation">Tab 2</a>
-                </li>
-                <li aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
-                    <a role="presentation">Tab 3</a>
-                </li>
-                <li aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4">
-                    <a role="presentation">Tab 4</a>
-                </li>
-            </ul>
-            <div>
-                <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">
-                    <h3 aria-hidden="true">Panel 1 Heading</h3>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda culpa est nisi porro
-                        quae quidem ratione repellendus, temporibus. Assumenda atque dolor dolorem eligendi eveniet
-                        ipsam modi necessitatibus quos ut?</p>
-                </div>
-                <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">
-                    <h3 aria-hidden="true">Panel 2 Heading</h3>
-
-                    <p>Panel 2 Content</p>
-                </div>
-                <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">
-                    <h3 aria-hidden="true">Panel 3 Heading</h3>
-
-                    <p>Panel 3 Content</p>
-                </div>
-                <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">
-                    <h3 aria-hidden="true">Panel 4 Heading</h3>
-
-                    <p>Panel 4 Content</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabs&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">role=</span><span class="s">&quot;tablist&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 1<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel2&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab2&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 2<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 3<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 4<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
-            <span class="c">&lt;!-- panel1 heading &amp; content --&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel2&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab2&quot;</span><span class="nt">&gt;</span>
-            <span class="c">&lt;!-- panel2 heading &amp; content --&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
-            <span class="c">&lt;!-- panel3 heading &amp; content --&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
-            <span class="c">&lt;!-- panel4 heading &amp; content --&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-</section>
-
-            <style type="text/css">
     .dialog__close {
         display: inline-block;
         font-family: "vq-icon-font";
@@ -866,191 +438,6 @@ class*="icon-"] {
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
-</section>
-
-            <section id="listnav">
-    <h2>List Nav</h2>
-    <hr />
-    <p>Displays hierarchical lists of links.</p>
-
-    <h3>List Nav Top level</h3>
-
-    <div class="demo">
-        <div class="list-nav">
-            <div>
-                <a href="http://www.ebay.com">
-                    <span>All Categories</span>
-                </a>
-            </div>
-            <div class="list-nav__active">
-                <a href="http://www.ebay.com">
-                    <span>Books</span>
-                </a>
-            </div>
-            <ul>
-                <li class="list-nav__branch">
-                    <a href="http://www.ebay.com">
-                        <span>Accessories</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Antiquarian &amp; Collectible</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Audiobooks</span>
-                    </a>
-                </li>
-                <li class="list-nav__branch">
-                    <a href="http://www.ebay.com">
-                        <span>Catalogs</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Children &amp; Young Adults</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav__active&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-nav__branch&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Accessories<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Antiquarian <span class="ni">&amp;amp;</span> Collectible<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Audiobooks<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-nav__branch&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Catalogs<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Children <span class="ni">&amp;amp;</span> Young Adults<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>List Nav Secondary level</h3>
-
-    <div class="demo">
-        <div class="list-nav">
-            <div>
-                <a href="http://www.ebay.com">
-                    <span>All Categories</span>
-                </a>
-            </div>
-            <div>
-                <a href="http://www.ebay.com">
-                    <span>Books</span>
-                </a>
-            </div>
-            <div>
-                <a href="http://www.ebay.com">
-                    <span>Catalogs</span>
-                </a>
-            </div>
-            <ul>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Agriculture</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Art &amp; Exhibitions</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Auction</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Clothing &amp; Fashion</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Department Stores</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>Catalogs<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Agriculture<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Art <span class="ni">&amp;amp;</span> Exhibitions<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Auction<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Clothing <span class="ni">&amp;amp;</span> Fashion<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Department Stores<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
 </section>
 
             <style type="text/css">
@@ -1505,6 +892,603 @@ class*="icon-"] {
         <span class="nt">&lt;/select&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>    
+
+            <style type="text/css">
+[class^="icon-"], 
+[class*="icon-"] {
+    font-size: 1rem;
+}
+</style>
+<section id="icon">
+    <h2>Icons</h2>
+
+    <hr/>
+
+    <div class="demo icons-demo">
+        <div class="icon-demo">
+            <span class="icon-alert" aria-label="alert"></span>
+            <span class="mls">icon-alert</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-arrow-down" aria-label="arrowDown"></span>
+            <span class="mls">icon-arrow-down</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-arrow-up" aria-label="arrowUp"></span>
+        <span
+            class="mls">icon-arrow-up</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-buying-null" aria-label="Buyingis empty"></span>
+            <span class="mls">icon-buying-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-cart" aria-label="cart"></span>
+            <span class="mls">icon-cart</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-cart-null" aria-label="cart is empty"></span>
+            <span class="mls">icon-cart-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-chevron-down" aria-label="chevronDown"></span>
+            <span class="mls">icon-chevron-down</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-chevron-left"></span>
+            <span class="mls">icon-chevron-left</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-chevron-right"></span>
+            <span class="mls">icon-chevron-right</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-chevron-up"></span>
+            <span class="mls">icon-chevron-up</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-close"></span>
+            <span class="mls">icon-close</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-error-null"></span>
+            <span class="mls">icon-error-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-feedback-negative"></span>
+            <span class="mls">icon-feedback-negative</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-feedback-neutral"></span>
+            <span class="mls">icon-feedback-neutral</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-feedback-null"></span>
+            <span class="mls">icon-feedback-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-feedback-positive"></span>
+            <span class="mls">icon-feedback-positive</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-follow"></span>
+            <span class="mls">icon-follow</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-forsale-null"></span>
+            <span class="mls">icon-forsale-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-gear" aria-label="gear"></span>
+            <span class="mls">icon-gear</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-images-null" aria-label="Image is empty"></span>
+            <span class="mls">icon-images-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-info"></span>
+            <span class="mls">icon-info</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-menu"></span>
+            <span class="mls">icon-menu</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-notifications"></span>
+            <span class="mls">icon-notifications</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-notifications-null"></span>
+        <span
+            class="mls">icon-notifications-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-profile"></span>
+            <span class="mls">icon-profile</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-search"></span>
+            <span class="mls">icon-search</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-search-null"></span>
+            <span class="mls">icon-search-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-sell"></span>
+            <span class="mls">icon-sell</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-sort"></span>
+            <span class="mls">icon-sort</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-star"></span>
+            <span class="mls">icon-star</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-success"></span>
+            <span class="mls">icon-success</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-success-circle"></span>
+            <span class="mls">icon-success-circle</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-view-expanded-list"></span>
+        <span
+            class="mls">icon-view-expanded-list</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-view-gallery"></span>
+            <span class="mls">icon-view-gallery</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-view-list"></span>
+            <span class="mls">icon-view-list</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-warning"></span>
+            <span class="mls">icon-warning</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-watching-null"></span>
+            <span class="mls">icon-watching-null</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-check" aria-label="check"></span>
+            <span class="mls"> icon-check</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-arrow" aria-label="arrow"></span>
+            <span class="mls"> icon-arrow</span>
+        </div>
+
+        <div class="icon-demo">
+            <span class="icon-required" ></span>
+            <span class="mls"> icon-required</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-email"></span>
+            <span class="mls"> icon-email</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-minus" ></span>
+            <span class="mls"> icon-minus</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-checkbox-active" ></span>
+            <span class="mls"> icon-checkbox-active</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-radio-btn-inactive" ></span>
+            <span class="mls"> icon-radio-btn-inactive</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-checkbox-inactive" ></span>
+            <span class="mls">icon-checkbox-inactive</span>
+        </div>
+        <div class="icon-demo">
+            <span class="icon-radio-btn-active" ></span>
+            <span class="mls"> icon-radio-btn-active</span>
+        </div>
+
+    </div>
+
+    <h3>Critical Icons and Accessibility</h3>
+    <p>A control that contains no visible text, and only an icon, is called a critical icon. An accessible label must be provided for assistive technology to identify the purpose of the control. The <span class="highlight">aria-label</span> property can be used for this purpose</p>
+    <div class="demo">
+        <span class="icon-cart" aria-label="Cart" />
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-cart&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Cart&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+</section>
+
+            <section id="spinner">
+    <h2>Spinner</h2>
+    <hr/>
+    <h3>Small Spinner</h3>
+
+    <div class="demo">
+        <span class="spinner-small"></span>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner-small&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+
+    <h3>Large Spinner</h3>
+
+    <div class="demo">
+        <span class="spinner-large"></span>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner-large&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+
+    <br/>
+    <br/>
+</section>
+
+            <section id="listnav">
+    <h2>List Nav</h2>
+    <hr />
+    <p>Displays hierarchical lists of links.</p>
+
+    <h3>List Nav Top level</h3>
+
+    <div class="demo">
+        <div class="list-nav">
+            <div>
+                <a href="http://www.ebay.com">
+                    <span>All Categories</span>
+                </a>
+            </div>
+            <div class="list-nav__active">
+                <a href="http://www.ebay.com">
+                    <span>Books</span>
+                </a>
+            </div>
+            <ul>
+                <li class="list-nav__branch">
+                    <a href="http://www.ebay.com">
+                        <span>Accessories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Antiquarian &amp; Collectible</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Audiobooks</span>
+                    </a>
+                </li>
+                <li class="list-nav__branch">
+                    <a href="http://www.ebay.com">
+                        <span>Catalogs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Children &amp; Young Adults</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav__active&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-nav__branch&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Accessories<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Antiquarian <span class="ni">&amp;amp;</span> Collectible<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Audiobooks<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-nav__branch&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Catalogs<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Children <span class="ni">&amp;amp;</span> Young Adults<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>List Nav Secondary level</h3>
+
+    <div class="demo">
+        <div class="list-nav">
+            <div>
+                <a href="http://www.ebay.com">
+                    <span>All Categories</span>
+                </a>
+            </div>
+            <div>
+                <a href="http://www.ebay.com">
+                    <span>Books</span>
+                </a>
+            </div>
+            <div>
+                <a href="http://www.ebay.com">
+                    <span>Catalogs</span>
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Agriculture</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Art &amp; Exhibitions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Auction</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Clothing &amp; Fashion</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Department Stores</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Catalogs<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Agriculture<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Art <span class="ni">&amp;amp;</span> Exhibitions<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Auction<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Clothing <span class="ni">&amp;amp;</span> Fashion<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Department Stores<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+</section>
+
+            <style type="text/css">
+    .btn--full.btn {
+        border: 1px solid #eeeeee;
+    }
+
+    .menu > [role=menu] {
+        border: 1px solid #eeeeee;
+    }
+</style>
+
+<section id="menu">
+    <h2>Menu</h2>
+    <hr/>
+    <p>A popup menu that allows a user to select from a series of options. A menu can contain button options, radio options or checkbox options.</p>
+
+    <h3>Menu Collapsed</h3>
+
+    <p>Set <span class="highlight">aria-expanded</span> state to false on popup button to hide menu.</p>
+
+    <div class="demo">
+        <div class="menu">
+            <button aria-expanded="false" aria-haspopup="true" id="menu-button-1" aria-controls="menu-list-1" type="button" class="btn btn--full">
+                Featured
+            </button>
+
+            <div role="menu" id="menu-list-1" aria-labelledby="menu-button-1">
+                <div role="menuitemradio" aria-checked="true" tabindex="-1">Featured</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Fashion</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Home & Garden</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Tech</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-button&quot;</span>
+            <span class="na">aria-controls=</span><span class="s">&quot;menu-list&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--full&quot;</span><span class="nt">&gt;</span>
+        Featured
+    <span class="nt">&lt;/button&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-list&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu-button&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Home <span class="ni">&amp;amp;</span> Garden<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Menu Expanded</h3>
+
+    <p>Set <span class="highlight">aria-expanded</span> state to true on popup button to show menu.</p>
+
+    <div class="demo">
+        <div class="menu">
+            <button aria-expanded="true" aria-haspopup="true" id="menu-button-2" aria-controls="menu-items-2" type="button" class="btn btn--full" style="border-bottom: none">
+                Featured
+            </button>
+
+            <div role="menu" id="menu-items-2" aria-labelledby="menu-button-2">
+                <div role="menuitemradio" aria-checked="true" tabindex="-1">Featured</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Fashion</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Home &amp; Garden</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Tech</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-button&quot;</span>
+            <span class="na">aria-controls=</span><span class="s">&quot;menu-items&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--full&quot;</span><span class="nt">&gt;</span>
+        Featured
+    <span class="nt">&lt;/button&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-items&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu-button&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Home <span class="ni">&amp;amp;</span> Garden<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+
+            <section id="tabs">
+    <h2>Tabs</h2>
+    <hr/>
+
+    <p>Only one <span class="highlight">tab</span> can be selected at
+        any time, using aria-selected="true". Selecting a tab will deselect all
+        other tabs.
+    </p>
+
+    <p>Only one <span class="highlight">tabpanel</span> can be visible
+        at any time, using aria-hidden="false", and it must correspond to the
+        currently selected tab. Showing a tabpanel will hide all other tabpanels.
+    </p>
+
+    <p>Tabs supports progressive enhancement. Before enhancement, the tabs are
+        functional as same page links. After enhancement to tabs (using
+        JavaScript to add ARIA roles, states &amp; properties) the links must
+        be disabled by removing the HREF attribute.</p>
+
+    <h3>Horizontal Tabs</h3>
+
+    <div class="demo">
+        <div class="tabs">
+            <ul role="tablist">
+                <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
+                    <a role="presentation">Tab 1</a>
+                </li>
+                <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
+                    <a role="presentation">Tab 2</a>
+                </li>
+                <li aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
+                    <a role="presentation">Tab 3</a>
+                </li>
+                <li aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4">
+                    <a role="presentation">Tab 4</a>
+                </li>
+            </ul>
+            <div>
+                <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">
+                    <h3 aria-hidden="true">Panel 1 Heading</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda culpa est nisi porro
+                        quae quidem ratione repellendus, temporibus. Assumenda atque dolor dolorem eligendi eveniet
+                        ipsam modi necessitatibus quos ut?</p>
+                </div>
+                <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">
+                    <h3 aria-hidden="true">Panel 2 Heading</h3>
+
+                    <p>Panel 2 Content</p>
+                </div>
+                <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">
+                    <h3 aria-hidden="true">Panel 3 Heading</h3>
+
+                    <p>Panel 3 Content</p>
+                </div>
+                <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">
+                    <h3 aria-hidden="true">Panel 4 Heading</h3>
+
+                    <p>Panel 4 Content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabs&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">role=</span><span class="s">&quot;tablist&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 1<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel2&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 2<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 3<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 4<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- panel1 heading &amp; content --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel2&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab2&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- panel2 heading &amp; content --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- panel3 heading &amp; content --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- panel4 heading &amp; content --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
 
         </div>
     </div>
