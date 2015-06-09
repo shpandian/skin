@@ -10,10 +10,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"alert"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -38,10 +38,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"arrow-down"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -66,10 +66,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"arrow-up"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -100,10 +100,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"buying-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -131,10 +131,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"cart"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -167,10 +167,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"cart-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -199,10 +199,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"chevron-down"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -227,10 +227,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"chevron-left"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -255,10 +255,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"chevron-right"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -283,10 +283,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"chevron-up"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -311,10 +311,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"close"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -341,10 +341,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"error-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -370,10 +370,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"feedback-negative"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -398,10 +398,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"feedback-neutral"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -440,10 +440,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"feedback-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -475,10 +475,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"feedback-positive"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -503,10 +503,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"follow"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -533,10 +533,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"forsale-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -562,10 +562,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"gear"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -598,10 +598,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"images-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -630,10 +630,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"info"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -662,10 +662,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"menu"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -694,10 +694,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"notifications"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -731,10 +731,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"notifications-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -763,10 +763,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"profile"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -791,10 +791,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"search"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -821,10 +821,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"search-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -850,10 +850,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"sell"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -878,10 +878,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"sort"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -906,10 +906,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"star"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -936,10 +936,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"success"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -965,10 +965,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"success-circle"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -995,10 +995,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"view-expanded-list"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -1030,10 +1030,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"view-gallery"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -1071,10 +1071,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"view-list"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -1104,10 +1104,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"warning"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -1140,10 +1140,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"watching-null"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -1172,10 +1172,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"check"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -1200,10 +1200,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"arrow"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -1222,44 +1222,16 @@
 		{
 			"icon": {
 				"paths": [
-					"M1024 512c0 282.77-229.23 512-512 512s-512-229.23-512-512c0-282.77 229.23-512 512-512s512 229.23 512 512z"
-				],
-				"attrs": [
-					{}
-				],
-				"isMulticolor": false,
-				"grid": 0,
-				"tags": [
-					"radio"
-				]
-			},
-			"attrs": [
-				{}
-			],
-			"properties": {
-				"order": 40,
-				"id": 86,
-				"prevSize": 32,
-				"code": 58919,
-				"name": "radio"
-			},
-			"setIdx": 0,
-			"setId": 0,
-			"iconIdx": 39
-		},
-		{
-			"icon": {
-				"paths": [
 					"M204.8 921.6c0 56.554-45.846 102.4-102.4 102.4s-102.4-45.846-102.4-102.4c0-56.554 45.846-102.4 102.4-102.4s102.4 45.846 102.4 102.4z"
 				],
 				"attrs": [
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"required"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -1273,44 +1245,38 @@
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 40
+			"iconIdx": 39
 		},
 		{
 			"icon": {
 				"paths": [
-					"M512 657.664l-358.997-358.997 60.331-60.331 298.667 298.667 298.667-298.667 60.331 60.331z",
-					"M1024 938.667h-1024v-853.333h1024v853.333zM85.333 853.333h853.333v-682.667h-853.333v682.667z",
-					"M298.664 579.663l60.339 60.339-145.659 145.659-60.339-60.339 145.659-145.659z",
-					"M725.34 579.659l145.659 145.659-60.339 60.339-145.659-145.659 60.339-60.339z"
+					"M518.4 652.8c-22.4 0-44.8-6.4-62.4-20.8l-384-308.8v460.8c0 35.2 28.8 64 64 64h768c35.2 0 64-28.8 64-64v-460.8l-387.2 308.8c-17.6 14.4-40 20.8-62.4 20.8z",
+					"M481.6 601.6c20.8 16 54.4 16 75.2 0l411.2-329.6v-32c0-35.2-28.8-64-64-64h-768c-35.2 0-64 28.8-64 64v32l409.6 329.6z"
 				],
 				"attrs": [
-					{},
-					{},
 					{},
 					{}
 				],
 				"isMulticolor": false,
 				"grid": 0,
 				"tags": [
-					"email"
+					"envelope"
 				]
 			},
 			"attrs": [
 				{},
-				{},
-				{},
 				{}
 			],
 			"properties": {
-				"order": 42,
-				"id": 88,
+				"order": 56,
+				"id": 99,
 				"prevSize": 32,
-				"code": 58921,
-				"name": "email"
+				"code": 58919,
+				"name": "envelope"
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 41
+			"iconIdx": 40
 		},
 		{
 			"icon": {
@@ -1321,10 +1287,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"minus"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -1338,7 +1304,7 @@
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 42
+			"iconIdx": 41
 		},
 		{
 			"icon": {
@@ -1349,10 +1315,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"checkbox-active"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -1366,7 +1332,7 @@
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 43
+			"iconIdx": 42
 		},
 		{
 			"icon": {
@@ -1377,10 +1343,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"radio-btn-inactive"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -1394,7 +1360,7 @@
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 44
+			"iconIdx": 43
 		},
 		{
 			"icon": {
@@ -1405,10 +1371,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"checkbox-inactive"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{}
@@ -1422,7 +1388,7 @@
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 45
+			"iconIdx": 44
 		},
 		{
 			"icon": {
@@ -1435,10 +1401,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"radio-btn-active"
-				]
+				],
+				"grid": 0
 			},
 			"attrs": [
 				{},
@@ -1453,7 +1419,7 @@
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 46
+			"iconIdx": 45
 		}
 	],
 	"height": 1024,
@@ -1481,11 +1447,7 @@
 			"png": true,
 			"useClassSelector": true,
 			"color": 4473924,
-			"bgColor": 16777215,
-			"classSelector": ".icon",
-			"columns": 16,
-			"margin": 16,
-			"height": 32
+			"bgColor": 16777215
 		},
 		"historySize": 100,
 		"showCodes": true

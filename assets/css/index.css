@@ -363,13 +363,11 @@ ul.skin-module-list li {
   width: 72%;
   float: right;
 }
-.icon-demo {
+.demo-icons > div {
+  font-size: 1rem;
   width: 14rem;
   display: inline-block;
   padding: 1rem;
-}
-.icon-demo span:last-child {
-  margin-left: 1rem;
 }
 footer {
   *zoom: 1;

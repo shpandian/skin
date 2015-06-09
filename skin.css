@@ -1,5 +1,5 @@
 /*!
-Skin v2.1.0
+Skin v2.1.1
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -678,7 +678,7 @@ a.btn:link {
 }
 
 [disabled].btn,
-[disabled].btn-prim {
+[disabled].btn--primary {
   cursor: not-allowed;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -703,10 +703,21 @@ a.btn:link {
 .btn--fluid {
   display: block;
   width: 100%;
+  padding: .75rem 0;
 }
 
 .btn[class*="icon-"]:before {
   margin-right: .3125rem;
+  font-size: .9rem;
+}
+
+.btn[class*="icon-"]:empty {
+  padding: .5rem;
+}
+
+.btn[class*="icon-"]:empty:before {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .btn[disabled],
@@ -721,7 +732,7 @@ fieldset[disabled] .btn,
   filter: alpha(opacity=50);
 }
 
-.btn--prim[disabled] {
+.btn--primary[disabled] {
   background-color: #0654ba;
 }
 
@@ -729,20 +740,20 @@ fieldset[disabled] .btn,
   background-color: #555555;
 }
 
-.btn--prim,
-a.btn--prim {
+.btn--primary,
+a.btn--primary {
   color: #ffffff;
   background-color: #0654ba;
   border: none;
 }
 
-.btn--prim[aria-pressed="true"],
-a.btn--prim[aria-pressed="true"] {
+.btn--primary[aria-pressed="true"],
+a.btn--primary[aria-pressed="true"] {
   background-color: #00489f;
 }
 
-.btn--prim:link,
-a.btn--prim:link {
+.btn--primary:link,
+a.btn--primary:link {
   text-decoration: none;
 }
 
@@ -798,10 +809,12 @@ a.btn--secondary:link {
 
 /**/
 
-[class*="icon-"] {
+[class*="icon-"]:before {
   display: inline-block;
-  font: normal normal normal 1.14rem "vq-icon-font";
+  font-family: "vq-icon-font";
   -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
   line-height: 1;
   text-transform: none;
   speak: none;
@@ -998,16 +1011,12 @@ a.btn--secondary:link {
   content: "\e626";
 }
 
-.icon-radio:before {
-  content: "\e627";
-}
-
 .icon-required:before {
   content: "\e628";
 }
 
-.icon-email:before {
-  content: "\e629";
+.icon-mail:before {
+  content: "\e627";
 }
 
 .icon-minus:before {
@@ -1032,9 +1041,10 @@ a.btn--secondary:link {
 
 /**/
 
-.spinner-large,
-.spinner-small {
+.spinner {
   display: inline-block;
+  width: 30px;
+  height: 30px;
   background: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner.svg") no-repeat center center;
   background-size: cover;
   -webkit-animation: spin 600ms linear infinite;
@@ -1063,29 +1073,19 @@ a.btn--secondary:link {
   }
 }
 
-.spinner-small {
-  width: 30px;
-  height: 30px;
-}
-
-.spinner-large {
+.spinner--large {
   width: 60px;
   height: 60px;
-  background-size: cover;
 }
 
 /* Fallback for Andriod Browsers */
 
-.spinner-gif .spinner-small,
-.spinner-gif .spinner-large {
+.spinner-gif .spinner {
   display: inline-block;
-}
-
-.spinner-gif .spinner-small {
   background: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner.gif") no-repeat center center;
 }
 
-.spinner-gif .spinner-large {
+.spinner-gif .spinner--large {
   background: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner@2x.gif") no-repeat center center;
 }
 
@@ -1177,18 +1177,16 @@ a.btn--secondary:link {
 }
 
 .list-nav > div {
-  display: inline-block;
-  width: 100%;
   font-size: 0.85rem;
   font-weight: 300;
   line-height: 2.5rem;
   color: #ffffff;
-  text-align: left;
   text-decoration: none;
   background-color: #9a9a9a;
 }
 
 .list-nav > div > a {
+  display: block;
   color: #ffffff;
   text-decoration: none;
 }
@@ -1243,11 +1241,10 @@ a.btn--secondary:link {
 .list-nav ul {
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  list-style: none;
 }
 
 .list-nav ul > li {
-  position: relative;
   display: block;
   font-size: 0.85rem;
   font-weight: 300;
@@ -1297,6 +1294,8 @@ a.btn--secondary:link {
   text-align: center;
 }
 
+/**/
+
 .dialog[role=dialog] {
   position: fixed;
   top: 0;
@@ -1321,6 +1320,19 @@ a.btn--secondary:link {
   overflow: auto;
   overflow-x: hidden;
   background: #f4f4f4;
+}
+
+.dialog[role=dialog] .dialog__close {
+  float: right;
+  padding: 0;
+  font-family: "vq-icon-font";
+  background: none;
+  border: none;
+}
+
+.dialog[role=dialog] .dialog__close:before {
+  color: #676767;
+  content: "\e60a";
 }
 
 .dialog[role=dialog][aria-hidden="true"] {
@@ -1702,7 +1714,7 @@ a.btn--secondary:link {
 }
 
 .textbox--email:before {
-  content: "\e629";
+  content: "\e627";
 }
 
 .textbox--username:before {
