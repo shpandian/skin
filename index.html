@@ -38,6 +38,7 @@
                 <li><a href="#spinner">Spinner</a></li>
                 <li><a href="#listnav">List Nav</a></li>
                 <li><a href="#menu">Menu</a></li>
+                <li><a href="#statusmsg">Status Messaging</a></li>
                 <li><a href="#tabs">Tabs</a></li>
             </ul>
         </div>
@@ -887,7 +888,7 @@
     <h2>Icons</h2>
 
     <hr/>
-
+    <p>Skin 2 uses <strong>font icons</strong>. All though they work fine across all browsers, there is a minor concern when using font icons due to weird failures. Please refer this github <a href="https://github.corp.ebay.com/f2e/skin/issues/152#issuecomment-82110">issue</a>, where we have analyzed the failure scenarios and provided fallback options.</p>
     <p><strong>Important:</strong> The classname prefix of <span class="highlight">icon-</span> is reserved by Skin. Please do not use it <em>anywhere</em> in your application CSS class names.</p>
 
     <div class="demo demo-icons">
@@ -1032,8 +1033,8 @@
             <span>icon-view-list</span>
         </div>
         <div>
-            <span class="icon-warning"></span>
-            <span>icon-warning</span>
+            <span class="icon-error"></span>
+            <span>icon-error</span>
         </div>
         <div>
             <span class="icon-watching-null"></span>
@@ -1397,6 +1398,61 @@
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+
+            <section id="statusmsg">
+    <h2>Status Messaging</h2>
+    <hr />
+    <p>Different states of status message conveys information about an action. Add a div class <span class="highlight">.status-msg</span> to get the base styles of the module.</p>
+
+    <h3>Information</h3>
+    <p>Add class <span class="highlight">.status-msg--info</span> to create an Information status message.</p>
+    <div class="demo">
+        <div class="status-msg status-msg--info">
+            <p>Info messaging goes here. Please contact customer service.</p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--info&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Info messaging goes here. Please contact customer service.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Success</h3>
+    <p>Add class <span class="highlight">.status-msg--success</span> to create an success status message.</p>
+    <div class="demo">
+        <div class="status-msg status-msg--success">
+            <p>The information you have enter is correct.</p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--success&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>The information you have enter is correct.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Warning</h3>
+    <p>Add class <span class="highlight">.status-msg--warning</span> to create an warning status message.</p>
+    <div class="demo">
+        <div class="status-msg status-msg--warning">
+            <p>This coupon code is invalid. Please enter a valid coupon code.</p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--warning&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This coupon code is invalid. Please enter a valid coupon code.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Error</h3>
+    <p>Add class <span class="highlight">.status-msg--error</span> to create an error status message.</p>
+    <div class="demo">
+        <div class="status-msg status-msg--error">
+            <p>This action is temporarily unavailable. please try again later after sometime.</p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--error&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This action is temporarily unavailable. please try again later after sometime.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
 </section>
 
             <section id="tabs">
