@@ -463,14 +463,33 @@ h3 {
   font-size: 1.25rem;
   /* 20px */
 
-  font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 200;
 }
 
 h4 {
-  font-size: 1rem;
-  /* 16px */
+  font-size: 1.125rem;
+  /* 18px */
 
-  font-weight: 600;
+  font-weight: 300;
+}
+
+h5 {
+  font-size: 1.125rem;
+  /* 14px */
+
+  font-weight: 400;
+}
+
+h6 {
+  font-size: .75rem;
+  /* 12px */
+
+  font-weight: 500;
 }
 
 h1 img,
@@ -667,14 +686,14 @@ a.btn {
   border: 1px solid #eeeeee;
 }
 
-.btn[aria-pressed="true"],
-a.btn[aria-pressed="true"] {
-  background-color: #e6e6e6;
-}
-
 .btn:link,
 a.btn:link {
   text-decoration: none;
+}
+
+.btn:active,
+a.btn:active {
+  color: #0654ba;
 }
 
 [disabled].btn,
@@ -747,14 +766,14 @@ a.btn--primary {
   border: none;
 }
 
-.btn--primary[aria-pressed="true"],
-a.btn--primary[aria-pressed="true"] {
-  background-color: #00489f;
-}
-
 .btn--primary:link,
 a.btn--primary:link {
   text-decoration: none;
+}
+
+.btn--primary:active,
+a.btn--primary:active {
+  color: #ffffff;
 }
 
 a.btn--link {
@@ -783,14 +802,14 @@ a.btn--secondary {
   border: none;
 }
 
-.btn--secondary[aria-pressed="true"],
-a.btn--secondary[aria-pressed="true"] {
-  background-color: #555555;
-}
-
 .btn--secondary:link,
 a.btn--secondary:link {
   text-decoration: none;
+}
+
+.btn--secondary:active,
+a.btn--secondary:active {
+  color: #ffffff;
 }
 
 /**/

@@ -241,14 +241,6 @@
 
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--secondary&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
-    <h3>Pressed Button</h3>
-    <p>To style a button so that it appears "pressed", use the <span class="highlight">aria-pressed</span> state.</p>
-    <div class="demo">
-        <button class="btn" aria-pressed="true">Button</button>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">aria-pressed=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span></code></pre></div>
-
     <h3>Small Button</h3>
     <p>For smaller buttons use the <span class="highlight">.btn--small</span> modifier classname.</p>
     <div class="demo">
@@ -1113,9 +1105,10 @@
 
             <section id="spinner">
     <h2>Spinner</h2>
-    <p>By default we have small spinner when you add classname <span class="highlight">.spinner</span>. Please use the modifier <span class="highlight">.spinner--large</span> for large spinner.</p>
+    <p>A spinner animation is used to convey a busy or loading state, often as the result of a user action. A spinner is considered a critical icon and therefore we also convey it's meaning and state to assistive technology.</p>
     <hr/>
     <h3>Small Spinner</h3>
+    <p>By default, all spinners are small.</p>
 
     <div class="demo">
         <span class="spinner" aria-label="Busy animation" role="img"></span>
@@ -1123,6 +1116,7 @@
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Busy animation&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
 
     <h3>Large Spinner</h3>
+    <p>Use the <span class="highlight">spinner--large</span> modifier class to create a large spinner.</p>
 
     <div class="demo">
         <span class="spinner spinner--large" aria-label="Busy animation" role="img"></span>
@@ -1403,54 +1397,54 @@
             <section id="statusmsg">
     <h2>Status Messaging</h2>
     <hr />
-    <p>Different states of status message conveys information about an action. Add a div class <span class="highlight">.status-msg</span> to get the base styles of the module.</p>
+    <p>Status messages appear prominently at the top of a page or module; usually as the direct result of a user action. A status message will have one of four possible levels: information, success, warning or error. Status messages are considered a page landmark, thus allowing users of assistive technology to easily identify and navigate to these regions.</p>
 
     <h3>Information</h3>
-    <p>Add class <span class="highlight">.status-msg--info</span> to create an Information status message.</p>
+    <p>Use the <span class="highlight">status-msg--info</span> modifier class to create an information-level status message.</p>
     <div class="demo">
-        <div class="status-msg status-msg--info">
-            <p>Info messaging goes here. Please contact customer service.</p>
+        <div class="status-msg status-msg--info" role="region" aria-label="Info">
+            <p>Your current browser is out of date. Please consider upgrading to a newer version.</p>
         </div>
     </div>
 
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--info&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Info messaging goes here. Please contact customer service.<span class="nt">&lt;/p&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--info&quot;</span> <span class="na">role=</span><span class="s">&quot;region&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Info&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Your current browser is out of date. Please consider upgrading to a newer version.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <h3>Success</h3>
-    <p>Add class <span class="highlight">.status-msg--success</span> to create an success status message.</p>
+    <p>Use the <span class="highlight">status-msg--success</span> modifier class to create a success-level status message.</p>
     <div class="demo">
-        <div class="status-msg status-msg--success">
-            <p>The information you have enter is correct.</p>
+        <div class="status-msg status-msg--success" role="region" aria-label="Success">
+            <p>The information you have entered is correct.</p>
         </div>
     </div>
 
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--success&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>The information you have enter is correct.<span class="nt">&lt;/p&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--success&quot;</span> <span class="na">role=</span><span class="s">&quot;region&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Success&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>The information you have entered is correct.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <h3>Warning</h3>
-    <p>Add class <span class="highlight">.status-msg--warning</span> to create an warning status message.</p>
+    <p>Use the <span class="highlight">status-msg--warning</span> modifier class to create a warning-level status message.</p>
     <div class="demo">
-        <div class="status-msg status-msg--warning">
-            <p>This coupon code is invalid. Please enter a valid coupon code.</p>
+        <div class="status-msg status-msg--warning" role="region" aria-label="Warning">
+            <p>Your password is set to expire in 3 days.</p>
         </div>
     </div>
 
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--warning&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>This coupon code is invalid. Please enter a valid coupon code.<span class="nt">&lt;/p&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--warning&quot;</span> <span class="na">role=</span><span class="s">&quot;region&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Warning&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Your password is set to expire in 3 days.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <h3>Error</h3>
-    <p>Add class <span class="highlight">.status-msg--error</span> to create an error status message.</p>
+    <p>Use the <span class="highlight">status-msg--error</span> modifier class to create an error-level status message.</p>
     <div class="demo">
-        <div class="status-msg status-msg--error">
-            <p>This action is temporarily unavailable. please try again later after sometime.</p>
+        <div class="status-msg status-msg--error" role="region" aria-label="Error">
+            <p>This action is temporarily unavailable. Please try again later.</p>
         </div>
     </div>
 
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--error&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>This action is temporarily unavailable. please try again later after sometime.<span class="nt">&lt;/p&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--error&quot;</span> <span class="na">role=</span><span class="s">&quot;region&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Error&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This action is temporarily unavailable. Please try again later.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 </section>
@@ -1459,12 +1453,9 @@
     <h2>Tabs</h2>
     <hr/>
 
-    <p>Only one <span class="highlight">tab</span> can be selected at
+    <p>Tabs follow the principal of <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">progressive disclosure</a> by allowing layered stacking of content panels. Only one <span class="highlight">tab</span> can be selected at
         any time, using aria-selected="true". Selecting a tab will deselect all
-        other tabs.
-    </p>
-
-    <p>Only one <span class="highlight">tabpanel</span> can be visible
+        other tabs. Likewise, only one <span class="highlight">tabpanel</span> can be visible
         at any time, using aria-hidden="false", and it must correspond to the
         currently selected tab. Showing a tabpanel will hide all other tabpanels.
     </p>
