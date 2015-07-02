@@ -1,5 +1,5 @@
 /*!
-Skin v2.1.2
+Skin v2.1.3
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -523,8 +523,8 @@ a:focus {
   font-family: "vq-icon-font";
   font-style: normal;
   font-weight: normal;
-  src: url('fonts/vq-icon-font.eot');
-  src: url('fonts/vq-icon-font.eot?#iefix') format('embedded-opentype'), url('fonts/vq-icon-font.woff') format('woff'), url('fonts/vq-icon-font.ttf') format('truetype'), url('fonts/vq-icon-font.svg#vq-icon-font') format('svg');
+  src: url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.eot');
+  src: url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.eot?#iefix') format('embedded-opentype'), url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.woff') format('woff'), url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.ttf') format('truetype'), url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.svg#vq-icon-font') format('svg');
 }
 
 /* ========================================
@@ -756,7 +756,7 @@ fieldset[disabled] .btn,
 }
 
 .btn--secondary[disabled] {
-  background-color: #555555;
+  background-color: rgba(240, 238, 236, 0.5);
 }
 
 .btn--primary,
@@ -797,9 +797,9 @@ a.btn--link[aria-pressed="true"] {
 
 .btn--secondary,
 a.btn--secondary {
-  color: #ffffff;
-  background-color: #555555;
-  border: none;
+  color: #555555;
+  background-color: rgba(240, 238, 236, 0.5);
+  border: 1px solid #999999;
 }
 
 .btn--secondary:link,
@@ -809,7 +809,7 @@ a.btn--secondary:link {
 
 .btn--secondary:active,
 a.btn--secondary:active {
-  color: #ffffff;
+  color: #555555;
 }
 
 /**/
@@ -1030,10 +1030,6 @@ a.btn--secondary:active {
   content: "\e626";
 }
 
-.icon-required:before {
-  content: "\e628";
-}
-
 .icon-mail:before {
   content: "\e627";
 }
@@ -1133,7 +1129,7 @@ a.btn--secondary:active {
 }
 
 .tabs > ul > li {
-  padding: 1em 0;
+  padding: .75rem 0;
   text-align: center;
   list-style: none;
   background-color: #ffffff;
@@ -1147,8 +1143,8 @@ a.btn--secondary:active {
 .tabs > ul > li > a {
   display: block;
   font-size: 1rem;
-  font-weight: 500;
-  color: #333333;
+  font-weight: 300;
+  color: #767676;
   text-decoration: none;
   border-right: 1px solid #eeeeee;
 }
@@ -1158,7 +1154,7 @@ a.btn--secondary:active {
 }
 
 .tabs > ul > li[role=tab][aria-selected=true] {
-  border-bottom: 0.25rem solid #333333;
+  border-bottom: 0.125rem solid #333333;
   -webkit-transition: all ease 0.5s;
           transition: all ease 0.5s;
 }
@@ -1166,7 +1162,7 @@ a.btn--secondary:active {
 .tabs > ul > li[role=tab][aria-selected=true] > a {
   position: relative;
   z-index: 1;
-  font-weight: bold;
+  font-weight: 400;
   color: #333333;
 }
 
@@ -1174,7 +1170,7 @@ a.btn--secondary:active {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 1em;
+  padding: 1rem;
   margin: 0;
   background-color: #ffffff;
   box-sizing: border-box;
@@ -1562,17 +1558,18 @@ a.btn--secondary:active {
   border-color: #ccc;
 }
 
+.textbox label,
+.listbox label {
+  display: block;
+  margin: 0.75rem 0;
+  font-size: .815rem;
+  font-weight: 300;
+  color: #555555;
+}
+
 .textbox {
   margin: 1.125rem auto;
   clear: both;
-}
-
-.textbox label {
-  display: block;
-  margin: 0.815rem 0;
-  font-size: .815rem;
-  font-weight: 300;
-  color: #2b3e51;
 }
 
 .textbox input::-webkit-input-placeholder,
@@ -1628,7 +1625,7 @@ a.btn--secondary:active {
 
 .listbox:after {
   position: absolute;
-  top: 1.3rem;
+  top: 3.25rem;
   right: 1.3rem;
   display: inline-block;
   font-family: "vq-icon-font";
@@ -1637,6 +1634,18 @@ a.btn--secondary:active {
   color: #555555;
   vertical-align: top;
   content: "\e601";
+}
+
+.listbox.listbox--no-label:after {
+  top: 1.4rem;
+}
+
+.listbox.listbox--small:after {
+  top: 2.75rem;
+}
+
+.listbox.listbox--small.listbox--no-label:after {
+  top: 1rem;
 }
 
 .listbox.listbox--disabled:after {
@@ -1659,10 +1668,17 @@ a.btn--secondary:active {
 }
 
 .form--small .listbox:after {
+  top: 2.75rem;
+}
+
+.form--small .listbox.listbox--no-label:after {
   top: 1rem;
 }
 
-.textbox--small input {
+.textbox--small input,
+.listbox--small input,
+.textbox--small select,
+.listbox--small select {
   padding: .625rem;
   font-size: 0.75rem;
 }
@@ -1753,7 +1769,6 @@ a.btn--secondary:active {
 
 .radios,
 .checkboxes {
-  cursor: pointer;
   /* Show checked/selected item */
 
   /* Add focus effect */
@@ -1773,7 +1788,6 @@ a.btn--secondary:active {
 .radios label,
 .checkboxes label {
   font-weight: normal;
-  cursor: pointer;
 }
 
 .radios legend,
@@ -1797,13 +1811,6 @@ a.btn--secondary:active {
   opacity: 0;
 }
 
-.radios input[type=radio][disabled],
-.checkboxes input[type=radio][disabled],
-.radios input[type=checkbox][disabled],
-.checkboxes input[type=checkbox][disabled] {
-  cursor: not-allowed;
-}
-
 .radios input[type=radio][disabled] + label,
 .checkboxes input[type=radio][disabled] + label,
 .radios input[type=checkbox][disabled] + label,
@@ -1816,7 +1823,6 @@ a.btn--secondary:active {
 .checkboxes input[type=radio][disabled] + span + label,
 .radios input[type=checkbox][disabled] + span + label,
 .checkboxes input[type=checkbox][disabled] + span + label {
-  cursor: not-allowed;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
