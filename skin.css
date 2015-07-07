@@ -523,8 +523,8 @@ a:focus {
   font-family: "vq-icon-font";
   font-style: normal;
   font-weight: normal;
-  src: url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.eot');
-  src: url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.eot?#iefix') format('embedded-opentype'), url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.woff') format('woff'), url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.ttf') format('truetype'), url('http://ir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.svg#vq-icon-font') format('svg');
+  src: url('//secureir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.eot');
+  src: url('//secureir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.eot?#iefix') format('embedded-opentype'), url('//secureir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.woff') format('woff'), url('//secureir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.ttf') format('truetype'), url('//secureir.ebaystatic.com/cr/v/c1/fonts/vq-icon-font.svg#vq-icon-font') format('svg');
 }
 
 /* ========================================
@@ -828,7 +828,8 @@ a.btn--secondary:active {
 
 /**/
 
-[class*="icon-"]:before {
+[class*=" icon-"]:before,
+[class^="icon-"]:before {
   display: inline-block;
   font-family: "vq-icon-font";
   -webkit-font-smoothing: antialiased;
