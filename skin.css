@@ -1,5 +1,5 @@
 /*!
-Skin v2.1.3
+Skin v2.1.4
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -441,55 +441,44 @@ html {
 
 html > body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: .875rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1rem;
   color: #333;
-  background: url("//secureir.ebaystatic.com/pictures/aw/cmp/ds3/imgbg.jpg") repeat 0 0 #f8f8f8;
+  background: #f0eeec;
 }
 
 h1 {
-  font-size: 1.875rem;
-  /* 30px */
-
-  line-height: 2rem;
+  font-size: 1.25rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  /* 24px */
-
+  font-size: 1.125rem;
 }
 
 h3 {
-  font-size: 1.25rem;
-  /* 20px */
+  font-size: 1rem;
+}
 
+h4 {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+h5 {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: .625rem;
+  font-weight: 500;
 }
 
 h1,
 h2,
 h3 {
   font-weight: 200;
-}
-
-h4 {
-  font-size: 1.125rem;
-  /* 18px */
-
-  font-weight: 300;
-}
-
-h5 {
-  font-size: 1.125rem;
-  /* 14px */
-
-  font-weight: 400;
-}
-
-h6 {
-  font-size: .75rem;
-  /* 12px */
-
-  font-weight: 500;
 }
 
 h1 img,
@@ -501,6 +490,30 @@ h6 img {
   margin: 0;
 }
 
+.skin-large h1 {
+  font-size: 1.875rem;
+}
+
+.skin-large h2 {
+  font-size: 1.5rem;
+}
+
+.skin-large h3 {
+  font-size: 1.25rem;
+}
+
+.skin-large h4 {
+  font-size: 1.125rem;
+}
+
+.skin-large h5 {
+  font-size: 0.875rem;
+}
+
+.skin-large h6 {
+  font-size: 0.75rem;
+}
+
 /*  Hyperlinks
 --------------------------------*/
 
@@ -509,14 +522,6 @@ a:focus,
 a:visited {
   color: #0654ba;
   text-decoration: none;
-}
-
-a:visited {
-  color: #6a29b9;
-}
-
-a:focus {
-  text-decoration: underline;
 }
 
 @font-face {
@@ -658,7 +663,7 @@ a:focus {
 .btn {
   display: inline-block;
   padding: 0.75rem 5rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: normal;
   text-align: center;
   text-decoration: none;
@@ -712,7 +717,7 @@ a.btn:active {
 
 .btn--large {
   padding: 0.95rem 7rem;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
 }
 
 .btn-group > .btn {
@@ -1108,20 +1113,17 @@ a.btn--secondary:active {
 /**/
 
 .tabs {
-  position: relative;
-  z-index: 0;
   width: 100%;
 }
 
 .tabs > ul {
-  position: relative;
-  z-index: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   padding: 0;
   margin: 0;
+  list-style: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -1131,8 +1133,6 @@ a.btn--secondary:active {
 
 .tabs > ul > li {
   padding: .75rem 0;
-  text-align: center;
-  list-style: none;
   background-color: #ffffff;
   box-sizing: border-box;
   -webkit-box-flex: 1;
@@ -1141,36 +1141,36 @@ a.btn--secondary:active {
           flex: 1;
 }
 
-.tabs > ul > li > a {
+.tabs > ul > li > a,
+.tabs > ul > li > span {
   display: block;
   font-size: 1rem;
   font-weight: 300;
   color: #767676;
+  text-align: center;
   text-decoration: none;
-  border-right: 1px solid #eeeeee;
 }
 
-.tabs > ul > li:last-child a {
-  border-right: none;
+.tabs > ul > li[role=tab] {
+  cursor: pointer;
 }
 
+.tabs > ul > li.tabs__selected,
 .tabs > ul > li[role=tab][aria-selected=true] {
   border-bottom: 0.125rem solid #333333;
   -webkit-transition: all ease 0.5s;
           transition: all ease 0.5s;
 }
 
-.tabs > ul > li[role=tab][aria-selected=true] > a {
-  position: relative;
-  z-index: 1;
+.tabs > ul > li.tabs__selected > a,
+.tabs > ul > li[role=tab][aria-selected=true] > a,
+.tabs > ul > li.tabs__selected > span,
+.tabs > ul > li[role=tab][aria-selected=true] > span {
   font-weight: 400;
   color: #333333;
 }
 
 .tabs > div:last-child {
-  position: relative;
-  z-index: 1;
-  width: 100%;
   padding: 1rem;
   margin: 0;
   background-color: #ffffff;
@@ -1193,7 +1193,7 @@ a.btn--secondary:active {
 }
 
 .list-nav > div {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 2.5rem;
   color: #ffffff;
@@ -1262,7 +1262,7 @@ a.btn--secondary:active {
 
 .list-nav ul > li {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.5rem;
   color: #666666;
@@ -1411,7 +1411,7 @@ a.btn--secondary:active {
 
 .menu > .btn:after {
   position: relative;
-  top: 0.5rem;
+  top: 0.1rem;
   left: 0.2rem;
   font-family: "vq-icon-font";
   font-size: 0.45rem;
@@ -1525,7 +1525,7 @@ a.btn--secondary:active {
 .listbox select {
   width: 100%;
   padding: 1rem;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 200;
   background: #fff;
   border: 1px solid #d3d3d3;
@@ -1533,7 +1533,9 @@ a.btn--secondary:active {
   box-sizing: border-box;
   -webkit-transition: all 0.15s ease-out;
           transition: all 0.15s ease-out;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .textbox input:focus,
@@ -1563,7 +1565,7 @@ a.btn--secondary:active {
 .listbox label {
   display: block;
   margin: 0.75rem 0;
-  font-size: .815rem;
+  font-size: 0.875rem;
   font-weight: 300;
   color: #555555;
 }
@@ -1626,7 +1628,7 @@ a.btn--secondary:active {
 
 .listbox:after {
   position: absolute;
-  top: 3.25rem;
+  top: 3rem;
   right: 1.3rem;
   display: inline-block;
   font-family: "vq-icon-font";
@@ -1638,15 +1640,15 @@ a.btn--secondary:active {
 }
 
 .listbox.listbox--no-label:after {
-  top: 1.4rem;
+  top: 1.2rem;
 }
 
 .listbox.listbox--small:after {
-  top: 2.75rem;
+  top: 2.65rem;
 }
 
 .listbox.listbox--small.listbox--no-label:after {
-  top: 1rem;
+  top: .8rem;
 }
 
 .listbox.listbox--disabled:after {
@@ -1669,11 +1671,11 @@ a.btn--secondary:active {
 }
 
 .form--small .listbox:after {
-  top: 2.75rem;
+  top: 2.65rem;
 }
 
 .form--small .listbox.listbox--no-label:after {
-  top: 1rem;
+  top: .8rem;
 }
 
 .textbox--small input,
@@ -1733,7 +1735,7 @@ a.btn--secondary:active {
 .textbox--search:before,
 .textbox--username:before {
   position: absolute;
-  top: 1rem;
+  top: 1.1rem;
   left: 1rem;
   font-family: "vq-icon-font";
   font-size: 1.125rem;
@@ -1743,8 +1745,8 @@ a.btn--secondary:active {
 .textbox--small.textbox--email:before,
 .textbox--small.textbox--search:before,
 .textbox--small.textbox--username:before {
-  top: .75rem;
-  font-size: .875rem;
+  top: .7rem;
+  font-size: 0.875rem;
 }
 
 .textbox--email input[type="email"],
@@ -1766,14 +1768,6 @@ a.btn--secondary:active {
 .textbox--search:before {
   color: #676767;
   content: "\e619";
-}
-
-.radios,
-.checkboxes {
-  /* Show checked/selected item */
-
-  /* Add focus effect */
-
 }
 
 .radios > fieldset > span,
@@ -1838,7 +1832,7 @@ a.btn--secondary:active {
 .checkboxes input[type=checkbox] + span {
   position: relative;
   padding-left: 1.5rem;
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: #555555;
 }
 

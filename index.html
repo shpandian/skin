@@ -29,6 +29,7 @@
         <div class="left-nav column">
             <ul class="modules-nav">
                 <li><a href="#intro">Introduction</a></li>
+                <li><a href="#less">Variables &amp; Mixins</a></li>
                 <li><a href="#core">Core</a></li>
                 <li><a href="#box">Box</a></li>
                 <li><a href="#button">Buttons &amp; Links</a></li>
@@ -37,8 +38,7 @@
                 <li><a href="#icon">Icons</a></li>
                 <li><a href="#listnav">List Nav</a></li>
                 <li><a href="#menu">Menu</a></li>
-                <li><a href="#statusmsg">Status Messaging</a></li>
-                <li><a href="#tabs">Tabs</a></li>
+                <li><a href="#tabs">Tabs</a></li>                
             </ul>
         </div>
         <div class="right column">
@@ -61,6 +61,14 @@
                 <p>With mobile traffic steadily increasing, we have built this version with a mobile first approach. Tablet and desktop breakpoints are not currently supported.
 
             </section>
+
+            <section id="less">
+    <h2>Variables &amp; Mixins</h2>
+    <hr/>
+    <p>
+        Skin exposes its core LESS <a href="https://github.corp.ebay.com/f2e/skin/blob/v2/src/less/core/variables.less">variables</a> &amp; <a href="https://github.corp.ebay.com/f2e/skin/blob/v2/src/less/core/mixins.less">mixins</a> as a separate module called <span class="highlight">skin-ebay/less</span>. Including this module as a dependency, will enable developers to access Skin LESS variables &amp; mixins in their application. Please refer to the <a href="/start.html">Getting Started</a> section on adding dependencies.
+    </p>  
+</section>
 
             <section id="core">
     <h2>Core</h2>
@@ -1468,78 +1476,61 @@
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 </section>
 
-            <section id="statusmsg">
-    <h2>Status Messaging</h2>
-    <hr />
-    <p>Status messages appear prominently at the top of a page or module; usually as the direct result of a user action. A status message will have one of four possible levels: information, success, warning or error. Status messages are considered a page landmark, thus allowing users of assistive technology to easily identify and navigate to these regions.</p>
-
-    <h3>Information</h3>
-    <p>Use the <span class="highlight">status-msg--info</span> modifier class to create an information-level status message.</p>
-    <div class="demo">
-        <div class="status-msg status-msg--info" role="region" aria-label="Info">
-            <p>Your current browser is out of date. Please consider upgrading to a newer version.</p>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--info&quot;</span> <span class="na">role=</span><span class="s">&quot;region&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Info&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Your current browser is out of date. Please consider upgrading to a newer version.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Success</h3>
-    <p>Use the <span class="highlight">status-msg--success</span> modifier class to create a success-level status message.</p>
-    <div class="demo">
-        <div class="status-msg status-msg--success" role="region" aria-label="Success">
-            <p>The information you have entered is correct.</p>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--success&quot;</span> <span class="na">role=</span><span class="s">&quot;region&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Success&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>The information you have entered is correct.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Warning</h3>
-    <p>Use the <span class="highlight">status-msg--warning</span> modifier class to create a warning-level status message.</p>
-    <div class="demo">
-        <div class="status-msg status-msg--warning" role="region" aria-label="Warning">
-            <p>Your password is set to expire in 3 days.</p>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--warning&quot;</span> <span class="na">role=</span><span class="s">&quot;region&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Warning&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Your password is set to expire in 3 days.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Error</h3>
-    <p>Use the <span class="highlight">status-msg--error</span> modifier class to create an error-level status message.</p>
-    <div class="demo">
-        <div class="status-msg status-msg--error" role="region" aria-label="Error">
-            <p>This action is temporarily unavailable. Please try again later.</p>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;status-msg status-msg--error&quot;</span> <span class="na">role=</span><span class="s">&quot;region&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Error&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>This action is temporarily unavailable. Please try again later.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-</section>
-
             <section id="tabs">
     <h2>Tabs</h2>
     <hr/>
+    <p>Tabs follow the principal of <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">progressive disclosure</a> by allowing layered stacking of content panels.</p>
+    <p>When using tabs, you have two choices. Either the tabs are visually styled as tabs, but behave like links (i.e. cause a full page load), <em>or</em> they behave like a tabs <em>widget</em>.</p>
 
-    <p>Tabs follow the principal of <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">progressive disclosure</a> by allowing layered stacking of content panels. Only one <span class="highlight">tab</span> can be selected at
-        any time, using aria-selected="true". Selecting a tab will deselect all
-        other tabs. Likewise, only one <span class="highlight">tabpanel</span> can be visible
+    <h3>Tabs for Navigation</h3>
+    <p>If you only wish to create a set of links that are styled visually like tabs, with no additional behaviour, please use a simple list of links. No JavaScript behaviour or ARIA attributes will be required.</p>
+    <p>The <span class="highlight">tabs__selected</span> class is used to visually denote the current tab/page.</p>
+
+    <div class="demo">
+        <div class="tabs">
+            <ul>
+                <li class="tabs__selected">
+                    <span>Page 1</span>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">Page 2</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">Page 3</a>
+                </li>
+            </ul>
+            <div>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </div>
+        </div>
+
+        <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabs&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;tabs__selected&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Page 1<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Page 2<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Page 3<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+    </div>
+
+    <h3>Tabs Widget</h3>
+    <p>For a widget-like experience, whereby selecting a tab will update the panel contents <strong>without</strong> a full page reload, we can progressively enhance the markup of our navigation tabs example. This time we will be using ARIA roles, states and properties. We must also prevent the default behaviour of the hyperlinks. We can do this by removing the href attribute and specifying role="presentation". In essence, this converts the anchor tag to a meaningless span/div tag.</p>
+    <p>If you have no interest in using progressive enhancement to create your tabs widget, you can simply replace the anchor tag with a span tag in the example markup below.</p>
+    <p>Only one <span class="highlight">tab</span> can be selected and in the tabindex at
+        any moment in time, using aria-selected="true" and tabindex="0". Selecting a tab will deselect all
+        other tabs and remove them from the tabindex. Likewise, only one <span class="highlight">tabpanel</span> can be visible
         at any time, using aria-hidden="false", and it must correspond to the
-        currently selected tab. Showing a tabpanel will hide all other tabpanels.
+        currently selected tab.
     </p>
-
-    <p>Tabs supports progressive enhancement. Before enhancement, the tabs are
-        functional as same page links. After enhancement to tabs (using
-        JavaScript to add ARIA roles, states &amp; properties) the links must
-        be disabled by removing the HREF attribute.</p>
-
-    <h3>Horizontal Tabs</h3>
 
     <div class="demo">
         <div class="tabs">
