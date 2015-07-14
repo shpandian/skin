@@ -1,5 +1,5 @@
 /*!
-Skin v2.1.4
+Skin v2.1.5
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -443,7 +443,7 @@ html > body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
-  line-height: 1rem;
+  line-height: 1;
   color: #333;
   background: #f0eeec;
 }
