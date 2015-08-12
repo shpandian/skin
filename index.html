@@ -30,11 +30,21 @@
             <ul class="modules-nav">
                 <li><a href="#intro">Introduction</a></li>
                 <li><a href="#less">Variables &amp; Mixins</a></li>
+                <li><a href="#combo">Combo</a></li>
                 <li><a href="#core">Core</a></li>
                 <li><a href="#box">Box</a></li>
                 <li><a href="#button">Buttons &amp; Links</a></li>
                 <li><a href="#dialog">Dialog</a></li>
-                <li><a href="#form">Forms</a></li>
+                <li><a href="#form">Forms</a>
+                    <ul class="sub-menu">
+                        <li><a href="#textbox">Textbox</a></li>
+                        <li><a href="#listbox">Listbox</a></li>
+                        <li><a href="#checkbox">Checkbox</a></li>
+                        <li><a href="#radios">Radio</a></li>
+                        <li><a href="#switch">Switch</a></li>
+                        <li><a href="#form-states">States &amp; Properties</a></li>
+                    </ul>
+               </li>
                 <li><a href="#icon">Icons</a></li>
                 <li><a href="#listnav">List Nav</a></li>
                 <li><a href="#menu">Menu</a></li>
@@ -67,6 +77,21 @@
     <hr/>
     <p>
         Skin exposes its core LESS <a href="https://github.corp.ebay.com/f2e/skin/blob/v2/src/less/core/variables.less">variables</a> &amp; <a href="https://github.corp.ebay.com/f2e/skin/blob/v2/src/less/core/mixins.less">mixins</a> as a separate module called <span class="highlight">skin-ebay/less</span>. Including this module as a dependency, will enable developers to access Skin LESS variables &amp; mixins in their application. Please refer to the <a href="/start.html">Getting Started</a> section on adding dependencies.
+    </p>  
+</section>
+
+            <section id="combo">
+    <h2>Combo</h2>
+    <hr/>
+    <p>
+        Skin identifies the below modules as the most common modules used across key eBay experiences. They are bundled together and exposed as a combo module called <span class="highlight">skin-ebay/combo</span>. The Vision Quest Global Header will include this combo module and hence domain teams can avoid adding the same dependency again.
+        <ul class="skin-module-list">
+            <li>skin-ebay/core</li>
+            <li>skin-ebay/button</li>
+            <li>skin-ebay/icon</li>
+            <li>skin-ebay/dialog</li>
+            <li>skin-ebay/form</li>
+        </ul>         
     </p>  
 </section>
 
@@ -438,6 +463,8 @@
     <p>A form displays a set of fields that allow users to input data. Fields include: textboxes, listboxes, radios, checkboxes and switches. Fields can have various different properties and states.</p>
     <p>Assistive technology requires accessible labels for <strong>all</strong> form controls, without exception. In some rare circumstances, labels can be visually hidden - read on to find out more.</p>
 
+        
+<section id="textbox">
     <h3>Textbox</h3>
     <p>A textbox can be single-line or multi-line, using the <span class="highlight">input</span> or <span class="highlight">textarea</span> element, respectively. By default, textbox labels will always appear <em>above</em> the input field (i.e. the labels are set to 'block' level).</p>
 
@@ -540,6 +567,153 @@
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search&quot;</span>  <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+    <h4>Readonly State</h4>
+    <p>A readonly field is conveyed using the <span class="highlight">readonly</span> attribute. Readonly field values <strong>do</strong> get passed to the server. Note that the readonly attribute has no effect on a listbox.</p>
+    <div class="demo">
+        <div class="textbox">
+            <label for="readonly-example-1">Email Address</label>
+            <input id="readonly-example-1" type="text" value="yourname@company.com" name="readonly-example" readonly />
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;readonly-example&quot;</span><span class="nt">&gt;</span>Email Address<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;readonly-example&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;yourname@company.com&quot;</span> <span class="na">name=</span><span class="s">&quot;readonly-example&quot;</span> <span class="na">readonly</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Form Sizes</h3>
+
+    <p>To make all fields small (including any icons or labels), apply the <span class="highlight">.form--small</span> modifier class.</p>
+    <div class="demo">
+        <div class="form form--small">
+            <div class="textbox">
+                <label for="phone">Telephone Number</label>
+                <input id="phone" type="tel" placeholder="xxx-xxx-xxxx" name="phone" />
+            </div>
+            <div class="listbox listbox--no-label">
+                <label for="size-selection" class="clipped">Choose a size</label>
+                <select id="size-selection">
+                    <option value="0" disabled selected>Choose a size</option>
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form form--small&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phone&quot;</span><span class="nt">&gt;</span>Telephone Number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phone&quot;</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;xxx-xxx-xxxx&quot;</span> <span class="na">name=</span><span class="s">&quot;phone&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox listbox--no-label&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+</section>
+
+        <style type="text/css">
+    #focused-input {
+        outline: 0 none;
+        border-color: #0654BA;
+    }
+
+</style>
+
+<section id="listbox">
+   
+<h3 id="listbox">Listbox</h3>
+    <p>Allows the user to select one item from a list of options.</p>
+    <p>A listbox (also known as a 'select') is typically used to collate form data and therefore must always be used in conjunction with a form submit button. If you are not submitting form data or do not wish to reload the entire page, then a <a href="#menu">Menu</a> maybe a better choice.</p>
+
+    <h4>Listbox with Default Selection</h4>
+    <p>By default, listboxes encourage one of the options to be auto-selected using the <span class="highlight">selected</span> property. This is known as a sensible default.</p>
+    <div class="demo">
+        <div class="listbox">
+            <label for="size-selection">Choose a size</label>
+            <select id="size-selection">
+                <option value="1" selected>Small</option>
+                <option value="2">Medium</option>
+                <option value="3">Large</option>
+                <option value="4">Extra Large</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">selected</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h4>Listbox with Forced Selection</h4>
+    <p>To force a user to make an actual selection themselves, the default option can be used as a prompt and must be set to <span class="highlight">disabled</span>.</p>
+    <div class="demo">
+        <div class="listbox">
+            <label for="size-selection">Choose a size</label>
+            <select id="size-selection">
+                <option value="0" disabled selected>-select-</option>
+                <option value="1">Small</option>
+                <option value="2">Medium</option>
+                <option value="3">Large</option>
+                <option value="4">Extra Large</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>-select-<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h4>Listbox with no Visible Label</h4>
+    <p>For listboxes without a visible label, use <span class="highlight">aria-label</span> to provide an accessible label to assistive technology. The <span class="highlight">listbox--no-label</span> modifier class must also be provided.</p>
+    <div class="demo">
+        <div class="listbox listbox--no-label">
+            <select id="size-selection" aria-label="Choose a size">
+                <option value="0" disabled selected>Choose a size</option>
+                <option value="1">Small</option>
+                <option value="2">Medium</option>
+                <option value="3">Large</option>
+                <option value="4">Extra Large</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox listbox--no-label&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Choose a size&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
+
+        
+<section id="checkbox">
+    
     <h3>Checkboxes</h3>
     <p>Checkboxes allow the user to select zero or more options in a group. A <span class="highlight">fieldset</span> and <span class="highlight">legend</span> are <strong>required</strong>.</p>
 
@@ -642,6 +816,11 @@
     <span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+</section>
+
+        
+<section id="radios">
+    
     <h3>Radios</h3>
     <p>Radios allow user to select only one option from a group. A <span class="highlight">fieldset</span> and <span class="highlight">legend</span> are <strong>required</strong>.</p>
 
@@ -725,84 +904,45 @@
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h3 id="listbox">Listbox</h3>
-    <p>Allows the user to select one item from a list of options.</p>
-    <p>A listbox (also known as a 'select') is typically used to collate form data and therefore must always be used in conjunction with a form submit button. If you are not submitting form data or do not wish to reload the entire page, then a <a href="#menu">Menu</a> maybe a better choice.</p>
+</section>
 
-    <h4>Listbox with Default Selection</h4>
-    <p>By default, listboxes encourage one of the options to be auto-selected using the <span class="highlight">selected</span> property. This is known as a sensible default.</p>
+        <section id="switch">
+   
+    <h3>Toggle Switch</h3>
+    <p>A toggle switch behaves very much like a checkbox - it can be on or off (i.e checked or unchecked) - and under the hood, that's exactly what it is. Whereas checkboxes are often used to allow multi-selection from a group of choices, switches are more often used in isolation or as a series of unrelated options.</p>
+
     <div class="demo">
-        <div class="listbox">
-            <label for="size-selection">Choose a size</label>
-            <select id="size-selection">
-                <option value="1" selected>Small</option>
-                <option value="2">Medium</option>
-                <option value="3">Large</option>
-                <option value="4">Extra Large</option>
-            </select>
+        <div class="switch">
+            <label for="toggle-switch">Returns Accepted</label>
+            <input id="toggle-switch" type="checkbox" name="toggle-switch" />
+            <span></span>
         </div>
     </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">selected</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
-    <span class="nt">&lt;/select&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;switch&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;toggle-switch&quot;</span><span class="nt">&gt;</span>Returns Accepted<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Listbox with Forced Selection</h4>
-    <p>To force a user to make an actual selection themselves, the default option can be used as a prompt and must be set to <span class="highlight">disabled</span>.</p>
+    <h4>Disabled Toggle Switch</h4>
+    <p>A toggle switch can be disabled using the <span class="highlight">disabled</span> property.</p>
     <div class="demo">
-        <div class="listbox">
-            <label for="size-selection">Choose a size</label>
-            <select id="size-selection">
-                <option value="0" disabled selected>-select-</option>
-                <option value="1">Small</option>
-                <option value="2">Medium</option>
-                <option value="3">Large</option>
-                <option value="4">Extra Large</option>
-            </select>
+        <div class="switch">
+            <label for="toggle-switch-disabled">Returns Accepted</label>
+            <input id="toggle-switch-disabled" type="checkbox" name="toggle-switch-disabled" disabled/>
+            <span></span>
         </div>
     </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>-select-<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
-    <span class="nt">&lt;/select&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;switch&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;toggle-switch-disabled&quot;</span><span class="nt">&gt;</span>Returns Accepted Disabled<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;toggle-switch-disabled&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;toggle-switch-disabled&quot;</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</section>
 
-    <h4>Listbox with no Visible Label</h4>
-    <p>For listboxes without a visible label, use <span class="highlight">aria-label</span> to provide an accessible label to assistive technology. The <span class="highlight">listbox--no-label</span> modifier class must also be provided.</p>
-    <div class="demo">
-        <div class="listbox listbox--no-label">
-            <select id="size-selection" aria-label="Choose a size">
-                <option value="0" disabled selected>Choose a size</option>
-                <option value="1">Small</option>
-                <option value="2">Medium</option>
-                <option value="3">Large</option>
-                <option value="4">Extra Large</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox listbox--no-label&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Choose a size&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
-    <span class="nt">&lt;/select&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
+        
+<section id="form-states">
+    
     <h3>Form States</h3>
 
     <h4>Error State</h4>
@@ -888,78 +1028,15 @@
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>Email Address <span class="nt">&lt;sup&gt;</span>*<span class="nt">&lt;/sup&gt;&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;yourname@company.com&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Form Sizes</h3>
-
-    <p>To make all fields small (including any icons or labels), apply the <span class="highlight">.form--small</span> modifier class.</p>
-    <div class="demo">
-        <div class="form form--small">
-            <div class="textbox">
-                <label for="phone">Telephone Number</label>
-                <input id="phone" type="tel" placeholder="xxx-xxx-xxxx" name="phone" />
-            </div>
-            <div class="listbox listbox--no-label">
-                <label for="size-selection" class="clipped">Choose a size</label>
-                <select id="size-selection">
-                    <option value="0" disabled selected>Choose a size</option>
-                    <option value="1">Small</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Large</option>
-                    <option value="4">Extra Large</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form form--small&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phone&quot;</span><span class="nt">&gt;</span>Telephone Number<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phone&quot;</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;xxx-xxx-xxxx&quot;</span> <span class="na">name=</span><span class="s">&quot;phone&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox listbox--no-label&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;/select&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h3>Toggle Switch</h3>
-    <p>A toggle switch behaves very much like a checkbox - it can be on or off (i.e checked or unchecked) - and under the hood, that's exactly what it is. Whereas checkboxes are often used to allow multi-selection from a group of choices, switches are more often used in isolation or as a series of unrelated options.</p>
-
-    <div class="demo">
-        <div class="switch">
-            <label for="toggle-switch">Returns Accepted</label>
-            <input id="toggle-switch" type="checkbox" name="toggle-switch" />
-            <span></span>
-        </div>
-    </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;switch&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;toggle-switch&quot;</span><span class="nt">&gt;</span>Returns Accepted<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-    <h4>Disabled Toggle Switch</h4>
-    <p>A toggle switch can be disabled using the <span class="highlight">disabled</span> property.</p>
-    <div class="demo">
-        <div class="switch">
-            <label for="toggle-switch-disabled">Returns Accepted</label>
-            <input id="toggle-switch-disabled" type="checkbox" name="toggle-switch-disabled" disabled/>
-            <span></span>
-        </div>
-    </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;switch&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;toggle-switch-disabled&quot;</span><span class="nt">&gt;</span>Returns Accepted Disabled<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;toggle-switch-disabled&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;toggle-switch-disabled&quot;</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>    
 </section>
+
+
+</section>    
+
+        
+        
+
 
             <style type="text/css">
 [class*="icon-"]:before {
@@ -999,6 +1076,10 @@
             <span>icon-cart-null</span>
         </div>
         <div>
+            <span class="icon-chevron-up"></span>
+            <span>icon-chevron-up</span>
+        </div>
+        <div>
             <span class="icon-chevron-down"></span>
             <span>icon-chevron-down</span>
         </div>
@@ -1011,8 +1092,20 @@
             <span>icon-chevron-right</span>
         </div>
         <div>
-            <span class="icon-chevron-up"></span>
-            <span>icon-chevron-up</span>
+            <span class="icon-chevron-up-disabled"></span>
+            <span>icon-chevron-up-disabled</span>
+        </div>
+        <div>
+            <span class="icon-chevron-down-disabled"></span>
+            <span>icon-chevron-down-disabled</span>
+        </div>
+        <div>
+            <span class="icon-chevron-left-disabled"></span>
+            <span>icon-chevron-left-disabled</span>
+        </div>
+        <div>
+            <span class="icon-chevron-right-disabled"></span>
+            <span>icon-chevron-right-disabled</span>
         </div>
         <div>
             <span class="icon-close"></span>

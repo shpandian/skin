@@ -121,9 +121,9 @@ header {
                     font-weight:300;
 
                     &.active {
-                        border-bottom: 1px solid @ebay-blue;
+                        border-bottom: 1px solid @color-cta-dark;
                         color: @font-color;
-                           font-weight:500;
+                        font-weight:500;
                     }
                 }
 
@@ -191,12 +191,23 @@ ul.skin-module-list {
             li {
                 display: inline-block;
                 width: @menu-item-width;
-                padding: .3rem .85rem;
                 margin: .3rem 0;
                 font-size: @font-size-base;
 
+                > a { 
+                    display: inline-block;
+                    padding: .3rem .85rem;
+                }  
+
                 &.active {
-                    border-left:2px solid @ebay-blue;
+                    > a {
+                        border-left: 2px solid @color-cta-dark;  
+                    }
+                }
+
+                > .sub-menu {
+                    padding-left: 1rem;
+                    margin: 0;
                 }
             }
         }
@@ -217,8 +228,8 @@ ul.skin-module-list {
 
 footer {
     .mixin-clearfix();
-    background: @grey-dark;
-    color: @grey-light;
+    background: @color-default-text;
+    color: @smoke;
     margin-top: 3rem;
 
     .footer-content {
@@ -231,10 +242,10 @@ footer {
         margin-right: 1rem;
     }
     a {
-        color: @grey-light;
+        color: @smoke;
 
         &:visited {
-            color: @grey-medium;
+            color: @color-subheader-text;
 
         }
     }
