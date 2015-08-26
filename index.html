@@ -47,7 +47,12 @@
                </li>
                 <li><a href="#icon">Icons</a></li>
                 <li><a href="#listnav">List Nav</a></li>
-                <li><a href="#menu">Menu</a></li>
+                <li><a href="#menu">Menu</a>
+                    <ul class="sub-menu">
+                        <li><a href="#popup-menu">Popup Menu</a></li>
+                        <li><a href="#popup-nav">Popup Nav</a></li>
+                    </ul> 
+                </li>       
                 <li><a href="#tabs">Tabs</a></li>                
             </ul>
         </div>
@@ -492,6 +497,20 @@
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;textbox-example-2&quot;</span><span class="nt">&gt;</span>Description<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;textbox-example-2&quot;</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h4>Textbox Inline</h4>
+    <p>A textbox with label next to it. Limit number of characters in label to 25 chars.</p>
+    <div class="demo">
+        <div class="textbox textbox--inline">
+            <label for="phonenumber">Phone Number</label>
+            <input id="phonenumber" type="phonenumber" placeholder="Phone Number" name="phonenumber" />
+        </div>  
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox textbox--inline&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phonenumber&quot;</span><span class="nt">&gt;</span>Phone Number<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">type=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Phone Number&quot;</span> <span class="na">name=</span><span class="s">&quot;phonenumber&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <h4>Textbox Placeholders</h4>
@@ -1247,6 +1266,18 @@
             <span class="icon-radio-btn-active"></span>
             <span>icon-radio-btn-active</span>
         </div>
+        <div>
+            <span class="icon-clock"></span>
+            <span>icon-clock</span>
+        </div>
+        <div>
+            <span class="icon-header-chevron-left"></span>
+            <span>icon-header-chevron-left</span>
+        </div>
+        <div>
+            <span class="icon-header-chevron-right"></span>
+            <span>icon-header-chevron-right</span>
+        </div>
     </div>
 
     <h3>Icons with Text</h3>
@@ -1306,25 +1337,25 @@
     <hr />
     <p>Displays hierarchical lists of links.</p>
 
-    <h3>List Nav Top level</h3>
+    <h3>List Group with parent category</h3>
 
-    <div class="demo">
+    <div class="demo" style="background: #f0eeec; border-bottom: 1px solid #ccc;">
         <div class="list-nav">
-            <div>
-                <a href="http://www.ebay.com">
-                    <span>All Categories</span>
-                </a>
-            </div>
-            <div class="list-nav__active">
-                <a href="http://www.ebay.com">
-                    <span>Books</span>
-                </a>
-            </div>
-            <ul>
-                <li class="list-nav__branch">
+            <ol>
+                <li>
                     <a href="http://www.ebay.com">
-                        <span>Accessories</span>
+                        <span>All Categories</span>
                     </a>
+                </li>
+                <li>
+                    <span>Books</span>
+                </li>
+            </ol>
+            <ol>
+                <li>
+                    <button>
+                        <span>Accessories</span>
+                    </button>
                 </li>
                 <li>
                     <a href="http://www.ebay.com">
@@ -1336,36 +1367,42 @@
                         <span>Audiobooks</span>
                     </a>
                 </li>
-                <li class="list-nav__branch">
-                    <a href="http://www.ebay.com">
+                <li>
+                    <button>
                         <span>Catalogs</span>
-                    </a>
+                    </button>
                 </li>
                 <li>
                     <a href="http://www.ebay.com">
                         <span>Children &amp; Young Adults</span>
                     </a>
                 </li>
-            </ul>
+                <li>
+                    <button>
+                        <span>Wholesale &amp; Bulk Lots</span>
+                    </button>
+                </li>
+
+            </ol>
         </div>
     </div>
 
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav__active&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-nav__branch&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Accessories<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>    
+    <span class="nt">&lt;ol&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;button&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Accessories<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
@@ -1377,113 +1414,209 @@
                 <span class="nt">&lt;span&gt;</span>Audiobooks<span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;list-nav__branch&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;button&gt;</span>
                 <span class="nt">&lt;span&gt;</span>Catalogs<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;span&gt;</span>Children <span class="ni">&amp;amp;</span> Young Adults<span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;button&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Wholesale <span class="ni">&amp;amp;</span> Bulk Lots<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+
+    <span class="nt">&lt;/ol&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h3>List Nav Secondary level</h3>
+    <h3>Child category expanded list group</h3>
 
-    <div class="demo">
+    <div class="demo" style="background: #f0eeec; border-bottom: 1px solid #ccc;">
         <div class="list-nav">
-            <div>
-                <a href="http://www.ebay.com">
-                    <span>All Categories</span>
-                </a>
-            </div>
-            <div>
-                <a href="http://www.ebay.com">
-                    <span>Books</span>
-                </a>
-            </div>
-            <div>
-                <a href="http://www.ebay.com">
-                    <span>Catalogs</span>
-                </a>
-            </div>
-            <ul>
+            <ol>
                 <li>
                     <a href="http://www.ebay.com">
-                        <span>Agriculture</span>
+                        <span>All Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <button>
+                        <span>Books</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Wholesale &amp; Bulk Lots</span>
+                    </a>
+                </li>
+            </ol>
+            <ol>
+                <li>
+                    <a href="http://www.ebay.com">
+                         <span>Audiobooks</span>
+                    </a>
+                </li>
+                <li>
+                    <button>
+                        <span>Books</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Magazines</span>
                     </a>
                 </li>
                 <li>
                     <a href="http://www.ebay.com">
-                        <span>Art &amp; Exhibitions</span>
+                        <span>Other Wholesale Books</span>
                     </a>
                 </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Auction</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Clothing &amp; Fashion</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.ebay.com">
-                        <span>Department Stores</span>
-                    </a>
-                </li>
-            </ul>
+            </ol>
         </div>
     </div>
 
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>Catalogs<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
         <span class="nt">&lt;li&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Agriculture<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;button&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Wholesale <span class="ni">&amp;amp;</span> Bulk Lots<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Audiobooks<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;button&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Magazines<span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Art <span class="ni">&amp;amp;</span> Exhibitions<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Other Wholesale Books<span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Auction<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Clothing <span class="ni">&amp;amp;</span> Fashion<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Department Stores<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>    
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+    <h3>Child category expanded list group and two subcategories</h3>
+    <div class="demo" style="background: #f0eeec; border-bottom: 1px solid #ccc;">
+        <div class="list-nav">
+            <ol>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>All Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <button>
+                        <span>Books</span>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <span>Wholesale &amp; Bulk Lots</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Books</span>
+                    </a>
+                </li>
+            </ol>
+            <ol>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>Up to 5 Items</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>6- 10 Items</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>11- 50 Items</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com">
+                        <span>51- 100 Items</span>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;list-nav&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>All Categories<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;button&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;button&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Wholesale <span class="ni">&amp;amp;</span> Bulk Lots<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Books<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>Up to 5 Items<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>6- 10 Items<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>11- 50 Items<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span>51- 101 Items<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 </section>
 
             <style type="text/css">
@@ -1498,6 +1631,9 @@
 
 <section id="menu">
     <h2>Menu</h2>
+
+    <section id="popup-menu">
+    <h3>Popup Filter Menu</h3>
     <hr/>
     <p>A popup menu that allows a user to select from a series of options. A menu can contain button options, radio options or checkbox options.</p>
     <p>Menus are typically used to perform AJAX requests and partial page reloads, therefore do not require a form submit button. If you are submitting form data or re-loading the entire page, then a <a href="#listbox">Listbox</a> may be a better choice.</p>
@@ -1509,14 +1645,14 @@
     <div class="demo">
         <div class="menu">
             <button aria-expanded="false" aria-haspopup="true" id="menu-button-1" aria-controls="menu-list-1" type="button" class="btn btn--full">
-                Featured
+                 Sort
             </button>
 
             <div role="menu" id="menu-list-1" aria-labelledby="menu-button-1">
-                <div role="menuitemradio" aria-checked="true" tabindex="-1">Featured</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Fashion</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Home & Garden</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Tech</div>
+                <div role="menuitemradio" aria-checked="true" tabindex="-1">Best Match</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Time: ending soonest</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Time: newly listed</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Price + Shipping: lowest first</div>
             </div>
         </div>
     </div>
@@ -1524,14 +1660,14 @@
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-button&quot;</span>
             <span class="na">aria-controls=</span><span class="s">&quot;menu-list&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--full&quot;</span><span class="nt">&gt;</span>
-        Featured
+         Sort
     <span class="nt">&lt;/button&gt;</span>
 
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-list&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu-button&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Home <span class="ni">&amp;amp;</span> Garden<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Best Match<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Time: ending soonest<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Time: newly listed<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Price + Shipping: lowest first<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
@@ -1542,14 +1678,14 @@
     <div class="demo">
         <div class="menu">
             <button aria-expanded="true" aria-haspopup="true" id="menu-button-2" aria-controls="menu-items-2" type="button" class="btn btn--full" style="border-bottom: none">
-                Featured
+                 Sort
             </button>
 
             <div role="menu" id="menu-items-2" aria-labelledby="menu-button-2">
-                <div role="menuitemradio" aria-checked="true" tabindex="-1">Featured</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Fashion</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Home &amp; Garden</div>
-                <div role="menuitemradio" aria-checked="false" tabindex="-1">Tech</div>
+                <div role="menuitemradio" aria-checked="true" tabindex="-1">Best Match</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Time: ending soonest</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Time: newly listed</div>
+                <div role="menuitemradio" aria-checked="false" tabindex="-1">Price + Shipping: lowest first</div>
             </div>
         </div>
     </div>
@@ -1557,16 +1693,77 @@
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-button&quot;</span>
             <span class="na">aria-controls=</span><span class="s">&quot;menu-items&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--full&quot;</span><span class="nt">&gt;</span>
-        Featured
+         Sort
     <span class="nt">&lt;/button&gt;</span>
 
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu-items&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu-button&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Home <span class="ni">&amp;amp;</span> Garden<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Best Match<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Time: ending soonest<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Time: newly listed<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Price + Shipping: lowest first<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+    </section>
+
+    <section id="popup-nav">
+    <h3>Popup Nav</h3>
+    <p>A flyout containing a list of links that pops up out of a button.</p>
+    <h5>Collapsed State</h5>
+    <div class="demo">
+        <div class="popupnav" id="popupnav_0">
+            <button class="btn btn--full" type="button" aria-controls="popupnav_0_flyout" aria-expanded="false">Featured
+            </button>
+            <div id="popupnav_0_flyout">
+                <ul>
+                    <li><a href="http://www.ebay.com">Featured</a></li>
+                    <li><a href="http://www.ebay.com">Fashion</a></li>
+                    <li><a href="http://www.ebay.com">Home &amp; Garden</a></li>
+                    <li><a href="http://www.ebay.com">Tech</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;popupnav&quot;</span> <span class="na">id=</span><span class="s">&quot;popupnav_0&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--full&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-controls=</span><span class="s">&quot;popupnav_0_flyout&quot;</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>Featured
+    <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;popupnav_0_flyout&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Home <span class="ni">&amp;amp;</span> Garden<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h5>Expanded State with selected list</h5>
+    <div class="demo">
+        <div class="popupnav" id="popupnav_1">
+            <button class="btn btn--full" type="button" aria-controls="popupnav_1_flyout" aria-expanded="true">Featured
+            </button>
+            <div id="popupnav_1_flyout">
+                <ul>
+                    <li><a class="popupnav__selected" href="http://www.ebay.com">Featured</a></li>
+                    <li><a href="http://www.ebay.com">Fashion</a></li>
+                    <li><a href="http://www.ebay.com">Home &amp; Garden</a></li>
+                    <li><a href="http://www.ebay.com">Tech</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;popupnav&quot;</span> <span class="na">id=</span><span class="s">&quot;popupnav_1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--full&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-controls=</span><span class="s">&quot;popupnav_1_flyout&quot;</span> <span class="na">aria-expanded=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Featured
+    <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;popupnav_1_flyout&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;popupnav__selected&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Home <span class="ni">&amp;amp;</span> Garden<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Tech<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+    </section>
 </section>
 
             <section id="tabs">
