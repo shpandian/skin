@@ -337,7 +337,7 @@ ul.skin-module-list li {
 }
 .content .left-nav {
   width: 20%;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 .content .left-nav.docked {
   position: fixed;
@@ -351,12 +351,12 @@ ul.skin-module-list li {
 .content .left-nav ul.modules-nav li {
   display: inline-block;
   width: 15rem;
-  margin: .3rem 0;
+  margin: .2rem 0;
   font-size: 1rem;
 }
 .content .left-nav ul.modules-nav li > a {
   display: inline-block;
-  padding: .3rem .85rem;
+  padding: .25rem .85rem;
 }
 .content .left-nav ul.modules-nav li.active > a {
   border-left: 2px solid #00489f;

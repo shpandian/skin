@@ -1,5 +1,5 @@
 /*!
-Skin v2.1.8
+Skin v2.1.10
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -811,13 +811,13 @@ a.btn--secondary:active {
   color: #555555;
 }
 
-.box {
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
+.box,
+.card {
+  padding: 16px;
+  margin-bottom: 16px;
   background: #fff;
-  border: 1px solid #eeeeee;
+  border: 1px solid #cccccc;
   border-radius: 2px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 [class*=" icon-"]:before,
@@ -1118,12 +1118,15 @@ a.btn--secondary:active {
 
 /* Fallback for Andriod Browsers */
 
-.spinner-gif .spinner {
+.spinner-gif.spinner {
   display: inline-block;
   background: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner.gif") no-repeat center center;
+  -webkit-animation: none;
+          animation: none;
 }
 
-.spinner-gif .spinner--large {
+.spinner-gif.spinner--large {
+  display: inline-block;
   background: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner@2x.gif") no-repeat center center;
 }
 
@@ -1147,7 +1150,6 @@ a.btn--secondary:active {
 }
 
 .tabs > ul > li {
-  padding: .75rem 0;
   background-color: #ffffff;
   box-sizing: border-box;
   -webkit-box-flex: 1;
@@ -1159,6 +1161,7 @@ a.btn--secondary:active {
 .tabs > ul > li > a,
 .tabs > ul > li > span {
   display: block;
+  padding: .75rem 0;
   font-size: 1rem;
   font-weight: 300;
   color: #767676;
@@ -1173,8 +1176,8 @@ a.btn--secondary:active {
 .tabs > ul > li.tabs__selected,
 .tabs > ul > li[role=tab][aria-selected=true] {
   border-bottom: 0.125rem solid #333333;
-  -webkit-transition: all ease 0.5s;
-          transition: all ease 0.5s;
+  -webkit-transition: color 0.1s ease;
+          transition: color 0.1s ease;
 }
 
 .tabs > ul > li.tabs__selected > a,
@@ -1380,40 +1383,183 @@ a.btn--secondary:active {
 .dialog[role=dialog] {
   position: fixed;
   top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  right: 0;
+  z-index: 1000;
   width: 100%;
   height: 100%;
   overflow: auto;
   background: #ffffff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dialog[role=dialog][aria-hidden="true"] {
+  opacity: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-overflow-scrolling: touch;
 }
 
 .dialog[role=dialog] > [role=document] {
   position: relative;
   width: 100%;
-  padding: 1.5rem;
+  height: 100%;
   overflow: auto;
   overflow-x: hidden;
-  background: #f4f4f4;
+  background: #f0eeec;
 }
 
-.dialog[role=dialog] .dialog__close {
-  float: right;
+.dialog[role=dialog] > [role=document] div {
+  padding: 1rem;
+}
+
+.dialog[role=dialog] header,
+.dialog[role=dialog] > [role=document] div:first-child {
   padding: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.dialog[role=dialog] header > button,
+.dialog[role=dialog] > [role=document] div:first-child > button {
+  position: relative;
+  float: right;
+  padding: .75rem;
   font-family: "vq-icon-font";
+  font-size: 1rem;
   background: none;
   border: none;
 }
 
-.dialog[role=dialog] .dialog__close:before {
+.dialog[role=dialog] header > button:after,
+.dialog[role=dialog] > [role=document] div:first-child > button:after {
   color: #676767;
   content: "\e60a";
+}
+
+.dialog[role=dialog] header > h2,
+.dialog[role=dialog] > [role=document] div:first-child > h2 {
+  padding: .75rem;
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.dialog[role=dialog].dialog--fullpage {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity 0.15s ease-out;
+          transition: opacity 0.15s ease-out;
+}
+
+.dialog[role=dialog].dialog--fullpage[aria-hidden="false"] {
+  -webkit-transition: opacity 0.15s ease-in;
+          transition: opacity 0.15s ease-in;
+}
+
+.dialog[role=dialog].dialog--subpage {
+  right: 0;
+  overflow-y: scroll;
+  opacity: 1;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.35s;
+          transition: transform 0.35s;
+}
+
+.dialog[role=dialog].dialog--subpage[aria-hidden="false"] {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.dialog[role=dialog].dialog--subpage header > button,
+.dialog[role=dialog].dialog--subpage > [role=document] div:first-child > button {
+  float: left;
+  font-size: 1.125rem;
+  color: #555555;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.dialog[role=dialog].dialog--subpage header > button:after,
+.dialog[role=dialog].dialog--subpage > [role=document] div:first-child > button:after {
+  content: "\e629";
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  background: #000000;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, width 0s 0.35s, height 0s 0.35s;
+          transition: opacity 0.35s, width 0s 0.35s, height 0s 0.35s;
+}
+
+.dialog[aria-hidden="false"] + .mask {
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  -webkit-transition: opacity 0.35s;
+          transition: opacity 0.35s;
+}
+
+.dialog[role=dialog].dialog--panel {
+  left: 0;
+  overflow-y: scroll;
+  opacity: 1;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.35s;
+          transition: transform 0.35s;
+}
+
+.dialog[role=dialog].dialog--panel[aria-hidden="false"] {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.dialog[role=dialog].dialog--panel header,
+.dialog[role=dialog].dialog--panel > [role=document] div:first-child {
+  background: #f0eeec;
+}
+
+.dialog[role=dialog].dialog--panel header > button,
+.dialog[role=dialog].dialog--panel > [role=document] div:first-child > button {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  border: 0;
+}
+
+.dialog[role=dialog].dialog--panel header > button:focus,
+.dialog[role=dialog].dialog--panel > [role=document] div:first-child > button:focus {
+  z-index: 1;
+  width: auto;
+  height: auto;
+  padding: .75rem;
+  clip: auto;
+}
+
+@media (min-width: 320px) {
+  .dialog[role=dialog].dialog--panel {
+    width: 300px;
+    -webkit-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
 }
 
 .dialog[role=dialog][aria-hidden="true"] {
@@ -1421,47 +1567,70 @@ a.btn--secondary:active {
 }
 
 .dialog[role=dialog][aria-hidden="false"] {
-  z-index: 100;
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
-@media only screen and (min-width: 768px) {
-  .dialog[role=dialog] {
-    background: rgba(0, 0, 0, 0.6);
-  }
-  .dialog[role=dialog] > [role=document] {
-    max-width: 800px;
-    margin: auto;
-  }
+.skin-large .dialog[role=dialog] {
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.dialog-slideUp,
-.dialog-slideDown {
-  -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-          transform: translateY(-100%);
-  -webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
-          transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+.skin-large .dialog[role=dialog] > [role=document] {
+  max-width: 800px;
+  margin: auto;
 }
 
-.dialog-slideUp .open,
-.dialog-slideDown .open {
+.dialog--slideup {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.35s ease-out, visibility 0s 0.35s;
+          transition: transform 0.35s ease-out, visibility 0s 0.35s;
+}
+
+.dialog--slideup[aria-hidden="false"] {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
 }
 
-.dialog-pushLeft {
+.dialog--pushleft {
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
-          transition: transform 0.5s, visibility 0s 0.5s;
+  -webkit-transition: -webkit-transform 0.35s, visibility 0s 0.35s;
+          transition: transform 0.35s, visibility 0s 0.35s;
 }
 
-.dialog-pushLeft .open {
+.dialog--pushleft[aria-hidden="false"] {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+}
+
+.dialog--slidedown {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.35s ease-out, visibility 0s 0.35s;
+          transition: transform 0.35s ease-out, visibility 0s 0.35s;
+}
+
+.dialog--slidedown[aria-hidden="false"] {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.dialog--slideleft {
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+}
+
+.dialog--slideleft[aria-hidden="false"] {
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
 }
 
 .menu > .btn {

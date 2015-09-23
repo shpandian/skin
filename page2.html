@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Skin 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- latest build -->
+    <link type="text/css" rel="stylesheet" href="skin.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
+</head>
+<body class="touch">
+
+    <div>
+        <h1>Test Page 2</h1>
+<script>
+/* globals performance */
+'use strict';
+
+window.ct1 = Date.now();
+
+window.addEventListener('load', function() {
+    console.log('performance.timing - ' + (performance.timing.responseStart - performance.timing.navigationStart));
+});
+</script>
+
+    </div>
+
+    <footer>
+   <div class="footer-content">
+       <div class="left">
+           <a href="https://github.corp.ebay.com/f2e/skin/issues">File a request</a>
+           <a href="mailto:dl-ebay-skin@ebay.com">Contact the team</a>
+       </div>
+       <div class="right">
+           <a href="https://github.corp.ebay.com/f2e/skin">View on Github</a>
+       </div>
+   </div>
+</footer>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
