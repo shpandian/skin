@@ -192,9 +192,7 @@ html > body {
   background: #fafafa;
   color: #555;
 }
-h1 {
-  margin: 0;
-}
+h1,
 h2,
 h3,
 h4 {
@@ -403,4 +401,14 @@ footer a {
 }
 footer a:visited {
   color: #777777;
+}
+[class*="icon-"]:before {
+  margin-right: .3125rem;
+}
+#focused-input {
+  outline: 0 none;
+  border-color: #0654BA;
+}
+.card {
+  margin: 20px;
 }

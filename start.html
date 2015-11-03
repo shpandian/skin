@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- latest build -->
     <link type="text/css" rel="stylesheet" href="skin.css"/>
+    <link type="text/css" rel="stylesheet" href="tab-noflex.css"/>
     <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
 </head>
-<body class="touch">
+<body>
 
     <div>
         <header>
@@ -25,55 +26,52 @@
     </nav>
 </header>
 <div role="main">
-    <h2 id="step1">Step 1</h2>
-    <hr/>
-    <p>
-        Skin is distributed as a npm module <span class="highlight">skin-ebay</span>. If skin is not already installed in your project, install it using the below command
+    <div>
+        <h2 id="step1">Step 1</h2>
+        <hr/>
+        <p>Skin is distributed as an NPM package. Install the package using the <span class="highlight">npm install</span> command.</p>
         <div class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay --save</code></pre></div>
-    </p>
-    <p>
-        Make sure your project's <span class="highlight">package.json</span> has a minimum skin-ebay dependency version of <span class="highlight"><strong>~2.1.0</strong></span> as shown below      
+
+        <p>Skin 2.0 does not follow strict semantic versioning, it has the following convention instead:</p>
+        <ul>
+            <li>PATCH version when we make backwards-compatible bug fixes AND when we add functionality in a backwards-compatible manner.
+            <li>MINOR version when we make incompatible API changes.
+            <li>MAJOR version when we make radical architectural changes (i.e this will be the next version of Skin, Skin3).
+        </ul>
+
+        <p>To avoid receiving breaking changes, please ensure that sure your <span class="highlight">package.json</span> dependency is configured to receive patch updates only.</p>
         <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;skin-ebay&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.1.0&quot;</span>
+        <span class="nt">&quot;skin-ebay&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.2.0&quot;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>                  
-    </p>
+<span class="p">}</span></code></pre></div>
+    </div>
 
-    <h2 id="step2">Step 2</h2>
-    <hr/>
-    <p>
-        Include the required skin modules in <span class="highlight">optimizer.json</span> and you are good to go
+    <div>
+        <h2 id="step2">Step 2</h2>
+        <hr/>
+        <p>Include the desired Skin modules in your <span class="highlight">browser.json</span> and you are good to go.</p>
         <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="s2">&quot;skin-ebay/core&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;skin-ebay/button&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;module.less&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;require: ./widget&quot;</span>
+        <span class="s2">&quot;skin-ebay/button&quot;</span>
     <span class="p">]</span>
-<span class="p">}</span></code></pre></div>        
-    </p>
+<span class="p">}</span></code></pre></div>
 
-    <h2 id="list">Module List</h2>
-    <hr/>
-      <p> Here are the list of modules available now </p>
-    <ul class="skin-module-list">
-        <li>skin-ebay/core</li>
-        <li>skin-ebay/button</li>
-        <li>skin-ebay/box</li>
-        <li>skin-ebay/card</li>
-        <li>skin-ebay/icon</li>
-        <li>skin-ebay/tab</li>
-        <li>skin-ebay/listnav</li>
-        <li>skin-ebay/dialog</li>
-        <li>skin-ebay/menu</li>
-        <li>skin-ebay/form</li>
-        <li>skin-ebay/status-message</li>
-        <li>skin-ebay/less</li>
-    </ul>  
-    <h2 id="cdn">Skin CDN</h2>
-    <hr/>
-    Coming soon
+        <p>Skin 2.0 includes the following modules.</p>
+        <ul class="skin-module-list">
+            <li>skin-ebay/button</li>
+            <li>skin-ebay/card</li>
+            <li>skin-ebay/combo</li>
+            <li>skin-ebay/core</li>
+            <li>skin-ebay/dialog</li>
+            <li>skin-ebay/form</li>
+            <li>skin-ebay/icon</li>
+            <li>skin-ebay/less</li>
+            <li>skin-ebay/menu</li>
+            <li>skin-ebay/tab</li>
+        </ul>
+    </div>
 </div>
 
     </div>

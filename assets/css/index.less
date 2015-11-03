@@ -16,11 +16,7 @@ html > body {
     color:#555;
 }
 
-h1 {
-    margin: 0;
-}
-
-h2, h3, h4 {
+h1, h2, h3, h4 {
     margin: 2em 0 0.5em 0;
 }
 
@@ -194,14 +190,14 @@ ul.skin-module-list {
                 margin: .2rem 0;
                 font-size: @font-size-base;
 
-                > a { 
+                > a {
                     display: inline-block;
                     padding: .25rem .85rem;
-                }  
+                }
 
                 &.active {
                     > a {
-                        border-left: 2px solid @color-cta-dark;  
+                        border-left: 2px solid @color-cta-dark;
                     }
                 }
 
@@ -250,4 +246,14 @@ footer {
         }
     }
 
+}
+[class*="icon-"]:before {
+    margin-right: .3125rem;
+}
+#focused-input {
+    outline: 0 none;
+    border-color: #0654BA;
+}
+.card {
+    margin: 20px;
 }
