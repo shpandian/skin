@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Skin 2.0</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- latest build -->
-    <link type="text/css" rel="stylesheet" href="skin.css"/>
-    <link type="text/css" rel="stylesheet" href="tab-noflex.css"/>
-    <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
-</head>
-<body>
-
-    <div>
+    <head>
+        <title>eBay skin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link type="text/css" rel="stylesheet" href="skin.css"/>
+        <link type="text/css" rel="stylesheet" href="tab-noflex.css"/>
+        <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
+    </head>
+    <body>
         <header>
+            <h1>
+                <a href="#">
+                    <span role="img" aria-label="eBay"></span>
+                    <span>Skin</span>
+                </a>
+            </h1>
+            <div class="menu menu--faux">
+                <button class="btn btn--fluid" type="button" aria-expanded="false">
+                    <h1>
+                        <span role="img" aria-label="eBay"></span>
+                        <span>Skin</span>
+                    </h1>
+                </button>
+                <ul>
+                    <li><a href="#button">Button</a></li>
+                    <li><a href="#card">Card</a></li>
+                    <li><a href="#checkbox">Checkbox</a></li>
+                    <li><a href="#core">Core</a></li>
+                    <li><a href="#dialog">Dialog</a></li>
+                    <li><a href="#icon">Icon</a></li>
+                    <li><a href="#listbox">Listbox</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#radio">Radio</a></li>
+                    <li><a href="#switch">Switch</a></li>
+                    <li><a href="#tab">Tab</a></li>
+                    <li><a href="#textbox">Textbox</a></li>
+                </ul>
+            </div>
+            <nav aria-labelledby="modules_heading" role="navigation">
+                <h2 id="modules_heading" class="clipped">Modules</h2>
+                <ul>
+                    <li><a href="#button">Button</a></li>
+                    <li><a href="#card">Card</a></li>
+                    <li><a href="#checkbox">Checkbox</a></li>
+                    <li><a href="#core">Core</a></li>
+                    <li><a href="#dialog">Dialog</a></li>
+                    <li><a href="#icon">Icon</a></li>
+                    <li><a href="#listbox">Listbox</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#radio">Radio</a></li>
+                    <li><a href="#switch">Switch</a></li>
+                    <li><a href="#tab">Tab</a></li>
+                    <li><a href="#textbox">Textbox</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <div role="main">
+                <header>
     <div class="ebay-logo"></div>
     <div class="left title">Skin 2.0</div>
     <nav role="navigation">
@@ -28,7 +74,6 @@
 <div role="main">
     <div>
         <h2 id="step1">Step 1</h2>
-        <hr/>
         <p>Skin is distributed as an NPM package. Install the package using the <span class="highlight">npm install</span> command.</p>
         <div class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay --save</code></pre></div>
 
@@ -49,7 +94,6 @@
 
     <div>
         <h2 id="step2">Step 2</h2>
-        <hr/>
         <p>Include the desired Skin modules in your <span class="highlight">browser.json</span> and you are good to go.</p>
         <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -74,21 +118,12 @@
     </div>
 </div>
 
-    </div>
+            </div>
+        </div>
+        <footer role="contentinfo">
+            <a href="https://github.corp.ebay.com/f2e/skin">View on GitHub</a>
 
-    <footer role="contentinfo">
-   <div class="footer-content">
-       <div class="left">
-           <a href="https://github.corp.ebay.com/f2e/skin/issues">File a request</a>
-           <a href="mailto:dl-ebay-skin@ebay.com">Contact the team</a>
-       </div>
-       <div class="right">
-           <a href="https://github.corp.ebay.com/f2e/skin">View on Github</a>
-       </div>
-   </div>
-</footer>
-
-
-    <script src="assets/js/main.js"></script>
-</body>
+        </footer>
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>

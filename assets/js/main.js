@@ -70,18 +70,42 @@ var dialogWidget = function() {
 };
 
 module.exports = dialogWidget;
-},{"jquery":4}],2:[function(require,module,exports){
+},{"jquery":5}],2:[function(require,module,exports){
 'use strict';
 var $ = require('jquery');
-var navigationWidget = require('./navigationWidget');
+//var navigationWidget = require('./navigationWidget');
 var dialogWidget = require('./dialogWidget');
+var menuWidget = require('./menuWidget');
 
 $(function () {
-    navigationWidget();
+    //navigationWidget();
     dialogWidget();
+    menuWidget();
 });
 
-},{"./dialogWidget":1,"./navigationWidget":3,"jquery":4}],3:[function(require,module,exports){
+},{"./dialogWidget":1,"./menuWidget":3,"jquery":5}],3:[function(require,module,exports){
+'use strict';
+var $ = require('jquery');
+
+var menuWidget = function() {
+
+    var $button =  $('header .menu button');
+    var $links = $('header .menu a');
+
+    $button.on('click', function() {
+        var isExpanded = $(this).attr('aria-expanded') === 'true';
+        $(this).attr('aria-expanded', isExpanded ? 'false' : 'true');
+    });
+
+    $links.on('click', function() {
+        $button.attr('aria-expanded', 'false');
+    });
+
+};
+
+module.exports = menuWidget;
+
+},{"jquery":5}],4:[function(require,module,exports){
 'use strict';
 var $ = require('jquery');
 
@@ -172,7 +196,7 @@ var NavigationWidget = function () {
 
 module.exports = NavigationWidget;
 
-},{"jquery":4}],4:[function(require,module,exports){
+},{"jquery":5}],5:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -9384,4 +9408,4 @@ return jQuery;
 
 }));
 
-},{}]},{},[1,2,3]);
+},{}]},{},[1,2,3,4]);

@@ -2,258 +2,185 @@
 @import "../../../../src/less/core/mixins";
 @import "pygments.less";
 
-@font-size-big: 2.25rem;
-@font-size-medium: 1.5rem;
-@font-size-nav: 1rem;
-@font-size-base: 1rem;
+@font-size-x-small: 0.444rem;
 @font-size-small: 0.667rem;
-@font-size-extra-small: 0.444rem;
-
-@font-color: #222;
+@font-size-base: 1rem;
+@font-size-large: 1.5rem;
+@font-size-x-large: 2.25rem;
 
 html > body {
     background: #fafafa;
-    color:#555;
+    color: #555;
 }
-
-h1, h2, h3, h4 {
-    margin: 2em 0 0.5em 0;
-}
-
 h1 {
-    font-size: @font-size-big;
-}
-
-h2 {
-    font-size: @font-size-big;
-    font-weight: 300;
-}
-
-h3 {
-    font-weight: 300;
-    font-size: @font-size-medium;
-}
-
-.code {
-    padding: 0.2rem 0.4rem;
+    display: inline-block;
+    line-height: normal;
     margin: 0;
-    border-radius: 3px;
 }
-
+h2 {
+    font-size: @font-size-x-large;
+    font-weight: 300;
+    margin-bottom: 1.75rem;
+    padding: 100px 0 0 0;
+}
+h3 {
+    font-size: @font-size-large;
+    font-weight: 300;
+    margin-top: 4rem;
+}
 p {
     line-height: 1.45rem;
     margin: 1.2rem 0;
-    font-weight:300;
-
+    font-weight: 300;
 }
-
-#page-notice {
-    color: #cc0000;
+header {
+    background: #fff;
+    border-bottom: 1px solid #ECECEC;
+    left: 0;
+    line-height: normal;
+    padding: 0.3rem 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
-
-.tabs {
-
-}
-
-.tabs h3[aria-hidden=true] {
+header > h1 {
     display: none;
 }
-
-[role=main] > div {
-    outline: none;
+header .menu.menu--faux button {
+    border: 0;
+}
+header .menu.menu--faux {
+    height: 100%;
+}
+header .menu.menu--faux ul {
+    border: 0;
+    column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    line-height: normal;
+    margin-top: 0.25rem;
+}
+header .menu.menu--faux ul li a {
+    padding-left: 0;
+}
+header .menu.menu--faux ul li a:hover {
+    color: black;
+}
+h1 span:first-child {
+    height: 37px;
+    width: 89px;
+    position: relative;
+    overflow: hidden;
+    background: url('http://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png?e') 0 117px;
+    background-size: 190px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+h1 span:last-child {
+    color: #333;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 2.2rem;
+}
+nav {
+    display: none;
+}
+[role="main"] {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 100px 1rem 2rem;
+}
+section:not(:last-of-type) {
+    padding-bottom: 2rem;
+}
+footer {
+    background: @color-default-text;
+    color: @smoke;
+    position: fixed;
+    bottom: 0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+}
+footer a,
+footer a:visited {
+    color: #eee;
+}
+.grid {
+    display: table;
+    border-collapse: collapse;
+}
+.grid > div {
+    display: table-row;
+}
+.grid > div > div {
+    display: table-cell;
+}
+.grid > div > div:nth-of-type(even) {
+    padding-left: 0.5em;
+}
+#intro h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+#intro h3 {
+    margin-top: 0;
+}
+.skin-module-list {
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    line-height: normal;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
+.skin-module-list li {
+    background-color: rgba(0, 0, 0, 0.06);
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+.card {
+    margin: 20px;
+}
+[class*="icon-"]:before {
+    margin-right: .5rem;
+}
+#icons {
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    font-size: @font-size-small;
+    line-height: normal;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#icons li {
+    display: inline-block;
+    padding: 0.5rem;
+    width: 100%;
+}
+#icons li span:first-child:after {
+    content: attr(class);
+}
+.demo {
+    background: #fff;
+    border: @border-grey;
+    padding: 1rem;
+}
 .highlight {
     padding: 0.2em 0.5em;
     margin-bottom: 14px;
     background-color: rgba(0, 0, 0, 0.06);
     border: @border-grey;
     border-top: 0;
-    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font: @font-size-small Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
-header {
-    padding: 0 2rem;
-    background: #fff;
-    padding: 0 2rem;
-    border-bottom: 1px solid #ECECEC;
-    .mixin-clearfix();
-
-    @ebay-sprite-url: 'http://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png?e';
-
-    .ebay-logo {
-        margin: 1.5rem 0 0;
-        width: 117px;
-        height: 39px;
-        position: relative;
-        overflow: hidden;
-        background: url(@ebay-sprite-url) 0 117px;
-        background-size: 190px;
-        float: left;
-    }
-
-    .title {
-        margin: 1.8rem 0 0;
-        font-weight: 300;
-        font-size: 1.35rem;
-    }
-
-    nav {
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            float: right;
-
-            li {
-                float: left;
-
-                a {
-                    line-height: 2rem;
-                    font-size: @font-size-base;
-                    padding: 2rem 0 1rem;
-                    margin: 0 1rem;
-                    display: inline-block;
-                    font-weight:300;
-
-                    &.active {
-                        border-bottom: 1px solid @color-cta-dark;
-                        color: @font-color;
-                        font-weight:500;
-                    }
-                }
-
-            }
-        }
-    }
-}
-
-[role="main"] {
-    margin: 0 auto;
-    max-width: 1200px;
-    .mixin-clearfix();
-
-    hr {
-        max-width: 4rem;
-        margin: 2rem 0;
-        border-style: solid;
-        border-top: 0;
-    }
-
-    .demo {
-        background: #fff;
-        border: @border-grey;
-        padding: 1rem;
-    }
-}
-
-.column {
-    float: left;
-}
-
-ul.skin-module-list {
-    padding: 0;
-    li {
-        background-color: rgba(0, 0, 0, 0.06);
-        display: inline-block;
-        margin: 0 1rem .25rem 0;
-        width: 30%;
-        padding: .5rem;
-    }
-}
-
-.content {
-    width: auto;
-    max-width: 1200px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 auto;
-
-    .left-nav {
-        width: 20%;
-        padding: 2rem 0;
-
-        &.docked {
-            position: fixed;
-            top: -30px;
-        }
-
-        ul.modules-nav {
-            @menu-item-width: 15rem;
-            margin: 1rem 0;
-            padding: 0;
-            position: relative;
-
-            li {
-                display: inline-block;
-                width: @menu-item-width;
-                margin: .2rem 0;
-                font-size: @font-size-base;
-
-                > a {
-                    display: inline-block;
-                    padding: .25rem .85rem;
-                }
-
-                &.active {
-                    > a {
-                        border-left: 2px solid @color-cta-dark;
-                    }
-                }
-
-                > .sub-menu {
-                    padding-left: 1rem;
-                    margin: 0;
-                }
-            }
-        }
-    }
-    .right {
-        width: 72%;
-        float: right;
-    }
-
-}
-
-.demo-icons > div {
-    font-size: 1rem;
-    width: 14rem;
-    display: inline-block;
-    padding: 1rem;
-}
-
-footer {
-    .mixin-clearfix();
-    background: @color-default-text;
-    color: @smoke;
-    margin-top: 3rem;
-
-    .footer-content {
-        padding: 2rem 0 3rem 0;
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    .left a {
-        margin-right: 1rem;
-    }
-    a {
-        color: @smoke;
-
-        &:visited {
-            color: @color-subheader-text;
-
-        }
-    }
-
-}
-[class*="icon-"]:before {
-    margin-right: .3125rem;
-}
-#focused-input {
-    outline: 0 none;
-    border-color: #0654BA;
-}
-.card {
-    margin: 20px;
-}
+@import "index-large.less";

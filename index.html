@@ -1,76 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Skin 2.0</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- latest build -->
-    <link type="text/css" rel="stylesheet" href="skin.css"/>
-    <link type="text/css" rel="stylesheet" href="tab-noflex.css"/>
-    <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
-</head>
-<body>
-
-    <div>
+    <head>
+        <title>eBay skin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link type="text/css" rel="stylesheet" href="skin.css"/>
+        <link type="text/css" rel="stylesheet" href="tab-noflex.css"/>
+        <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
+    </head>
+    <body>
         <header>
-    <div class="ebay-logo"></div>
-    <div class="left title">Skin 2.0</div>
-    <nav role="navigation">
-        <ul>
-            <li>
-                <a class="active" href="#">Modules</a>
-            </li>
-            <li>
-                <a href="start.html">Getting Started</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div class="content">
-    <div role="main">
-        <nav class="left-nav column" aria-labelledby="modules_heading" role="navigation">
-            <h2 class="clipped" id="modules_heading">Modules</h2>
-            <ul class="modules-nav">
-                <li><a href="#button">Button</a></li>
-                <li><a href="#card">Card</a></li>
-                <li><a href="#combo">Combo</a></li>
-                <li><a href="#core">Core</a></li>
-                <li><a href="#dialog">Dialog</a></li>
-                <li><a href="#form">Form</a>
-                    <ul class="sub-menu">
-                        <li><a href="#textbox">Textbox</a></li>
-                        <li><a href="#listbox">Listbox</a></li>
-                        <li><a href="#checkbox">Checkbox</a></li>
-                        <li><a href="#radio">Radio</a></li>
-                        <li><a href="#switch">Switch</a></li>
-                    </ul>
-               </li>
-                <li><a href="#icon">Icon</a></li>
-                <li><a href="#less">LESS</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#tab">Tab</a></li>
-            </ul>
-        </nav>
-        <div class="right column">
-
-            <div id="intro">
-                <h1>Welcome to Skin 2.0</h1>
-                <hr/>
-
-                <p>Skin 2.0 has been rebuilt from the ground up to support eBay's new mobile design system and is <strong>not backwards compatible</strong> with <a href="http://go/skin">earlier versions</a>.</p>
-                <p>Skin 2.0 is exclusively a CSS toolkit, meaning that JavaScript behaviour is <strong>not</strong> included as part of this project. Remaining decoupled from the JavaScript layer means that our HTML and CSS should not need to be reimplemented every time the JS frontend framework changes.</p>
-                <p>Skin 2.0 operates under an open source model. You can find the code in <a href="https://github.corp.ebay.com/f2e/skin">GitHub</a>. If you wish to contribute, or file a bug, feel free to <a href="https://github.corp.ebay.com/f2e/skin/issues">create an issue</a>. You can also reach the Skin team via <a href="http://ebayui.slack.com">ebayui.slack.com</a> or <a href="mailto:DL-ebay-skin@ebay.com">DL-ebay-skin@ebay.com</a>.</p>
-
-                <h3>Mobile-First</h3>
-                <p>Skin 2.0 is designed to be "Mobile-First". All screen sizes under 7" are considered to be small screens; they are our default, baseline experience. All screen sizes of 7" and over are considered to be large screens; Skin 2.0 provides support for these large screens in an adaptive manner.</p>
-
-                <h3>Accessibility</h3>
-                <p>Accessibility is at the heart of Skin 2.0. A widget must not only look like a certain type of widget, it must be described like that widget too. Skin 2.0 leverages ARIA roles, states and properties to apply our styles wherever possible, thus enforcing correct, accessible semantics.</p>
-
+            <h1>
+                <a href="#">
+                    <span role="img" aria-label="eBay"></span>
+                    <span>Skin</span>
+                </a>
+            </h1>
+            <div class="menu menu--faux">
+                <button class="btn btn--fluid" type="button" aria-expanded="false">
+                    <h1>
+                        <span role="img" aria-label="eBay"></span>
+                        <span>Skin</span>
+                    </h1>
+                </button>
+                <ul>
+                    <li><a href="#button">Button</a></li>
+                    <li><a href="#card">Card</a></li>
+                    <li><a href="#checkbox">Checkbox</a></li>
+                    <li><a href="#core">Core</a></li>
+                    <li><a href="#dialog">Dialog</a></li>
+                    <li><a href="#icon">Icon</a></li>
+                    <li><a href="#listbox">Listbox</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#radio">Radio</a></li>
+                    <li><a href="#switch">Switch</a></li>
+                    <li><a href="#tab">Tab</a></li>
+                    <li><a href="#textbox">Textbox</a></li>
+                </ul>
             </div>
+            <nav aria-labelledby="modules_heading" role="navigation">
+                <h2 id="modules_heading" class="clipped">Modules</h2>
+                <ul>
+                    <li><a href="#button">Button</a></li>
+                    <li><a href="#card">Card</a></li>
+                    <li><a href="#checkbox">Checkbox</a></li>
+                    <li><a href="#core">Core</a></li>
+                    <li><a href="#dialog">Dialog</a></li>
+                    <li><a href="#icon">Icon</a></li>
+                    <li><a href="#listbox">Listbox</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#radio">Radio</a></li>
+                    <li><a href="#switch">Switch</a></li>
+                    <li><a href="#tab">Tab</a></li>
+                    <li><a href="#textbox">Textbox</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <div role="main">
+                <section id="intro" aria-labelledby="intro_heading">
+    <h2 id="intro_heading">Intelligent Components</h2>
+    <div class="grid">
+        <div>
+            <div>
+                <h3>New Design</h3>
+                <p>Skin has been built from the ground up to support eBay's new mobile design system. Skin will evolve as the design system evolves, meaning you only need to keep your Skin package updated to ensure the latest look and feel.</p>
+            </div>
+            <div>
+                <h3>Mobile-First</h3>
+                <p>All screen sizes 7" and below are considered to be small screens; they are our default, baseline experience. All screen sizes over 7" are considered to be large screens; Skin provides support for these large screens in an adaptive manner.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3>Accessibility</h3>
+                <p>Accessibility is at the heart of Skin. A widget must not only look like a certain type of widget, it must be described like that widget too. Skin leverages ARIA roles, states and properties to apply our styles wherever possible, thus enforcing correct, accessible semantics.</p>
+            </div>
+            <div>
+                <h3>Pure CSS</h3>
+                <p>Skin is exclusively a CSS toolkit, meaning that JavaScript is <strong>not</strong> included as part of this project. Remaining decoupled from the JavaScript layer means that our HTML and CSS should not need to be reimplemented every time the JS frontend framework changes.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3>BEM</h3>
+                <p>Skin follows the BEM principles of Block, Element and Modifier to ensure our class name and class structure is human readable and understandable. The princicples of BEM also act as a front-line defense against classitis.</p>
+            </div>
+            <div>
+                <h3>Open Source</h3>
+                <p>Skin operates under an open source model. If you wish to contribute, raise an issue, or ask a question, head over to <a href="https://github.corp.ebay.com/f2e/skin">GitHub</a> for more information.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <section id="button" aria-labelledby="button_heading">
+<section id="install" aria-labelledby="install_heading">
+    <h2 id="install_heading">Install</h2>
+    <div>
+
+        <p>Skin is distributed as an NPM package. Install the package using the <span class="highlight">npm install</span> command.</p>
+        <div class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay --save</code></pre></div>
+
+        <p>Include the desired Skin modules in your <span class="highlight">browser.json</span> and you are good to go.</p>
+        <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;skin-ebay/core&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;skin-ebay/button&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+        <p>Skin includes the following modules.</p>
+        <ul class="skin-module-list">
+            <li>skin-ebay/button</li>
+            <li>skin-ebay/card</li>
+            <li>skin-ebay/combo</li>
+            <li>skin-ebay/core</li>
+            <li>skin-ebay/dialog</li>
+            <li>skin-ebay/form</li>
+            <li>skin-ebay/icon</li>
+            <li>skin-ebay/less</li>
+            <li>skin-ebay/menu</li>
+            <li>skin-ebay/tab</li>
+        </ul>
+    </div>
+</section>
+
+<section id="button" aria-labelledby="button_heading">
     <h2 id="button_heading">Button</h2>
-    <hr>
     <p>Buttons are used to trigger form actions (e.g. submit, reset) or JavaScript actions (e.g. open an overlay or menu). There are two tags for creating buttons: <span class="highlight">&lt;button&gt;</span> (supports inner HTML) and <span class="highlight">&lt;input&gt;</span> (supports inner text only). Outside of forms, the <span class="highlight">&lt;button&gt;</span> tag is always recommended. The only button that can update the full URL is a form submit button.</p>
     <p>When using the <span class="highlight">&lt;button&gt;</span> tag, remember to always specify it's type attribute (type="submit" is the default, if not specified).</p>
     <p>Links are used exclusively to navigate URLs and therefore the <span class="highlight">href</span> attribute must always contain a valid URL ('javascript' is <strong>not</strong> a valid URL so please instead use a button for javascript behaviour). Only the <span class="highlight">&lt;a&gt;</span> tag can be used to create links. Links always trigger a <span class="highlight">GET</span> request, which means that they should always be idempotent. If you wish to trigger an action that chages data on the server, then you should use a form submit to trigger a <span class="highlight">POST</span> request.</p>
@@ -231,9 +286,8 @@
 
 </section>
 
-            <section id="card" aria-labelledby="card_heading">
+<section id="card" aria-labelledby="card_heading">
     <h2 id="card_heading">Card</h2>
-    <hr />
     <p>The <span class="highlight">card</span> class creates a bordered box around the content of any module or element.</p>
     <div class="demo">
         <div class="card">
@@ -254,9 +308,8 @@
 
 </section>
 
-            <section id="combo" aria-labelledby="combo_heading">
+<section id="combo" aria-labelledby="combo_heading">
     <h2 id="combo_heading">Combo</h2>
-    <hr/>
     <p>Skin identifies the below modules as the most common modules used across key eBay experiences. They are bundled together and exposed as a combo module called <span class="highlight">skin-ebay/combo</span>. The eBay Global Header will include this combo module and hence domain teams can avoid adding the same dependency again.</p>
     <ul class="skin-module-list">
         <li>skin-ebay/core</li>
@@ -267,9 +320,8 @@
     </ul>
 </section>
 
-            <section id="core" aria-labelledby="core_heading">
+<section id="core" aria-labelledby="core_heading">
     <h2 id="core_heading">Core</h2>
-    <hr/>
     <p>Core centralizes common functionality that is re-used by other modules. It includes the following sub-modules: normalize, typography and atoms.</p>
 
     <h3>Normalize</h3>
@@ -326,7 +378,7 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-    table tr td:nth-child(2n - 1) {
+    .table tr td:nth-child(2n - 1) {
         font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
         min-width: 90px;
     }
@@ -392,9 +444,8 @@
 
 </section>
 
-            <section id="dialog" aria-labelledby="dialog_heading">
+<section id="dialog" aria-labelledby="dialog_heading">
     <h2 id="dialog_heading">Dialog</h2>
-    <hr />
     <p>A dialog is a child window that is spawned by the main web page or application.  Skin dialogs are always modal, meaning that interactions with the dialog's parent window must be prevented while the dialog is open.</p>
     <p>A dialog must always be labelled using the <span class="highlight">aria-labelledby</span> or <span class="highlight">aria-label</span> properties.</p>
 
@@ -534,17 +585,16 @@
     </div>
 </section>
 
-            <section id="form" aria-labelledby="form_heading">
+<section id="form" aria-labelledby="form_heading">
     <h2 id="form_heading">Form</h2>
-    <hr/>
     <p>A form displays a set of fields that allow users to input data. Fields include: textboxes, listboxes, radios, checkboxes and switches. Fields can have various different properties and states.</p>
     <p>Assistive technology requires accessible labels for <strong>all</strong> form controls, without exception. In some rare circumstances, labels can be visually hidden - read on to find out more.</p>
 
-        <section id="textbox" aria-labelledby="textbox_heading">
-    <h3 id="textbox_heading">Textbox</h3>
+    <section id="textbox" aria-labelledby="textbox_heading">
+    <h2 id="textbox_heading">Textbox</h2>
     <p>A textbox can be single-line or multi-line, using the <span class="highlight">input</span> or <span class="highlight">textarea</span> element, respectively. By default, textbox labels will always appear <em>above</em> the input field (i.e. the labels are set to 'block' level).</p>
 
-    <h4>Single-line Textbox</h4>
+    <h3>Default Textbox</h3>
     <div class="demo">
         <div class="textbox">
             <label for="textbox-example-1">Email Address</label>
@@ -556,7 +606,7 @@
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;textbox-example-1&quot;</span><span class="nt">&gt;</span>Email Address<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;textbox-example-1&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
-    <h4>Multi-line Textbox</h4>
+    <h3>Multi-line Textbox</h3>
     <p>A multi-line textbox allows line breaks.</p>
     <div class="demo">
         <div class="textbox">
@@ -570,8 +620,8 @@
     <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;textbox-example-2&quot;</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Textbox Inline</h4>
-    <p>A textbox with label next to it. Limit number of characters in label to 25 chars.</p>
+    <h3>Inline Textbox</h3>
+    <p>A textbox with label beside it. NOTE: Label length is restricted to 25 characters.</p>
     <div class="demo">
         <div class="textbox textbox--inline">
             <label for="phonenumber">Phone Number</label>
@@ -584,7 +634,7 @@
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">type=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Phone Number&quot;</span> <span class="na">name=</span><span class="s">&quot;phonenumber&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Textbox Placeholders</h4>
+    <h3>Textbox Placeholders</h3>
     <p>Placeholder text is intended as a short hint towards the type of value that should be entered. Both single-line and multi-line textboxes can have placeholder text. Placeholder text alone does <strong>not</strong> count as an accessible label, because this text is transient (i.e. it gets cleared on user input).</p>
 
     <div class="demo">
@@ -599,7 +649,7 @@
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;placeholder-example&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;yourname@company.com&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Hidden Textbox Label</h4>
+    <h3>Textbox Hidden Label</h3>
     <p>The <span class="highlight">aria-label</span> property can be used to provide a non-visual label that remains accessible to assistive technology. To prevent possible cognitive difficulties for our users, a hidden label is only acceptable if there is some other visual clue (e.g. an icon) as to the purpose of the field.</p>
 
     <p>Remember too that placeholders are <strong>not</strong> an accessible alternative to visual labels, the only possible exception to this rule is for very short forms (e.g. a login form, as in the example below), and even then a hidden label is still always required.</p>
@@ -620,10 +670,8 @@
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Password&quot;</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Password&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Textbox Icons</h4>
-
+    <h3>Textbox Icons</h3>
     <p>Skin provides a set of textbox icons that can be used simply by applying the relevant modifier class to the input. For example <span class="highlight">textbox--username</span> or <span class="highlight">textbox--search</span>. These icons are currently only compatible with single-line textboxes. If you do not find the textbox icon that you need, let us know and we will consider adding it to our set.</p>
-    </p>
     <div class="demo">
         <div class="textbox textbox--username">
             <input type="text" name="username" aria-label="Username" placeholder="Username" />
@@ -640,7 +688,7 @@
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Small Textbox</h4>
+    <h3>Small Textbox</h3>
     <p>For a smaller textbox (including any label and icon), apply the <span class="highlight">.textbox--small</span> modifier class.</p>
     <div class="demo">
         <div class="textbox textbox--username textbox--small">
@@ -657,7 +705,7 @@
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search&quot;</span>  <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Readonly State</h4>
+    <h3>Readonly Textbox</h3>
     <p>A readonly field is conveyed using the <span class="highlight">readonly</span> attribute. Readonly field values <strong>do</strong> get passed to the server. Note that the readonly attribute has no effect on a listbox.</p>
     <div class="demo">
         <div class="textbox">
@@ -671,54 +719,16 @@
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;readonly-example&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;yourname@company.com&quot;</span> <span class="na">name=</span><span class="s">&quot;readonly-example&quot;</span> <span class="na">readonly</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h3>Form Sizes</h3>
-
-    <p>To make all fields small (including any icons or labels), apply the <span class="highlight">.form--small</span> modifier class.</p>
-    <div class="demo">
-        <div class="form form--small">
-            <div class="textbox">
-                <label for="phone">Telephone Number</label>
-                <input id="phone" type="tel" placeholder="xxx-xxx-xxxx" name="phone" />
-            </div>
-            <div class="listbox listbox--no-label">
-                <label for="size-selection" class="clipped">Choose a size</label>
-                <select id="size-selection">
-                    <option value="0" disabled selected>Choose a size</option>
-                    <option value="1">Small</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Large</option>
-                    <option value="4">Extra Large</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form form--small&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phone&quot;</span><span class="nt">&gt;</span>Telephone Number<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phone&quot;</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;xxx-xxx-xxxx&quot;</span> <span class="na">name=</span><span class="s">&quot;phone&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox listbox--no-label&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;/select&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
 </section>
 
-        <section id="listbox" aria-labelledby="listbox_heading">
+    <a id="listbox"></a>
+<section aria-labelledby="listbox_heading">
 
-    <h3 id="listbox_heading">Listbox</h3>
+    <h2 id="listbox_heading">Listbox</h2>
     <p>Allows the user to select one item from a list of options.</p>
     <p>A listbox (also known as a 'select') is typically used to collate form data and therefore must always be used in conjunction with a form submit button. If you are not submitting form data or do not wish to reload the entire page, then a <a href="#menu">Menu</a> maybe a better choice.</p>
 
-    <h4>Listbox with Default Selection</h4>
+    <h3>Default Listbox</h3>
     <p>By default, listboxes encourage one of the options to be auto-selected using the <span class="highlight">selected</span> property. This is known as a sensible default.</p>
     <div class="demo">
         <div class="listbox">
@@ -742,7 +752,7 @@
     <span class="nt">&lt;/select&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Listbox with Forced Selection</h4>
+    <h3>Unselected Listbox</h3>
     <p>To force a user to make an actual selection themselves, the default option can be used as a prompt and must be set to <span class="highlight">disabled</span>.</p>
     <div class="demo">
         <div class="listbox">
@@ -768,7 +778,7 @@
     <span class="nt">&lt;/select&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Listbox with no Visible Label</h4>
+    <h3>Unlabelled Listbox</h3>
     <p>For listboxes without a visible label, use <span class="highlight">aria-label</span> to provide an accessible label to assistive technology. The <span class="highlight">listbox--no-label</span> modifier class must also be provided.</p>
     <div class="demo">
         <div class="listbox listbox--no-label">
@@ -793,11 +803,11 @@
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 </section>
 
-        <section id="checkbox" aria-labelledby="checkbox_heading">
-    <h3 id="checkbox_heading">Checkbox</h3>
+    <section id="checkbox" aria-labelledby="checkbox_heading">
+    <h2 id="checkbox_heading">Checkbox</h2>
     <p>Checkboxes allow the user to select zero or more options in a group. A <span class="highlight">fieldset</span> and <span class="highlight">legend</span> are <strong>required</strong>.</p>
 
-    <h4>Vertical Checkboxes</h4>
+    <h3>Vertical Checkboxes</h3>
     <p>Wrap each checkbox and label in a <span class="highlight">div</span> to stack vertically. A <span class="highlight">disabled</span> checkbox will be styled appropriately.</p>
     <div class="demo">
         <div class="checkboxes">
@@ -837,7 +847,7 @@
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Horizontal Checkboxes</h4>
+    <h3>Horizontal Checkboxes</h3>
     <p>Wrap each checkbox and label inside of a <span class="highlight">span</span> element to display horizontally.</p>
     <div class="demo">
         <div class="checkboxes">
@@ -877,7 +887,7 @@
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Standalone Checkbox</h4>
+    <h3>Solo Checkbox</h3>
     <p>Sometimes a checkbox may exist on it's own, without a fieldset or legend.</p>
 
     <div class="demo">
@@ -898,11 +908,11 @@
 
 </section>
 
-        <section id="radio" aria-labelledby="radio_heading">
-    <h3 id="radio_heading">Radio</h3>
+    <section id="radio" aria-labelledby="radio_heading">
+    <h2 id="radio_heading">Radio</h2>
     <p>Radio buttons allow the user to select only one option from a group. A <span class="highlight">fieldset</span> and <span class="highlight">legend</span> are <strong>required</strong>.</p>
 
-    <h4>Vertical Radios</h4>
+    <h3>Vertcal Radios</h3>
     <p>Wrap each radio and label in a <span class="highlight">div</span> element to stack vertically.</p>
     <div class="demo">
         <div class="radios">
@@ -942,7 +952,7 @@
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Horizontal Radios</h4>
+    <h3>Horizontal Radios</h3>
     <p>Wrap each radio and label in a span element to align horizontally.</p>
     <div class="demo">
         <div class="radios">
@@ -984,8 +994,8 @@
 
 </section>
 
-        <section id="switch" aria-labelledby="switch_heading">
-    <h3 id="switch_heading">Switch</h3>
+    <section id="switch" aria-labelledby="switch_heading">
+    <h2 id="switch_heading">Switch</h2>
     <p>A switch behaves very much like a checkbox - it can be on or off (i.e checked or unchecked) - and under the hood, that's exactly what it is. Whereas checkboxes are often used to allow multi-selection from a group of choices, switches are more often used in isolation or as a series of unrelated options.</p>
 
     <div class="demo">
@@ -1001,7 +1011,7 @@
     <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Disabled Toggle Switch</h4>
+    <h3>Disabled Switch</h3>
     <p>A toggle switch can be disabled using the <span class="highlight">disabled</span> property.</p>
     <div class="demo">
         <div class="switch">
@@ -1017,10 +1027,10 @@
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 </section>
 
-        <div>
-    <h3>States &amp; Properties</h3>
+    <div>
+    <h2>Form States &amp; Properties</h2>
 
-    <h4>Error State</h4>
+    <h3>Error State</h3>
     <p>An error is conveyed using the <span class="highlight">aria-invalid</span> state. Additional context for the error is conveyed using the <span class="highlight">aria-describedby</span> property which <strong>must</strong> point to the unique id of the error message container. This error message container can be designated as a live region if client-side input validation is implemented and enabled.</p>
 
     <div class="demo">
@@ -1041,7 +1051,7 @@
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Disabled State</h4>
+    <h3>Disabled State</h3>
     <p>A disabled field is conveyed using the <span class="highlight">disabled</span> attribute. Disabled field values are <strong>not</strong> passed to the server.</p>
     <div class="demo">
         <div class="textbox">
@@ -1075,7 +1085,7 @@
     <span class="nt">&lt;/select&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Readonly State</h4>
+    <h3>Readonly State</h3>
     <p>A readonly field is conveyed using the <span class="highlight">readonly</span> attribute. Readonly field values <strong>do</strong> get passed to the server. Note that the readonly attribute has no effect on a listbox.</p>
     <div class="demo">
         <div class="textbox">
@@ -1089,7 +1099,7 @@
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;readonly-example&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;yourname@company.com&quot;</span> <span class="na">name=</span><span class="s">&quot;readonly-example&quot;</span> <span class="na">readonly</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h4>Required Property</h4>
+    <h3>Required Property</h3>
     <p>A required field is conveyed visually using an asterisk in superscript, and for assistive technology using the <span class="highlight">aria-required</span> property.</p>
     <div class="demo">
         <div class="textbox">
@@ -1102,259 +1112,235 @@
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>Email Address <span class="nt">&lt;sup&gt;</span>*<span class="nt">&lt;/sup&gt;&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;yourname@company.com&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Smaller Form</h3>
+    <p>To make all fields small (including any icons or labels), apply the <span class="highlight">.form--small</span> modifier class.</p>
+    <div class="demo">
+        <div class="form form--small">
+            <div class="textbox">
+                <label for="phone">Telephone Number</label>
+                <input id="phone" type="tel" placeholder="xxx-xxx-xxxx" name="phone" />
+            </div>
+            <div class="listbox listbox--no-label">
+                <label for="size-selection" class="clipped">Choose a size</label>
+                <select id="size-selection">
+                    <option value="0" disabled selected>Choose a size</option>
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form form--small&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phone&quot;</span><span class="nt">&gt;</span>Telephone Number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phone&quot;</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;xxx-xxx-xxxx&quot;</span> <span class="na">name=</span><span class="s">&quot;phone&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;listbox listbox--no-label&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;size-selection&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;size-selection&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>Extra Large<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 </div>
 
 </section>
 
-            <section id="icon" aria-labelledby="icon_heading">
+<section id="icon" aria-labelledby="icon_heading">
     <h2 id="icon_heading">Icon</h2>
-
-    <hr/>
     <p>Skin 2.0 uses <strong>icon fonts</strong>. Although icon fonts are supported across all modern browsers, they sometimes experience "weird failures". Please refer to this <a href="https://github.corp.ebay.com/f2e/skin/issues/152#issuecomment-82110">GitHub issue</a>, which summarizes the failure scenarios and provides fallback options.</p>
     <p><strong>Important:</strong> The classname prefix of <span class="highlight">icon-</span> is reserved by Skin. Please do not use it <em>anywhere</em> in your application CSS class names.</p>
 
-    <div class="demo demo-icons">
-        <div>
+    <ul id="icons" class="demo">
+        <li>
             <span class="icon-arrow-down"></span>
-            <span>icon-arrow-down</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-arrow-up"></span>
-            <span>icon-arrow-up</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-chevron-up"></span>
-            <span>icon-chevron-up</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-chevron-down"></span>
-            <span>icon-chevron-down</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-chevron-left"></span>
-            <span>icon-chevron-left</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-chevron-right"></span>
-            <span>icon-chevron-right</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-chevron-up-disabled"></span>
-            <span>icon-chevron-up-disabled</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-chevron-down-disabled"></span>
-            <span>icon-chevron-down-disabled</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-chevron-left-disabled"></span>
-            <span>icon-chevron-left-disabled</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-chevron-right-disabled"></span>
-            <span>icon-chevron-right-disabled</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-header-chevron-left"></span>
-            <span>icon-header-chevron-left</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-header-chevron-right"></span>
-            <span>icon-header-chevron-right</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-checkbox-unchecked"></span>
-            <span>icon-checkbox-unchecked</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-checkbox-checked"></span>
-            <span>icon-checkbox-checked</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-radio-unchecked"></span>
-            <span>icon-radio-unchecked</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-radio-checked"></span>
-            <span>icon-radio-checked</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-check"></span>
-            <span>icon-check</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-success"></span>
-            <span>icon-success</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-success-circle"></span>
-            <span>icon-success-circle</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-info"></span>
-            <span>icon-info</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-alert"></span>
-            <span>icon-alert</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-error"></span>
-            <span>icon-error</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-error-null"></span>
-            <span>icon-error-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-feedback-negative"></span>
-            <span>icon-feedback-negative</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-feedback-neutral"></span>
-            <span>icon-feedback-neutral</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-feedback-positive"></span>
-            <span>icon-feedback-positive</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-feedback-null"></span>
-            <span>icon-feedback-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-follow"></span>
-            <span>icon-follow</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-buying-null"></span>
-            <span>icon-buying-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-cart"></span>
-            <span>icon-cart</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-cart-null"></span>
-            <span>icon-cart-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-close"></span>
-            <span>icon-close</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-for-sale-null"></span>
-            <span>icon-for-sale-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-gear"></span>
-            <span>icon-gear</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-images-null"></span>
-            <span>icon-images-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-menu"></span>
-            <span>icon-menu</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-notifications"></span>
-            <span>icon-notifications</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-notifications-null"></span>
-            <span>icon-notifications-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-profile"></span>
-            <span>icon-profile</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-search"></span>
-            <span>icon-search</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-search-null"></span>
-            <span>icon-search-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-sell"></span>
-            <span>icon-sell</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-sort"></span>
-            <span>icon-sort</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-star"></span>
-            <span>icon-star</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-view-expanded-list"></span>
-            <span>icon-view-expanded-list</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-view-gallery"></span>
-            <span>icon-view-gallery</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-view-list"></span>
-            <span>icon-view-list</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-watching-null"></span>
-            <span>icon-watching-null</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-minus"></span>
-            <span>icon-minus</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-clock"></span>
-            <span>icon-clock</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-box"></span>
-            <span>icon-box</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-camera"></span>
-            <span>icon-camera</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-tag"></span>
-            <span>icon-tag</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-fire"></span>
-            <span>icon-fire</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-autocomplete"></span>
-            <span>icon-autocomplete</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-mail"></span>
-            <span>icon-mail</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-call-me"></span>
-            <span>icon-call-me</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-comments"></span>
-            <span>icon-comments</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-help"></span>
-            <span>icon-help</span>
-        </div>
-        <div>
+        </li>
+        <li>
             <span class="icon-save"></span>
-            <span>icon-save</span>
-        </div>
-    </div>
+        </li>
+    </ul>
 
     <h3>Icons with Text</h3>
     <p>Icons with adjacent text are deemed to be non-critical if the text adequately conveys the same message as the icon. Non-critical icons should be hidden from assistive technology using the <span class="highlight">aria-hidden</span> state.</p>
@@ -1422,7 +1408,6 @@
 
     <h3>Inline SVG Icons</h3>
     <p>Inline SVG Icons are available through the <a href="https://github.corp.ebay.com/eBayUI/ebayui-image">ebayui-image project</a>. Please refer to the ebayui-image instructions when adding these icons to your project.</p>
-    <h4>ebayui-image-charity-ribbon</h4>
     <div class="demo">
         <svg style="width:0.875rem;vertical-align:middle" version="1.1" class="ebayui-image-charity-ribbon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         	 viewBox="0 0 510.8 654.6" enable-background="new 0 0 510.8 654.6" xml:space="preserve">
@@ -1459,15 +1444,12 @@
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ebayui-image-charity-ribbon&gt;&lt;/ebayui-image-charity-ribbon&gt;</span></code></pre></div>
 </section>
 
-            <section id="less" aria-labelledby="less_heading">
+<section id="less" aria-labelledby="less_heading">
     <h2 id="less_heading">LESS</h2>
-    <hr/>
-    <p>
-        Skin exposes its core LESS <a href="https://github.corp.ebay.com/f2e/skin/blob/v2/src/less/core/variables.less">variables</a> &amp; <a href="https://github.corp.ebay.com/f2e/skin/blob/v2/src/less/core/mixins.less">mixins</a> as a separate module called <span class="highlight">skin-ebay/less</span>. Including this module as a dependency, will enable developers to access Skin LESS variables &amp; mixins in their application. Please refer to the <a href="start.html">Getting Started</a> section on adding dependencies.
-    </p>
+    <p>Skin exposes its core LESS <a href="https://github.corp.ebay.com/f2e/skin/blob/v2/src/less/core/variables.less">variables</a> &amp; <a href="https://github.corp.ebay.com/f2e/skin/blob/v2/src/less/core/mixins.less">mixins</a> as a separate module called <span class="highlight">skin-ebay/less</span>. Including this module as a dependency, will enable developers to access Skin LESS variables &amp; mixins in their application. Please refer to the <a href="start.html">Getting Started</a> section on adding dependencies.</p>
 </section>
 
-            <section id="menu" aria-labelledby="menu_heading">
+<section id="menu" aria-labelledby="menu_heading">
     <h2 id="menu_heading">Menu</h2>
 
     <p>A menu follows the principal of <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">progressive disclosure</a> by keeping advanced functionality hidden from view until it's button is activated.</p>
@@ -1575,9 +1557,8 @@
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 </section>
 
-            <section id="tab" aria-labelledby="tab_heading">
+<section id="tab" aria-labelledby="tab_heading">
     <h2 id="tab_heading">Tab</h2>
-    <hr/>
     <p>A tabbed interface allows the layered stacking of content panels, with only one panel being visible at any time. A tab is contained within a tablist - each tab controlling the visibility of it's respective panel. By decluttering the user-interface in this way, we say that a tab follows the principals of <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">progressive disclosure</a>.</p>
     <p>When adding a tabbed interface to a page, you have two choices: selecting a tab can either update the panel contents dynamically, <strong>without</strong> a full page reload (these are our default tabs), <em>or</em> statically, reload the <strong>entire</strong> page (we call these our 'Faux' Tabs) - be sure to use the correct version for your needs!</p>
 
@@ -1596,9 +1577,6 @@
                 <div aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
                     <span>Tab 3</span>
                 </div>
-                <div aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4">
-                    <span>Tab 4</span>
-                </div>
             </div>
             <div>
                 <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">
@@ -1609,9 +1587,6 @@
                 </div>
                 <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">
                     <p>Panel 3 Content</p>
-                </div>
-                <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">
-                    <p>Panel 4 Content</p>
                 </div>
             </div>
         </div>
@@ -1627,9 +1602,6 @@
         <span class="nt">&lt;div</span> <span class="na">aria-controls=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;span&gt;</span>Tab 3<span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">aria-controls=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span>Tab 4<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
@@ -1641,9 +1613,6 @@
         <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
             <span class="c">&lt;!-- panel3 heading &amp; content --&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
-            <span class="c">&lt;!-- panel4 heading &amp; content --&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
@@ -1652,7 +1621,7 @@
     <p>For no-flex tabs, you must additionally specify the number of tabs using one of the following modifier class: <span class="highlight">tabs--two</span>, <span class="highlight">tabs--three</span>, <span class="highlight">tabs--four</span>.</p>
 
     <div class="demo skin-noflex">
-        <div class="tabs">
+        <div class="tabs tabs--three">
             <div role="tablist">
                 <div aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
                     <span>Tab 1</span>
@@ -1662,9 +1631,6 @@
                 </div>
                 <div aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
                     <span>Tab 3</span>
-                </div>
-                <div aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4">
-                    <span>Tab 4</span>
                 </div>
             </div>
             <div>
@@ -1677,15 +1643,12 @@
                 <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">
                     <p>Panel 3 Content</p>
                 </div>
-                <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">
-                    <p>Panel 4 Content</p>
-                </div>
             </div>
         </div>
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">&quot;skin-noflex&quot;</span><span class="nt">&gt;</span>
     ...
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabs tabs--four&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabs tabs--three&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;tablist&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">aria-controls=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;span&gt;</span>Tab 1<span class="nt">&lt;/span&gt;</span>
@@ -1695,9 +1658,6 @@
             <span class="nt">&lt;/div&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">aria-controls=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;span&gt;</span>Tab 3<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">aria-controls=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Tab 4<span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div&gt;</span>
@@ -1709,9 +1669,6 @@
             <span class="nt">&lt;/div&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
                 <span class="c">&lt;!-- panel3 heading &amp; content --&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
-                <span class="c">&lt;!-- panel4 heading &amp; content --&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
@@ -1734,9 +1691,6 @@
                 <li>
                     <a href="http://www.ebay.com">Page 3</a>
                 </li>
-                <li>
-                    <a href="http://www.ebay.com">Page 4</a>
-                </li>
             </ul>
             <div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda culpa est nisi porro quae quidem ratione repellendus, temporibus. Assumenda atque dolor dolorem eligendi eveniet ipsam modi necessitatibus quos ut?</p>
@@ -1753,9 +1707,6 @@
         <span class="nt">&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Page 3<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Page 4<span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;/ul&gt;</span>
     <span class="nt">&lt;div&gt;</span>
@@ -1779,9 +1730,6 @@
                 <li aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
                     <a role="presentation">Tab 3</a>
                 </li>
-                <li aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4">
-                    <a role="presentation">Tab 4</a>
-                </li>
             </ul>
             <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda culpa est nisi porro quae quidem ratione repellendus, temporibus. Assumenda atque dolor dolorem eligendi eveniet ipsam modi necessitatibus quos ut?</p>
@@ -1790,9 +1738,6 @@
                 <!-- panel3 heading & content -->
             </div>
             <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">
-                <!-- panel3 heading & content -->
-            </div>
-            <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">
                 <!-- panel3 heading & content -->
             </div>
         </div>
@@ -1809,9 +1754,6 @@
         <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 3<span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">aria-controls=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-selected=</span><span class="s">&quot;false&quot;</span> <span class="na">id=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Tab 4<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;/ul&gt;</span>
     <span class="nt">&lt;div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel1&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab1&quot;</span><span class="nt">&gt;</span>
@@ -1823,33 +1765,18 @@
         <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel3&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab3&quot;</span><span class="nt">&gt;</span>
             <span class="c">&lt;!-- panel3 heading &amp; content --&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panel4&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;tab4&quot;</span><span class="nt">&gt;</span>
-            <span class="c">&lt;!-- panel3 heading &amp; content --&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 </section>
 
+
+            </div>
         </div>
-    </div>
-</div>
+        <footer role="contentinfo">
+            <a href="https://github.corp.ebay.com/f2e/skin">View on GitHub</a>
 
-    </div>
-
-    <footer role="contentinfo">
-   <div class="footer-content">
-       <div class="left">
-           <a href="https://github.corp.ebay.com/f2e/skin/issues">File a request</a>
-           <a href="mailto:dl-ebay-skin@ebay.com">Contact the team</a>
-       </div>
-       <div class="right">
-           <a href="https://github.corp.ebay.com/f2e/skin">View on Github</a>
-       </div>
-   </div>
-</footer>
-
-
-    <script src="assets/js/main.js"></script>
-</body>
+        </footer>
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
