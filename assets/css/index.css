@@ -192,7 +192,7 @@ html > body {
   background: #fafafa;
   color: #555;
 }
-h1 {
+body > header h1 {
   display: inline-block;
   line-height: normal;
   margin: 0;
@@ -213,7 +213,7 @@ p {
   margin: 1.2rem 0;
   font-weight: 300;
 }
-header {
+body > header {
   background: #fff;
   border-bottom: 1px solid #ECECEC;
   left: 0;
@@ -224,16 +224,16 @@ header {
   width: 100%;
   z-index: 1;
 }
-header > h1 {
+body > header > h1 {
   display: none;
 }
-header .menu.menu--faux button {
+body > header .menu.menu--faux button {
   border: 0;
 }
-header .menu.menu--faux {
+body > header .menu.menu--faux {
   height: 100%;
 }
-header .menu.menu--faux ul {
+body > header .menu.menu--faux ul {
   border: 0;
   column-count: 3;
   -webkit-column-count: 3;
@@ -241,13 +241,13 @@ header .menu.menu--faux ul {
   line-height: normal;
   margin-top: 0.25rem;
 }
-header .menu.menu--faux ul li a {
+body > header .menu.menu--faux ul li a {
   padding-left: 0;
 }
-header .menu.menu--faux ul li a:hover {
+body > header .menu.menu--faux ul li a:hover {
   color: black;
 }
-h1 span:first-child {
+body > header h1 span:first-child {
   height: 37px;
   width: 89px;
   position: relative;
@@ -257,13 +257,13 @@ h1 span:first-child {
   display: inline-block;
   vertical-align: bottom;
 }
-h1 span:last-child {
+body > header h1 span:last-child {
   color: #333;
   display: inline-block;
   font-weight: 100;
   font-size: 2.2rem;
 }
-nav {
+body > header > nav {
   display: none;
 }
 [role="main"] {
@@ -274,7 +274,7 @@ nav {
 section:not(:last-of-type) {
   padding-bottom: 2rem;
 }
-footer {
+body > footer {
   background: #333333;
   color: #eeeeee;
   position: fixed;
@@ -284,8 +284,8 @@ footer {
   z-index: 2;
   width: 100%;
 }
-footer a,
-footer a:visited {
+body > footer a,
+body > footer a:visited {
   color: #eee;
 }
 .grid {
@@ -362,7 +362,7 @@ footer a:visited {
   font: 0.667rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 @media (min-width: 750px) {
-  header {
+  body > header {
     border-right: 1px solid #ECECEC;
     border-bottom: 0;
     height: 100%;
@@ -370,19 +370,19 @@ footer a:visited {
     padding: 1rem;
     width: 200px;
   }
-  header > h1 {
+  body > header h1 {
     display: inline-block;
   }
-  header > h1 a {
+  body > header h1 a {
     display: inline-block;
   }
-  header button[type].btn {
+  body > header button[type].btn {
     display: none;
   }
-  header .menu.menu--faux {
+  body > header .menu.menu--faux {
     display: none;
   }
-  nav {
+  body > header > nav {
     column-count: 2;
     -webkit-column-count: 2;
     -moz-column-count: 2;
@@ -392,25 +392,25 @@ footer a:visited {
     margin: 1rem 0;
     width: 100%;
   }
-  nav ul {
+  body > header > nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 100%;
   }
-  nav li {
+  body > header > nav li {
     width: 100%;
   }
-  nav a {
+  body > header > nav a {
     color: #333;
     display: block;
     white-space: nowrap;
     width: 100%;
   }
-  nav a:hover {
+  body > header > nav a:hover {
     color: black;
   }
-  nav a:visited {
+  body > header > nav a:visited {
     color: #333;
   }
   [role=main] {
@@ -425,7 +425,7 @@ footer a:visited {
     margin-top: 0;
     padding-top: 1.05rem;
   }
-  footer {
+  body > footer {
     text-align: left;
     width: 200px;
   }
