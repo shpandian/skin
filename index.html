@@ -95,33 +95,32 @@
 
 <section id="install" aria-labelledby="install_heading">
     <h2 id="install_heading">Install</h2>
-    <div>
+    <p>Skin is distributed as an NPM package. Install the package using the <span class="highlight">npm install</span> command.</p>
+    <div class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay --save</code></pre></div>
 
-        <p>Skin is distributed as an NPM package. Install the package using the <span class="highlight">npm install</span> command.</p>
-        <div class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay --save</code></pre></div>
-
-        <p>Include the desired Skin modules in your <span class="highlight">browser.json</span> and you are good to go.</p>
-        <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <p>Include the desired Skin modules in your <span class="highlight">browser.json</span> and you are good to go.</p>
+    <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="s2">&quot;skin-ebay/core&quot;</span><span class="p">,</span>
         <span class="s2">&quot;skin-ebay/button&quot;</span>
     <span class="p">]</span>
 <span class="p">}</span></code></pre></div>
 
-        <p>Skin includes the following modules.</p>
-        <ul class="skin-module-list">
-            <li>skin-ebay/button</li>
-            <li>skin-ebay/card</li>
-            <li>skin-ebay/combo</li>
-            <li>skin-ebay/core</li>
-            <li>skin-ebay/dialog</li>
-            <li>skin-ebay/form</li>
-            <li>skin-ebay/icon</li>
-            <li>skin-ebay/less</li>
-            <li>skin-ebay/menu</li>
-            <li>skin-ebay/tab</li>
-        </ul>
-    </div>
+    <p>Skin includes the following modules.</p>
+    <ul class="skin-module-list">
+        <li>skin-ebay/button</li>
+        <li>skin-ebay/card</li>
+        <li>skin-ebay/combo</li>
+        <li>skin-ebay/core</li>
+        <li>skin-ebay/dialog</li>
+        <li>skin-ebay/form</li>
+        <li>skin-ebay/icon</li>
+        <li>skin-ebay/less</li>
+        <li>skin-ebay/menu</li>
+        <li>skin-ebay/tab</li>
+    </ul>
+    <h3>Legacy Browsers</h3>
+    <p>Skin takes advantage of Lasso's <a href="https://github.com/lasso-js/lasso#conditional-dependencies">conditional dependencies</a> to provide cross-browser support for legacy browsers (e.g. browsers that do not support Flexbox or SVG). To plugin this conditional dependency, simply pass the flag <span class="highlight">skin-legacy</span> to Lasso and apply the <span class="highlight">skin-legacy</span> class to the body of your page. Skin itself <strong>does not</strong> do any detection of browser or browser capabilities, therefore it is the responsibility of the application logic to detect whether the legacy styles are needed.</p>
 </section>
 
 <section id="button" aria-labelledby="button_heading">
@@ -1393,13 +1392,13 @@
     </div>
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner spinner--large&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Busy animation&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
 
-    <h3>No-SVG Spinner</h3>
-    <p>For browsers that do not support SVG, Skin will fallback to a GIF animation when applying the <span class="highlight">skin-nosvg</span> body class.</p>
+    <h3>Legacy Spinner</h3>
+    <p>For browsers that do not support SVG, Skin will fallback to a GIF animation when applying the <span class="highlight">skin-legacy</span> body class.</p>
     <div class="skin-nosvg demo">
         <span class="spinner" aria-label="Busy animation" role="img"></span>
         <span class="spinner spinner--large" aria-label="Busy animation" role="img"></span>
     </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">&quot;skin-nosvg&quot;</span><span class="nt">&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">&quot;skin-legacy&quot;</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Busy animation&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;spinner spinner--large&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Busy animation&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
@@ -1616,11 +1615,11 @@
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h3>No-Flex Tabs</h3>
-    <p>For browsers that don't support CSS Flexbox, please apply the class <span class="highlight">skin-noflex</span> to the body tag of your page. Tabs, and other Skin modules, make use of this body class to provide fallback support for legacy browsers.</p>
-    <p>For no-flex tabs, you must additionally specify the number of tabs using one of the following modifier class: <span class="highlight">tabs--two</span>, <span class="highlight">tabs--three</span>, <span class="highlight">tabs--four</span>.</p>
+    <h3>Legacy Tabs</h3>
+    <p>For browsers that don't support flexbox, please apply the class <span class="highlight">skin-legacy</span> to the body tag of your page. Tabs, and other Skin modules, make use of this body class to provide fallback support for legacy browsers.</p>
+    <p>For legacy tabs, you must additionally specify the number of tabs using one of the following modifier class: <span class="highlight">tabs--two</span>, <span class="highlight">tabs--three</span>, <span class="highlight">tabs--four</span>.</p>
 
-    <div class="demo skin-noflex">
+    <div class="demo skin-legacy">
         <div class="tabs tabs--three">
             <div role="tablist">
                 <div aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
@@ -1646,7 +1645,7 @@
             </div>
         </div>
     </div>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">&quot;skin-noflex&quot;</span><span class="nt">&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">&quot;skin-legacy&quot;</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabs tabs--three&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;tablist&quot;</span><span class="nt">&gt;</span>
