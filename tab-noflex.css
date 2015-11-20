@@ -1,5 +1,5 @@
 /*!
-Skin v2.2.4
+Skin v2.2.5
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -18,15 +18,15 @@ https://github.com/eBay/skin/blob/master/LICENSE.txt"
   border-bottom-color: #333333;
 }
 
-.skin-noflex .tabstabs--two span[role=tab] {
+.skin-noflex .tabs.tabs--two div[role=tab] {
   width: 50%;
 }
 
-.skin-noflex .tabstabs--three span[role=tab] {
+.skin-noflex .tabs.tabs--three div[role=tab] {
   width: 33.333333333333336%;
 }
 
-.skin-noflex .tabstabs--four span[role=tab] {
+.skin-noflex .tabs.tabs--four div[role=tab] {
   width: 25%;
 }
 
