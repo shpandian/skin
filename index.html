@@ -479,8 +479,8 @@
         <p>Transition duration: 150ms.</p>
 
         <div class="demo">
-            <button id="dialog-open" class="btn btn--primary btn--small" type="button">Dialog</button>
-            <div role="dialog" class="dialog" id="dialog_window" aria-labelledby="dialog-title-0" aria-hidden="true">
+            <button class="btn btn--primary btn--small dialog-open" type="button" data-dialog="dialog-0">Dialog</button>
+            <div role="dialog" class="dialog" id="dialog-0" aria-labelledby="dialog-title-0" aria-hidden="true">
                 <div role="document">
                      <header>
                         <button id="dialog-close" aria-label="Close Dialog" type="button"></button>
@@ -494,11 +494,11 @@
             </div>
         </div>
 
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;dialog-title-0&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;dialog-0-title&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;document&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;header&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Close Dialog&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-title-0&quot;</span><span class="nt">&gt;</span>Notifications<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-0-title&quot;</span><span class="nt">&gt;</span>Notifications<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
         <span class="nt">&lt;div&gt;</span>
             <span class="c">&lt;!-- dialog content goes here --&gt;</span>
@@ -516,12 +516,12 @@
         <p>Transition duration: 350ms.</p>
 
         <div class="demo">
-            <button id="subpage-dialog" class="btn btn--primary btn--small" type="button">SubPage</button>
-            <div role="dialog" class="dialog dialog--subpage" id="dialog_window2" aria-labelledby="dialog-title-1" aria-hidden="true">
+            <button class="btn btn--primary btn--small dialog-open" type="button" data-dialog="dialog-1">SubPage</button>
+            <div role="dialog" class="dialog dialog--subpage" id="dialog-1" aria-labelledby="dialog-1-title" aria-hidden="true">
                 <div role="document">
                     <header>
                         <button id="dialog-backarrow" aria-label="back" type="button"></button>
-                        <h2 id="dialog-title-1">Product Details</h2>
+                        <h2 id="dialog-1-title">Product Details</h2>
                     </header>
                     <div>
                         <!-- dialog content goes here -->
@@ -532,11 +532,11 @@
             <div id="dialog__mask1" class="mask"></div><!-- /mask -->
         </div>
 
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog dialog--subpage&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;dialog-title-1&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog dialog--subpage&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;dialog-1-title&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;document&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;header&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;back&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-title-1&quot;</span><span class="nt">&gt;</span>Product Details<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-1-title&quot;</span><span class="nt">&gt;</span>Product Details<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
         <span class="nt">&lt;div&gt;</span>
             <span class="c">&lt;!-- dialog content goes here --&gt;</span>
@@ -553,8 +553,8 @@
         <p>Panel Dialog slides in from the left of the screen to fill 80% of the available space, and is intended for small screens only.</p>
         <p>Transition duration: 350ms.</p>
         <div class="demo">
-            <button id="panel" class="btn btn--primary btn--small" type="button">Panel</button>
-            <div role="dialog" class="dialog dialog--panel" id="dialog_panel" aria-label="panel" aria-hidden="true">
+            <button class="btn btn--primary btn--small dialog-open" type="button" data-dialog="dialog-2">Panel</button>
+            <div role="dialog" class="dialog dialog--panel" id="dialog-2" aria-label="panel" aria-hidden="true">
                 <div role="document">
                     <header>
                         <button aria-label="Close Dialog"></button>
