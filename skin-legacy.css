@@ -1,0 +1,93 @@
+/*!
+Skin v2.2.5
+Copyright 2015 eBay! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/eBay/skin/blob/master/LICENSE.txt"
+*/
+.skin-legacy .spinner[role=img][aria-label] {
+  display: inline-block;
+  background-image: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner.gif");
+  -webkit-animation: none;
+          animation: none;
+}
+
+.skin-legacy .spinner--large[role=img][aria-label] {
+  background-image: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner@2x.gif");
+}
+
+.skin-legacy .tabs div[role=tablist] {
+  display: table;
+  width: 100%;
+}
+
+.skin-legacy .tabs div[role=tab] {
+  display: table-cell;
+  border-bottom: .125rem solid #fff;
+}
+
+.skin-legacy .tabs div[role=tab][aria-selected=true] {
+  border-bottom-color: #333333;
+}
+
+.skin-legacy .tabs.tabs--two div[role=tab] {
+  width: 50%;
+}
+
+.skin-legacy .tabs.tabs--three div[role=tab] {
+  width: 33.333333333333336%;
+}
+
+.skin-legacy .tabs.tabs--four div[role=tab] {
+  width: 25%;
+}
+
+.skin-legacy .tabs > div:last-child {
+  width: 100%;
+}
+
+.skin-legacy .tabs--faux > ul {
+  display: table;
+  width: 100%;
+}
+
+.skin-legacy .tabs--faux > ul > li {
+  display: table-cell;
+  border-bottom: .125rem solid #fff;
+}
+
+.skin-legacy .tabs--faux > ul > li.tabs__selected {
+  border-bottom-color: #333333;
+}
+
+.skin-legacy .tabs--faux.tabs--two > ul > li {
+  width: 50%;
+}
+
+.skin-legacy .tabs--faux.tabs--three > ul > li {
+  width: 33.333333333333336%;
+}
+
+.skin-legacy .tabs--faux.tabs--four > ul > li {
+  width: 25%;
+}
+
+.skin-legacy .tabs--hijax ul[role=tablist] {
+  display: table;
+  width: 100%;
+}
+
+.skin-legacy .tabs--hijax li[role=tab] {
+  display: table-cell;
+  border-bottom: .125rem solid #fff;
+}
+
+.skin-legacy .tabs--hijax li[role=tab][aria-selected=true] {
+  border-bottom: 0.125rem solid #333333;
+  -webkit-transition: color 0.1s ease;
+          transition: color 0.1s ease;
+}
+
+.skin-legacy .tabs--hijax li[role=tab][aria-selected=true] > a[role=presentation] {
+  font-weight: 400;
+  color: #333333;
+}
