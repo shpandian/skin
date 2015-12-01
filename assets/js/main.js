@@ -133,18 +133,18 @@ window.$ = $;
 window.jQuery = $;
 
 $(function () {
-    require('../../node_modules/jquery-next-id/jquery.nextid.min.js');
-    require('../../node_modules/jquery-common-keys/jquery.commonkeys.min.js');
-    require('../../node_modules/jquery-focusable/jquery.focusable.min.js');
-    require('../../node_modules/jquery-focus-exit/jquery.focusexit.min.js');
-    require('../../node_modules/jquery-keyboard-trap/jquery.keyboardtrap.min.js');
-    require('../../node_modules/jquery-screenreader-trap/jquery.screenreadertrap.min.js');
+    require('jquery-next-id/jquery.nextid.min.js');
+    require('jquery-common-keys/jquery.commonkeys.min.js');
+    require('jquery-focusable/jquery.focusable.min.js');
+    require('jquery-focus-exit/jquery.focusexit.min.js');
+    require('jquery-keyboard-trap/jquery.keyboardtrap.min.js');
+    require('jquery-screenreader-trap/jquery.screenreadertrap.min.js');
     require('./jquery.dialog.js');
     require('./dialogWidget')();
     require('./menuWidget')();
 });
 
-},{"../../node_modules/jquery-common-keys/jquery.commonkeys.min.js":5,"../../node_modules/jquery-focus-exit/jquery.focusexit.min.js":6,"../../node_modules/jquery-focusable/jquery.focusable.min.js":7,"../../node_modules/jquery-keyboard-trap/jquery.keyboardtrap.min.js":8,"../../node_modules/jquery-next-id/jquery.nextid.min.js":9,"../../node_modules/jquery-screenreader-trap/jquery.screenreadertrap.min.js":10,"./dialogWidget":1,"./jquery.dialog.js":2,"./menuWidget":4,"jquery":11}],4:[function(require,module,exports){
+},{"./dialogWidget":1,"./jquery.dialog.js":2,"./menuWidget":4,"jquery":11,"jquery-common-keys/jquery.commonkeys.min.js":5,"jquery-focus-exit/jquery.focusexit.min.js":6,"jquery-focusable/jquery.focusable.min.js":7,"jquery-keyboard-trap/jquery.keyboardtrap.min.js":8,"jquery-next-id/jquery.nextid.min.js":9,"jquery-screenreader-trap/jquery.screenreadertrap.min.js":10}],4:[function(require,module,exports){
 'use strict';
 var $ = require('jquery');
 
