@@ -449,26 +449,30 @@
     <p>A dialog must always be labelled using the <span class="highlight">aria-labelledby</span> or <span class="highlight">aria-label</span> properties.</p>
 
     <h3>Dialog Transitions</h3>
-    <p>Dialog hide/show transitions are triggered when <span class="highlight">aria-hidden</span> state is toggled. A JavaScript timeout function is required to correctly trigger CSS transitions, see commented example code below for further details.</p>
+    <p>Dialog hide/show transitions require JavaScript. See commented example code below for further details:</p>
 
     <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#dialog-open&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// immediately set display to block to enable CSS transitions</span>
+    <span class="c1">// set dialog display to block to enable CSS transitions on opacity property</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.dialog&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">);</span>
 
-    <span class="c1">// set aria-hidden state to trigger opening transition</span>
+    <span class="c1">// dialog will remain visually hidden at this point, because opacity is still 0</span>
+
+    <span class="c1">// after short delay, set aria-hidden state to trigger CSS opacity transition from 0 to 1</span>
     <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.dialog&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;aria-hidden&#39;</span><span class="p">,</span> <span class="s1">&#39;false&#39;</span><span class="p">);</span>
     <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#dialog-close&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// immediately set aria-hidden state to trigger closing transition</span>
+    <span class="c1">// set aria-hidden state to trigger CSS opacity transition from 1 to 0</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.dialog&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;aria-hidden&#39;</span><span class="p">,</span> <span class="s1">&#39;true&#39;</span><span class="p">);</span>
 
-    <span class="c1">// after close transition has finished, it is safe to set display to none</span>
+    <span class="c1">// after CSS transition has finished, dialog is visually hidden but still masks page</span>
+
+    <span class="c1">// set dialog display to none after CSS transition duration</span>
     <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.dialog&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">);</span>
-    <span class="p">},</span> <span class="mi">375</span><span class="p">);</span>
+    <span class="p">},</span> <span class="nx">transitionDuration</span><span class="p">);</span>
 <span class="p">});</span></code></pre></div>
 
     <p><strong>Note:</strong> The transition duration varies for each type of dialog.</p>
@@ -479,7 +483,7 @@
         <p>Transition duration: 150ms.</p>
 
         <div class="demo">
-            <button class="btn btn--primary btn--small dialog-open" type="button" data-dialog="dialog-0">Dialog</button>
+            <button class="btn btn--primary btn--small dialog-button" type="button" aria-controls="dialog-0" data-dialog={"transitionDurationMs":"175"}>Dialog</button>
             <div role="dialog" class="dialog" id="dialog-0" aria-labelledby="dialog-title-0" aria-hidden="true">
                 <div role="document">
                      <header>
@@ -516,7 +520,7 @@
         <p>Transition duration: 350ms.</p>
 
         <div class="demo">
-            <button class="btn btn--primary btn--small dialog-open" type="button" data-dialog="dialog-1">SubPage</button>
+            <button class="btn btn--primary btn--small dialog-button" type="button" aria-controls="dialog-1" data-dialog={"transitionDurationMs":"375"}>SubPage</button>
             <div role="dialog" class="dialog dialog--subpage" id="dialog-1" aria-labelledby="dialog-1-title" aria-hidden="true">
                 <div role="document">
                     <header>
@@ -553,7 +557,7 @@
         <p>Panel Dialog slides in from the left of the screen to fill 80% of the available space, and is intended for small screens only.</p>
         <p>Transition duration: 350ms.</p>
         <div class="demo">
-            <button class="btn btn--primary btn--small dialog-open" type="button" data-dialog="dialog-2">Panel</button>
+            <button class="btn btn--primary btn--small dialog-button" type="button" aria-controls="dialog-2" data-dialog={"transitionDurationMs":"375"}>Panel</button>
             <div role="dialog" class="dialog dialog--panel" id="dialog-2" aria-label="panel" aria-hidden="true">
                 <div role="document">
                     <header>

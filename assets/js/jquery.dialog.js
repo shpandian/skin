@@ -20,7 +20,17 @@
                 $heading = $header.find('> h2'),
                 $doc = $dialog.find('> [role=document]'), // role=document is for older NVDA
                 $closeButton = $header.find('> button'),
-                $focusable;
+                $focusable,
+                openTimeout,
+                closeTimeout;
+
+            function onDocumentEscKey() {
+                $dialog.trigger('close.dialog');
+            }
+
+            function onCloseButtonClick() {
+                $dialog.trigger('close.dialog');
+            }
 
             // assign a unique id to the dialog widget
             $dialog.nextId('dialog');
@@ -37,54 +47,55 @@
             // ensure header has role banner
             $header.attr('role', 'banner');
 
-            // add hook to body for CSS
-            $body.addClass('has-dialog');
+            $dialog.on('open.dialog', function onDialogClose() {
+                // clean up any untriggered closeTimeout
+                window.clearTimeout(closeTimeout);
 
-            // unhide the dialog
+                // set display block so that CSS transitions will work
+                $dialog.css('display', 'block');
 
-            $dialog.css('display', 'block');
-            setTimeout(function() {
-                $dialog.attr('aria-hidden', 'false');
-            }, 10);
+                // wait a little time before triggering CSS transition
+                openTimeout = setTimeout(function() {
+                    $dialog.attr('aria-hidden', 'false');
+                }, 10);
 
-            // find all focusable elements inside dialog
-            $focusable = $dialog.focusable();
+                // find all focusable elements inside dialog
+                $focusable = $dialog.focusable();
 
-            // dialog must always focus on an interactive element
-            // if none found, set focus to doc
-            // todo: hide focus indicator if keyboard was not used
-            if ($focusable.size() === 0) {
-                $doc.attr('tabindex', '-1').focus();
-            }
-            else {
-                $focusable.first().focus();
-            }
+                // dialog must always focus on an interactive element
+                // if none found, set focus to doc
+                if ($focusable.size() === 0) {
+                    $doc.attr('tabindex', '-1').focus();
+                }
+                else {
+                    $focusable.first().focus();
+                }
 
-            // prevent screen reader virtual cursor from leaving the dialog
-            $.trapScreenreader($dialog);
+                // prevent screen reader virtual cursor from leaving the dialog
+                $.trapScreenreader($dialog);
 
-            // prevent keyboard user from leaving the dialog
-            $.trapKeyboard($dialog, {deactivateOnFocusExit:false});
+                // prevent keyboard user from leaving the dialog
+                $.trapKeyboard($dialog, {deactivateOnFocusExit:false});
 
-            function onDocumentEscKey() {
-                $dialog.trigger('close.dialog');
-            }
+                // add hook to body for CSS
+                $body.addClass('has-dialog');
 
-            // dialog must be closed on esc key
-            $(document).commonKeys().on('escape.commonKeyDown', onDocumentEscKey);
+                // dialog must be closed on esc key
+                $(document).commonKeys().on('escape.commonKeyDown', onDocumentEscKey);
 
-            $closeButton.on('click', function onCloseButtonClick() {
-                $dialog.trigger('close.dialog');
+                $closeButton.on('click', onCloseButtonClick);
             });
 
             // when the dialog is closed, we must undo everything we did on open
             $dialog.on('close.dialog', function onDialogClose() {
+                window.clearTimeout(openTimeout);
+                $closeButton.off('click', onCloseButtonClick);
                 $(document).off('escape.commonKeyDown', onDocumentEscKey);
                 $.untrapKeyboard();
                 $.untrapScreenreader();
                 $body.removeClass('has-dialog');
                 $dialog.attr('aria-hidden', 'true');
-                setTimeout(function() {
+                closeTimeout = setTimeout(function() {
                     $dialog.css('display', 'none');
                 }, opts.transitionDurationMs);
             });
@@ -93,5 +104,5 @@
 }( jQuery ));
 
 $.fn.dialog.defaults = {
-    transitionDurationMs : 300
+    transitionDurationMs : 175
 };

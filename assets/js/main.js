@@ -1,33 +1,10 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
-
 var $ = require('jquery');
 
 window.$ = $;
 window.jQuery = $;
 
-var dialogWidget = function() {
-
-    function getTransitionTime(el) {
-        return ($(el).hasClass('dialog--subpage') || $(el).hasClass('dialog--panel')) ? 375 : 175;
-    }
-
-    $('.dialog-open').on('click', function() {
-        var $this = $(this),
-            dialogId = $this.data('dialog'),
-            $dialog = $('#'+dialogId);
-
-        $dialog.dialog({transitionDurationMs:getTransitionTime($dialog)});
-
-        $dialog.on('close.dialog', function() {
-            $this.focus();
-        });
-    });
-};
-
-module.exports = dialogWidget;
-
-},{"jquery":14}],2:[function(require,module,exports){
+},{"jquery":16}],2:[function(require,module,exports){
 /**
 * @function jquery.dialog.js
 * @version 0.0.1
@@ -50,7 +27,17 @@ module.exports = dialogWidget;
                 $heading = $header.find('> h2'),
                 $doc = $dialog.find('> [role=document]'), // role=document is for older NVDA
                 $closeButton = $header.find('> button'),
-                $focusable;
+                $focusable,
+                openTimeout,
+                closeTimeout;
+
+            function onDocumentEscKey() {
+                $dialog.trigger('close.dialog');
+            }
+
+            function onCloseButtonClick() {
+                $dialog.trigger('close.dialog');
+            }
 
             // assign a unique id to the dialog widget
             $dialog.nextId('dialog');
@@ -67,54 +54,55 @@ module.exports = dialogWidget;
             // ensure header has role banner
             $header.attr('role', 'banner');
 
-            // add hook to body for CSS
-            $body.addClass('has-dialog');
+            $dialog.on('open.dialog', function onDialogClose() {
+                // clean up any untriggered closeTimeout
+                window.clearTimeout(closeTimeout);
 
-            // unhide the dialog
+                // set display block so that CSS transitions will work
+                $dialog.css('display', 'block');
 
-            $dialog.css('display', 'block');
-            setTimeout(function() {
-                $dialog.attr('aria-hidden', 'false');
-            }, 10);
+                // wait a little time before triggering CSS transition
+                openTimeout = setTimeout(function() {
+                    $dialog.attr('aria-hidden', 'false');
+                }, 10);
 
-            // find all focusable elements inside dialog
-            $focusable = $dialog.focusable();
+                // find all focusable elements inside dialog
+                $focusable = $dialog.focusable();
 
-            // dialog must always focus on an interactive element
-            // if none found, set focus to doc
-            // todo: hide focus indicator if keyboard was not used
-            if ($focusable.size() === 0) {
-                $doc.attr('tabindex', '-1').focus();
-            }
-            else {
-                $focusable.first().focus();
-            }
+                // dialog must always focus on an interactive element
+                // if none found, set focus to doc
+                if ($focusable.size() === 0) {
+                    $doc.attr('tabindex', '-1').focus();
+                }
+                else {
+                    $focusable.first().focus();
+                }
 
-            // prevent screen reader virtual cursor from leaving the dialog
-            $.trapScreenreader($dialog);
+                // prevent screen reader virtual cursor from leaving the dialog
+                $.trapScreenreader($dialog);
 
-            // prevent keyboard user from leaving the dialog
-            $.trapKeyboard($dialog, {deactivateOnFocusExit:false});
+                // prevent keyboard user from leaving the dialog
+                $.trapKeyboard($dialog, {deactivateOnFocusExit:false});
 
-            function onDocumentEscKey() {
-                $dialog.trigger('close.dialog');
-            }
+                // add hook to body for CSS
+                $body.addClass('has-dialog');
 
-            // dialog must be closed on esc key
-            $(document).commonKeys().on('escape.commonKeyDown', onDocumentEscKey);
+                // dialog must be closed on esc key
+                $(document).commonKeys().on('escape.commonKeyDown', onDocumentEscKey);
 
-            $closeButton.on('click', function onCloseButtonClick() {
-                $dialog.trigger('close.dialog');
+                $closeButton.on('click', onCloseButtonClick);
             });
 
             // when the dialog is closed, we must undo everything we did on open
             $dialog.on('close.dialog', function onDialogClose() {
+                window.clearTimeout(openTimeout);
+                $closeButton.off('click', onCloseButtonClick);
                 $(document).off('escape.commonKeyDown', onDocumentEscKey);
                 $.untrapKeyboard();
                 $.untrapScreenreader();
                 $body.removeClass('has-dialog');
                 $dialog.attr('aria-hidden', 'true');
-                setTimeout(function() {
+                closeTimeout = setTimeout(function() {
                     $dialog.css('display', 'none');
                 }, opts.transitionDurationMs);
             });
@@ -123,10 +111,42 @@ module.exports = dialogWidget;
 }( jQuery ));
 
 $.fn.dialog.defaults = {
-    transitionDurationMs : 300
+    transitionDurationMs : 175
 };
 
 },{}],3:[function(require,module,exports){
+/**
+* @function jquery.dialogbutton.js
+* @version 0.0.1
+* @author Ian McBurnie <imcburnie@ebay.com>
+* @requires jquery.dialog.js
+*/
+(function ( $ ) {
+
+    $.fn.dialogButton = function dialogButton(options) {
+
+        return this.each(function onEach() {
+
+            var $dialogButton = $(this),
+                dialogId = $dialogButton.attr('aria-controls'),
+                dialogOptions = options || $dialogButton.data('dialog'),
+                $dialog = $('#'+dialogId);
+
+            $dialog.dialog(dialogOptions);
+
+            $dialog.on('close.dialog', function(e) {
+                $dialogButton.focus();
+            });
+
+            $dialogButton.on('click', function(e) {
+                $dialog.trigger('open.dialog');
+            })
+
+        });
+    };
+}( jQuery ));
+
+},{}],4:[function(require,module,exports){
 /**
 * @function jquery.menu.js
 * @version 0.0.1
@@ -243,13 +263,120 @@ $.fn.dialog.defaults = {
     };
 }( jQuery ));
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+/**
+* @function jquery.tabs.js
+* @version 0.0.1
+* @author Ian McBurnie <imcburnie@ebay.com>
+* @requires jquery-next-id
+* @requires jquery-roving-tabindex
+*/
+(function ( $ ) {
+
+    $.fn.tabs = function tabs (options) {
+
+        var options = options || {};
+
+        return this.each(function onEach() {
+
+            var $tabsWidget = $(this),
+                $tablist = $tabsWidget.find('> ul:first-child, > ol:first-child, > div:first-child'),
+                $tabs = $tablist.find('> li, > div'),
+                $links = $tablist.find('a'),
+                $panelcontainer = $tabsWidget.find('> div:last-child'),
+                $panels = $panelcontainer.find('> div'),
+                $panelHeadings = $panels.find('> h2:first-child, > h3:first-child');
+
+            // set a unique widget id
+            $tabsWidget.nextId('tabs');
+
+            // add required ARIA roles, states and properties
+            // first tabpanel is selected by default
+            $tablist
+                .attr('role', 'tablist');
+
+            $tabs
+                .attr('role', 'tab')
+                .attr('aria-selected', 'false')
+                .first()
+                    .attr('aria-selected', 'true');
+
+            $panels
+                .attr('role', 'tabpanel')
+                .attr('aria-hidden', 'true')
+                .first()
+                    .attr('aria-hidden', 'false');
+
+            $panelHeadings.attr('aria-hidden', 'true');
+
+            // remove hyperlink behaviour from links
+            $links
+                .attr('role', 'presentation')
+                .removeAttr('href');
+
+            if (options.livePanels === true) {
+                $panelcontainer.attr('aria-live', 'polite');
+            }
+
+            // all panels are labelled and controlled by their respective tab
+            $tabs.each(function onEachTab(idx, el) {
+                var $tab = $(el),
+                    tabId = $tabsWidget.attr('id') + '-tab-' + idx,
+                    panelId = $tabsWidget.attr('id') + '-panel-' + idx;
+
+                $tab
+                    .attr('id', tabId)
+                    .attr('aria-controls', panelId);
+
+                $panels.eq(idx)
+                    .attr('id', panelId)
+                    .attr('aria-labelledby', tabId);
+            });
+
+            $tabs.on('click', function(e) {
+                $tabsWidget.trigger('select', $(this));
+            });
+
+            // Create a roving tab index on tabs
+            $tabs.rovingTabindex($tabsWidget.prop('id'));
+
+            $tabsWidget.on('select change.rovingTabindex', function(e, selectedTab) {
+                var $selectedTab = $(selectedTab),
+                    $activeTab = $tablist.find('[aria-selected=true]'),
+                    $activePanel = $panelcontainer.find('[aria-labelledby={0}]'.replace('{0}', $activeTab.attr('id'))),
+                    $selectedPanel = $panelcontainer.find('[aria-labelledby={0}]'.replace('{0}', $selectedTab.attr('id')));
+
+                if ($selectedTab[0] !== $activeTab[0]) {
+                    $activePanel.attr('aria-hidden', 'true');
+                    $selectedPanel.attr('aria-hidden', 'false');
+
+                    $selectedTab.attr('aria-selected', 'true');
+
+                    // update keyboard focus on next tick
+                    setTimeout(function onTimeout() {
+                        $selectedTab.focus();
+                        // deselect activeTab last to prevent focus issues
+                        $activeTab.attr('aria-selected', 'false');
+                    }, 0);
+                }
+            });
+
+            // call plugin to prevent page scroll
+            $('.tabs [role=tab]').preventDocumentScrollKeys();
+
+            // mark widget as initialised
+            $tabsWidget.addClass('tabs--js');
+        });
+    };
+}( jQuery ));
+
+},{}],6:[function(require,module,exports){
 'use strict';
+
 var $ = require('jquery');
-window.$ = $;
-window.jQuery = $;
 
 $(function () {
+    require('./jquery-shim.js');
     require('jquery-next-id/jquery.nextid.min.js');
     require('jquery-common-keys/jquery.commonkeys.min.js');
     require('jquery-focusable/jquery.focusable.min.js');
@@ -260,45 +387,49 @@ $(function () {
     require('jquery-roving-tabindex/jquery.rovingtabindex.min.js');
     require('jquery-prevent-document-scroll-keys/jquery.preventdocumentscrollkeys.min.js');
     require('./jquery.dialog.js');
+    require('./jquery.dialogbutton.js');
     require('./jquery.menu.js');
-    require('./dialogWidget')();
+    require('./jquery.tabs.js');
+    $('.dialog-button').dialogButton();
     $('.menu--faux').buttonFlyout();
     $('.menu:not(.menu--faux)').menu();
+    $('.tabs:not(.tabs--faux)').tabs();
 });
 
-},{"./dialogWidget":1,"./jquery.dialog.js":2,"./jquery.menu.js":3,"jquery":14,"jquery-button-flyout/jquery.buttonflyout.min.js":5,"jquery-common-keys/jquery.commonkeys.min.js":6,"jquery-focus-exit/jquery.focusexit.min.js":7,"jquery-focusable/jquery.focusable.min.js":8,"jquery-keyboard-trap/jquery.keyboardtrap.min.js":9,"jquery-next-id/jquery.nextid.min.js":10,"jquery-prevent-document-scroll-keys/jquery.preventdocumentscrollkeys.min.js":11,"jquery-roving-tabindex/jquery.rovingtabindex.min.js":12,"jquery-screenreader-trap/jquery.screenreadertrap.min.js":13}],5:[function(require,module,exports){
+},{"./jquery-shim.js":1,"./jquery.dialog.js":2,"./jquery.dialogbutton.js":3,"./jquery.menu.js":4,"./jquery.tabs.js":5,"jquery":16,"jquery-button-flyout/jquery.buttonflyout.min.js":7,"jquery-common-keys/jquery.commonkeys.min.js":8,"jquery-focus-exit/jquery.focusexit.min.js":9,"jquery-focusable/jquery.focusable.min.js":10,"jquery-keyboard-trap/jquery.keyboardtrap.min.js":11,"jquery-next-id/jquery.nextid.min.js":12,"jquery-prevent-document-scroll-keys/jquery.preventdocumentscrollkeys.min.js":13,"jquery-roving-tabindex/jquery.rovingtabindex.min.js":14,"jquery-screenreader-trap/jquery.screenreadertrap.min.js":15}],7:[function(require,module,exports){
 
 (function($,window,document,undefined){$.fn.buttonFlyout=function buttonFlyout(options){options=options||{};return this.each(function onEach(){var $this=$(this),$button=$this.find('> button'),$overlay=$this.find('> *:last-child');$this.nextId('button-flyout');$overlay.focusExit().on('focusexit',function onOverlayFocusExit(e){$this.trigger('hide.buttonFlyout');});$overlay.prop('id',$this.prop('id')+'-overlay').attr('aria-hidden','true');$button.attr('aria-controls',$overlay.prop('id')).attr('aria-expanded','false');$button.on('click',function onButtonClick(e){$this.trigger('toggle.buttonFlyout');});$this.on('toggle.buttonFlyout',function onToggle(e){$this.trigger($overlay.attr('aria-hidden')=='true'?'show.buttonFlyout':'hide.buttonFlyout');});$this.on('show.buttonFlyout',function onShow(e){$button.attr('aria-expanded','true');$overlay.attr('aria-hidden','false');if(options.focusManagement===true){$overlay.focusable().first().focus();}});$this.on('hide.buttonFlyout',function onHide(e){$button.attr('aria-expanded','false');$overlay.attr('aria-hidden','true');});$this.commonKeys().on('escape.commonKeyDown',function onEscKeyDown(e){$this.trigger('hide.buttonFlyout');$button.focus();});});};}(jQuery,window,document));
-},{}],6:[function(require,module,exports){
+
+},{}],8:[function(require,module,exports){
 
 (function($,window,document,undefined){var pluginName='jquery-common-keys';var normalizeEvent=function(type,e){return $.Event(type,{originalEvent:e});};$.fn.commonKeys=function commonKeys(){return this.each(function onEach(){if(!$.data(this,pluginName)){jQuery.data(this,pluginName,'true');var $this=$(this),keyCodes=$.fn.commonKeys.keyCodes;function onKeyDown(e){switch(e.keyCode){case keyCodes.ENTER:$this.trigger(normalizeEvent('enter.commonKeyDown',e));break;case keyCodes.ESCAPE:$this.trigger(normalizeEvent('escape.commonKeyDown',e));break;case keyCodes.SPACE:$this.trigger(normalizeEvent('space.commonKeyDown',e));break;case keyCodes.PAGEUP:$this.trigger(normalizeEvent('pageup.commonKeyDown',e));break;case keyCodes.PAGEDOWN:$this.trigger(normalizeEvent('pagedown.commonKeyDown',e));break;case keyCodes.END:$this.trigger(normalizeEvent('end.commonKeyDown',e));break;case keyCodes.HOME:$this.trigger(normalizeEvent('home.commonKeyDown',e));break;case keyCodes.LEFTARROW:$this.trigger(normalizeEvent('leftarrow.commonKeyDown',e));break;case keyCodes.UPARROW:$this.trigger(normalizeEvent('uparrow.commonKeyDown',e));break;case keyCodes.RIGHTARROW:$this.trigger(normalizeEvent('rightarrow.commonKeyDown',e));break;case keyCodes.DOWNARROW:$this.trigger(normalizeEvent('downarrow.commonKeyDown',e));break;default:break;}}
 function onKeyUp(e){switch(e.keyCode){case keyCodes.ENTER:$this.trigger(normalizeEvent('enter.commonKeyUp',e));break;case keyCodes.ESCAPE:$this.trigger(normalizeEvent('escape.commonKeyUp',e));break;case keyCodes.SPACE:$this.trigger(normalizeEvent('space.commonKeyUp',e));break;case keyCodes.PAGEUP:$this.trigger(normalizeEvent('pageup.commonKeyUp',e));break;case keyCodes.PAGEDOWN:$this.trigger(normalizeEvent('pagedown.commonKeyUp',e));break;case keyCodes.END:$this.trigger(normalizeEvent('end.commonKeyUp',e));break;case keyCodes.HOME:$this.trigger(normalizeEvent('home.commonKeyUp',e));break;case keyCodes.LEFTARROW:$this.trigger(normalizeEvent('leftarrow.commonKeyUp',e));break;case keyCodes.UPARROW:$this.trigger(normalizeEvent('uparrow.commonKeyUp',e));break;case keyCodes.RIGHTARROW:$this.trigger(normalizeEvent('rightarrow.commonKeyUp',e));break;case keyCodes.DOWNARROW:$this.trigger(normalizeEvent('downarrow.commonKeyUp',e));break;default:break;}}
 $this.on('keydown',onKeyDown);$this.on('keyup',onKeyUp);}});};$.fn.commonKeys.keyCodes={ENTER:13,ESCAPE:27,SPACE:32,PAGEUP:33,PAGEDOWN:34,END:35,HOME:36,LEFTARROW:37,UPARROW:38,RIGHTARROW:39,DOWNARROW:40};}(jQuery,window,document));
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 
 (function($,window,document,undefined){$.fn.focusExit=function focusExit(){return this.each(function onEach(){var $this=$(this),timeout;function onFocusIn(){window.clearTimeout(timeout);}
 $this.on('focusout',function onFocusOut(e){timeout=window.setTimeout(function onTimeout(){$this.off('focusin',onFocusIn).trigger('focusexit',{"lostFocus":e.target,"gainedFocus":e.relatedTarget});},100);$this.one('focusin',onFocusIn);});});};}(jQuery,window,document));
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 
 (function($,window,document,undefined){var focusableElements=['a[href]','button:not([disabled])','area[href]','input:not([disabled])','select:not([disabled])','textarea:not([disabled])','iframe','object','embed','*[tabindex]','*[contenteditable]'];$.fn.focusable=function focusable(options){var opts=$.extend({},$.fn.focusable.defaults,options);return $(this).find(focusableElements.join()).filter(function(index){return(opts.findNegativeTabindex===true)?true:$(this).attr('tabindex')!=='-1';}).filter(function(index){return(opts.findPositiveTabindex===true)?true:($(this).attr('tabindex')>0===false);});};}(jQuery,window,document));$.fn.focusable.defaults={findNegativeTabindex:true,findPositiveTabindex:true};
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 (function($,window,document,undefined){var trapTemplate='<div tabindex="0" class="keyboard-trap-boundary">',defaults={deactivateOnFocusExit:false},$topTrap=$(trapTemplate),$outerTrapBefore=$(trapTemplate),$innerTrapBefore=$(trapTemplate),$innerTrapAfter=$(trapTemplate),$outerTrapAfter=$(trapTemplate),$botTrap=$(trapTemplate),$trap,$firstTabElement,$lastTabElement;$topTrap.on("focus",setFocusToFirstFocusableElement);$outerTrapBefore.on("focus",setFocusToFirstFocusableElement);$innerTrapBefore.on("focus",setFocusToLastFocusableElement);$innerTrapAfter.on("focus",setFocusToFirstFocusableElement);$outerTrapAfter.on("focus",setFocusToLastFocusableElement);$botTrap.on("focus",setFocusToLastFocusableElement);function setFocusToFirstFocusableElement(){$firstTabElement.focus()}function setFocusToLastFocusableElement(){$lastTabElement.focus()}$.trapKeyboard=function trapKeyboard(el,options){var opts=$.extend({},defaults,options),$focusable;$.untrapKeyboard();$trap=$(el);$focusable=$trap.focusable();$firstTabElement=$focusable.first();$lastTabElement=$focusable.last();if(opts.deactivateOnFocusExit===true){$trap.focusExit();$trap.one("focusexit",function(e){if(opts.deactivateOnFocusExit===true){$.untrapKeyboard()}})}$("body").prepend($topTrap);$outerTrapBefore.insertBefore($trap);$trap.prepend($innerTrapBefore);$trap.append($innerTrapAfter);$outerTrapAfter.insertAfter($trap);$("body").append($botTrap);$trap.addClass("keyboard-trap--active");$trap.trigger("on.keyboardTrap");return $trap};$.untrapKeyboard=function untrapKeyboard(){if($trap!==undefined){$topTrap.detach();$outerTrapBefore.detach();$innerTrapBefore.detach();$innerTrapAfter.detach();$outerTrapAfter.detach();$botTrap.detach();$trap.off("focusexit");$trap.removeClass("keyboard-trap--active");$trap.trigger("off.keyboardTrap")}return $trap}})(jQuery,window,document);
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 
 (function($,window,document,undefined){var _nextInSequenceMap={};$.fn.nextId=function nextId(prefix){prefix=prefix||$.fn.nextId.defaults.prefix;_nextInSequenceMap[prefix]=(_nextInSequenceMap[prefix]===undefined)?0:_nextInSequenceMap[prefix];return this.filter(function onFilter(){return!this.id;}).each(function onEach(){var $this=$(this);$this.prop('id',prefix+$.fn.nextId.defaults.separator+_nextInSequenceMap[prefix]++);});};}(jQuery,window,document));$.fn.nextId.defaults={prefix:'nid',separator:'-'};
 
-},{}],11:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 
 (function($,window,document,undefined){$.fn.preventDocumentScrollKeys=function preventDocumentScrollKeys(){$(document).commonKeys();$(this).preventDocumentSpaceKeyScroll();$(this).preventDocumentArrowKeyScroll();};$.fn.preventDocumentSpaceKeyScroll=function preventDocumentSpaceKeyScroll(){$(document).on('space.commonKeyDown',$(this).selector,function(e){e.preventDefault();});};$.fn.preventDocumentArrowKeyScroll=function preventDocumentArrowKeyScroll(){$(document).on('uparrow.commonKeyDown downarrow.commonKeyDown',$(this).selector,function(e){e.preventDefault();});};}(jQuery,window,document));
-},{}],12:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 
 (function($,window,document,undefined){$.fn.rovingTabindex=function rovingTabindex(id,options){options=options||{};var wrap=options.wrap,axis=options.axis,activeIndex=options.activeIndex||0,$collection=this;$(this).eq(activeIndex).attr('tabindex','0');return this.each(function onEach(i){var $this=$(this);$this.commonKeys();$this.eq(0).data(id,{"rovingtabindex":i++});if(axis==='x'){$this.on('leftarrow.commonKeyDown',function onLeftArrowKey(){$this.trigger('prev.rovingTabindex');});$this.on('rightarrow.commonKeyDown',function onRightArrowKey(){$this.trigger('next.rovingTabindex');});}
 else if(axis==='y'){$this.on('downarrow.commonKeyDown',function onDownArrowKey(){$this.trigger('next.rovingTabindex');});$this.on('uparrow.commonKeyDown',function onUpArrowKey(){$this.trigger('prev.rovingTabindex');});}
 else{$this.on('leftarrow.commonKeyDown uparrow.commonKeyDown',function onLeftOrUpArrowKey(){$this.trigger('prev.rovingTabindex');});$this.on('rightarrow.commonKeyDown downarrow.commonKeyDown',function onRightOrDownArrowKey(){$this.trigger('next.rovingTabindex');});}
 $this.on('prev.rovingTabindex',function onPrev(e){var itemIdx=$this.data(id).rovingtabindex,$prevEl=$collection.eq(itemIdx-1),hasPrevEl=$prevEl.length===1,$lastEl=$collection.eq($collection.length-1),$roveToEl=(hasPrevEl&&itemIdx!==0)?$prevEl:(options.wrap!==false)?$lastEl:$this;$this.attr('tabindex','-1');$roveToEl.attr('tabindex','0');$this.trigger('change.rovingTabindex',$roveToEl);});$this.on('next.rovingTabindex',function onNext(e){var itemIdx=$this.data(id).rovingtabindex,$nextEl=$collection.eq(itemIdx+1),hasNextEl=$nextEl.length===1,$firstEl=$collection.eq(0),$roveToEl=(hasNextEl)?$nextEl:(options.wrap!==false)?$firstEl:$this;$this.attr('tabindex','-1');$roveToEl.attr('tabindex','0');$this.trigger('change.rovingTabindex',$roveToEl);});});};}(jQuery,window,document));
-},{}],13:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 !function(r,e,a,t){var n,d;r.trapScreenreader=function(e){r.untrapScreenreader(),n=r(e);var a=n.siblings(":not(script, [aria-hidden=true])"),t=n.parents(":not(html, body)"),i=n.parents(":not(html, body)").siblings(":not(script, [aria-hidden=true])");n.attr("aria-hidden","false"),a.attr("aria-hidden","true"),t.attr("aria-hidden","false"),i.attr("aria-hidden","true"),d=n.add(a).add(t).add(i),n.trigger("on.screenreaderTrap")},r.untrapScreenreader=function(){n&&(d.removeAttr("aria-hidden"),n.trigger("off.screenreaderTrap"))}}(jQuery,window,document);
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -9510,4 +9641,4 @@ return jQuery;
 
 }));
 
-},{}]},{},[1,2,3,4]);
+},{}]},{},[1,2,3,4,5,6]);
