@@ -1,5 +1,5 @@
 /*!
-Skin v2.2.5
+Skin v2.2.6
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -2090,6 +2090,14 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   color: #bd1b1b;
 }
 
+.ie9 .listbox::after {
+  display: none;
+}
+
+.ie9 .listbox select {
+  padding-right: 1.5rem;
+}
+
 .textbox--email,
 .textbox--search,
 .textbox--username {
@@ -2468,6 +2476,56 @@ fieldset[disabled] .switch > input + span {
 }
 
 .status-msg--error::before {
+  color: #dd1e31;
+  content: "\e623";
+}
+
+.page-alert {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: .75rem .5rem .75rem;
+  background: #f0eeec;
+  border-top: 2px solid #777777;
+}
+
+.page-alert::before {
+  padding-right: .5rem;
+  font-family: "vq-icon-font";
+  font-size: 1.25rem;
+}
+
+.page-alert > p {
+  margin: 0;
+  line-height: 1.06rem;
+  vertical-align: top;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.page-alert--info::before {
+  color: #777777;
+  content: "\e614";
+}
+
+.page-alert--confirm {
+  border-top-color: #5ba71b;
+}
+
+.page-alert--confirm::before {
+  color: #5ba71b;
+  content: "\e61f";
+}
+
+.page-alert--high {
+  border-top-color: #dd1e31;
+}
+
+.page-alert--high::before {
   color: #dd1e31;
   content: "\e623";
 }

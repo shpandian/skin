@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
 <html lang="en">
+<!--<![endif]-->
     <head>
         <title>eBay skin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -40,6 +44,7 @@
             <nav aria-labelledby="modules_heading" role="navigation">
                 <h2 id="modules_heading" class="clipped">Modules</h2>
                 <ul>
+                    <li><a href="#alert">Alert</a></li>
                     <li><a href="#button">Button</a></li>
                     <li><a href="#card">Card</a></li>
                     <li><a href="#checkbox">Checkbox</a></li>
@@ -121,6 +126,60 @@
     </ul>
     <h3>Legacy Browsers</h3>
     <p>Skin takes advantage of Lasso's <a href="https://github.com/lasso-js/lasso#conditional-dependencies">conditional dependencies</a> to provide cross-browser support for legacy browsers (e.g. browsers that do not support Flexbox or SVG). To plugin this conditional dependency, simply pass the flag <span class="highlight">skin-legacy</span> to Lasso and apply the <span class="highlight">skin-legacy</span> class to the body of your page. Skin itself <strong>does not</strong> do any detection of browser or browser capabilities, therefore it is the responsibility of the application logic to detect whether the legacy styles are needed.</p>
+
+    <h3>IE9</h3>
+    <p>Sometimes we will need specific CSS rules for older versions of IE. We try our best to keep these to a minimum, but we ask that you use the following code at the top of your HTML file to ensure that the correct CSS hooks are in place for IE9.</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--[if IE 9]&gt;</span>
+<span class="c">&lt;html class=&quot;ie9&quot; lang=&quot;en&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if gt IE 9]&gt;&lt;!--&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+<span class="c">&lt;!--&lt;![endif]--&gt;</span></code></pre></div>
+
+</section>
+
+<section id="alert" aria-labelledby="alert_heading">
+    <h2 id="alert_heading">Alert</h2>
+    <p>An alert typically appears as the direct result of some user interaction, and may be rendered by the server on initial page load (role=region) or rendered by the client any time after page load (role=alert).</p>
+    <p>An alert may have one of three possible levels: <span class="highlight">high-priority</span>, <span class="highlight">confirmation</span>, or <span class="highlight">information</span>.</p>
+
+    <h3>Page Alert</h3>
+    <p>A page alert appears prominently at the top of the page. Use the <span class="highlight">page-alert--high</span>, <span class="highlight">page-alert--confirm</span>, or <span class="highlight">page-alert--info</span> modifier classes depending on the type of alert required.</p>
+
+    <div class="demo">
+        <div class="page-alert page-alert--high" role="region" aria-label="High Priority">
+            <p>Something went wrong. Please try again.</p>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="page-alert page-alert--confirm" role="region" aria-label="Confirmation">
+            <p>You just completed the task.</p>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="page-alert page-alert--info" role="region" aria-label="Info">
+            <p>Here's a tip to help you be successful at your task.</p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--high&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;High Priority&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Something went wrong. Please try again.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--confirm&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Confirmation&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>You just completed the task.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--info&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Info&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Here&#39;s a tip to help you be successful at your task.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <!--
+    <h3>Inline Alert</h3>
+    <p>Coming soon.</p>
+
+    <h3>Flyout Alert</h3>
+    <p>Coming soon.</p>
+    -->
+
 </section>
 
 <section id="button" aria-labelledby="button_heading">
