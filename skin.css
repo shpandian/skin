@@ -1,5 +1,5 @@
 /*!
-Skin v2.2.6
+Skin v2.2.7
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -632,7 +632,7 @@ a[href]:not([role]):not([href|=javascript]).btn.btn--faux {
   text-decoration: none;
   vertical-align: middle;
   background-color: #ffffff;
-  border: 1px solid #eeeeee;
+  border: 1px solid #cccccc;
   border-radius: 3px;
 }
 
@@ -1164,7 +1164,7 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner.svg") no-repeat center center;
+  background: url("//secureir.ebaystatic.com/cr/v/c1/svg/spinner.svg") no-repeat center center;
   background-size: cover;
   -webkit-animation: spin 600ms linear infinite;
           animation: spin 600ms linear infinite;
@@ -1593,7 +1593,6 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   overflow-y: scroll;
   opacity: 1;
   -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: -webkit-transform 0.35s;
           transition: transform 0.35s;
@@ -1601,7 +1600,6 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
 
 .dialog[role=dialog].dialog--subpage[aria-hidden="false"] {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 
@@ -1636,7 +1634,6 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   overflow-y: scroll;
   opacity: 1;
   -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: -webkit-transform 0.35s;
           transition: transform 0.35s;
@@ -1644,7 +1641,6 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
 
 .dialog[role=dialog].dialog--panel[aria-hidden="false"] {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 
@@ -1690,14 +1686,12 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   .dialog[role=dialog].dialog--panel {
     width: 300px;
     -webkit-transform: translateX(-300px);
-        -ms-transform: translateX(-300px);
             transform: translateX(-300px);
   }
 }
 
 .dialog--slideup {
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%);
   -webkit-transition: -webkit-transform 0.35s ease-out, visibility 0s 0.35s;
           transition: transform 0.35s ease-out, visibility 0s 0.35s;
@@ -1705,13 +1699,11 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
 
 .dialog--slideup[aria-hidden="false"] {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 
 .dialog--pushleft {
   -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: -webkit-transform 0.35s, visibility 0s 0.35s;
           transition: transform 0.35s, visibility 0s 0.35s;
@@ -1719,13 +1711,11 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
 
 .dialog--pushleft[aria-hidden="false"] {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 
 .dialog--slidedown {
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%);
   -webkit-transition: -webkit-transform 0.35s ease-out, visibility 0s 0.35s;
           transition: transform 0.35s ease-out, visibility 0s 0.35s;
@@ -1733,7 +1723,6 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
 
 .dialog--slidedown[aria-hidden="false"] {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 
@@ -2060,7 +2049,7 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   line-height: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
-  vertical-align: text-top;
+  vertical-align: middle;
 }
 
 .textbox--inline input {
@@ -2096,6 +2085,21 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
 
 .ie9 .listbox select {
   padding-right: 1.5rem;
+}
+
+.skin-large .textbox--inline-wrap label {
+  display: inline-block;
+  width: 23%;
+  height: 36px;
+  padding-right: 1rem;
+  margin: 0;
+  overflow: hidden;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+.skin-large .textbox--inline-wrap input {
+  width: 76%;
 }
 
 .textbox--email,
@@ -2481,10 +2485,6 @@ fieldset[disabled] .switch > input + span {
 }
 
 .page-alert {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   width: 100%;
   padding: .75rem .5rem .75rem;
   background: #f0eeec;
@@ -2492,7 +2492,8 @@ fieldset[disabled] .switch > input + span {
 }
 
 .page-alert::before {
-  padding-right: .5rem;
+  float: left;
+  padding-right: 1rem;
   font-family: "vq-icon-font";
   font-size: 1.25rem;
 }
@@ -2500,11 +2501,6 @@ fieldset[disabled] .switch > input + span {
 .page-alert > p {
   margin: 0;
   line-height: 1.06rem;
-  vertical-align: top;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 .page-alert--info::before {

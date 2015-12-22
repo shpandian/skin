@@ -6,7 +6,7 @@
 }
 .err {
   color: #AA0000;
-  background-color: #ffaaaa;
+  background-color: #FFAAAA;
 }
 .k {
   color: #006699;
@@ -29,23 +29,23 @@
 }
 .gd {
   background-color: #FFCCCC;
-  border: 1px solid #cc0000;
+  border: 1px solid #CC0000;
 }
 .ge {
   font-style: italic;
 }
 .gr {
-  color: #ff0000;
+  color: #FF0000;
 }
 .gh {
   color: #003300;
 }
 .gi {
   background-color: #CCFFCC;
-  border: 1px solid #00cc00;
+  border: 1px solid #00CC00;
 }
 .go {
-  color: #aaaaaa;
+  color: #AAAAAA;
 }
 .gp {
   color: #000099;
@@ -54,7 +54,7 @@
   color: #003300;
 }
 .gt {
-  color: #99cc66;
+  color: #99CC66;
 }
 .kc {
   color: #006699;
@@ -75,7 +75,7 @@
   color: #007788;
 }
 .m {
-  color: #ff6600;
+  color: #FF6600;
 }
 .s {
   color: #d44950;
@@ -93,7 +93,7 @@
   color: #336600;
 }
 .nd {
-  color: #9999ff;
+  color: #9999FF;
 }
 .ni {
   color: #999999;
@@ -102,10 +102,10 @@
   color: #CC0000;
 }
 .nf {
-  color: #cc00ff;
+  color: #CC00FF;
 }
 .nl {
-  color: #9999ff;
+  color: #9999FF;
 }
 .nn {
   color: #00CCFF;
@@ -123,50 +123,50 @@
   color: #bbbbbb;
 }
 .mf {
-  color: #ff6600;
+  color: #FF6600;
 }
 .mh {
-  color: #ff6600;
+  color: #FF6600;
 }
 .mi {
-  color: #ff6600;
+  color: #FF6600;
 }
 .mo {
-  color: #ff6600;
+  color: #FF6600;
 }
 .sb {
-  color: #cc3300;
+  color: #CC3300;
 }
 .sc {
-  color: #cc3300;
+  color: #CC3300;
 }
 .sd {
   color: #CC3300;
   font-style: italic;
 }
 .s2 {
-  color: #cc3300;
+  color: #CC3300;
 }
 .se {
   color: #CC3300;
 }
 .sh {
-  color: #cc3300;
+  color: #CC3300;
 }
 .si {
-  color: #aa0000;
+  color: #AA0000;
 }
 .sx {
-  color: #cc3300;
+  color: #CC3300;
 }
 .sr {
-  color: #33aaaa;
+  color: #33AAAA;
 }
 .s1 {
-  color: #cc3300;
+  color: #CC3300;
 }
 .ss {
-  color: #ffcc33;
+  color: #FFCC33;
 }
 .bp {
   color: #336666;
@@ -181,7 +181,7 @@
   color: #003333;
 }
 .il {
-  color: #ff6600;
+  color: #FF6600;
 }
 .css .o,
 .css .o + .nt,

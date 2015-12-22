@@ -684,17 +684,33 @@
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <h3>Inline Textbox</h3>
-    <p>A textbox with label beside it. NOTE: Label length is restricted to 25 characters.</p>
+    <p>A textbox with label beside it. <strong>NOTE</strong>: Label length is restricted to 25 characters.</p>
     <div class="demo">
         <div class="textbox textbox--inline">
             <label for="phonenumber">Phone Number</label>
-            <input id="phonenumber" type="phonenumber" placeholder="Phone Number" name="phonenumber" />
+            <input id="phonenumber" type="phonenumber" name="phonenumber" />
         </div>
     </div>
 
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox textbox--inline&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phonenumber&quot;</span><span class="nt">&gt;</span>Phone Number<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">type=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Phone Number&quot;</span> <span class="na">name=</span><span class="s">&quot;phonenumber&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">type=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">name=</span><span class="s">&quot;phonenumber&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Inline Textbox Wrapped</h3>
+    <p>For large 7+ screens only. Inline label is wrapped to two lines. <strong>NOTE</strong>: Label length is restricted to 52 characters and truncation with ellipses requires JavaScript.</p>
+    <div class="demo skin-large">
+        <div class="textbox textbox--inline-wrap">
+            <label for="phonenumber-wrappedtext">Phone number with valid area code</label>
+            <input id="phonenumber-wrappedtext" type="phonenumber" name="phonenumber" />
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;textbox textbox--inline-wrap&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;phonenumber-wrappedtext&quot;</span><span class="nt">&gt;</span>Phone number with valid area code<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;phonenumber-wrappedtext&quot;</span> <span class="na">type=</span><span class="s">&quot;phonenumber&quot;</span> <span class="na">name=</span><span class="s">&quot;phonenumber&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <h3>Textbox Placeholders</h3>
