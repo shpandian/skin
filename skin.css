@@ -1,5 +1,5 @@
 /*!
-Skin v2.2.7
+Skin v2.2.8
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -1531,7 +1531,8 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
           transition: opacity 0.15s ease-in;
 }
 
-.dialog[role=dialog][aria-hidden="false"] + .mask {
+.dialog[role=dialog][aria-hidden="false"] + .mask,
+.dialog[role=dialog][aria-hidden="false"] + * + .mask {
   width: 100%;
   height: 100%;
   opacity: .6;
