@@ -185,5 +185,25 @@ body > footer a:visited {
     border-top: 0;
     font: @font-size-small Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
+.tooltip {
+    position: relative;
+    > .flyout-alert {
+        top: 30px;
+    }
+}
+.bubblehelp {
+    position: relative;
+    > .flyout-alert {
+        left: -12.5px;
+        top: 35px;
+    }
+    > button {
+        border: none;
+        background: none;
+    }
+    > button::before {
+        margin-right: 0;
+    }
+}
 
 @import "index-large.less";

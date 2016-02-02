@@ -88,7 +88,7 @@
         <div>
             <div>
                 <h3>BEM</h3>
-                <p>Skin follows the BEM principles of Block, Element and Modifier to ensure our class name and class structure is human readable and understandable. The princicples of BEM also act as a front-line defense against classitis.</p>
+                <p>Skin follows the <a href="https://en.bem.info/method/key-concepts/">BEM</a> principles of Block, Element and Modifier to ensure our class name and class structure is human readable and understandable. The princicples of BEM also act as a front-line defense against classitis.</p>
             </div>
             <div>
                 <h3>Open Source</h3>
@@ -101,7 +101,7 @@
 <section id="install" aria-labelledby="install_heading">
     <h2 id="install_heading">Install</h2>
     <p>Skin is distributed as an NPM package. Install the package using the <span class="highlight">npm install</span> command.</p>
-    <div class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay --save</code></pre></div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay</code></pre></div>
 
     <p>Include the desired Skin modules in your <span class="highlight">browser.json</span> and you are good to go.</p>
     <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
@@ -113,20 +113,20 @@
 
     <p>Skin includes the following modules.</p>
     <ul class="skin-module-list">
-        <li>skin-ebay/alert</li>
-        <li>skin-ebay/button</li>
-        <li>skin-ebay/card</li>
-        <li>skin-ebay/combo</li>
-        <li>skin-ebay/core</li>
-        <li>skin-ebay/dialog</li>
-        <li>skin-ebay/form</li>
-        <li>skin-ebay/icon</li>
-        <li>skin-ebay/less</li>
-        <li>skin-ebay/menu</li>
-        <li>skin-ebay/tab</li>
+        <li><a href="#alert">skin-ebay/alert</a></li>
+        <li><a href="#button">skin-ebay/button</a></li>
+        <li><a href="#card">skin-ebay/card</a></li>
+        <li><a href="#combo">skin-ebay/combo</a></li>
+        <li><a href="#core">skin-ebay/core</a></li>
+        <li><a href="#dialog">skin-ebay/dialog</a></li>
+        <li><a href="#form">skin-ebay/form</a></li>
+        <li><a href="#icon">skin-ebay/icon</a></li>
+        <li><a href="#less">skin-ebay/less</a></li>
+        <li><a href="#menu">skin-ebay/menu</a></li>
+        <li><a href="#tab">skin-ebay/tab</a></li>
     </ul>
     <h3>Legacy Browsers</h3>
-    <p>Skin takes advantage of Lasso's <a href="https://github.com/lasso-js/lasso#conditional-dependencies">conditional dependencies</a> to provide cross-browser support for legacy browsers (e.g. browsers that do not support Flexbox or SVG). To plugin this conditional dependency, simply pass the flag <span class="highlight">skin-legacy</span> to Lasso and apply the <span class="highlight">skin-legacy</span> class to the body of your page. Skin itself <strong>does not</strong> do any detection of browser or browser capabilities, therefore it is the responsibility of the application logic to detect whether the legacy styles are needed.</p>
+    <p>Skin takes advantage of <a href="https://github.com/lasso-js/lasso#conditional-dependencies">LassoJS conditional dependencies</a> to provide cross-browser support for legacy browsers (e.g. browsers that do not support Flexbox or SVG). To plugin this conditional dependency, simply pass the flag <span class="highlight">skin-legacy</span> to Lasso and apply the <span class="highlight">skin-legacy</span> class to the body of your page. Skin itself <strong>does not</strong> do any detection of browser or browser capabilities, therefore it is the responsibility of the application logic to detect whether the legacy styles are needed.</p>
 
     <h3>IE9</h3>
     <p>Sometimes we will need specific CSS rules for older versions of IE. We try our best to keep these to a minimum, but we ask that you use the following code at the top of your HTML file to ensure that the correct CSS hooks are in place for IE9.</p>
@@ -141,23 +141,19 @@
 
 <section id="alert" aria-labelledby="alert_heading">
     <h2 id="alert_heading">Alert</h2>
-    <p>An alert typically appears as the direct result of some user interaction, and may be rendered by the server on initial page load (role=region) or rendered by the client any time after page load (role=alert).</p>
+    <p><a href="#page-alert">Page alerts</a>, <a href="#inline-alert">inline alerts</a> and <a href="#flyout-alert">flyout alerts</a> typically appear as the direct result of some user interaction, and may be rendered by the server on initial page load (role=region) or rendered by the client any time after page load (role=alert).</p>
     <p>An alert may have one of three possible levels: <span class="highlight">high-priority</span>, <span class="highlight">confirmation</span>, or <span class="highlight">information</span>.</p>
 
-    <h3>Page Alert</h3>
-    <p>A page alert appears prominently at the top of the page. Use the <span class="highlight">page-alert--high</span>, <span class="highlight">page-alert--confirm</span>, or <span class="highlight">page-alert--info</span> modifier classes depending on the type of alert required.</p>
-
+    <h3 id="page-alert">Page Alert</h3>
+    <p>A page alert appears prominently at the top of the page.</p>
+    <p>Use the <span class="highlight">page-alert--high</span>, <span class="highlight">page-alert--confirm</span>, or <span class="highlight">page-alert--info</span> modifier classes depending on the level of alert required.</p>
     <div class="demo">
         <div class="page-alert page-alert--high" role="region" aria-label="High Priority">
             <p>Something went wrong. Please try again.</p>
         </div>
-    </div>
-    <div class="demo">
         <div class="page-alert page-alert--confirm" role="region" aria-label="Confirmation">
             <p>You just completed the task.</p>
         </div>
-    </div>
-    <div class="demo">
         <div class="page-alert page-alert--info" role="region" aria-label="Info">
             <p>Here's a tip to help you be successful at your task.</p>
         </div>
@@ -173,13 +169,187 @@
     <span class="nt">&lt;p&gt;</span>Here&#39;s a tip to help you be successful at your task.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <!--
-    <h3>Inline Alert</h3>
-    <p>Coming soon.</p>
+    <h3>Call-to-Action Page Alert</h4>
+    <p>Use the <span class="highlight">page-alert--cta</span> for any page alert with button or link call-to-action.</p>
 
-    <h3>Flyout Alert</h3>
-    <p>Coming soon.</p>
-    -->
+    <div class="demo">
+        <div class="page-alert page-alert--confirm page-alert--cta" role="region" aria-label="High Priority">
+            <button aria-label="Invoke alert" type="button"></button>
+            <p>Congrats! You are the highest bidder!</p>
+        </div>
+        <div class="page-alert page-alert--confirm page-alert--cta" role="region" aria-label="High Priority">
+            <a href="http://www.ebay.com"><span class="clipped">Invoke alert</span></a>
+            <p>Congrats! You are the highest bidder!</p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--confirm page-alert--cta&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;High Priority&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Invoke alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Congrats! You are the highest bidder!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--confirm page-alert--cta&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;High Priority&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Invoke alert<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Congrats! You are the highest bidder!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Dismissable Page Alert</h4>
+    <p>Use the <span class="highlight">page-alert--close</span> for any dismissable page alert.</p>
+
+    <div class="demo">
+        <div class="page-alert page-alert--info page-alert--close" role="region" aria-label="Confirmation">
+            <button aria-label="Dismiss alert" type="button"></button>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas non dolor velsagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. dolor vl sagittis.</p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--info page-alert--close&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Confirmation&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas non dolor velsagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. dolor vl sagittis.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Page Alert 7+</h3>
+
+    <p>For screens sizes over 7", leverage the <span class="highlight">skin-large</span> class to display a larger, more prominent page alert.</p>
+
+    <div class="demo skin-large">
+        <div class="page-alert page-alert--high" role="region" aria-label="High Priority">
+            <p>Something went wrong. Please try again.</p>
+        </div>
+
+        <div class="page-alert page-alert--confirm page-alert--cta" role="region" aria-label="Confirmation">
+            <button aria-label="Invoke alert" type="button"></button>
+            <p>You just completed the task.</p>
+        </div>
+
+
+        <div class="page-alert page-alert--info page-alert--close" role="region" aria-label="Information">
+            <button aria-label="Dismiss alert" type="button"></button>
+            <p>We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete</p>
+            <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--high&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;High Priority&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Something went wrong. Please try again.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--confirm page-alert--cta&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Confirmation&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Invoke alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;p&gt;</span>You just completed the task.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--info page-alert--close&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Information&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;p&gt;</span>We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Use fewer refinements<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3 id="inline-alert">Inline Alert</h3>
+    <p>Inline alerts are often located close to a form field, user interface control or other specific area of interest.</p>
+    <p>Use the <span class="highlight">inline-alert--high</span>, <span class="highlight">inline-alert--confirm</span>, or <span class="highlight">inline-alert--info</span> modifier classes depending on the level of alert required.</p>
+    <div class="demo">
+        <div class="inline-alert inline-alert--high" role="region" aria-label="High Priority">
+            <p>Something went wrong. Please try again.</p>
+        </div>
+        <div class="inline-alert inline-alert--confirm" role="region" aria-label="Confirmation">
+            <p>You just completed the task.</p>
+        </div>
+        <div class="inline-alert inline-alert--info" role="region" aria-label="Info">
+            <p>Here's a tip to help you be successful at your task.</p>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inline-alert inline-alert--high&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;High Priority&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Something went wrong. Please try again.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inline-alert inline-alert--confirm&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Confirmation&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>You just completed the task.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inline-alert inline-alert--info&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Info&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Here&#39;s a tip to help you be successful at your task.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3 id="flyout-alert">Flyout Alert</h3>
+    <p>Flyout alerts are available on large, 7+ screens only. Like inline alerts, they call out a specific section or element of the page.</p>
+    <p>Content order of flyout alerts is important. To avoid reading-order and tabbing-order accessibility issues, the flyout element should be placed adjacent in the DOM to the page section or element of interest.</p>
+    <p>Use the <span class="highlight">flyout-alert--high</span>, <span class="highlight">flyout-alert--confirm</span>, or <span class="highlight">flyout-alert--info</span> modifier classes depending on the level of alert required.</p>
+    <p>The flyout pointer can be positioned using any one of the following modifier classes: <span class="highlight">flyout-alert--top-left</span>, <span class="highlight">flyout-alert--top-center</span>, <span class="highlight">flyout-alert--top-right</span>, <span class="highlight">flyout-alert--bottom-right</span>, <span class="highlight">flyout-alert--bottom-center</span>, <span class="highlight">flyout-alert--bottom-left</span>, <span class="highlight">flyout-alert--left-middle</span> or <span class="highlight">flyout-alert--right-middle</span>.</p>
+
+    <div class="demo skin-large">
+        <div style="height:100px">
+            <div class="flyout-alert flyout-alert--high flyout-alert--top-right flyout-alert--close" role="region" aria-label="High Priority">
+                <button aria-label="Dismiss alert" type="button"></button>
+                <p>We had trouble connecting to PayPal. Please make your payment later.</p>
+            </div>
+        </div>
+        <div style="height:100px">
+            <div class="flyout-alert flyout-alert--confirm flyout-alert--top-left flyout-alert--close" role="region" aria-label="Confirmation">
+                <button aria-label="Dismiss alert" type="button"></button>
+                <p>Congrats! You are currently the high bidder, but you are close to getting outbid.</p>
+            </div>
+        </div>
+        <div style="height:110px">
+            <div class="flyout-alert flyout-alert--info flyout-alert--right-middle flyout-alert--close" role="region" aria-label="Info">
+                <button aria-label="Dismiss alert" type="button"></button>
+                <p>We could not find any items that match your search. Try expanding your search to find more items.</p>
+                <p><a href="http://www.ebay.com">Use fewer refinements.</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--high flyout-alert--top-right flyout-alert--close&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;High Priority&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;p&gt;</span>We had trouble connecting to PayPal. Please make your payment later.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--confirm flyout-alert--top-left flyout-alert--close&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Confirmation&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Congrats! You are currently the high bidder, but you are close to getting outbid.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--info flyout-alert--right-middle flyout-alert--close&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Info&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;p&gt;</span>We could not find any items that match your search. Try expanding your search to find more items.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Use fewer refinements.<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Flyout Alert on Hover (Tooltip)</h3>
+    <p>The container requires <span class="highlight">position:relative</span> in order to position the flyout relatively to the interactive hover element.</p>
+    <p>Use <span class="highlight">role="tooltip"</span> and <span class="highlight">aria-describedby</span> to create a 'tooltip' for assistive technology.</p>
+    <div class="demo skin-large">
+        <div class="tooltip">
+            <a href="http://www.ebay.com" aria-describedby="tooltip-0">www.ebay.com</a>
+            <div id="tooltip-0" class="flyout-alert flyout-alert--high flyout-alert--top-left" role="tooltip" aria-hidden="true">
+                <p>We had trouble connecting to PayPal. Please make your payment later.</p>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span> <span class="na">aria-describedby=</span><span class="s">&quot;tooltip-0&quot;</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;tooltip-0&quot;</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--high flyout-alert--top-left&quot;</span> <span class="na">role=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>We had trouble connecting to PayPal. Please make your payment later.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h3>Flyout Alert on Click (Bubble-Help)</h3>
+    <div class="demo skin-large">
+        <div class="bubblehelp">
+            <button class="icon-info" type="button" aria-label="Open alert" aria-expanded="false"></button>
+            <div class="flyout-alert flyout-alert--high flyout-alert--close flyout-alert--top-left" aria-hidden="true">
+                <button aria-label="Dismiss alert" type="button"></button>
+                <p>We had trouble connecting to PayPal. Please make your payment later.</p>
+            </div>
+        </div>
+    </div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;icon-info&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Open alert&quot;</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--high flyout-alert--close flyout-alert--top-left&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;p&gt;</span>We had trouble connecting to PayPal. Please make your payment later.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 </section>
 
@@ -1294,7 +1464,7 @@
             <span class="icon-success"></span>
         </li>
         <li>
-            <span class="icon-success-circle"></span>
+            <span class="icon-confirmation"></span>
         </li>
         <li>
             <span class="icon-info"></span>
@@ -1422,12 +1592,12 @@
     <p>Icons with adjacent text are deemed to be non-critical if the text adequately conveys the same message as the icon. Non-critical icons should be hidden from assistive technology using the <span class="highlight">aria-hidden</span> state.</p>
 
     <div class="demo">
-        <p><span class="icon-alert" aria-hidden="true"></span>We had trouble connecting to PayPal. Please make your payment later.</p>
+        <p><span class="icon-info" aria-hidden="true"></span>We had trouble connecting to PayPal. Please make your payment later.</p>
     </div>
 
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;demo&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-alert&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-info&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
         We had trouble connecting to PayPal. Please make your payment later.
     <span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
@@ -1437,10 +1607,10 @@
 
     <p>Icons deemed critical <strong>must</strong> provide alternative text using <span class="highlight">aria-label</span> and must specify <span class="highlight">role=img</span>.</p>
     <div class="demo">
-        <span class="icon-alert" aria-label="Alert" role="img"></span>
+        <span class="icon-error" aria-label="Error" role="img"></span>
     </div>
 
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Alert&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-error&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Error&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
 
     <p>Note that in the case of buttons, and other interactive controls, an ARIA state or property might also convey the same information as the visual icon, e.g. a chevron icon and <span class="highlight">aria-expanded</span> or a sort icon and <span class="highlight">aria-haspopup</span>, in which case the icon is no longer deemed critical.</p>
 

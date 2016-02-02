@@ -364,6 +364,26 @@ body > footer a:visited {
   border-top: 0;
   font: 0.667rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
+.tooltip {
+  position: relative;
+}
+.tooltip > .flyout-alert {
+  top: 30px;
+}
+.bubblehelp {
+  position: relative;
+}
+.bubblehelp > .flyout-alert {
+  left: -12.5px;
+  top: 35px;
+}
+.bubblehelp > button {
+  border: none;
+  background: none;
+}
+.bubblehelp > button::before {
+  margin-right: 0;
+}
 @media (min-width: 750px) {
   body > header {
     border-right: 1px solid #ECECEC;
