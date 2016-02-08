@@ -10,6 +10,7 @@ window.jQuery = $;
 * @version 0.0.1
 * @author Ian McBurnie <imcburnie@ebay.com>
 * @requires jquery-next-id
+* @requires jquery-common-keydown
 * @requires jquery-focusable
 * @requires jquery-keyboard-trap
 * @requires jquery-screenreader-trap
@@ -88,7 +89,7 @@ window.jQuery = $;
                 $body.addClass('has-dialog');
 
                 // dialog must be closed on esc key
-                $(document).commonKeys().on('escape.commonKeyDown', onDocumentEscKey);
+                $(document).commonKeyDown().on('escapeKeyDown', onDocumentEscKey);
 
                 $closeButton.on('click', onCloseButtonClick);
             });
@@ -97,7 +98,7 @@ window.jQuery = $;
             $dialog.on('close.dialog', function onDialogClose() {
                 window.clearTimeout(openTimeout);
                 $closeButton.off('click', onCloseButtonClick);
-                $(document).off('escape.commonKeyDown', onDocumentEscKey);
+                $(document).off('escapeKeyDown', onDocumentEscKey);
                 $.untrapKeyboard();
                 $.untrapScreenreader();
                 $body.removeClass('has-dialog');
@@ -186,7 +187,7 @@ $.fn.dialog.defaults = {
             $this.buttonFlyout({focusManagement:true});
 
             // listen for specific key presses on all menu items
-            $allmenuitems.commonKeys();
+            $allmenuitems.commonKeyDown();
 
             // listen for roving tabindex update on all menu items
             $allmenuitems.rovingTabindex($this.prop('id'), {axis: 'y'});
@@ -204,7 +205,7 @@ $.fn.dialog.defaults = {
             // all submenus start in collapsed state
             $subMenus.attr('aria-expanded', 'false');
 
-            $allmenuitems.on('change.rovingTabindex', function onRovingTabindex(event, item) {
+            $allmenuitems.on('rovingTabindexChange', function onRovingTabindex(event, item) {
                 $(item).focus();
             });
 
@@ -212,11 +213,11 @@ $.fn.dialog.defaults = {
                 $this.trigger('activate', e.target);
             });
 
-            $allmenuitems.not('a').on('space.commonKeyDown enter.commonKeyDown', function(e) {
+            $allmenuitems.not('a').on('spaceKeyDown enterKeyDown', function(e) {
                 $this.trigger('activate', e.target);
             });
 
-            $checkboxes.on('space.commonKeyDown enter.commonKeyDown', function(e) {
+            $checkboxes.on('spaceKeyDown enterKeyDown', function(e) {
                 $(this).attr('aria-checked', $(this).attr('aria-checked') == 'true' ? 'false' : 'true');
             });
 
@@ -224,7 +225,7 @@ $.fn.dialog.defaults = {
                 $(this).attr('aria-checked', $(this).attr('aria-checked') == 'true' ? 'false' : 'true');
             });
 
-            $radios.on('space.commonKeyDown enter.commonKeyDown', function(e) {
+            $radios.on('spaceKeyDown enterKeyDown', function(e) {
                 $radios.attr('aria-checked', 'false')
                 $(this).attr('aria-checked', 'true');
             });
@@ -234,7 +235,7 @@ $.fn.dialog.defaults = {
                 $(this).attr('aria-checked', 'true');
             });
 
-            $this.on('show.buttonFlyout hide.buttonFlyout', function onShowOrHide() {
+            $this.on('buttonFlyoutOpen openButtonFlyoutClose', function onShowOrHide() {
                 $allmenuitems.attr('tabindex', '-1');
             });
 
@@ -340,7 +341,7 @@ $.fn.dialog.defaults = {
             // Create a roving tab index on tabs
             $tabs.rovingTabindex($tabsWidget.prop('id'));
 
-            $tabsWidget.on('select change.rovingTabindex', function(e, selectedTab) {
+            $tabsWidget.on('select rovingTabindexChange', function(e, selectedTab) {
                 var $selectedTab = $(selectedTab),
                     $activeTab = $tablist.find('[aria-selected=true]'),
                     $activePanel = $panelcontainer.find('[aria-labelledby={0}]'.replace('{0}', $activeTab.attr('id'))),
@@ -377,15 +378,15 @@ var $ = require('jquery');
 
 $(function () {
     require('./jquery-shim.js');
-    require('@ebay/jquery-next-id/jquery.nextid.min.js');
-    require('@ebay/jquery-common-keys/jquery.commonkeys.min.js');
-    require('@ebay/jquery-focusable/jquery.focusable.min.js');
-    require('@ebay/jquery-focus-exit/jquery.focusexit.min.js');
-    require('@ebay/jquery-keyboard-trap/jquery.keyboardtrap.min.js');
-    require('@ebay/jquery-screenreader-trap/jquery.screenreadertrap.min.js');
-    require('@ebay/jquery-button-flyout/jquery.buttonflyout.min.js');
-    require('@ebay/jquery-roving-tabindex/jquery.rovingtabindex.min.js');
-    require('@ebay/jquery-prevent-document-scroll-keys/jquery.preventdocumentscrollkeys.min.js');
+    require('@ebay/makeup/core/jquery-next-id/jquery.nextid.js');
+    require('@ebay/makeup/core/jquery-common-keydown/jquery.commonkeydown.js');
+    require('@ebay/makeup/core/jquery-focusable/jquery.focusable.js');
+    require('@ebay/makeup/core/jquery-focus-exit/jquery.focusexit.js');
+    require('@ebay/makeup/core/jquery-keyboard-trap/jquery.keyboardtrap.js');
+    require('@ebay/makeup/core/jquery-screenreader-trap/jquery.screenreadertrap.js');
+    require('@ebay/makeup/core/jquery-roving-tabindex/jquery.rovingtabindex.js');
+    require('@ebay/makeup/core/jquery-prevent-document-scroll-keys/jquery.preventdocumentscrollkeys.js');
+    require('@ebay/makeup/flyout/jquery-button-flyout/jquery.buttonflyout.js');
     require('./jquery.dialog.js');
     require('./jquery.dialogbutton.js');
     require('./jquery.menu.js');
@@ -397,7 +398,7 @@ $(function () {
     $('.tabs:not(.tabs--faux)').tabs();
 });
 
-},{"./jquery-shim.js":1,"./jquery.dialog.js":2,"./jquery.dialogbutton.js":3,"./jquery.menu.js":4,"./jquery.tabs.js":5,"./tooltipWidget.js":7,"@ebay/jquery-button-flyout/jquery.buttonflyout.min.js":8,"@ebay/jquery-common-keys/jquery.commonkeys.min.js":9,"@ebay/jquery-focus-exit/jquery.focusexit.min.js":10,"@ebay/jquery-focusable/jquery.focusable.min.js":11,"@ebay/jquery-keyboard-trap/jquery.keyboardtrap.min.js":12,"@ebay/jquery-next-id/jquery.nextid.min.js":13,"@ebay/jquery-prevent-document-scroll-keys/jquery.preventdocumentscrollkeys.min.js":14,"@ebay/jquery-roving-tabindex/jquery.rovingtabindex.min.js":15,"@ebay/jquery-screenreader-trap/jquery.screenreadertrap.min.js":16,"jquery":17}],7:[function(require,module,exports){
+},{"./jquery-shim.js":1,"./jquery.dialog.js":2,"./jquery.dialogbutton.js":3,"./jquery.menu.js":4,"./jquery.tabs.js":5,"./tooltipWidget.js":7,"@ebay/makeup/core/jquery-common-keydown/jquery.commonkeydown.js":8,"@ebay/makeup/core/jquery-focus-exit/jquery.focusexit.js":9,"@ebay/makeup/core/jquery-focusable/jquery.focusable.js":10,"@ebay/makeup/core/jquery-keyboard-trap/jquery.keyboardtrap.js":11,"@ebay/makeup/core/jquery-next-id/jquery.nextid.js":12,"@ebay/makeup/core/jquery-prevent-document-scroll-keys/jquery.preventdocumentscrollkeys.js":13,"@ebay/makeup/core/jquery-roving-tabindex/jquery.rovingtabindex.js":14,"@ebay/makeup/core/jquery-screenreader-trap/jquery.screenreadertrap.js":15,"@ebay/makeup/flyout/jquery-button-flyout/jquery.buttonflyout.js":16,"jquery":17}],7:[function(require,module,exports){
 (function ( $ ) {
     $('.tooltip a').bind('mouseenter focus', function() {
         var element = this;
@@ -430,39 +431,616 @@ $(function () {
 }( jQuery ));
 
 },{}],8:[function(require,module,exports){
+/**
+* @function $.fn.commonKeyDown
+* @name jquery-common-keydown
+* @version 0.0.1
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @desc jQuery collection plugin that triggers events for common accessibility
+* keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
+* @fires {object} enterKeyDown
+* @fires {object} escapeKeyDown
+* @fires {object} spaceKeyDown
+* @fires {object} pageUpKeyDown
+* @fires {object} pageDownKeyDown
+* @fires {object} endKeyDown
+* @fires {object} homeKeyDown
+* @fires {object} leftArrowKeyDown
+* @fires {object} upArrowKeyDown
+* @fires {object} downArrowKeyDown
+* @fires {object} rightArrowKeyDown
+*/
+(function ($, window, document, undefined) {
 
-(function($,window,document,undefined){$.fn.buttonFlyout=function buttonFlyout(options){options=options||{};return this.each(function onEach(){var $this=$(this),$button=$this.find('> button'),$overlay=$this.find('> *:last-child');$this.nextId('button-flyout');$overlay.focusExit().on('focusexit',function onOverlayFocusExit(e){$this.trigger('hide.buttonFlyout');});$overlay.prop('id',$this.prop('id')+'-overlay').attr('aria-hidden','true');$button.attr('aria-controls',$overlay.prop('id')).attr('aria-expanded','false');$button.on('click',function onButtonClick(e){$this.trigger('toggle.buttonFlyout');});$this.on('toggle.buttonFlyout',function onToggle(e){$this.trigger($overlay.attr('aria-hidden')=='true'?'show.buttonFlyout':'hide.buttonFlyout');});$this.on('show.buttonFlyout',function onShow(e){$button.attr('aria-expanded','true');$overlay.attr('aria-hidden','false');if(options.focusManagement===true){$overlay.focusable().first().focus();}});$this.on('hide.buttonFlyout',function onHide(e){$button.attr('aria-expanded','false');$overlay.attr('aria-hidden','true');});$this.commonKeys().on('escape.commonKeyDown',function onEscKeyDown(e){$this.trigger('hide.buttonFlyout');$button.focus();});});};}(jQuery,window,document));
+    var pluginName = 'jquery-common-keydown';
+
+    var normalizeEvent = function(type, e) {
+        return $.Event(type, { originalEvent: e });
+    };
+
+    $.fn.commonKeyDown = function keyDown() {
+
+        return this.each(function onEach() {
+
+            // check element does not already have this plugin
+            if (!$.data(this, pluginName)) {
+
+                jQuery.data(this, pluginName, 'true');
+
+                var $this = $(this),
+                    keyCodes = $.fn.commonKeyDown.keyCodes;
+
+                var onKeyDown = function(e) {
+                    switch(e.keyCode) {
+                        case keyCodes.ENTER:
+                            $this.trigger(normalizeEvent('enterKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.ESCAPE:
+                            $this.trigger(normalizeEvent('escapeKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.SPACE:
+                            $this.trigger(normalizeEvent('spaceKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.PAGEUP:
+                            $this.trigger(normalizeEvent('pageUpKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.PAGEDOWN:
+                            $this.trigger(normalizeEvent('pageDownKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.END:
+                            $this.trigger(normalizeEvent('endKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.HOME:
+                            $this.trigger(normalizeEvent('homeKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.LEFTARROW:
+                            $this.trigger(normalizeEvent('leftArrowKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.UPARROW:
+                            $this.trigger(normalizeEvent('upArrowKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.RIGHTARROW:
+                            $this.trigger(normalizeEvent('rightArrowKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        case keyCodes.DOWNARROW:
+                            $this.trigger(normalizeEvent('downArrowKeyDown', e));
+                            /* istanbul ignore next */
+                            break;
+                        /* istanbul ignore next */
+                        default:
+                            break;
+                    }
+                };
+
+                $this.on('keydown', onKeyDown);
+            }
+        });
+    };
+
+    $.fn.commonKeyDown.keyCodes = {
+        ENTER: 13,
+        ESCAPE: 27,
+        SPACE: 32,
+        PAGEUP: 33,
+        PAGEDOWN: 34,
+        END: 35,
+        HOME: 36,
+        LEFTARROW: 37,
+        UPARROW: 38,
+        RIGHTARROW: 39,
+        DOWNARROW: 40
+    };
+
+}(jQuery, window, document));
+
 },{}],9:[function(require,module,exports){
+/**
+* @function jquery.focusexit.js
+* @version 0.1.0
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @desc Triggers 'focusExit' event when keyboard focus has completely left the element.
+* @fires {object} focusExit
+* @fires {string} focusExit.lostFocus - the descendant element that lost focus
+* @fires {string} focusExit.gainedFocus - the non-descendant element that gained focus
+*/
+(function ($, window, document, undefined) {
 
-(function($,window,document,undefined){var pluginName='jquery-common-keys';var normalizeEvent=function(type,e){return $.Event(type,{originalEvent:e});};$.fn.commonKeys=function commonKeys(){return this.each(function onEach(){if(!$.data(this,pluginName)){jQuery.data(this,pluginName,'true');var $this=$(this),keyCodes=$.fn.commonKeys.keyCodes;var onKeyDown=function(e){switch(e.keyCode){case keyCodes.ENTER:$this.trigger(normalizeEvent('enter.commonKeyDown',e));break;case keyCodes.ESCAPE:$this.trigger(normalizeEvent('escape.commonKeyDown',e));break;case keyCodes.SPACE:$this.trigger(normalizeEvent('space.commonKeyDown',e));break;case keyCodes.PAGEUP:$this.trigger(normalizeEvent('pageup.commonKeyDown',e));break;case keyCodes.PAGEDOWN:$this.trigger(normalizeEvent('pagedown.commonKeyDown',e));break;case keyCodes.END:$this.trigger(normalizeEvent('end.commonKeyDown',e));break;case keyCodes.HOME:$this.trigger(normalizeEvent('home.commonKeyDown',e));break;case keyCodes.LEFTARROW:$this.trigger(normalizeEvent('leftarrow.commonKeyDown',e));break;case keyCodes.UPARROW:$this.trigger(normalizeEvent('uparrow.commonKeyDown',e));break;case keyCodes.RIGHTARROW:$this.trigger(normalizeEvent('rightarrow.commonKeyDown',e));break;case keyCodes.DOWNARROW:$this.trigger(normalizeEvent('downarrow.commonKeyDown',e));break;default:break;}};var onKeyUp=function(e){switch(e.keyCode){case keyCodes.ENTER:$this.trigger(normalizeEvent('enter.commonKeyUp',e));break;case keyCodes.ESCAPE:$this.trigger(normalizeEvent('escape.commonKeyUp',e));break;case keyCodes.SPACE:$this.trigger(normalizeEvent('space.commonKeyUp',e));break;case keyCodes.PAGEUP:$this.trigger(normalizeEvent('pageup.commonKeyUp',e));break;case keyCodes.PAGEDOWN:$this.trigger(normalizeEvent('pagedown.commonKeyUp',e));break;case keyCodes.END:$this.trigger(normalizeEvent('end.commonKeyUp',e));break;case keyCodes.HOME:$this.trigger(normalizeEvent('home.commonKeyUp',e));break;case keyCodes.LEFTARROW:$this.trigger(normalizeEvent('leftarrow.commonKeyUp',e));break;case keyCodes.UPARROW:$this.trigger(normalizeEvent('uparrow.commonKeyUp',e));break;case keyCodes.RIGHTARROW:$this.trigger(normalizeEvent('rightarrow.commonKeyUp',e));break;case keyCodes.DOWNARROW:$this.trigger(normalizeEvent('downarrow.commonKeyUp',e));break;default:break;}};$this.on('keydown',onKeyDown);$this.on('keyup',onKeyUp);}});};$.fn.commonKeys.keyCodes={ENTER:13,ESCAPE:27,SPACE:32,PAGEUP:33,PAGEDOWN:34,END:35,HOME:36,LEFTARROW:37,UPARROW:38,RIGHTARROW:39,DOWNARROW:40};}(jQuery,window,document));
+    var pluginName = 'jquery-focus-exit';
+
+    $.fn.focusExit = function focusExit() {
+
+        return this.each(function onEach() {
+
+            // check plugin does not already exist
+            if (!$.data(this, pluginName)) {
+
+                jQuery.data(this, pluginName, 'true');
+
+                var $this = $(this),
+                    relatedTargetShim,
+                    timeout;
+
+                var onElementFocusIn = function() {
+                    window.clearTimeout(timeout);
+                };
+
+                var onDocumentFocusIn = function(e) {
+                    relatedTargetShim = e.target;
+                };
+
+                // KeyboardEvent.relatedTarget is not supported in Firefox.
+                // So we manually listen to see where focus goes to in the doc.
+                $this.on('focusin', function() {
+                    $(document).on('focusin', onDocumentFocusIn);
+                });
+
+                $this.on('focusout', function onFocusOut(e) {
+                    timeout = window.setTimeout(function onTimeout() {
+                        $(document).off('focusin', onDocumentFocusIn);
+                        $this.off('focusin', onElementFocusIn);
+                        $this.trigger('focusExit', {
+                            "lostFocus": e.target,
+                            "gainedFocus": e.relatedTarget || relatedTargetShim
+                        });
+                    }, 100);
+
+                    $this.one('focusin', onElementFocusIn);
+                });
+            }
+        });
+    };
+}(jQuery, window, document));
+
 },{}],10:[function(require,module,exports){
+/**
+* @function $.fn.focusable
+* @name jquery-focusable
+* @version 0.0.5
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @desc Finds all focusable descendant elements of the given selector and returns
+* them as a new jQuery object
+* @param {options}
+* @param {boolean} options.findNegativeTabindex
+* @param {boolean} options.findPositiveTabindex
+* @todo sort return collection by positive tabindex order
+*/
+(function ($, window, document, undefined) {
 
-(function($,window,document,undefined){var pluginName='jquery-focus-exit';$.fn.focusExit=function focusExit(){return this.each(function onEach(){if(!$.data(this,pluginName)){jQuery.data(this,pluginName,'true');var $this=$(this),relatedTargetShim,timeout;var onElementFocusIn=function(){window.clearTimeout(timeout);};var onDocumentFocusIn=function(e){relatedTargetShim=e.target;};$this.on('focusin',function(){$(document).on('focusin',onDocumentFocusIn);});$this.on('focusout',function onFocusOut(e){timeout=window.setTimeout(function onTimeout(){$(document).off('focusin',onDocumentFocusIn);$this.off('focusin',onElementFocusIn);$this.trigger('focusexit',{"lostFocus":e.target,"gainedFocus":e.relatedTarget||relatedTargetShim});},100);$this.one('focusin',onElementFocusIn);});}});};}(jQuery,window,document));
+    var focusableElements = [
+        'a[href]',
+        'button:not([disabled])',
+        'area[href]',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        'textarea:not([disabled])',
+        'iframe',
+        'object',
+        'embed',
+        '*[tabindex]',
+        '*[contenteditable]'
+    ];
+
+    $.fn.focusable = function focusable(options) {
+        var opts = $.extend({}, $.fn.focusable.defaults, options);
+
+        return $(this).find(focusableElements.join())
+            .filter(function(index) {
+                return (opts.findNegativeTabindex === true) ? true : $(this).attr('tabindex') !== '-1';
+            })
+            .filter(function(index) {
+                return (opts.findPositiveTabindex === true) ? true : ($(this).attr('tabindex') > 0 === false);
+            }
+        );
+    };
+
+}(jQuery, window, document));
+
+$.fn.focusable.defaults = {
+    findNegativeTabindex : true,
+    findPositiveTabindex : true
+};
+
 },{}],11:[function(require,module,exports){
+/**
+* @name @ebay/jquery-keyboard-trap
+* @function $.trapKeyboard
+* @version 0.2.0
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @desc Traps keyboard focus cycle within element's interactive children.
+* @requires jquery-focusable
+* @requires jquery-focus-exit
+* @param {options}
+* @param {boolean} options.deactivateOnFocusExit - deactivate focus trap when
+* mouse user interacts with rest of page (default: false).
+* @fires {object} keyboardTrap - keyboard has been trapped
+* @fires {object} keyboardUntrap - keyboard has been untrapped
+*/
+(function ($, window, document, undefined) {
 
-(function($,window,document,undefined){var focusableElements=['a[href]','button:not([disabled])','area[href]','input:not([disabled])','select:not([disabled])','textarea:not([disabled])','iframe','object','embed','*[tabindex]','*[contenteditable]'];$.fn.focusable=function focusable(options){var opts=$.extend({},$.fn.focusable.defaults,options);return $(this).find(focusableElements.join()).filter(function(index){return(opts.findNegativeTabindex===true)?true:$(this).attr('tabindex')!=='-1';}).filter(function(index){return(opts.findPositiveTabindex===true)?true:($(this).attr('tabindex')>0===false);});};}(jQuery,window,document));$.fn.focusable.defaults={findNegativeTabindex:true,findPositiveTabindex:true};
+    var trapTemplate = '<div tabindex="0" class="keyboard-trap-boundary">',
+        defaults = {
+            deactivateOnFocusExit: false
+        },
+        $topTrap = $(trapTemplate),
+        $outerTrapBefore = $(trapTemplate),
+        $innerTrapBefore = $(trapTemplate),
+        $innerTrapAfter = $(trapTemplate),
+        $outerTrapAfter = $(trapTemplate),
+        $botTrap = $(trapTemplate),
+        $trap,
+        $firstTabElement,
+        $lastTabElement;
+
+    $topTrap.on('focus', setFocusToFirstFocusableElement);
+    $outerTrapBefore.on('focus', setFocusToFirstFocusableElement);
+    $innerTrapBefore.on('focus', setFocusToLastFocusableElement);
+    $innerTrapAfter.on('focus', setFocusToFirstFocusableElement);
+    $outerTrapAfter.on('focus', setFocusToLastFocusableElement);
+    $botTrap.on('focus', setFocusToLastFocusableElement);
+
+    function setFocusToFirstFocusableElement(){
+        $firstTabElement.focus();
+    }
+
+    function setFocusToLastFocusableElement(){
+        $lastTabElement.focus();
+    }
+
+    $.trapKeyboard = function trapKeyboard(el, options) {
+        var opts = $.extend({}, defaults, options),
+            $focusable;
+
+        $.untrapKeyboard();
+
+        $trap = $(el);
+        $focusable = $trap.focusable();
+        $firstTabElement = $focusable.first();
+        $lastTabElement = $focusable.last();
+
+        if (opts.deactivateOnFocusExit === true) {
+            $trap.focusExit();
+
+            $trap.one('focusExit', function(e) {
+                if (opts.deactivateOnFocusExit === true) {
+                    $.untrapKeyboard();
+                }
+            });
+        }
+
+        $('body').prepend($topTrap);
+        $outerTrapBefore.insertBefore($trap);
+        $trap.prepend($innerTrapBefore);
+        $trap.append($innerTrapAfter);
+        $outerTrapAfter.insertAfter($trap);
+        $('body').append($botTrap);
+
+        $trap.addClass('keyboard-trap--active');
+        $trap.trigger('keyboardTrap');
+
+        return $trap;
+    };
+
+    $.untrapKeyboard = function untrapKeyboard() {
+        if ($trap !== undefined) {
+            $topTrap.detach();
+            $outerTrapBefore.detach();
+            $innerTrapBefore.detach();
+            $innerTrapAfter.detach();
+            $outerTrapAfter.detach();
+            $botTrap.detach();
+
+            $trap.off('focusExit');
+            $trap.removeClass('keyboard-trap--active');
+            $trap.trigger('keyboardUntrap');
+        }
+        return $trap;
+    };
+
+}(jQuery, window, document));
+
 },{}],12:[function(require,module,exports){
+/**
+* @name jquery-next-id
+* @function $.fn.nextId
+* @version 0.0.13
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @desc jQuery collection plugin that will assign the next id in sequence if an
+* id property does not already exist.
+* @param {string} prefix The id will be prefixed with this value (default: nid)
+*/
+(function ($, window, document, undefined) {
+    var _nextInSequenceMap = {};
 
-(function($,window,document,undefined){var trapTemplate='<div tabindex="0" class="keyboard-trap-boundary">',defaults={deactivateOnFocusExit:false},$topTrap=$(trapTemplate),$outerTrapBefore=$(trapTemplate),$innerTrapBefore=$(trapTemplate),$innerTrapAfter=$(trapTemplate),$outerTrapAfter=$(trapTemplate),$botTrap=$(trapTemplate),$trap,$firstTabElement,$lastTabElement;$topTrap.on('focus',setFocusToFirstFocusableElement);$outerTrapBefore.on('focus',setFocusToFirstFocusableElement);$innerTrapBefore.on('focus',setFocusToLastFocusableElement);$innerTrapAfter.on('focus',setFocusToFirstFocusableElement);$outerTrapAfter.on('focus',setFocusToLastFocusableElement);$botTrap.on('focus',setFocusToLastFocusableElement);function setFocusToFirstFocusableElement(){$firstTabElement.focus();}
-function setFocusToLastFocusableElement(){$lastTabElement.focus();}
-$.trapKeyboard=function trapKeyboard(el,options){var opts=$.extend({},defaults,options),$focusable;$.untrapKeyboard();$trap=$(el);$focusable=$trap.focusable();$firstTabElement=$focusable.first();$lastTabElement=$focusable.last();if(opts.deactivateOnFocusExit===true){$trap.focusExit();$trap.one('focusexit',function(e){if(opts.deactivateOnFocusExit===true){$.untrapKeyboard();}});}
-$('body').prepend($topTrap);$outerTrapBefore.insertBefore($trap);$trap.prepend($innerTrapBefore);$trap.append($innerTrapAfter);$outerTrapAfter.insertAfter($trap);$('body').append($botTrap);$trap.addClass('keyboard-trap--active');$trap.trigger('on.keyboardTrap');return $trap;};$.untrapKeyboard=function untrapKeyboard(){if($trap!==undefined){$topTrap.detach();$outerTrapBefore.detach();$innerTrapBefore.detach();$innerTrapAfter.detach();$outerTrapAfter.detach();$botTrap.detach();$trap.off('focusexit');$trap.removeClass('keyboard-trap--active');$trap.trigger('off.keyboardTrap');}
-return $trap;};}(jQuery,window,document));
+    $.fn.nextId = function nextId(prefix) {
+        prefix = prefix || $.fn.nextId.defaults.prefix;
+
+        // initialise prefix in sequence map if necessary
+        _nextInSequenceMap[prefix] = _nextInSequenceMap[prefix] || 0;
+
+        return this.filter(function onFilter() {
+            return !this.id;
+        })
+        .each(function onEach() {
+            $(this).prop('id', prefix + $.fn.nextId.defaults.separator + _nextInSequenceMap[prefix]++);
+        });
+    };
+
+}(jQuery, window, document));
+
+$.fn.nextId.defaults = {
+    prefix: 'nid',
+    separator: '-'
+};
+
 },{}],13:[function(require,module,exports){
+/**
+* @name @ebay/jquery-prevent-document-scroll-keys
+* @function $.fn.preventDocumentScrollKeys
+* @version 0.3.0
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @desc Prevent main page scroll when pressing any scroll key (e.g. down arrow, spacebar) with focus on given selector.
+* @requires @ebay/jquery-common-keydown
+* @todo store hash of selectors to avoid duplicate event handlers
+*/
+(function ($, window, document, undefined) {
 
-(function($,window,document,undefined){var _nextInSequenceMap={};$.fn.nextId=function nextId(prefix){prefix=prefix||$.fn.nextId.defaults.prefix;_nextInSequenceMap[prefix]=_nextInSequenceMap[prefix]||0;return this.filter(function onFilter(){return!this.id;}).each(function onEach(){$(this).prop('id',prefix+$.fn.nextId.defaults.separator+_nextInSequenceMap[prefix]++);});};}(jQuery,window,document));$.fn.nextId.defaults={prefix:'nid',separator:'-'};
+    $.fn.preventDocumentScrollKeys = function preventDocumentScrollKeys() {
+        $(document).commonKeyDown();
+        $(this).preventDocumentSpaceKeyScroll();
+        $(this).preventDocumentArrowKeyScroll();
+    };
+
+    $.fn.preventDocumentSpaceKeyScroll = function preventDocumentSpaceKeyScroll() {
+        $(document).on('spaceKeyDown', $(this).selector, function(e) {
+            e.preventDefault();
+        });
+    };
+
+    $.fn.preventDocumentArrowKeyScroll = function preventDocumentArrowKeyScroll() {
+        $(document).on('upArrowKeyDown downArrowKeyDown', $(this).selector, function(e) {
+            e.preventDefault();
+        });
+    };
+
+}(jQuery, window, document));
+
 },{}],14:[function(require,module,exports){
+/**
+* @function jquery.rovingtabindex.js
+* @version 0.5.0
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @description jQuery collection plugin that implements a roving keyboard tabindex
+* @summary http://www.w3.org/TR/wai-aria-practices/#kbd_general_within
+* @requires jquery-common-keydown
+* @param {string} id
+* @param {Object} options
+* @param {string} options.axis
+* @param {boolean} options.wrap
+* @param {string} options.activeIndex
+* @fires rovingTabindexChange
+* @fires nextRovingTabindex
+* @fires prevRovingTabindex
+*/
+(function ($, window, document, undefined) {
 
-(function($,window,document,undefined){$.fn.preventDocumentScrollKeys=function preventDocumentScrollKeys(){$(document).commonKeys();$(this).preventDocumentSpaceKeyScroll();$(this).preventDocumentArrowKeyScroll();};$.fn.preventDocumentSpaceKeyScroll=function preventDocumentSpaceKeyScroll(){$(document).on('space.commonKeyDown',$(this).selector,function(e){e.preventDefault();});};$.fn.preventDocumentArrowKeyScroll=function preventDocumentArrowKeyScroll(){$(document).on('uparrow.commonKeyDown downarrow.commonKeyDown',$(this).selector,function(e){e.preventDefault();});};}(jQuery,window,document));
+    $.fn.rovingTabindex = function rovingTabindex(id, options) {
+
+        options = options || {};
+
+        var wrap = options.wrap,
+            axis = options.axis,
+            activeIndex = options.activeIndex || 0,
+            $collection = this;
+
+        $(this).eq(activeIndex).attr('tabindex', '0');
+
+        return this.each(function onEach(i) {
+
+            var $this = $(this);
+
+            $this.commonKeyDown();
+
+            // store collection index pos in element dataset
+            $this.eq(0).data(id, {"rovingtabindex": i++});
+
+            if (axis === 'x') {
+                $this.on('leftArrowKeyDown', function onLeftArrowKey() {
+                    $this.trigger('prevRovingTabindex');
+                });
+
+                $this.on('rightArrowKeyDown', function onRightArrowKey() {
+                    $this.trigger('nextRovingTabindex');
+                });
+            }
+            else if (axis === 'y') {
+                $this.on('downArrowKeyDown', function onDownArrowKey() {
+                    $this.trigger('nextRovingTabindex');
+                });
+
+                $this.on('upArrowKeyDown', function onUpArrowKey() {
+                    $this.trigger('prevRovingTabindex');
+                });
+            }
+            else {
+                $this.on('leftArrowKeyDown upArrowKeyDown', function onLeftOrUpArrowKey() {
+                    $this.trigger('prevRovingTabindex');
+                });
+
+                $this.on('rightArrowKeyDown downArrowKeyDown', function onRightOrDownArrowKey() {
+                    $this.trigger('nextRovingTabindex');
+                });
+            }
+
+            $this.on('prevRovingTabindex', function onPrev(e) {
+                var itemIdx = $this.data(id).rovingtabindex,
+                    $prevEl = $collection.eq(itemIdx - 1),
+                    hasPrevEl = $prevEl.length === 1,
+                    $lastEl = $collection.eq($collection.length-1),
+                    $roveToEl = (hasPrevEl && itemIdx !== 0) ? $prevEl : (options.wrap !== false) ? $lastEl : $this;
+
+                $this.attr('tabindex', '-1');
+                $roveToEl.attr('tabindex', '0');
+                $this.trigger('rovingTabindexChange', $roveToEl);
+            });
+
+            $this.on('nextRovingTabindex', function onNext(e) {
+                var itemIdx = $this.data(id).rovingtabindex,
+                    $nextEl = $collection.eq(itemIdx + 1),
+                    hasNextEl = $nextEl.length === 1,
+                    $firstEl = $collection.eq(0),
+                    $roveToEl = (hasNextEl) ? $nextEl : (options.wrap !== false) ? $firstEl: $this;
+
+                $this.attr('tabindex', '-1');
+                $roveToEl.attr('tabindex', '0');
+                $this.trigger('rovingTabindexChange', $roveToEl);
+            });
+
+        });
+    };
+
+}(jQuery, window, document));
+
 },{}],15:[function(require,module,exports){
+/**
+* @name jquery-screenreader-trap
+* @function $.trapScreenreader
+* @version 0.2.0
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @desc Restricts virtual cursor to the given element and it's children. This is
+* achieved by adding aria-hidden=true to all siblings and ancestor siblings of
+* the trapped element. Any elements that have aria-hidden=true state before
+* the trap is activated must have their state preserved. Note this plugin does
+* not trap regular keyboard focus, use jquery-keyboard-trap instead.
+* @fires screenreaderTrap
+* @fires screenreaderUntrap
+*/
+(function ($, window, document, undefined) {
 
-(function($,window,document,undefined){$.fn.rovingTabindex=function rovingTabindex(id,options){options=options||{};var wrap=options.wrap,axis=options.axis,activeIndex=options.activeIndex||0,$collection=this;$(this).eq(activeIndex).attr('tabindex','0');return this.each(function onEach(i){var $this=$(this);$this.commonKeys();$this.eq(0).data(id,{"rovingtabindex":i++});if(axis==='x'){$this.on('leftarrow.commonKeyDown',function onLeftArrowKey(){$this.trigger('prev.rovingTabindex');});$this.on('rightarrow.commonKeyDown',function onRightArrowKey(){$this.trigger('next.rovingTabindex');});}
-else if(axis==='y'){$this.on('downarrow.commonKeyDown',function onDownArrowKey(){$this.trigger('next.rovingTabindex');});$this.on('uparrow.commonKeyDown',function onUpArrowKey(){$this.trigger('prev.rovingTabindex');});}
-else{$this.on('leftarrow.commonKeyDown uparrow.commonKeyDown',function onLeftOrUpArrowKey(){$this.trigger('prev.rovingTabindex');});$this.on('rightarrow.commonKeyDown downarrow.commonKeyDown',function onRightOrDownArrowKey(){$this.trigger('next.rovingTabindex');});}
-$this.on('prev.rovingTabindex',function onPrev(e){var itemIdx=$this.data(id).rovingtabindex,$prevEl=$collection.eq(itemIdx-1),hasPrevEl=$prevEl.length===1,$lastEl=$collection.eq($collection.length-1),$roveToEl=(hasPrevEl&&itemIdx!==0)?$prevEl:(options.wrap!==false)?$lastEl:$this;$this.attr('tabindex','-1');$roveToEl.attr('tabindex','0');$this.trigger('change.rovingTabindex',$roveToEl);});$this.on('next.rovingTabindex',function onNext(e){var itemIdx=$this.data(id).rovingtabindex,$nextEl=$collection.eq(itemIdx+1),hasNextEl=$nextEl.length===1,$firstEl=$collection.eq(0),$roveToEl=(hasNextEl)?$nextEl:(options.wrap!==false)?$firstEl:$this;$this.attr('tabindex','-1');$roveToEl.attr('tabindex','0');$this.trigger('change.rovingTabindex',$roveToEl);});});};}(jQuery,window,document));
+    var $trappedEl,
+        $modifiedElements;
+
+    $.trapScreenreader = function trapScreenReader(el) {
+        $.untrapScreenreader();
+
+        $trappedEl = $(el);
+
+        var $siblings = $trappedEl.siblings(':not(script, [aria-hidden=true])');
+        var $parents = $trappedEl.parents(':not(html, body)');
+        var $parentsSiblings = $trappedEl.parents(':not(html, body)').siblings(':not(script, [aria-hidden=true])');
+
+        $trappedEl.attr('aria-hidden', 'false');
+        $siblings.attr('aria-hidden', 'true');
+        $parents.attr('aria-hidden', 'false');
+        $parentsSiblings.attr('aria-hidden', 'true');
+
+        $modifiedElements = $trappedEl.add($siblings).add($parents).add($parentsSiblings);
+
+        $trappedEl.trigger('screenreaderTrap');
+    };
+
+    $.untrapScreenreader = function untrapScreenReader() {
+        if ($trappedEl) {
+            $modifiedElements.removeAttr('aria-hidden');
+            $trappedEl.trigger('screenreaderUntrap');
+        }
+    };
+
+}(jQuery, window, document));
+
 },{}],16:[function(require,module,exports){
+/**
+* @name @ebay/jquery-button-flyout
+* @function $.fn.buttonFlyout
+* @version 0.4.0
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @requires @ebay/jquery-next-id
+* @requires @ebay/jquery-common-keydown
+* @requires @ebay/jquery-focusable
+* @requires @ebay/jquery-focus-exit
+* @desc converts a button + * into a button + popup flyout and handles all
+* hide/show behaviour.
+* @fires {object} closeButtonFlyout - close the button flyout
+* @fires {object} openButtonFlyout - open the button flyout
+* @fires {object} toggleButtonFlyout - toggle the button flyout
+* @fires {object} buttonFlyoutClose - the button flyout has closed
+* @fires {object} buttonFlyoutOpen - the button flyout has opened
+*/
+(function ($, window, document, undefined) {
 
-(function($,window,document,undefined){var $trappedEl,$modifiedElements;$.trapScreenreader=function trapScreenReader(el){$.untrapScreenreader();$trappedEl=$(el);var $siblings=$trappedEl.siblings(':not(script, [aria-hidden=true])');var $parents=$trappedEl.parents(':not(html, body)');var $parentsSiblings=$trappedEl.parents(':not(html, body)').siblings(':not(script, [aria-hidden=true])');$trappedEl.attr('aria-hidden','false');$siblings.attr('aria-hidden','true');$parents.attr('aria-hidden','false');$parentsSiblings.attr('aria-hidden','true');$modifiedElements=$trappedEl.add($siblings).add($parents).add($parentsSiblings);$trappedEl.trigger('on.screenreaderTrap');};$.untrapScreenreader=function untrapScreenReader(){if($trappedEl){$modifiedElements.removeAttr('aria-hidden');$trappedEl.trigger('off.screenreaderTrap');}};}(jQuery,window,document));
+    $.fn.buttonFlyout = function buttonFlyout(options) {
+
+        options = options || {};
+
+        return this.each(function onEach() {
+            var $this = $(this),
+                $button = $this.find('> button'),
+                $overlay = $this.find('> *:last-child');
+
+            // assign next id in sequence if one doesn't already exist
+            $this.nextId('button-flyout');
+
+            // when overlay loses focus, hide overlay
+            $overlay.focusExit().on('focusExit', function onOverlayFocusExit(e) {
+                $this.trigger('closeButtonFlyout');
+            });
+
+            // assign id to overlay and hide element
+            $overlay
+                .prop('id', $this.prop('id') + '-overlay')
+                .attr('aria-hidden', 'true');
+
+            // the button controls the overlay's expanded state
+            $button
+                .attr('aria-controls', $overlay.prop('id'))
+                .attr('aria-expanded', 'false');
+
+            $button.on('click', function onButtonClick(e) {
+                $this.trigger('toggleButtonFlyout');
+            });
+
+            $this.on('toggleButtonFlyout', function onToggle(e) {
+                $this.trigger($overlay.attr('aria-hidden') == 'true' ? 'openButtonFlyout' : 'closeButtonFlyout');
+            });
+
+            // update ARIA states on show
+            $this.on('openButtonFlyout', function onShow(e) {
+                $button.attr('aria-expanded', 'true');
+                $overlay.attr('aria-hidden', 'false');
+                // if desired, set focus on first interactive element
+                if (options.focusManagement === true) {
+                    $overlay.focusable().first().focus();
+                }
+                $this.trigger('buttonFlyoutOpen');
+            });
+
+            // update ARIA states on hide
+            $this.on('closeButtonFlyout', function onHide(e) {
+                $button.attr('aria-expanded', 'false');
+                $overlay.attr('aria-hidden', 'true');
+                $this.trigger('buttonFlyoutClose');
+            });
+
+            // esc key must close overlay
+            $this.commonKeyDown().on('escapeKeyDown', function onEscKeyDown(e) {
+                $this.trigger('closeButtonFlyout');
+                $button.focus();
+            });
+
+        });
+    };
+
+}(jQuery, window, document));
+
 },{}],17:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0

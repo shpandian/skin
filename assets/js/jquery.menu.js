@@ -37,7 +37,7 @@
             $this.buttonFlyout({focusManagement:true});
 
             // listen for specific key presses on all menu items
-            $allmenuitems.commonKeys();
+            $allmenuitems.commonKeyDown();
 
             // listen for roving tabindex update on all menu items
             $allmenuitems.rovingTabindex($this.prop('id'), {axis: 'y'});
@@ -55,7 +55,7 @@
             // all submenus start in collapsed state
             $subMenus.attr('aria-expanded', 'false');
 
-            $allmenuitems.on('change.rovingTabindex', function onRovingTabindex(event, item) {
+            $allmenuitems.on('rovingTabindexChange', function onRovingTabindex(event, item) {
                 $(item).focus();
             });
 
@@ -63,11 +63,11 @@
                 $this.trigger('activate', e.target);
             });
 
-            $allmenuitems.not('a').on('space.commonKeyDown enter.commonKeyDown', function(e) {
+            $allmenuitems.not('a').on('spaceKeyDown enterKeyDown', function(e) {
                 $this.trigger('activate', e.target);
             });
 
-            $checkboxes.on('space.commonKeyDown enter.commonKeyDown', function(e) {
+            $checkboxes.on('spaceKeyDown enterKeyDown', function(e) {
                 $(this).attr('aria-checked', $(this).attr('aria-checked') == 'true' ? 'false' : 'true');
             });
 
@@ -75,7 +75,7 @@
                 $(this).attr('aria-checked', $(this).attr('aria-checked') == 'true' ? 'false' : 'true');
             });
 
-            $radios.on('space.commonKeyDown enter.commonKeyDown', function(e) {
+            $radios.on('spaceKeyDown enterKeyDown', function(e) {
                 $radios.attr('aria-checked', 'false')
                 $(this).attr('aria-checked', 'true');
             });
@@ -85,7 +85,7 @@
                 $(this).attr('aria-checked', 'true');
             });
 
-            $this.on('show.buttonFlyout hide.buttonFlyout', function onShowOrHide() {
+            $this.on('buttonFlyoutOpen openButtonFlyoutClose', function onShowOrHide() {
                 $allmenuitems.attr('tabindex', '-1');
             });
 

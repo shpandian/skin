@@ -2098,6 +2098,12 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   width: 76%;
 }
 
+.skin-large .textbox--inline > [aria-live],
+.skin-large .textbox--inline-wrap > [aria-live] {
+  float: right;
+  width: 76.5%;
+}
+
 .textbox--email,
 .textbox--search,
 .textbox--username {

@@ -3,6 +3,7 @@
 * @version 0.0.1
 * @author Ian McBurnie <imcburnie@ebay.com>
 * @requires jquery-next-id
+* @requires jquery-common-keydown
 * @requires jquery-focusable
 * @requires jquery-keyboard-trap
 * @requires jquery-screenreader-trap
@@ -81,7 +82,7 @@
                 $body.addClass('has-dialog');
 
                 // dialog must be closed on esc key
-                $(document).commonKeys().on('escape.commonKeyDown', onDocumentEscKey);
+                $(document).commonKeyDown().on('escapeKeyDown', onDocumentEscKey);
 
                 $closeButton.on('click', onCloseButtonClick);
             });
@@ -90,7 +91,7 @@
             $dialog.on('close.dialog', function onDialogClose() {
                 window.clearTimeout(openTimeout);
                 $closeButton.off('click', onCloseButtonClick);
-                $(document).off('escape.commonKeyDown', onDocumentEscKey);
+                $(document).off('escapeKeyDown', onDocumentEscKey);
                 $.untrapKeyboard();
                 $.untrapScreenreader();
                 $body.removeClass('has-dialog');
