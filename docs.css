@@ -1,3 +1,27 @@
+/****************************************/
+/* BEGIN "src/less/core/variables.less" */
+/* @import "color-variables.less"; */
+/*----------------------------------------------*/
+/* + BEGIN "src/less/core/color-variables.less" */
+/* + END   "src/less/core/color-variables.less" */
+/*----------------------------------------------*/
+/* END   "src/less/core/variables.less" */
+/****************************************/
+/*************************************/
+/* BEGIN "src/less/core/mixins.less" */
+/* @import "icon-mixins.less"; */
+/*------------------------------------------*/
+/* + BEGIN "src/less/core/icon-mixins.less" */
+/* @import "variables.less"; (skipped, already imported) */
+/* + END   "src/less/core/icon-mixins.less" */
+/*------------------------------------------*/
+/* END   "src/less/core/mixins.less" */
+/*************************************/
+/******************************************/
+/* BEGIN "docs/src/assets/css/index.less" */
+/* @import "pygments.less"; */
+/*---------------------------------------------*/
+/* + BEGIN "docs/src/assets/css/pygments.less" */
 .hll {
   background-color: #ffffcc;
 }
@@ -188,6 +212,8 @@
 .css .nt + .nt {
   color: #999;
 }
+/* + END   "docs/src/assets/css/pygments.less" */
+/*---------------------------------------------*/
 html > body {
   background: #fafafa;
   color: #555;
@@ -385,6 +411,9 @@ body > footer a:visited {
 .bubblehelp > button::before {
   margin-right: 0;
 }
+/* @import "index-large.less"; */
+/*------------------------------------------------*/
+/* + BEGIN "docs/src/assets/css/index-large.less" */
 @media (min-width: 750px) {
   body > header {
     border-right: 1px solid #ECECEC;
@@ -467,3 +496,9 @@ body > footer a:visited {
     padding-left: 1em;
   }
 }
+/* + END   "docs/src/assets/css/index-large.less" */
+/*------------------------------------------------*/
+/* END   "docs/src/assets/css/index.less" */
+/******************************************/
+
+

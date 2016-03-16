@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link type="text/css" rel="stylesheet" href="skin.css"/>
         <link type="text/css" rel="stylesheet" href="skin-legacy.css"/>
-        <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
+        <link type="text/css" rel="stylesheet" href="docs.css"/>
     </head>
     <body>
         <header>
@@ -144,12 +144,15 @@
 
 <section id="alert" aria-labelledby="alert_heading">
     <h2 id="alert_heading">Alert</h2>
-    <p><a href="#page-alert">Page alerts</a>, <a href="#inline-alert">inline alerts</a> and <a href="#flyout-alert">flyout alerts</a> typically appear as the direct result of some user interaction, and may be rendered by the server on initial page load (role=region) or rendered by the client any time after page load (role=alert).</p>
+    <p><a href="#page-alert">Page alerts</a>, <a href="#inline-alert">inline alerts</a> and <a href="#flyout-alert">flyout alerts</a> typically appear as the direct result of some user interaction.</p>
+    <p>Alerts may be rendered by the server on initial page load (use <span class="highlight">role=region</span>) or rendered by the client any time after page load (use <span class="highlight">role=alert</span>). It is also possible that an alert may be rendered by the server and then modified or re-used by the client (use <span class="highlight">role=alert</span>).</p>
     <p>An alert may have one of three possible levels: <span class="highlight">high-priority</span>, <span class="highlight">confirmation</span>, or <span class="highlight">information</span>.</p>
 
     <h3 id="page-alert">Page Alert</h3>
     <p>A page alert appears prominently at the top of the page.</p>
     <p>Use the <span class="highlight">page-alert--high</span>, <span class="highlight">page-alert--confirm</span>, or <span class="highlight">page-alert--info</span> modifier classes depending on the level of alert required.</p>
+    <p>If page alert text is longer than a single line, please apply the <span class="highlight">.page-alert--multi-line</span> modifier class to ensure correct alignment of text and icon.</p>
+
     <div class="demo">
         <div class="page-alert page-alert--high" role="region" aria-label="High Priority">
             <p>Something went wrong. Please try again.</p>
@@ -174,7 +177,7 @@
     </code></pre></figure>
 
     <h3>Call-to-Action Page Alert</h4>
-    <p>Use the <span class="highlight">page-alert--cta</span> for any page alert with button or link call-to-action.</p>
+    <p>Use the <span class="highlight">page-alert--cta</span> modifier for any page alert with a button or link call-to-action.</p>
 
     <div class="demo">
         <div class="page-alert page-alert--confirm page-alert--cta" role="region" aria-label="High Priority">
@@ -198,12 +201,12 @@
     </code></pre></figure>
 
     <h3>Dismissable Page Alert</h4>
-    <p>Use the <span class="highlight">page-alert--close</span> for any dismissable page alert.</p>
+    <p>Use the <span class="highlight">page-alert--close</span> modifier for any dismissable page alert.</p>
 
     <div class="demo">
         <div class="page-alert page-alert--info page-alert--close" role="region" aria-label="Confirmation">
             <button aria-label="Dismiss alert" type="button"></button>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas non dolor velsagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. dolor vl sagittis.</p>
+            <p>Here's a tip to help you be successful at your task.</p>
         </div>
     </div>
 
@@ -216,6 +219,7 @@
     <h3>Page Alert 7+</h3>
 
     <p>For screens sizes over 7", leverage the <span class="highlight">skin-large</span> class to display a larger, more prominent page alert.</p>
+    <p>Notice the use of <span class="highlight">.page-alert--multi-line</span> on the last example. It ensures that multi-line text is aligned to top of icon. <strong>NOTE:</strong> we have hardcoded this class here, but in general you may want to apply this class dynamically based on a pre-determined character count.</p>
 
     <div class="demo skin-large">
         <div class="page-alert page-alert--high" role="region" aria-label="High Priority">
@@ -228,7 +232,7 @@
         </div>
 
 
-        <div class="page-alert page-alert--info page-alert--close" role="region" aria-label="Information">
+        <div class="page-alert page-alert--info page-alert--close page-alert--multi-line" role="region" aria-label="Information">
             <button aria-label="Dismiss alert" type="button"></button>
             <p>We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete</p>
             <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
@@ -243,7 +247,7 @@
         <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Invoke alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;p&gt;</span>You just completed the task.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--info page-alert--close&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Information&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-alert page-alert--info page-alert--close page-alert--multi-line&quot;</span> <span class="na">role=</span><span class="s">&quot;region|alert&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Information&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;p&gt;</span>We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Use fewer refinements<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
@@ -328,16 +332,16 @@
     <div class="demo skin-large">
         <div class="tooltip">
             <a href="http://www.ebay.com" aria-describedby="tooltip-0">www.ebay.com</a>
-            <div id="tooltip-0" class="flyout-alert flyout-alert--high flyout-alert--top-left" role="tooltip" aria-hidden="true">
-                <p>We had trouble connecting to PayPal. Please make your payment later.</p>
+            <div id="tooltip-0" class="flyout-alert flyout-alert--info flyout-alert--top-left" role="tooltip" aria-hidden="true">
+                <p>We could not find any items that match your search. Try expanding your search to find more items.</p>
             </div>
         </div>
     </div>
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span> <span class="na">aria-describedby=</span><span class="s">&quot;tooltip-0&quot;</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;tooltip-0&quot;</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--high flyout-alert--top-left&quot;</span> <span class="na">role=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;p&gt;</span>We had trouble connecting to PayPal. Please make your payment later.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;tooltip-0&quot;</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--info flyout-alert--top-left&quot;</span> <span class="na">role=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>We could not find any items that match your search. Try expanding your search to find more items.<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -348,18 +352,18 @@
     <div class="demo skin-large">
         <div class="bubblehelp">
             <button class="icon-info" type="button" aria-label="Open alert" aria-expanded="false"></button>
-            <div class="flyout-alert flyout-alert--high flyout-alert--close flyout-alert--top-left" aria-hidden="true">
+            <div class="flyout-alert flyout-alert--info flyout-alert--close flyout-alert--top-left" aria-hidden="true">
                 <button aria-label="Dismiss alert" type="button"></button>
-                <p>We had trouble connecting to PayPal. Please make your payment later.</p>
+                <p>We could not find any items that match your search. Try expanding your search to find more items.</p>
             </div>
         </div>
     </div>
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;icon-info&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Open alert&quot;</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--high flyout-alert--close flyout-alert--top-left&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--info flyout-alert--close flyout-alert--top-left&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;p&gt;</span>We had trouble connecting to PayPal. Please make your payment later.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;</span>We could not find any items that match your search. Try expanding your search to find more items.<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -1563,9 +1567,6 @@
             <span class="icon-close"></span>
         </li>
         <li>
-            <span class="icon-for-sale-null"></span>
-        </li>
-        <li>
             <span class="icon-gear"></span>
         </li>
         <li>
@@ -1587,10 +1588,10 @@
             <span class="icon-search"></span>
         </li>
         <li>
-            <span class="icon-search-null"></span>
+            <span class="icon-sell"></span>
         </li>
         <li>
-            <span class="icon-sell"></span>
+            <span class="icon-sell-null"></span>
         </li>
         <li>
             <span class="icon-sort"></span>
@@ -1599,7 +1600,7 @@
             <span class="icon-star"></span>
         </li>
         <li>
-            <span class="icon-view-expanded-list"></span>
+            <span class="icon-view-detail"></span>
         </li>
         <li>
             <span class="icon-view-gallery"></span>
@@ -1635,7 +1636,7 @@
             <span class="icon-mail"></span>
         </li>
         <li>
-            <span class="icon-call-me"></span>
+            <span class="icon-call"></span>
         </li>
         <li>
             <span class="icon-comments"></span>
@@ -1645,6 +1646,9 @@
         </li>
         <li>
             <span class="icon-save"></span>
+        </li>
+        <li>
+            <span class="icon-clear"></span>
         </li>
     </ul>
 
@@ -2096,6 +2100,6 @@
             <a href="https://github.corp.ebay.com/f2e/skin">View on GitHub</a>
 
         </footer>
-        <script src="assets/js/main.js"></script>
+        <script src="docs.js"></script>
     </body>
 </html>
