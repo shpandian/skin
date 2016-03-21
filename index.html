@@ -101,7 +101,7 @@
 <section id="install" aria-labelledby="install_heading">
     <h2 id="install_heading">Install</h2>
     <p>Skin is distributed as an NPM package. Install the package using the <span class="highlight">npm install</span> command.</p>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">        npm install skin-ebay
+    <figure class="highlight"><pre><code class="language-html" data-lang="html">npm install skin-ebay
     </code></pre></figure>
 
     <p>Include the desired Skin modules in your <span class="highlight">browser.json</span> and you are good to go.</p>
@@ -383,7 +383,7 @@
         <button class="btn" type="button">Buy it Now</button>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
     </code></pre></figure>
 
     <h3>Primary Button</h3>
@@ -392,7 +392,7 @@
         <button class="btn btn--primary" type="button">Buy it Now</button>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--primary&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--primary&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
     </code></pre></figure>
 
     <h3>Secondary Button</h3>
@@ -401,7 +401,7 @@
         <button class="btn btn--secondary" type="button">Buy it Now</button>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--secondary&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--secondary&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
     </code></pre></figure>
 
     <h3>Small Button</h3>
@@ -747,6 +747,7 @@
     <div id="fullpage">
         <h3>Default Dialog</h3>
         <p>The default dialog is a full-page like experience on small screens, and a center-aligned window for large screens. For large screens, a fixed height is required on the div with role=document.</p>
+        <p>For a close button with text (e.g. "Cancel", "Done") use the element class <span class="highlight">dialog__close</span> and apply inner text. For a close button with default icon ('X'), use the modifier class <span class="highlight">dialog__close--icon</span> and apply aria-label.</p>
         <p>Transition duration: 150ms.</p>
 
         <div class="demo">
@@ -754,7 +755,7 @@
             <div role="dialog" class="dialog" id="dialog-0" aria-labelledby="dialog-title-0" aria-hidden="true">
                 <div role="document">
                      <header>
-                        <button id="dialog-close" aria-label="Close Dialog" type="button"></button>
+                        <button id="dialog-close" class="dialog__close dialog__close--icon" aria-label="Close Dialog" type="button"></button>
                         <h2 id="dialog-title-0">Notifications</h2>
                     </header>
                     <div>
@@ -768,7 +769,7 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;dialog-0-title&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;document&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;header&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Close Dialog&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;dialog__close dialog__close--icon&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Close Dialog&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
             <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-0-title&quot;</span><span class="nt">&gt;</span>Notifications<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
         <span class="nt">&lt;div&gt;</span>
@@ -784,6 +785,7 @@
     <div id="subpage">
         <h3>Sub-Page Dialog</h3>
         <p>Sub-Page Dialog is a variant of the default modal; it is invoked from a right-facing chevron, and is apt for the mobile hub-and-spoke model.</p>
+        <p>For a back button with text (e.g. "Back") use the element class <span class="highlight">dialog__back</span> and apply inner text. For a back button with default icon ("<") use the modifier class <span class="highlight">dialog__back-icon</span> and apply aria-label.</p>
         <p>Sub-Page Dialog slides in from the right side of the screen and is intended for small screens only.</p>
         <p>Transition duration: 350ms.</p>
 
@@ -792,7 +794,7 @@
             <div role="dialog" class="dialog dialog--subpage" id="dialog-1" aria-labelledby="dialog-1-title" aria-hidden="true">
                 <div role="document">
                     <header>
-                        <button id="dialog-backarrow" aria-label="back" type="button"></button>
+                        <button id="dialog-backarrow" class="dialog__back dialog__back--icon" aria-label="Back" type="button"></button>
                         <h2 id="dialog-1-title">Product Details</h2>
                     </header>
                     <div>
@@ -807,7 +809,7 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog dialog--subpage&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;dialog-1-title&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;document&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;header&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;back&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Back&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog__back dialog__back--icon&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
             <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-1-title&quot;</span><span class="nt">&gt;</span>Product Details<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
         <span class="nt">&lt;div&gt;</span>
@@ -827,11 +829,11 @@
         <p>Transition duration: 350ms.</p>
         <div class="demo">
             <button class="btn btn--primary btn--small dialog-button" type="button" aria-controls="dialog-2" data-dialog={"transitionDurationMs":"375"}>Panel</button>
-            <div role="dialog" class="dialog dialog--panel" id="dialog-2" aria-label="panel" aria-hidden="true">
+            <div role="dialog" class="dialog dialog--panel" id="dialog-2" aria-labelledby="dialog-2-title" aria-hidden="true">
                 <div role="document">
                     <header>
-                        <button aria-label="Close Dialog"></button>
-                        <!-- dialog heading goes here -->
+                        <button class="dialog__close dialog__close--icon" aria-label="Close Dialog"></button>
+                        <h2 id="dialog-2-title" class="clipped">Main Navigation</h2>
                     </header>
                     <div>
                         <!-- dialog content goes here -->
@@ -841,11 +843,11 @@
             <div id="dialog__mask2" class="mask"></div><!-- /mask -->
         </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog dialog--panel&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;panel&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span> <span class="na">class=</span><span class="s">&quot;dialog dialog--panel&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;dialog-2-title&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;document&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;header&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Close Dialog&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="c">&lt;!-- dialog heading goes here --&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;dialog__close dialog__close--icon&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Close Dialog&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-2-title&quot;</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span>Main Navigation<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
         <span class="nt">&lt;div&gt;</span>
             <span class="c">&lt;!-- dialog content goes here --&gt;</span>

@@ -383,13 +383,19 @@ body > footer a:visited {
   padding: 1rem;
 }
 .highlight {
-  padding: 0.2em 0.5em;
-  margin-bottom: 14px;
-  margin-left: 0;
+  margin: 0;
   background-color: rgba(0, 0, 0, 0.06);
   border: 1px solid #eeeeee;
   border-top: 0;
   font: 0.667rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  width: 100%;
+}
+.highlight pre {
+  margin: 0;
+  padding: 1em 1em 0;
+}
+.highlight code {
+  white-space: pre-wrap;
 }
 .tooltip {
   position: relative;
