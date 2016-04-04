@@ -1,5 +1,5 @@
 /*!
-Skin v2.4.1
+Skin v2.4.2
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -508,6 +508,9 @@ a:visited {
   color: #0654ba;
   text-decoration: none;
 }
+a:hover {
+  text-decoration: underline;
+}
 @font-face {
   font-family: "vq-icon-font";
   src: url('//ir.ebaystatic.com/cr/v/c1/fonts/2.4.1/vq-icon-font.eot');
@@ -619,6 +622,7 @@ a[href][role=button]:not([href|=javascript]).btn.btn--hijax.btn--cart,
 a[href]:not([role]):not([href|=javascript]).btn.btn--faux.btn--cart {
   background-color: #0654ba;
   color: #ffffff;
+  border: 1px solid #0654ba;
 }
 button[type].btn.btn--cart::before,
 input[type=submit].btn.btn--cart::before,
@@ -666,13 +670,32 @@ a[href]:not([role]):not([href|=javascript]).btn.btn--faux[class*="icon-"]:empty:
   font-size: 1rem;
   margin: 0;
 }
+button[type].btn:hover,
+input[type=submit].btn:hover,
+input[type=reset].btn:hover,
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax:hover,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux:hover,
+button[type].btn:focus,
+input[type=submit].btn:focus,
+input[type=reset].btn:focus,
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax:focus,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux:focus {
+  border: 1px solid #999999;
+}
+button[type].btn:active,
+input[type=submit].btn:active,
+input[type=reset].btn:active,
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax:active,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux:active {
+  border: 1px solid #555555;
+}
 button[type].btn[disabled],
 input[type=submit].btn[disabled],
 input[type=reset].btn[disabled] {
-  background-color: #999999;
+  background-color: #cccccc;
   background-image: none;
   border: none;
-  color: #ffffff;
+  color: #767676;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -683,9 +706,16 @@ a[href][role=button]:not([href|=javascript]).btn.btn--hijax:link,
 a[href]:not([role]):not([href|=javascript]).btn.btn--faux:link {
   text-decoration: none;
 }
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax:hover,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux:hover,
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax:focus,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux:focus {
+  border: 1px solid #999999;
+}
 a[href][role=button]:not([href|=javascript]).btn.btn--hijax:active,
 a[href]:not([role]):not([href|=javascript]).btn.btn--faux:active {
   color: #0654ba;
+  border: 1px solid #555555;
 }
 a[href][role=button]:not([href|=javascript]).btn.btn--hijax:visited,
 a[href]:not([role]):not([href|=javascript]).btn.btn--faux:visited {
@@ -693,10 +723,10 @@ a[href]:not([role]):not([href|=javascript]).btn.btn--faux:visited {
 }
 a[href][role=button]:not([href|=javascript]).btn.btn--hijax[aria-disabled=true],
 a[href]:not([role]):not([href|=javascript]).btn.btn--faux[aria-disabled=true] {
-  background-color: #999999;
+  background-color: #cccccc;
   background-image: none;
   border: none;
-  color: #ffffff;
+  color: #767676;
   opacity: 0.5;
   filter: alpha(opacity=50);
   cursor: default;
@@ -709,6 +739,7 @@ a[href]:not([role]):not([href|=javascript]).btn.btn--faux[aria-disabled=true] {
   margin-left: .25rem;
 }
 button[type].btn--primary,
+button[type].btn--cart,
 input[type=submit].btn--primary,
 input[type=reset].btn--primary,
 a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary,
@@ -717,23 +748,74 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary {
   background-color: #0654ba;
   border: 1px solid #0654ba;
 }
+button[type].btn--primary:hover,
+button[type].btn--cart:hover,
+input[type=submit].btn--primary:hover,
+input[type=reset].btn--primary:hover,
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:hover,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:hover,
+button[type].btn--primary:focus,
+button[type].btn--cart:focus,
+input[type=submit].btn--primary:focus,
+input[type=reset].btn--primary:focus,
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:focus,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:focus {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  border: 1px solid #0654ba;
+}
+button[type].btn--primary:active,
+button[type].btn--cart:active,
+input[type=submit].btn--primary:active,
+input[type=reset].btn--primary:active,
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:active,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:active {
+  background-color: #00489f;
+}
 a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:link,
-a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:link {
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:link,
+a[href][role=button]:not([href|=javascript]).btn--cart.btn--hijax:link,
+a[href]:not([role]):not([href|=javascript]).btn--cart.btn--faux:link {
   text-decoration: none;
+}
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:visited,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:visited,
+a[href][role=button]:not([href|=javascript]).btn--cart.btn--hijax:visited,
+a[href]:not([role]):not([href|=javascript]).btn--cart.btn--faux:visited {
+  color: #ffffff;
+}
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:hover,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:hover,
+a[href][role=button]:not([href|=javascript]).btn--cart.btn--hijax:hover,
+a[href]:not([role]):not([href|=javascript]).btn--cart.btn--faux:hover,
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:focus,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:focus,
+a[href][role=button]:not([href|=javascript]).btn--cart.btn--hijax:focus,
+a[href]:not([role]):not([href|=javascript]).btn--cart.btn--faux:focus {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  border: 1px solid #0654ba;
 }
 a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:active,
 a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:active,
-a[href][role=button]:not([href|=javascript]).btn--hijax.btn--primary:visited,
-a[href]:not([role]):not([href|=javascript]).btn--faux.btn--primary:visited {
+a[href][role=button]:not([href|=javascript]).btn--cart.btn--hijax:active,
+a[href]:not([role]):not([href|=javascript]).btn--cart.btn--faux:active {
   color: #ffffff;
+  background-color: #00489f;
 }
 button[type].btn--primary[disabled],
+button[type].btn--cart[disabled],
 input[type=submit].btn--primary[disabled],
 input[type=reset].btn--primary[disabled],
 a[aria-disabled=true][href][role=button]:not([href|=javascript]).btn--hijax.btn--primary,
-a[aria-disabled=true][href]:not([role]):not([href|=javascript]).btn--faux.btn--primary {
+a[aria-disabled=true][href]:not([role]):not([href|=javascript]).btn--faux.btn--primary,
+a[aria-disabled=true][href][role=button]:not([href|=javascript]).btn--cart.btn--hijax,
+a[aria-disabled=true][href]:not([role]):not([href|=javascript]).btn--cart.btn--faux {
+  color: #ffffff;
   background-color: #0654ba;
   border: 1px solid #0654ba;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 button[type].btn--secondary,
 input[type=submit].btn--secondary,
@@ -744,15 +826,47 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary {
   border: 1px solid #999999;
   background-color: rgba(240, 238, 236, 0.5);
 }
+button[type].btn--secondary:hover,
+input[type=submit].btn--secondary:hover,
+input[type=reset].btn--secondary:hover,
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:hover,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:hover,
+button[type].btn--secondary:focus,
+input[type=submit].btn--secondary:focus,
+input[type=reset].btn--secondary:focus,
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:focus,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:focus {
+  background-color: rgba(221, 221, 221, 0.5);
+  border: 1px solid #767676;
+}
+button[type].btn--secondary:active,
+input[type=submit].btn--secondary:active,
+input[type=reset].btn--secondary:active,
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:active,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:active {
+  background-color: rgba(221, 221, 221, 0.5);
+  border: 1px solid rgba(85, 85, 85, 0.5);
+}
 a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:link,
 a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:link {
   text-decoration: none;
 }
-a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:active,
-a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:active,
 a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:visited,
 a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:visited {
   color: #555555;
+}
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:hover,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:hover,
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:focus,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:focus {
+  background-color: rgba(221, 221, 221, 0.5);
+  border: 1px solid #767676;
+}
+a[href][role=button]:not([href|=javascript]).btn--hijax.btn--secondary:active,
+a[href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary:active {
+  color: #555555;
+  background-color: rgba(221, 221, 221, 0.5);
+  border: 1px solid rgba(85, 85, 85, 0.5);
 }
 button[type].btn--secondary[disabled],
 input[type=submit].btn--secondary[disabled],
@@ -761,7 +875,7 @@ a[aria-disabled=true][href][role=button]:not([href|=javascript]).btn--hijax.btn-
 a[aria-disabled=true][href]:not([role]):not([href|=javascript]).btn--faux.btn--secondary {
   background-color: rgba(240, 238, 236, 0.5);
   border: 1px solid #999999;
-  color: #999999;
+  color: #555555;
 }
 button[type].btn--link {
   border: none;
@@ -770,6 +884,14 @@ button[type].btn--link {
   font-weight: 500;
   color: #0654ba;
   text-decoration: none;
+}
+button[type].btn--link:hover,
+button[type].btn--link:focus {
+  border: none;
+}
+button[type].btn--link:active {
+  border: none;
+  background-color: #ffffff;
 }
 button[type].btn--fluid,
 input[type=submit].btn--fluid,
