@@ -373,9 +373,9 @@
 
 <section id="button" aria-labelledby="button_heading">
     <h2 id="button_heading">Button</h2>
-    <p>Buttons are used to trigger form actions (e.g. submit, reset) or JavaScript actions (e.g. open an overlay or menu). There are two tags for creating buttons: <span class="highlight">&lt;button&gt;</span> (supports inner HTML) and <span class="highlight">&lt;input&gt;</span> (supports inner text only). Outside of forms, the <span class="highlight">&lt;button&gt;</span> tag is always recommended. The only button that can update the full URL is a form submit button.</p>
-    <p>When using the <span class="highlight">&lt;button&gt;</span> tag, remember to always specify it's type attribute (type="submit" is the default, if not specified).</p>
-    <p>Links are used exclusively to navigate URLs and therefore the <span class="highlight">href</span> attribute must always contain a valid URL ('javascript' is <strong>not</strong> a valid URL so please instead use a button for javascript behaviour). Only the <span class="highlight">&lt;a&gt;</span> tag can be used to create links. Links always trigger a <span class="highlight">GET</span> request, which means that they should always be idempotent. If you wish to trigger an action that chages data on the server, then you should use a form submit to trigger a <span class="highlight">POST</span> request.</p>
+    <p>Buttons are used either to trigger form actions (e.g. submit, reset) or JavaScript actions (e.g. open an overlay or menu). There are two tags for creating buttons: <span class="highlight">&lt;button&gt;</span> (supports inner HTML) and <span class="highlight">&lt;input&gt;</span> (supports inner text only). Outside of forms, the <span class="highlight">&lt;button&gt;</span> tag is always recommended. The only button that should update the full URL is a form submit button.</p>
+    <p>When using the <span class="highlight">&lt;button&gt;</span> tag remember to <strong>always</strong> specify the <span class="highlight">type</span> attribute. The value can be <span class="highlight">button</span>, <span class="highlight">reset</span> or <span class="highlight">submit</span> (default).</p>
+    <p>Links are used exclusively to navigate URLs and therefore the <span class="highlight">href</span> attribute must always contain a valid URL ('javascript' is <strong>not</strong> a valid URL so please instead use a button for javascript behaviour). Only the <span class="highlight">&lt;a&gt;</span> tag can be used to create links. Links always trigger a <span class="highlight">GET</span> request, which means that they should always be idempotent. If you wish to trigger an action that changes data on the server, then you should use a form submit to trigger a <span class="highlight">POST</span> request.</p>
 
     <h3>Default Button</h3>
     <p>To create a default button, use class <span class="highlight">.btn</span>.</p>
@@ -465,18 +465,56 @@
     </code></pre></figure>
 
     <h3>Icon Buttons</h3>
-    <p>Skin provides a fixed set of icon buttons that can be used by simply by applying the relevant modifier class. For example <span class="highlight">btn--cart</span> or <span class="highlight">btn--sort</span>.</p>
+    <p>Use any of the available <a href="#icon">icon fonts</a> to create an icon button.</p>
+    <p>An icon on a button that contains no visible text is deemed a critical icon. An <span class="highlight">aria-label</span> <strong>must</strong> be provided to identify the purpose of the control.</p>
     <div class="demo">
-        <button class="btn btn--small btn--cart" type="button">Add To Cart</button>
-        <button class="btn btn--small btn--sort" type="button">Sort</button>
+        <button class="btn icon-menu" aria-label="Menu" type="button"></button>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--small btn--cart&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Add To Cart<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--small btn--sort&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Sort<span class="nt">&lt;/button&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn icon-menu&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Menu&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
     </code></pre></figure>
 
-    <h3>Custom Icon Buttons</h3>
-    <p>If you do not find the icon button you need, you can either ask us to add it to our set of button classes, or you can create it yourself by leveraging our <a href="#icon">icon classes</a>.</p>
+    <p>Use modifier class <span class="highlight">btn--icon</span> to apply actionable icon states for hover, focus, active &amp; disabled. Here is the list of recommended actionable icons:</p>
+    <div class="demo">
+        <button type="button" class="btn btn--icon icon-arrow-down" aria-label="arrow-down"></button>
+        <button type="button" class="btn btn--icon icon-arrow-up" aria-label="arrow-up"></button>
+        <button type="button" class="btn btn--icon icon-cart" aria-label="cart"></button>
+        <button type="button" class="btn btn--icon icon-chevron-down" aria-label="chevron down"></button>
+        <button type="button" class="btn btn--icon icon-chevron-up" aria-label="chevron up"></button>
+        <button type="button" class="btn btn--icon icon-chevron-left" aria-label="chevron left"></button>
+        <button type="button" class="btn btn--icon icon-chevron-right" aria-label="chevron right"></button>
+        <button type="button" class="btn btn--icon icon-clock" aria-label="clock"></button>
+        <button type="button" class="btn btn--icon icon-close" aria-label="close"></button>
+        <button type="button" class="btn btn--icon icon-gear" aria-label="gear"></button>
+        <button type="button" class="btn btn--icon icon-mail" aria-label="mail"></button>
+        <button type="button" class="btn btn--icon icon-mail-opened" aria-label="mail opened"></button>
+        <button type="button" class="btn btn--icon icon-notifications" aria-label="notifications"></button>
+        <button type="button" class="btn btn--icon icon-profile" aria-label="profile"></button>
+        <button type="button" class="btn btn--icon icon-trash" aria-label="trash"></button>
+        <button type="button" class="btn btn--icon icon-view-gallery" aria-label="view-gallery"></button>
+        <button type="button" class="btn btn--icon icon-view-detail" aria-label="view-detail"></button>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-arrow-down&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;arrow-down&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-arrow-up&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;arrow-up&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-cart&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;cart&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-chevron-down&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron down&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-chevron-up&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron up&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-chevron-left&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron left&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-chevron-right&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron right&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-clock&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;clock&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-close&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;close&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-gear&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;gear&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-mail&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;mail&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-mail-opened&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;mail opened&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-notifications&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;notifications&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-profile&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;profile&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-trash&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;trash&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-view-gallery&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;view-gallery&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-view-detail&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;view-detail&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+    </code></pre></figure>
+
+    <p>Icons are considered non-critical if adjacent to button text. Actionable states do not apply to non-critical icons.</p>
     <div class="demo">
         <button class="btn btn--small icon-close" type="button">Close</button>
         <button class="btn btn--small icon-menu" type="button">Menu</button>
@@ -484,20 +522,6 @@
 
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--small icon-close&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Close<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--small icon-menu&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Menu<span class="nt">&lt;/button&gt;</span>
-    </code></pre></figure>
-
-    <h3>Icon Buttons and Accessibility</h3>
-    <p>An icon on a button that contains no visible text, is always deemed a critical icon. An <span class="highlight">aria-label</span> must be provided for assistive technology to identify the purpose of the control.</p>
-
-    <div class="demo">
-        <button class="btn icon-close" aria-label="Close" type="button"></button>
-        <button class="btn icon-menu" aria-label="Menu" type="button"></button>
-        <button class="btn icon-info" aria-label="Information" type="button"></button>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn icon-close&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Close&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn icon-menu&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Menu&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn icon-info&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Information&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
     </code></pre></figure>
 
     <h3>Submit &amp; Reset</h3>
@@ -510,8 +534,8 @@
 <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">type=</span><span class="s">&quot;reset&quot;</span> <span class="na">value=</span><span class="s">&quot;Reset&quot;</span> <span class="nt">/&gt;</span>
     </code></pre></figure>
 
-    <h3>Link</h3>
-    <p>A regular text link is styled by the Core module and does not need any classes.</p>
+    <h3>Text Link</h3>
+    <p>A regular text link is an anhcor tag styled by the <a href="#core">core module</a> and does not need any classes.</p>
     <div class="demo">
         <a href="http://www.ebay.com">Visit Store</a>
     </div>
@@ -521,7 +545,7 @@
 
     <h3>Faux Button</h3>
     <p>Links can be styled to <em>look</em> like buttons, whilst still behaving like links. You should only do this for prominent 'call to action' type links, e.g. 'Start Shopping', 'Take me There', etc.</p>
-    <p>Please use the <span class="highlight">btn--faux</span> modifier class in this case. The <span class="highlight">href</span> attribute must always contain a valid URL.</p>
+    <p>Please use the <span class="highlight">btn--faux</span> modifier class in this case. The <span class="highlight">href</span> attribute must always contain a valid URL destination.</p>
     <div class="demo">
         <a class="btn btn--faux" href="http://www.ebay.com">Shop Now</a>
     </div>
@@ -529,23 +553,23 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn--faux&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Shop Now<span class="nt">&lt;/a&gt;</span>
     </code></pre></figure>
 
-    <h3>Disabled Faux Button</h3>
-    <p>To mark an anchor tag as disabled, apply the <span class="highlight">aria-disabled</span> state. Apply a negative tabindex to prevent keyboard focus. Use javascript to prevent default click behaviour.</p>
-    <div class="demo">
-        <a class="btn btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Disabled</a>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn--faux&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span> <span class="na">aria-disabled=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/a&gt;</span>
-    </code></pre></figure>
-
-    <h3>Link Hijax</h3>
-    <p>Using JavaScript, a link can have it's URL navigation behaviour progressively enhanced to button behaviour. For example, a link that would take the user to a new page might be converted to launch a view of the new page inside of a dialog instead. This technique is often referred to as 'hijax'.</p>
+    <h3>Hijaxed Faux Button</h3>
+    <p>A faux button can have it's link behaviour progressively enhanced into button behaviour. For example, a link might open the destination URL inside of an overlay instead of leaving the page. Because AJAX is typically used, this technique is often referred to as 'hijax', i.e. hijaxing a link or form submision.</p>
     <p>Please use the <span class="highlight">btn--hijax</span> modifier class in this case. The <span class="highlight">href</span> attribute must always contain a valid fallback URL. A role of <span class="highlight">button</span> must also be specified.</p>
     <div class="demo">
         <a class="btn btn--hijax" href="http://www.ebay.com" role="button">View Item</a>
     </div>
 
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn--hijax&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>View Item<span class="nt">&lt;/a&gt;</span>
+    </code></pre></figure>
+
+    <h3>Disabled Links</h3>
+    <p>To mark an anchor tag as disabled, apply the <span class="highlight">aria-disabled</span> state. Apply a negative <span class="highlight">tabindex</span> attribute to prevent keyboard focus. Use javascript to prevent default click behaviour.</p>
+    <div class="demo">
+        <a class="btn btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Disabled</a>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn--faux&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span> <span class="na">aria-disabled=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/a&gt;</span>
     </code></pre></figure>
 
 </section>

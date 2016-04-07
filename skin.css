@@ -1,5 +1,5 @@
 /*!
-Skin v2.4.2
+Skin v2.4.3
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -699,26 +699,39 @@ input[type=reset].btn[disabled] {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
-a[aria-disabled=true]:not([href]):not([href|=javascript]) {
-  cursor: default;
+button[type].btn.btn--icon:empty::before,
+input[type=submit].btn.btn--icon:empty::before,
+input[type=reset].btn.btn--icon:empty::before {
+  color: #555555;
 }
-a[href][role=button]:not([href|=javascript]).btn.btn--hijax:link,
-a[href]:not([role]):not([href|=javascript]).btn.btn--faux:link {
-  text-decoration: none;
+button[type].btn.btn--icon:empty:enabled:hover::before,
+input[type=submit].btn.btn--icon:empty:enabled:hover::before,
+input[type=reset].btn.btn--icon:empty:enabled:hover::before {
+  color: rgba(153, 153, 153, 0.9);
 }
-a[href][role=button]:not([href|=javascript]).btn.btn--hijax:hover,
-a[href]:not([role]):not([href|=javascript]).btn.btn--faux:hover,
-a[href][role=button]:not([href|=javascript]).btn.btn--hijax:focus,
-a[href]:not([role]):not([href|=javascript]).btn.btn--faux:focus {
-  border: 1px solid #999999;
+button[type].btn.btn--icon:empty:enabled:focus::before,
+input[type=submit].btn.btn--icon:empty:enabled:focus::before,
+input[type=reset].btn.btn--icon:empty:enabled:focus::before {
+  color: rgba(153, 153, 153, 0.9);
 }
-a[href][role=button]:not([href|=javascript]).btn.btn--hijax:active,
-a[href]:not([role]):not([href|=javascript]).btn.btn--faux:active {
-  color: #0654ba;
-  border: 1px solid #555555;
+button[type].btn.btn--icon:empty:enabled:active::before,
+input[type=submit].btn.btn--icon:empty:enabled:active::before,
+input[type=reset].btn.btn--icon:empty:enabled:active::before {
+  color: #333333;
 }
-a[href][role=button]:not([href|=javascript]).btn.btn--hijax:visited,
-a[href]:not([role]):not([href|=javascript]).btn.btn--faux:visited {
+button[type].btn.btn--icon:disabled:empty,
+input[type=submit].btn.btn--icon:disabled:empty,
+input[type=reset].btn.btn--icon:disabled:empty {
+  background-color: transparent;
+  opacity: 1;
+}
+button[type].btn.btn--icon:disabled:empty::before,
+input[type=submit].btn.btn--icon:disabled:empty::before,
+input[type=reset].btn.btn--icon:disabled:empty::before {
+  color: #cccccc;
+}
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux {
   text-decoration: none;
 }
 a[href][role=button]:not([href|=javascript]).btn.btn--hijax[aria-disabled=true],
@@ -730,6 +743,31 @@ a[href]:not([role]):not([href|=javascript]).btn.btn--faux[aria-disabled=true] {
   opacity: 0.5;
   filter: alpha(opacity=50);
   cursor: default;
+}
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax.btn--icon:empty::before,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux.btn--icon:empty::before {
+  color: #555555;
+}
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax.btn--icon:empty:not([aria-disabled=true]):hover::before,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux.btn--icon:empty:not([aria-disabled=true]):hover::before {
+  color: rgba(153, 153, 153, 0.9);
+}
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax.btn--icon:empty:not([aria-disabled=true]):focus::before,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux.btn--icon:empty:not([aria-disabled=true]):focus::before {
+  color: rgba(153, 153, 153, 0.9);
+}
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax.btn--icon:empty:not([aria-disabled=true]):active::before,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux.btn--icon:empty:not([aria-disabled=true]):active::before {
+  color: #333333;
+}
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax.btn--icon[aria-disabled=true]:empty,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux.btn--icon[aria-disabled=true]:empty {
+  background-color: transparent;
+  opacity: 1;
+}
+a[href][role=button]:not([href|=javascript]).btn.btn--hijax.btn--icon[aria-disabled=true]:empty::before,
+a[href]:not([role]):not([href|=javascript]).btn.btn--faux.btn--icon[aria-disabled=true]:empty::before {
+  color: #cccccc;
 }
 .btn-group > button[type].btn,
 .btn-group > input[type=submit].btn,
@@ -1406,6 +1444,7 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   display: inline-block;
   text-align: center;
   content: "\e609";
+  color: #676767;
   left: .7rem;
   color: #dddddd;
 }
@@ -1432,6 +1471,7 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   display: inline-block;
   text-align: center;
   content: "\e609";
+  color: #676767;
   left: .7rem;
   color: #b9b9b9;
 }
@@ -1482,6 +1522,7 @@ a[href]:not([role]):not([href|=javascript]).btn--faux.btn--fluid {
   display: inline-block;
   text-align: center;
   content: "\e606";
+  color: #676767;
   right: .5rem;
   color: #b9b9b9;
 }
