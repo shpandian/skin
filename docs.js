@@ -1,5 +1,5 @@
 /*!
- * jQuery JavaScript Library v2.2.2
+ * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -9,7 +9,7 @@
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-03-17T17:51Z
+ * Date: 2016-04-05T19:26Z
  */
 
 (function( global, factory ) {
@@ -65,7 +65,7 @@ var support = {};
 
 
 var
-	version = "2.2.2",
+	version = "2.2.3",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -9475,7 +9475,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {
-				callback.apply( self, response || [ jqXHR.responseText, status, jqXHR ] );
+				callback.apply( this, response || [ jqXHR.responseText, status, jqXHR ] );
 			} );
 		} );
 	}
@@ -10568,10 +10568,10 @@ https://github.com/joyent/node/blob/master/lib/module.js
     }
 })();
 
-$rmod.main("/jquery@2.2.2", "dist/jquery");
-$rmod.dep("", "jquery", "2.2.2");
-$rmod.def("/jquery@2.2.2/dist/jquery", function(require, exports, module, __filename, __dirname) { /*!
- * jQuery JavaScript Library v2.2.2
+$rmod.main("/jquery@2.2.3", "dist/jquery");
+$rmod.dep("", "jquery", "2.2.3");
+$rmod.def("/jquery@2.2.3/dist/jquery", function(require, exports, module, __filename, __dirname) { /*!
+ * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -10581,7 +10581,7 @@ $rmod.def("/jquery@2.2.2/dist/jquery", function(require, exports, module, __file
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-03-17T17:51Z
+ * Date: 2016-04-05T19:26Z
  */
 
 (function( global, factory ) {
@@ -10637,7 +10637,7 @@ var support = {};
 
 
 var
-	version = "2.2.2",
+	version = "2.2.3",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -20047,7 +20047,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {
-				callback.apply( self, response || [ jqXHR.responseText, status, jqXHR ] );
+				callback.apply( this, response || [ jqXHR.responseText, status, jqXHR ] );
 			} );
 		} );
 	}
@@ -21268,7 +21268,7 @@ $.fn.nextId.defaults = {
 /**
 * @name jquery-button-flyout
 * @function $.fn.buttonFlyout
-* @version 0.5.4
+* @version 0.5.5
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
 * @requires jquery-next-id
 * @requires jquery-common-keydown
@@ -21283,38 +21283,44 @@ $.fn.nextId.defaults = {
 
     $.fn.buttonFlyout = function buttonFlyout(options) {
 
-        options = options || {};
+        options = $.extend({
+            focusManagement: false,
+            sticky: false
+        }, options);
 
         return this.each(function onEach() {
             var $this = $(this);
             var $button = $this.find('> button');
             var $overlay = $this.find('> *:last-child');
 
-            // update ARIA states on show
+            // update ARIA states on open
             function openButtonFlyout(e) {
-                $button.attr('aria-expanded', 'true');
-                $overlay.attr('aria-hidden', 'false');
-                // if desired, set focus on first interactive element
-                if (options.focusManagement === true) {
-                    $overlay.focusable().first().focus();
+                if ($button.attr('aria-expanded') === 'false') {
+                    $button.attr('aria-expanded', 'true');
+                    $overlay.attr('aria-hidden', 'false');
+                    if (options.focusManagement === true) {
+                        $overlay.focusable().first().focus();
+                    }
+                    $this.trigger('buttonFlyoutOpen');
                 }
-                $this.trigger('buttonFlyoutOpen');
             }
 
-            // update ARIA states on hide
+            // update ARIA states on close
             function closeButtonFlyout(e) {
-                $button.attr('aria-expanded', 'false');
-                $overlay.attr('aria-hidden', 'true');
-                $this.trigger('buttonFlyoutClose');
+                if ($button.attr('aria-expanded') === 'true') {
+                    $button.attr('aria-expanded', 'false');
+                    $overlay.attr('aria-hidden', 'true');
+                    $this.trigger('buttonFlyoutClose');
+                }
             }
 
             // assign next id in sequence if one doesn't already exist
             $this.nextId('button-flyout');
 
-            // when overlay loses focus, hide overlay
-            $this.focusExit().on('focusExit', function onOverlayFocusExit(e) {
-                closeButtonFlyout();
-            });
+            if (options.sticky === false) {
+                $overlay.focusExit().on('focusExit', closeButtonFlyout);
+                $this.focusExit().on('focusExit', closeButtonFlyout);
+            }
 
             // assign id to overlay and hide element
             $overlay
@@ -21326,6 +21332,7 @@ $.fn.nextId.defaults = {
                 .attr('aria-controls', $overlay.prop('id'))
                 .attr('aria-expanded', 'false');
 
+            // the button is a toggle button
             $button.on('click', function onButtonClick(e) {
                 if ($overlay.attr('aria-hidden') === 'true') {
                     openButtonFlyout();
@@ -21336,7 +21343,6 @@ $.fn.nextId.defaults = {
 
             // when focus is inside flyout, esc key must close flyout
             $overlay.commonKeyDown().on('escapeKeyDown', function onEscKeyDown(e) {
-                closeButtonFlyout();
                 $button.focus();
             });
 
@@ -21407,186 +21413,59 @@ $.fn.nextId.defaults = {
 */
 
 /**
-* @function jquery.dialog.js
+* @file jQuery plugin that creates the basic interactivity for an ARIA menu widget
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
 * @version 0.0.1
-* @author Ian McBurnie <imcburnie@ebay.com>
+* @requires jquery
 * @requires jquery-next-id
-* @requires jquery-common-keydown
-* @requires jquery-focusable
-* @requires jquery-keyboard-trap
-* @requires jquery-screenreader-trap
-*/
-(function ( $ ) {
-
-    $.fn.dialog = function dialog(options) {
-
-        return this.each(function onEach() {
-
-            var $dialog = $(this),
-                opts = $.extend({}, $.fn.dialog.defaults, options),
-                $body = $('body'),
-                $header = $dialog.find('header'),
-                $heading = $header.find('> h2'),
-                $doc = $dialog.find('> [role=document]'), // role=document is for older NVDA
-                $closeButton = $header.find('> button'),
-                $mask = $('div.mask'),
-                $focusable,
-                openTimeout,
-                closeTimeout;
-
-            function onDocumentEscKey() {
-                $dialog.trigger('close.dialog');
-            }
-
-            function onCloseButtonClick() {
-                $dialog.trigger('close.dialog');
-            }
-
-            // assign a unique id to the dialog widget
-            $dialog.nextId('dialog');
-
-            // heading needs an id to create programmatic label for dialog
-            $heading.nextId($dialog.prop('id') + '-title');
-
-            // setup the programmatic label
-            $dialog.attr('aria-labelledby', $heading.prop('id'));
-
-            // ensure dialog has role dialog
-            $dialog.attr('role', 'dialog');
-
-            // ensure header has role banner
-            $header.attr('role', 'banner');
-
-            $dialog.on('open.dialog', function onDialogClose() {
-                // clean up any untriggered closeTimeout
-                window.clearTimeout(closeTimeout);
-
-                // set display block so that CSS transitions will work
-                $dialog.css('display', 'block');
-
-                // wait a little time before triggering CSS transition
-                openTimeout = setTimeout(function() {
-                    $dialog.attr('aria-hidden', 'false');
-                }, 10);
-
-                // find all focusable elements inside dialog
-                $focusable = $dialog.focusable();
-
-                // dialog must always focus on an interactive element
-                // if none found, set focus to doc
-                if ($focusable.size() === 0) {
-                    $doc.attr('tabindex', '-1').focus();
-                }
-                else {
-                    $focusable.first().focus();
-                }
-
-                // prevent screen reader virtual cursor from leaving the dialog
-                $.trapScreenreader($dialog);
-
-                // prevent keyboard user from leaving the dialog
-                $.trapKeyboard($dialog, {deactivateOnFocusExit:false});
-
-                // add hook to body for CSS
-                $body.addClass('has-dialog');
-
-                // dialog must be closed on esc key
-                $(document).commonKeyDown().on('escapeKeyDown', onDocumentEscKey);
-
-                $closeButton.on('click', onCloseButtonClick);
-                $mask.on('click', onCloseButtonClick);
-            });
-
-            // when the dialog is closed, we must undo everything we did on open
-            $dialog.on('close.dialog', function onDialogClose() {
-                window.clearTimeout(openTimeout);
-                $closeButton.off('click', onCloseButtonClick);
-                $mask.off('click', onCloseButtonClick);
-                $(document).off('escapeKeyDown', onDocumentEscKey);
-                $.untrapKeyboard();
-                $.untrapScreenreader();
-                $body.removeClass('has-dialog');
-                $dialog.attr('aria-hidden', 'true');
-                closeTimeout = setTimeout(function() {
-                    $dialog.css('display', 'none');
-                }, opts.transitionDurationMs);
-            });
-        });
-    };
-}( jQuery ));
-
-$.fn.dialog.defaults = {
-    transitionDurationMs : 175
-};
-
-/**
-* @function jquery.dialogbutton.js
-* @version 0.0.1
-* @author Ian McBurnie <imcburnie@ebay.com>
-* @requires jquery.dialog.js
-*/
-(function ( $ ) {
-
-    $.fn.dialogButton = function dialogButton(options) {
-
-        return this.each(function onEach() {
-
-            var $dialogButton = $(this),
-                dialogId = $dialogButton.attr('aria-controls'),
-                dialogOptions = options || $dialogButton.data('dialog'),
-                $dialog = $('#'+dialogId);
-
-            $dialog.dialog(dialogOptions);
-
-            $dialog.on('close.dialog', function(e) {
-                $dialogButton.focus();
-            });
-
-            $dialogButton.on('click', function(e) {
-                $dialog.trigger('open.dialog');
-            })
-
-        });
-    };
-}( jQuery ));
-
-/**
-* @function jquery.menu.js
-* @version 0.0.1
-* @author Ian McBurnie <imcburnie@ebay.com>
 * @requires jquery-button-flyout
 * @requires jquery-common-keydown
 * @requires jquery-roving-tabindex
+* @requires jquery-prevent-document-scroll-keys
 */
-(function ( $ ) {
+(function($, window, document, undefined) {
+    function createKeyCodeMap() {
+        var map = {};
 
-    var keycodes = {"65":"A","66":"B","68":"D","76":"L","77":"M","78":"N","80":"P"}
+        for (var charCode = 65; charCode <= 90; charCode++) {
+            map[charCode] = String.fromCharCode(charCode);
+        }
 
+        return map;
+    }
+
+    /**
+    * jQuery plugin that creates the basic interactivity for an ARIA menu widget
+    *
+    * @method "jQuery.fn.menu"
+    * @return {jQuery} chainable jQuery class
+    */
     $.fn.menu = function menu() {
-
         return this.each(function onEach() {
-            var $this = $(this),
-                $button = $this.find('button'),
-                $rootMenu = $this.find('> [role=menu], > *:last-child > [role=menu]').first(),
-                $groups = $rootMenu.find('> div[role=presentation]'),
-                $allmenuitems = $rootMenu.find('> [role^=menuitem], > div > [role^=menuitem], > a'),
-                $links = $rootMenu.find('a'),
-                $buttons = $rootMenu.find('[role=menuitem]'),
-                $checkboxes = $rootMenu.find('[role=menuitemcheckbox]'),
-                $radios = $rootMenu.find('[role=menuitemradio]'),
-                $firstMenuItem = $allmenuitems.first(),
-                $subMenus = $rootMenu.find('[role=menuitem][aria-haspopup=true]'),
-                shortcutKeyMap = {};
+            var $this = $(this);
+            var $button = $this.find('button');
+            var $rootMenu = $this.find('> [role=menu], > *:last-child > [role=menu]').first();
+            var $groups = $rootMenu.find('> div[role=presentation]');
+            var $allmenuitems = $rootMenu.find('> [role^=menuitem], > div > [role^=menuitem], > a');
+            var $links = $rootMenu.find('a');
+            var $buttons = $rootMenu.find('[role=menuitem]');
+            var $checkboxes = $rootMenu.find('[role=menuitemcheckbox]');
+            var $radios = $rootMenu.find('[role=menuitemradio]');
+            var $firstMenuItem = $allmenuitems.first();
+            var $subMenus = $rootMenu.find('[role=menuitem][aria-haspopup=true]');
+            var keyCodeMap = createKeyCodeMap();
+            var shortcutKeyMap = {};
 
+            // store first char of all menu items
             $allmenuitems.each(function(idx) {
-                // store the starting letter of each menu item
                 shortcutKeyMap[$(this).text()[0]] = idx;
             });
 
             // assign id to widget
             $this.nextId('popupmenu');
 
-            $this.buttonFlyout({focusManagement:true});
+            // menu is built on top of button-flyout plugin
+            $this.buttonFlyout({focusManagement: true});
 
             // listen for specific key presses on all menu items
             $allmenuitems.commonKeyDown();
@@ -21597,94 +21476,99 @@ $.fn.dialog.defaults = {
             // assign id to menu
             $rootMenu.prop('id', $this.prop('id') + '-menu');
 
+            // create popup menu semantics
             $button
                 .attr('aria-haspopup', 'true')
                 .prop('id', $this.prop('id') + '-button');
 
-            $groups
-                .attr('role', 'presentation');
-
             // all submenus start in collapsed state
             $subMenus.attr('aria-expanded', 'false');
 
-            $allmenuitems.not('a').on('click' , function(e) {
-                $this.trigger('activate', e.target);
+            $allmenuitems.not('a').on('click spaceKeyDown enterKeyDown', function(e) {
+                $this.trigger('menuSelect');
             });
 
-            $allmenuitems.not('a').on('spaceKeyDown enterKeyDown', function(e) {
-                $this.trigger('activate', e.target);
+            // toggle checkbox state
+            $checkboxes.on('click spaceKeyDown enterKeyDown', function(e) {
+                $(this).attr('aria-checked', $(this).attr('aria-checked') === 'true' ? 'false' : 'true');
             });
 
-            $checkboxes.on('spaceKeyDown enterKeyDown', function(e) {
-                $(this).attr('aria-checked', $(this).attr('aria-checked') == 'true' ? 'false' : 'true');
-            });
-
-            $checkboxes.on('click', function(e) {
-                $(this).attr('aria-checked', $(this).attr('aria-checked') == 'true' ? 'false' : 'true');
-            });
-
-            $radios.on('spaceKeyDown enterKeyDown', function(e) {
+            // toggle radios state
+            $radios.on('click spaceKeyDown enterKeyDown', function(e) {
                 $radios.attr('aria-checked', 'false');
                 $(this).attr('aria-checked', 'true');
             });
 
-            $radios.on('click', function(e) {
-                $radios.attr('aria-checked', 'false')
-                $(this).attr('aria-checked', 'true');
-            });
-
+            // reset all tabindexes when flyout opens and closes
             $this.on('buttonFlyoutOpen buttonFlyoutClose', function onShowOrHide() {
                 $allmenuitems.attr('tabindex', '-1');
             });
 
-            $allmenuitems.on('keydown', function(e){
-                var keyPressed = keycodes[e.keyCode];
+            // if char key is pressed, set focus on 1st matching menu item
+            $allmenuitems.on('keydown', function(e) {
+                var char = keyCodeMap[e.keyCode];
+                var itemIndex = shortcutKeyMap[char];
 
-                // if a menu item begin with this letter, set focus on it
-                if (keyPressed) {
-                    $allmenuitems.get(shortcutKeyMap[keyPressed]).focus();
+                if (itemIndex) {
+                    $allmenuitems.get(itemIndex).focus();
                 }
-            })
-
-            $this.on('activate', function onActivate(e, item) {
-                alert(item.getAttribute('role') + ': ' + item.innerHTML);
-                $this.trigger('dismiss');
-                setTimeout(function(){
-                    $button.focus();
-                }, 50)
             });
 
-            // call plugin to prevent page scroll
+            // when a menu item selection has been made, set focus back to button
+            $this.on('menuSelect', function onMenuSelect(e) {
+                $button.focus();
+            });
+
+            // use a plugin to prevent page scroll when arrow keys are pressed
             $('[role^=menuitem]').preventDocumentScrollKeys();
 
             // mark widget as js initialised
-            $this.addClass('menu-js');
+            $this.addClass('menu--js');
         });
     };
-}( jQuery ));
+}(jQuery));
 
 /**
-* @function jquery.tabs.js
+* The jQuery plugin namespace.
+* @external "jQuery.fn"
+* @see {@link http://learn.jquery.com/plugins/|jQuery Plugins}
+*/
+
+/**
+* menuSelect event
+*
+* @event menuSelect
+* @type {object}
+* @property {object} event - event object
+*/
+
+/**
+* @file jQuery plugin that creates the basic interactivity for an ARIA tabs widget
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
 * @version 0.0.1
-* @author Ian McBurnie <imcburnie@ebay.com>
+* @requires jquery
 * @requires jquery-next-id
 * @requires jquery-roving-tabindex
+* @requires jquery-prevent-document-scroll-keys
 */
-(function ( $ ) {
-
-    $.fn.tabs = function tabs (options) {
-
-        var options = options || {};
+(function($) {
+    /**
+    * jQuery plugin that creates the basic interactivity for an ARIA tabs widget
+    *
+    * @method "jQuery.fn.tabs"
+    * @return {jQuery} chainable jQuery class
+    */
+    $.fn.tabs = function tabs(options) {
+        options = $.extend({}, options);
 
         return this.each(function onEach() {
-
-            var $tabsWidget = $(this),
-                $tablist = $tabsWidget.find('> ul:first-child, > ol:first-child, > div:first-child'),
-                $tabs = $tablist.find('> li, > div'),
-                $links = $tablist.find('a'),
-                $panelcontainer = $tabsWidget.find('> div:last-child'),
-                $panels = $panelcontainer.find('> div'),
-                $panelHeadings = $panels.find('> h2:first-child, > h3:first-child');
+            var $tabsWidget = $(this);
+            var $tablist = $tabsWidget.find('> ul:first-child, > ol:first-child, > div:first-child');
+            var $tabs = $tablist.find('> li, > div');
+            var $links = $tablist.find('a');
+            var $panelcontainer = $tabsWidget.find('> div:last-child');
+            var $panels = $panelcontainer.find('> div');
+            var $panelHeadings = $panels.find('> h2:first-child, > h3:first-child');
 
             // set a unique widget id
             $tabsWidget.nextId('tabs');
@@ -21719,9 +21603,9 @@ $.fn.dialog.defaults = {
 
             // all panels are labelled and controlled by their respective tab
             $tabs.each(function onEachTab(idx, el) {
-                var $tab = $(el),
-                    tabId = $tabsWidget.attr('id') + '-tab-' + idx,
-                    panelId = $tabsWidget.attr('id') + '-panel-' + idx;
+                var $tab = $(el);
+                var tabId = $tabsWidget.attr('id') + '-tab-' + idx;
+                var panelId = $tabsWidget.attr('id') + '-panel-' + idx;
 
                 $tab
                     .attr('id', tabId)
@@ -21736,10 +21620,10 @@ $.fn.dialog.defaults = {
             $tablist.rovingTabindex($tabs);
 
             $tablist.on('rovingTabindexChange', function(e, selectedTab) {
-                var $selectedTab = $(selectedTab),
-                    $activeTab = $tablist.find('[aria-selected=true]'),
-                    $activePanel = $panelcontainer.find('[aria-labelledby={0}]'.replace('{0}', $activeTab.attr('id'))),
-                    $selectedPanel = $panelcontainer.find('[aria-labelledby={0}]'.replace('{0}', $selectedTab.attr('id')));
+                var $selectedTab = $(selectedTab);
+                var $activeTab = $tablist.find('[aria-selected=true]');
+                var $activePanel = $panelcontainer.find('[aria-labelledby={0}]'.replace('{0}', $activeTab.attr('id')));
+                var $selectedPanel = $panelcontainer.find('[aria-labelledby={0}]'.replace('{0}', $selectedTab.attr('id')));
 
                 if ($selectedTab[0] !== $activeTab[0]) {
                     $activePanel.attr('aria-hidden', 'true');
@@ -21748,6 +21632,7 @@ $.fn.dialog.defaults = {
 
                     setTimeout(function() {
                         $activeTab.attr('aria-selected', 'false');
+                        $tabsWidget.trigger('tabsSelect');
                     }, 0);
                 }
             });
@@ -21759,7 +21644,174 @@ $.fn.dialog.defaults = {
             $tabsWidget.addClass('tabs--js');
         });
     };
-}( jQuery ));
+}(jQuery));
+
+/**
+* The jQuery plugin namespace.
+* @external "jQuery.fn"
+* @see {@link http://learn.jquery.com/plugins/|jQuery Plugins}
+*/
+
+/**
+* tabsSelect event
+*
+* @event tabsSelect
+* @type {object}
+* @property {object} event - event object
+*/
+
+/**
+* @file jQuery plugin that creates the basic interactivity for an ARIA dialog widget
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @version 0.0.1
+* @requires jquery
+* @requires jquery-next-id
+* @requires jquery-focusable
+* @requires jquery-keyboard-trap
+* @requires jquery-screenreader-trap
+*/
+(function($) {
+    /**
+    * jQuery plugin that creates the basic interactivity for an ARIA dialog button
+    *
+    * @method "jQuery.fn.dialogButton"
+    * @return {jQuery} chainable jQuery class
+    */
+    $.fn.dialogButton = function dialogButton(options) {
+        return this.each(function onEach() {
+            var $dialogButton = $(this);
+            var dialogId = $dialogButton.attr('aria-controls');
+            var dialogOptions = options || $dialogButton.data('dialog');
+            var $dialog = $('#' + dialogId);
+
+            $dialog.on('dialogClose', function(e) {
+                $dialogButton.focus();
+            });
+
+            $dialogButton.on('click', function(e) {
+                $dialog.dialog(dialogOptions);
+            });
+        });
+    };
+
+    /**
+    * jQuery plugin that creates the basic interactivity for an ARIA dialog widget
+    *
+    * @method "jQuery.fn.dialog"
+    * @return {jQuery} chainable jQuery class
+    */
+    $.fn.dialog = function dialog(options) {
+        return this.each(function onEach() {
+            var $dialog = $(this);
+            var opts = $.extend({}, $.fn.dialog.defaults, options);
+            var $body = $('body');
+            var $header = $dialog.find('header');
+            var $heading = $header.find('> h2');
+            var $doc = $dialog.find('> [role=document]'); // role=document is for older NVDA
+            var $closeButton = $header.find('> button');
+            var $autoFocusable = $doc.find('[autofocus]');
+            var $focusable;
+            var openTimeout;
+            var closeTimeout;
+
+            /**
+            * @method close
+            * @return void
+            */
+            function close() {
+                window.clearTimeout(openTimeout);
+                $closeButton.off('click', close);
+                $(document).off('escapeKeyDown', close);
+                $.untrapKeyboard();
+                $.untrapScreenreader();
+                $body.removeClass('has-dialog');
+                $dialog.attr('aria-hidden', 'true');
+                closeTimeout = setTimeout(function() {
+                    $dialog.css('display', 'none');
+                    $dialog.trigger('dialogClose');
+                }, opts.transitionDurationMs);
+            }
+
+            // assign a unique id to the dialog widget
+            $dialog.nextId('dialog');
+
+            // heading needs an id to create programmatic label for dialog
+            $heading.nextId($dialog.prop('id') + '-title');
+
+            // setup the programmatic label
+            $dialog.attr('aria-labelledby', $heading.prop('id'));
+
+            // ensure dialog has role dialog
+            $dialog.attr('role', 'dialog');
+
+            // ensure header has role banner
+            $header.attr('role', 'banner');
+
+            // clean up any untriggered closeTimeout
+            window.clearTimeout(closeTimeout);
+
+            // set display block so that CSS transitions will work
+            $dialog.css('display', 'block');
+
+            // wait a little time before triggering CSS transition
+            openTimeout = setTimeout(function() {
+                $dialog.attr('aria-hidden', 'false');
+                // find all focusable elements inside dialog
+                $focusable = ($autoFocusable.length > 0) ? $autoFocusable : $dialog.focusable();
+
+                // dialog must always focus on an interactive element
+                // if none found, set focus to doc
+                if ($focusable.size() === 0) {
+                    $doc.attr('tabindex', '-1').focus();
+                } else {
+                    $focusable.first().focus();
+                }
+
+                // prevent screen reader virtual cursor from leaving the dialog
+                $.trapScreenreader($dialog);
+
+                // prevent keyboard user from leaving the dialog
+                $.trapKeyboard($dialog, {deactivateOnFocusExit: false});
+
+                // add hook to body for CSS
+                $body.addClass('has-dialog');
+
+                // dialog must be closed on esc key
+                $(document).commonKeyDown().on('escapeKeyDown', close);
+
+                $closeButton.on('click', close);
+
+                $dialog.trigger('dialogOpen');
+            }, 10);
+        });
+    };
+}(jQuery));
+
+$.fn.dialog.defaults = {
+    transitionDurationMs: 175
+};
+
+/**
+* The jQuery plugin namespace.
+* @external "jQuery.fn"
+* @see {@link http://learn.jquery.com/plugins/|jQuery Plugins}
+*/
+
+/**
+* dialogOpen event
+*
+* @event dialogOpen
+* @type {object}
+* @property {object} event - event object
+*/
+
+/**
+* dialogClose event
+*
+* @event dialogClose
+* @type {object}
+* @property {object} event - event object
+*/
 
 (function ( $ ) {
     $('.tooltip a').bind('mouseenter focus', function() {
@@ -21774,7 +21826,7 @@ $.fn.dialog.defaults = {
         }, 500);
     });
 
-    $('.bubblehelp button.icon-info').on('click', function(e) {
+    $('.bubblehelp button.icon-information').on('click', function(e) {
         if ($(this).attr('aria-expanded') === 'false') {
             $(this).attr('aria-expanded', 'true');
             $(this).next().attr('aria-hidden', 'false');
@@ -21786,7 +21838,7 @@ $.fn.dialog.defaults = {
         }
     });
     $('.bubblehelp .flyout-alert button').on('click', function() {
-        $('.bubblehelp button.icon-info').attr('aria-expanded', 'false');
+        $('.bubblehelp button.icon-information').attr('aria-expanded', 'false');
         $(this).parent('.flyout-alert').attr('aria-hidden', 'true');
         $(this).parent('.flyout-alert').fadeOut();
     });

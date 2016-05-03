@@ -226,23 +226,28 @@ body > header h1 {
   line-height: normal;
   margin: 0;
 }
-h2 {
+section > h2 {
   font-size: 2.25rem;
   font-weight: 300;
   margin-bottom: 1.75rem;
   padding: 100px 0 0 0;
 }
-h3 {
+section > h3,
+section > div > h3,
+.grid h3 {
   font-size: 1.5rem;
   font-weight: 300;
   margin-top: 4rem;
 }
-p {
+section > p,
+section > div > p,
+.grid p {
   line-height: 1.45rem;
   margin: 1.2rem 0;
   font-weight: 300;
 }
 body > header {
+  box-sizing: border-box;
   background: #fff;
   border-bottom: 1px solid #ececec;
   left: 0;
@@ -257,7 +262,11 @@ body > header > h1 {
   display: none;
 }
 body > header .menu.menu--faux button {
-  border: 0;
+  border: 1px solid transparent;
+}
+body > header .menu.menu--faux button:hover,
+body > header .menu.menu--faux button:focus {
+  border: 1px solid transparent;
 }
 body > header .menu.menu--faux {
   height: 100%;
@@ -304,6 +313,7 @@ section:not(:last-of-type) {
   padding-bottom: 2rem;
 }
 body > footer {
+  box-sizing: border-box;
   background: #333333;
   color: #eeeeee;
   position: fixed;
@@ -353,13 +363,10 @@ body > footer a:visited {
   padding: 0.5rem;
   width: 100%;
 }
-.card {
-  margin: 20px;
-}
 [class*="icon-"]:before {
   margin-right: .5rem;
 }
-#icons {
+.icons {
   column-count: 2;
   -moz-column-count: 2;
   -webkit-column-count: 2;
@@ -369,12 +376,12 @@ body > footer a:visited {
   margin: 0;
   padding: 0;
 }
-#icons li {
+.icons li {
   display: inline-block;
   padding: 0.5rem;
   width: 100%;
 }
-#icons li span:first-child:after {
+.icons li span:first-child:after {
   content: attr(class);
 }
 .demo {
@@ -480,7 +487,7 @@ body > footer a:visited {
   section:not(:last-of-type) {
     padding-bottom: 4rem;
   }
-  h2 {
+  section > h2 {
     margin-top: 0;
     padding-top: 1.05rem;
   }
@@ -488,7 +495,7 @@ body > footer a:visited {
     text-align: left;
     width: 200px;
   }
-  #icons {
+  .icons {
     column-count: 3;
     -moz-column-count: 3;
     -webkit-column-count: 3;
