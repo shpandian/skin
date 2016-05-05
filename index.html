@@ -341,24 +341,28 @@
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
+
     <h3>Flyout Alert on Hover (Tooltip)</h3>
-    <p>The container requires <span class="highlight">position:relative</span> in order to position the flyout relatively to the interactive hover element.</p>
+    <p>Flyout alerts are absolutely positioned by default. The flyout will be positioned relatively to the nearest ancestor with <span class="highlight">position:relative</span>. If you require a fixed position flyout, apply modifier class <span class="highlight">flyout-alert--fixed</span>.</p>
+    <p><strong>NOTE:</strong> In the example below we use a JavaScript plugin to fine-tune absolute positioning and hide/show behaviour.</p>
     <p>Use <span class="highlight">role="tooltip"</span> and <span class="highlight">aria-describedby</span> to create a 'tooltip' for assistive technology.</p>
     <div class="demo skin-large">
-        <div class="tooltip">
-            <a href="http://www.ebay.com" aria-describedby="tooltip-0">www.ebay.com</a>
+        <div>
+            <span class="tooltip"><a href="http://www.ebay.com" aria-describedby="tooltip-0">www.ebay.com</a></span>
             <div id="tooltip-0" class="flyout-alert flyout-alert--information flyout-alert--top-left" role="tooltip" aria-hidden="true">
                 <p>We could not find any items that match your search. Try expanding your search to find more items.</p>
+                <p><a href="http://www.ebay.com">Use fewer refinements.</a></p>
             </div>
         </div>
     </div>
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span> <span class="na">aria-describedby=</span><span class="s">&quot;tooltip-0&quot;</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">style=</span><span class="s">&quot;position:relative;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span> <span class="na">aria-describedby=</span><span class="s">&quot;tooltip-0&quot;</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/span&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;tooltip-0&quot;</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--information flyout-alert--top-left&quot;</span> <span class="na">role=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;p&gt;</span>We could not find any items that match your search. Try expanding your search to find more items.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Use fewer refinements.<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
