@@ -1,0 +1,59 @@
+body {
+    margin: 8px;
+}
+body.has-dialog {
+    overflow-y: hidden;
+}
+body > header {
+    text-align: center;
+}
+body > header > h1 {
+    margin-bottom: 8px;
+}
+body > header > h1,
+body > div > h2 {
+    font-weight: bold;
+}
+body > div > div:not(.dialog) {
+    border: 1px solid #aaa;
+    margin-bottom: 8px;
+    padding: 8px;
+}
+#index {
+    background-color: #fff;
+    column-count: 1;
+}
+#index ol {
+    margin: 0;
+}
+
+/* adaptive classes */
+
+body.skin-large {
+    margin: 16px;
+}
+body.skin-large > header > h1 {
+    margin-bottom: 16px;
+}
+body.skin-large > div > div:not(.dialog) {
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+/* responsive classes */
+
+@media (min-width: 320px) {
+  #index {
+      column-count: 2;
+  }
+}
+@media (min-width: 600px) {
+  #index {
+      column-count: 3;
+  }
+}
+@media (min-width: 960px) {
+  #index {
+      column-count: 4;
+  }
+}

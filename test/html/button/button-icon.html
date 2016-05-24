@@ -1,0 +1,168 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>Buttons - icon</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../../css/test.css">
+        <script src="../../js/querystring.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Buttons - icon</h1>
+            <form>
+                <input id="skin-large" type="checkbox" name="skin-large">
+                <label for="skin-large">skin-large</label>
+                <input id="skin-legacy" type="checkbox" name="skin-legacy">
+                <label for="skin-large">skin-legacy</label>
+                <input type="submit" value="Apply" />
+            </form>
+        </header>
+        <div role="main">
+
+            <h2>Critical icon, no states</h2>
+            <div class="test">
+                <button type="button" class="btn icon-menu" aria-label="menu"></button>
+                <a class="btn icon-menu btn--faux" href="http://www.ebay.com" aria-label="menu"></a>
+                <a class="btn icon-menu btn--hijax" href="http://www.ebay.com" aria-label="menu" role="button"></a>
+            </div>
+
+            <h2>Critical icon with states</h2>
+            <div class="test">
+                <button type="button" class="btn btn--states icon-menu" aria-label="menu"></button>
+                <a class="btn btn--states icon-menu btn--faux" href="http://www.ebay.com" aria-label="menu"></a>
+                <a class="btn btn--states icon-menu btn--hijax" href="http://www.ebay.com" aria-label="menu" role="button"></a>
+            </div>
+
+            <h2>Critical icon, Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn icon-menu" aria-label="menu" disabled></button>
+                <a class="btn icon-menu btn--faux" href="http://www.ebay.com" aria-label="menu" aria-disabled="true" tabindex="-1"></a>
+                <a class="btn icon-menu btn--hijax" href="http://www.ebay.com" aria-label="menu" aria-disabled="true" role="button" tabindex="-1"></a>
+            </div>
+
+            <h2>Non-critical icon</h2>
+            <div class="test">
+                <button type="button" class="btn icon-close">Button</button>
+                <a class="btn icon-close btn--faux" href="http://www.ebay.com">Faux</a>
+                <a class="btn icon-close btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
+            </div>
+
+            <h2>Non-critical icon with States</h2>
+            <div class="test">
+                <button type="button" class="btn btn--states icon-close">Button</button>
+                <a class="btn btn--states btn--faux icon-close" href="http://www.ebay.com">Faux</a>
+                <a class="btn btn--states btn--hijax icon-close" href="http://www.ebay.com" role="button">Hijax</a>
+            </div>
+
+            <h2>Non-critical icon, Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn icon-close" disabled>Button</button>
+                <a class="btn icon-close btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Faux</a>
+                <a class="btn icon-close btn--hijax" href="http://www.ebay.com" aria-disabled="true" role="button" tabindex="-1">Hijax</a>
+            </div>
+
+            <h2>Non-critical icon small</h2>
+            <div class="test">
+                <button type="button" class="btn btn--small icon-close">Button</button>
+                <a class="btn btn--small btn--faux icon-close " href="http://www.ebay.com">Faux</a>
+                <a class="btn btn--small btn--hijax icon-close" href="http://www.ebay.com" role="button">Hijax</a>
+            </div>
+
+            <h2>Non-critical icon large</h2>
+            <div class="test">
+                <button type="button" class="btn btn--large icon-close">Button</button>
+                <a class="btn btn--large btn--faux icon-close " href="http://www.ebay.com">Faux</a>
+                <a class="btn btn--large btn--hijax icon-close" href="http://www.ebay.com" role="button">Hijax</a>
+            </div>
+
+            <h2>Actionable Icon Buttons</h2>
+            <div class="test">
+                <button type="button" class="btn btn--states icon-arrow-down" aria-label="arrow-down"></button>
+                <button type="button" class="btn btn--states icon-arrow-up" aria-label="arrow-up"></button>
+                <button type="button" class="btn btn--states icon-cart" aria-label="cart"></button>
+                <button type="button" class="btn btn--states icon-chevron-down" aria-label="chevron down"></button>
+                <button type="button" class="btn btn--states icon-chevron-up" aria-label="chevron up"></button>
+                <button type="button" class="btn btn--states icon-chevron-left" aria-label="chevron left"></button>
+                <button type="button" class="btn btn--states icon-chevron-right" aria-label="chevron right"></button>
+                <button type="button" class="btn btn--states icon-clock" aria-label="clock"></button>
+                <button type="button" class="btn btn--states icon-settings" aria-label="settings"></button>
+                <button type="button" class="btn btn--states icon-mail" aria-label="mail"></button>
+                <button type="button" class="btn btn--states icon-mail-opened" aria-label="mail opened"></button>
+                <button type="button" class="btn btn--states icon-notifications" aria-label="notifications"></button>
+                <button type="button" class="btn btn--states icon-profile" aria-label="profile"></button>
+                <button type="button" class="btn btn--states icon-trash" aria-label="trash"></button>
+                <button type="button" class="btn btn--states icon-view-gallery" aria-label="view-gallery"></button>
+                <button type="button" class="btn btn--states icon-view-detail" aria-label="view-detail"></button>
+            </div>
+
+            <h2>Actionable Icon Buttons Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--states icon-arrow-down" aria-label="arrow-down" disabled></button>
+                <button type="button" class="btn btn--states icon-arrow-up" aria-label="arrow-up" disabled></button>
+                <button type="button" class="btn btn--states icon-cart" aria-label="cart" disabled></button>
+                <button type="button" class="btn btn--states icon-chevron-down" aria-label="chevron down" disabled></button>
+                <button type="button" class="btn btn--states icon-chevron-up" aria-label="chevron up" disabled></button>
+                <button type="button" class="btn btn--states icon-chevron-left" aria-label="chevron left" disabled></button>
+                <button type="button" class="btn btn--states icon-chevron-right" aria-label="chevron right" disabled></button>
+                <button type="button" class="btn btn--states icon-clock" aria-label="clock" disabled></button>
+                <button type="button" class="btn btn--states icon-settings" aria-label="settings" disabled></button>
+                <button type="button" class="btn btn--states icon-mail" aria-label="mail" disabled></button>
+                <button type="button" class="btn btn--states icon-mail-opened" aria-label="mail opened" disabled></button>
+                <button type="button" class="btn btn--states icon-notifications" aria-label="notifications" disabled></button>
+                <button type="button" class="btn btn--states icon-profile" aria-label="profile" disabled></button>
+                <button type="button" class="btn btn--states icon-trash" aria-label="trash" disabled></button>
+                <button type="button" class="btn btn--states icon-view-gallery" aria-label="view-gallery" disabled></button>
+                <button type="button" class="btn btn--states icon-view-detail" aria-label="view-detail" disabled></button>
+            </div>
+
+            <h2>Actionable Icon Buttons Faux</h2>
+            <div class="test">
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-arrow-down" aria-label="arrow-down"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-arrow-up" aria-label="arrow-up"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-cart" aria-label="cart"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-chevron-down" aria-label="chevron down"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-chevron-up" aria-label="chevron up"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-chevron-left" aria-label="chevron left"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-chevron-right" aria-label="chevron right"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-clock" aria-label="clock"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-settings" aria-label="settings"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-mail" aria-label="mail"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-mail-opened" aria-label="mail opened"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-notifications" aria-label="notifications"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-profile" aria-label="profile"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-trash" aria-label="trash"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-view-gallery" aria-label="view-gallery"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-view-detail" aria-label="view-detail"></a>
+            </div>
+
+            <h2>Actionable Icon Buttons Faux Disabled</h2>
+            <div class="test">
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-arrow-down" aria-label="arrow-down" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-arrow-up" aria-label="arrow-up" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-cart" aria-label="cart" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-chevron-down" aria-label="chevron down" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-chevron-up" aria-label="chevron up" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-chevron-left" aria-label="chevron left" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-chevron-right" aria-label="chevron right" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-clock" aria-label="clock" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-settings" aria-label="settings" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-mail" aria-label="mail" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-mail-opened" aria-label="mail opened" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-notifications" aria-label="notifications" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-profile" aria-label="profile" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-trash" aria-label="trash" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-view-gallery" aria-label="view-gallery" aria-disabled="true" tabindex="-1"></a>
+                <a href="http://www.ebay.com" class="btn btn--faux btn--states icon-view-detail" aria-label="view-detail" aria-disabled="true" tabindex="-1"></a>
+            </div>
+
+        </div>
+    </body>
+</html>

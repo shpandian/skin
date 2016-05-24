@@ -1,0 +1,80 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Radio</title>
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../../css/test.css">
+        <script src="../../js/querystring.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Radio</h1>
+            <form>
+                <input id="skin-large" type="checkbox" name="skin-large">
+                <label for="skin-large">skin-large</label>
+                <input id="skin-legacy" type="checkbox" name="skin-legacy">
+                <label for="skin-large">skin-legacy</label>
+                <input type="submit" value="Apply" />
+            </form>
+        </header>
+        <div>
+            <h2>Radio Horizontal</h2>
+            <div class="test">
+                <form>
+                    <div class="radios">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <span>
+                                <input type="radio" name="radiogroup1" id="radiogroup1-option1" value="option1" />
+                                <label for="radiogroup1-option1">Option 1</label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radiogroup1" id="radiogroup1-option2" value="option2" />
+                                <label for="radiogroup1-option2">Option 2</label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radiogroup1" id="radiogroup1-option3" value="option3" disabled />
+                                <label for="radiogroup1-option3">Option 3 (disabled)</label>
+                            </span>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <!-- test disabled - see issue #302 -->
+            <h2>Radio Vertical</h2>
+            <div>
+                <form>
+                    <div class="radios">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <div>
+                                <input id="radiolist1-input1" type="radio" value="1" name="radiolist1" />
+                                <span/>
+                                <label for="radiolist1-input1">Option 1</label>
+                            </div>
+                            <div>
+                                <input id="radiolist1-input2" type="radio" value="2" name="radiolist1" />
+                                <span/>
+                                <label for="radiolist1-input2">Option 2</label>
+                            </div>
+                            <div>
+                                <input id="radiolist1-input3" type="radio" value="3" name="radiolist1" disabled />
+                                <span/>
+                                <label for="radiolist1-input3">Option 3 (disabled)</label>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

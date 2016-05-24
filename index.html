@@ -7,7 +7,8 @@
     <head>
         <title>eBay skin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link type="text/css" rel="stylesheet" href="skin.css"/>
+        <link type="text/css" rel="stylesheet" href="dist/skin.css"/>
+        <link type="text/css" rel="stylesheet" href="dist/skin-legacy.css"/>
         <link type="text/css" rel="stylesheet" href="docs.css"/>
     </head>
     <body>
@@ -84,7 +85,7 @@
         </div>
         <div>
             <div>
-                <h3>Accessibile</h3>
+                <h3>Accessible</h3>
                 <p>Accessibility is at the heart of Skin. A widget must not only look like a certain type of widget, it must be described like that widget too. Skin leverages ARIA roles, states and properties to apply our styles wherever possible, thus enforcing correct, accessible semantics.</p>
             </div>
             <div>
@@ -142,10 +143,10 @@
         <li><a href="#textbox">skin-ebay/textbox</a></li>
         <li><a href="#tile">skin-ebay/tile</a></li>
     </ul>
-    <h3>Legacy Browsers</h3>
+    <h3 id="install-legacy">Legacy Browsers</h3>
     <p>Skin takes advantage of <a href="https://github.com/lasso-js/lasso#conditional-dependencies">LassoJS conditional dependencies</a> to provide cross-browser support for legacy browsers (e.g. browsers that do not support Flexbox or SVG). To plugin this conditional dependency, simply pass the flag <span class="highlight">skin-legacy</span> to Lasso and apply the <span class="highlight">skin-legacy</span> class to the body of your page. Skin itself <strong>does not</strong> do any detection of browser or browser capabilities, therefore it is the responsibility of the application logic to detect whether the legacy styles are needed.</p>
 
-    <h3>IE9</h3>
+    <h3 id="install-ie9">IE9</h3>
     <p>Sometimes we will need specific CSS rules for older versions of IE. We try our best to keep these to a minimum, but we ask that you use the following code at the top of your HTML file to ensure that the correct CSS hooks are in place for IE9.</p>
 
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--[if IE 9]&gt;</span>
@@ -369,22 +370,22 @@
     <h3>Flyout Alert on Click (Bubble-Help)</h3>
     <p>The container requires <span class="highlight">position:relative</span> in order to position the flyout relatively to the interactive click element.</p>
     <div class="demo skin-large">
-        <div class="bubblehelp">
-            <button class="icon-information" type="button" aria-label="Open alert" aria-expanded="false"></button>
+        <span class="bubblehelp">
+            <button class="btn btn--icon icon-information" type="button" aria-label="Information" aria-expanded="false"></button>
             <div class="flyout-alert flyout-alert--information flyout-alert--close flyout-alert--top-left" aria-hidden="true">
-                <button aria-label="Dismiss alert" type="button"></button>
+                <button aria-label="Dismiss" type="button"></button>
                 <p>We could not find any items that match your search. Try expanding your search to find more items.</p>
             </div>
-        </div>
+        </span>
     </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;icon-information&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Open alert&quot;</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-large&quot;</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;bubblehelp&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-information&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Information&quot;</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;flyout-alert flyout-alert--information flyout-alert--close flyout-alert--top-left&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss alert&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">&quot;Dismiss&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
             <span class="nt">&lt;p&gt;</span>We could not find any items that match your search. Try expanding your search to find more items.<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
@@ -493,64 +494,68 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn icon-menu&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Menu&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
     </code></pre></figure>
 
-    <p>Use modifier class <span class="highlight">btn--icon</span> to apply actionable icon states for hover, focus, active &amp; disabled. Here is the list of recommended actionable icons:</p>
+    <p>Icons are considered non-critical if the button contains inner text. No aria-label is necessary.</p>
     <div class="demo">
-        <button type="button" class="btn btn--icon icon-arrow-down" aria-label="arrow-down"></button>
-        <button type="button" class="btn btn--icon icon-arrow-up" aria-label="arrow-up"></button>
-        <button type="button" class="btn btn--icon icon-cart" aria-label="cart"></button>
-        <button type="button" class="btn btn--icon icon-chevron-down" aria-label="chevron down"></button>
-        <button type="button" class="btn btn--icon icon-chevron-up" aria-label="chevron up"></button>
-        <button type="button" class="btn btn--icon icon-chevron-left" aria-label="chevron left"></button>
-        <button type="button" class="btn btn--icon icon-chevron-right" aria-label="chevron right"></button>
-        <button type="button" class="btn btn--icon icon-clock" aria-label="clock"></button>
-        <button type="button" class="btn btn--icon icon-close" aria-label="close"></button>
-        <button type="button" class="btn btn--icon icon-settings" aria-label="gear"></button>
-        <button type="button" class="btn btn--icon icon-mail" aria-label="mail"></button>
-        <button type="button" class="btn btn--icon icon-mail-open" aria-label="mail opened"></button>
-        <button type="button" class="btn btn--icon icon-notifications" aria-label="notifications"></button>
-        <button type="button" class="btn btn--icon icon-profile" aria-label="profile"></button>
-        <button type="button" class="btn btn--icon icon-trash" aria-label="trash"></button>
-        <button type="button" class="btn btn--icon icon-view-grid" aria-label="view-gallery"></button>
-        <button type="button" class="btn btn--icon icon-view-detail" aria-label="view-detail"></button>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-arrow-down&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;arrow-down&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-arrow-up&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;arrow-up&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-cart&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;cart&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-chevron-down&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron down&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-chevron-up&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron up&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-chevron-left&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron left&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-chevron-right&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron right&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-clock&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;clock&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-close&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;close&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-settings&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;gear&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-mail&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;mail&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-mail-open&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;mail opened&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-notifications&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;notifications&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-profile&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;profile&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-trash&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;trash&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-view-grid&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;view-gallery&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--icon icon-view-detail&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;view-detail&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-    </code></pre></figure>
-
-    <p>Icons are considered non-critical if adjacent to button text. Actionable states do not apply to non-critical icons.</p>
-    <div class="demo">
-        <button class="btn btn--small icon-close" type="button">Close</button>
         <button class="btn btn--small icon-menu" type="button">Menu</button>
+        <a href="http://www.ebay.com" class="btn btn--faux btn--small icon-settings">Settings</a>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--small icon-close&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Close<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--small icon-menu&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Menu<span class="nt">&lt;/button&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--small icon-menu&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Menu<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--faux btn--small icon-settings&quot;</span><span class="nt">&gt;</span>Settings<span class="nt">&lt;/a&gt;</span>
     </code></pre></figure>
+
+    <h3>Actionable Icon Buttons</h3>
+    <p>Use modifier class <span class="highlight">btn--states</span> to apply actionable icon states for hover, focus, active &amp; disabled.</p>
+    <p>The recommended actionable icons are as follows:</p>
+    <div class="demo">
+        <button type="button" class="btn btn--states icon-arrow-down" aria-label="arrow-down"></button>
+        <button type="button" class="btn btn--states icon-arrow-up" aria-label="arrow-up"></button>
+        <button type="button" class="btn btn--states icon-cart" aria-label="cart"></button>
+        <button type="button" class="btn btn--states icon-chevron-down" aria-label="chevron down"></button>
+        <button type="button" class="btn btn--states icon-chevron-up" aria-label="chevron up"></button>
+        <button type="button" class="btn btn--states icon-chevron-left" aria-label="chevron left"></button>
+        <button type="button" class="btn btn--states icon-chevron-right" aria-label="chevron right"></button>
+        <button type="button" class="btn btn--states icon-clock" aria-label="clock"></button>
+        <button type="button" class="btn btn--states icon-close" aria-label="close"></button>
+        <button type="button" class="btn btn--states icon-settings" aria-label="gear"></button>
+        <button type="button" class="btn btn--states icon-mail" aria-label="mail"></button>
+        <button type="button" class="btn btn--states icon-mail-open" aria-label="mail opened"></button>
+        <button type="button" class="btn btn--states icon-notifications" aria-label="notifications"></button>
+        <button type="button" class="btn btn--states icon-profile" aria-label="profile"></button>
+        <button type="button" class="btn btn--states icon-trash" aria-label="trash"></button>
+        <button type="button" class="btn btn--states icon-view-grid" aria-label="view-gallery"></button>
+        <button type="button" class="btn btn--states icon-view-detail" aria-label="view-detail"></button>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-arrow-down&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;arrow-down&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-arrow-up&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;arrow-up&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-cart&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;cart&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-chevron-down&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron down&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-chevron-up&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron up&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-chevron-left&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron left&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-chevron-right&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;chevron right&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-clock&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;clock&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-close&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;close&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-settings&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;gear&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-mail&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;mail&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-mail-open&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;mail opened&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-notifications&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;notifications&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-profile&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;profile&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-trash&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;trash&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-view-grid&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;view-gallery&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--states icon-view-detail&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;view-detail&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+    </code></pre></figure>
+
+    <p><strong>TIP</strong>: Anchor tags can also be used to create actionable icon buttons. Don't forget to apply <span class="highlight">.btn--faux</span> or <span class="highlight">.btn--hijax</span> modifiers.</p>
 
     <h3>Submit &amp; Reset</h3>
     <p>For form submit &amp; reset buttons, use class <span class="highlight">.btn</span> and any desired modifiers.</p>
     <div class="demo">
-        <input class="btn" type="reset" value="Reset" />
-        <input class="btn btn--primary" type="submit" value="Submit" />
+        <input class="btn btn--small" type="reset" value="Reset" />
+        <input class="btn btn--small btn--primary" type="submit" value="Submit" />
     </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">type=</span><span class="s">&quot;reset&quot;</span> <span class="na">value=</span><span class="s">&quot;Reset&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">type=</span><span class="s">&quot;submit btn--primary&quot;</span> <span class="na">value=</span><span class="s">&quot;Submit&quot;</span> <span class="nt">/&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn btn--small&quot;</span> <span class="na">type=</span><span class="s">&quot;reset&quot;</span> <span class="na">value=</span><span class="s">&quot;Reset&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn btn--small btn--primary&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Submit&quot;</span> <span class="nt">/&gt;</span>
     </code></pre></figure>
 
     <h3>Text Link</h3>
@@ -887,7 +892,9 @@
                         <h2 id="dialog-0-title">Dialog Title</h2>
                     </header>
                     <div>
-                        <!-- content layer & content goes here -->
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
                     </div>
                 </div>
             </div>
@@ -900,7 +907,9 @@
             <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-0-title&quot;</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="c">&lt;!-- content layer &amp; content goes here --&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -1001,7 +1010,9 @@
                             <h2 id="dialog-1-title">Dialog Title</h2>
                         </header>
                         <div>
-                            <!-- content layer & content goes here -->
+                            <h2>Heading</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
+                            <p><a href="http://www.ebay.com">www.ebay.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -1016,7 +1027,9 @@
                 <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;dialog-1-title&quot;</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
             <span class="nt">&lt;/header&gt;</span>
             <span class="nt">&lt;div&gt;</span>
-                <span class="c">&lt;!-- content layer &amp; content goes here --&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
@@ -1040,7 +1053,9 @@
                         <h2 id="subpage-0-title">Dialog Title</h2>
                     </header>
                     <div>
-                        <!-- content layer & content goes here -->
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
                     </div>
                 </div>
             </div>
@@ -1054,7 +1069,9 @@
             <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;subpage-0-title&quot;</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="c">&lt;!-- content layer &amp; content goes here --&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -1079,7 +1096,9 @@
                         <h2 id="panel-0-title">Dialog Title</h2>
                     </header>
                     <div>
-                        <!-- content layer & content goes here -->
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
                     </div>
                 </div>
             </div>
@@ -1091,7 +1110,9 @@
                         <h2 id="panel-1-title">Dialog Title</h2>
                     </header>
                     <div>
-                        <!-- content layer & content goes here -->
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
                     </div>
                 </div>
             </div>
@@ -1319,8 +1340,8 @@
         </li>
     </ul>
 
-    <h3>Other Icons</h3>
-    <ul id="icon-other" class="icons">
+    <h3>Misc Icons</h3>
+    <ul id="icon-misc" class="icons">
         <li>
             <span class="icon-chevron-up-disabled"></span>
         </li>
@@ -1389,6 +1410,12 @@
         </li>
         <li>
             <span class="icon-chat"></span>
+        </li>
+        <li>
+            <span class="icon-magnify"></span>
+        </li>
+        <li>
+            <span class="icon-window"></span>
         </li>
     </ul>
 

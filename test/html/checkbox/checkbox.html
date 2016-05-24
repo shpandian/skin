@@ -1,0 +1,90 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Checkbox</title>
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../../css/test.css">
+        <script src="../../js/querystring.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Checkbox</h1>
+            <form>
+                <input id="skin-large" type="checkbox" name="skin-large">
+                <label for="skin-large">skin-large</label>
+                <input id="skin-legacy" type="checkbox" name="skin-legacy">
+                <label for="skin-large">skin-legacy</label>
+                <input type="submit" value="Apply" />
+            </form>
+        </header>
+        <div>
+            <h2>Checkbox Horizontal</h2>
+            <div class="test">
+                <form>
+                    <div class="checkboxes">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <span>
+                                <input id="checkbox-inline-choice1" type="checkbox" value="1" name="checbox1" />
+                                <label for="checkbox-inline-choice1">Option 1</label>
+                            </span>
+                            <span>
+                                <input id="checkbox-inline-choice2" type="checkbox" value="2" name="checbox1" />
+                                <label for="checkbox-inline-choice2">Option 2</label>
+                            </span>
+                            <span>
+                                <input id="checkbox-inline-choice3" type="checkbox" value="3" name="checbox1" disabled />
+                                <label for="checkbox-inline-choice3">Option 3 (disabled)</label>
+                            </span>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <!-- test disabled - see issue #302 -->
+            <h2>Checkbox Vertical</h2>
+            <div>
+                <form>
+                    <div class="checkboxes">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <div>
+                                <input id="checkbox-choice1" type="checkbox" value="1" name="checbox1" />
+                                <span/>
+                                <label for="checkbox-choice1" class="custom-checkbox">Option 1</label>
+                            </div>
+                            <div>
+                                <input id="checkbox-choice2" type="checkbox" value="2" name="checbox1" />
+                                <span/>
+                                <label for="checkbox-choice2" class="custom-checkbox">Option 2</label>
+                            </div>
+                            <div>
+                                <input id="checkbox-choice3" type="checkbox" value="3" name="checbox1" disabled />
+                                <span/>
+                                <label for="checkbox-choice3" class="custom-checkbox">Option 3 (disabled)</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Checkbox Standalone</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkboxes">
+                        <input id="signin" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin">Toggle</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Textbox - clipped label</title>
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../../css/test.css">
+        <script src="../../js/querystring.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Textbox< - clipped label</h1>
+            <form>
+                <input id="skin-large" type="checkbox" name="skin-large">
+                <label for="skin-large">skin-large</label>
+                <input id="skin-legacy" type="checkbox" name="skin-legacy">
+                <label for="skin-large">skin-legacy</label>
+                <input type="submit" value="Apply" />
+            </form>
+        </header>
+        <div>
+            <h2>Clipped Label</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <label for="clipped-label" class="clipped">Email</label>
+                        <input type="email" placeholder="Email" name="email" id="clipped-label" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Clipped label - disabled</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <label for="clipped-label-disabled" class="clipped">Email</label>
+                        <input id="clipped-label-disabled" type="email" placeholder="Email (Required)" name="email6" aria-required="true" disabled />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Clipped label - required</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <label for="clipped-label-required" class="clipped">Email</label>
+                        <input id="clipped-label-required" type="email" placeholder="Email (Required)" name="email6" aria-required="true" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Clipped Label - error</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <label for="clipped-label-error" class="clipped">Email</label>
+                        <input id="clipped-label-error" type="email" placeholder="Email" name="email3" aria-invalid="true" aria-describedby="invalid-clipped-label" />
+                        <div aria-live="polite" id="invalid-clipped-label">
+                            <p>Please Enter a valid Email Address</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Clipped Label - small</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <label for="clipped-label" class="clipped">Email</label>
+                        <input type="email" placeholder="Email" name="email" id="clipped-label" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Clipped label - small - disabled</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <label for="clipped-label-disabled-small" class="clipped">Email</label>
+                        <input id="clipped-label-disabled-small" type="email" placeholder="Email (Required)" name="email6" aria-required="true" disabled />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Clipped label - small - required</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <label for="clipped-label-required-small" class="clipped">Email</label>
+                        <input id="clipped-label-required-small" type="email" placeholder="Email (Required)" name="email6" aria-required="true" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Clipped Label - small - error</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <label for="clipped-label-error-small" class="clipped">Email</label>
+                        <input id="clipped-label-error-small" type="email" placeholder="Email" name="email3" aria-invalid="true" aria-describedby="invalid-clipped-label-small" />
+                        <div aria-live="polite" id="invalid-clipped-label-small">
+                            <p>Please Enter a valid Email Address</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>

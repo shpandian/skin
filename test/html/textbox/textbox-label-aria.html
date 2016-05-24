@@ -1,0 +1,108 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Textbox - ARIA label</title>
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../../css/test.css">
+        <script src="../../js/querystring.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Textbox - ARIA label</h1>
+            <form>
+                <input id="skin-large" type="checkbox" name="skin-large">
+                <label for="skin-large">skin-large</label>
+                <input id="skin-legacy" type="checkbox" name="skin-legacy">
+                <label for="skin-large">skin-legacy</label>
+                <input type="submit" value="Apply" />
+            </form>
+        </header>
+        <div>
+            <h2>ARIA Label</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <input type="email" placeholder="Email" name="email" aria-label="Email"/>
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - disabled</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <input type="email" placeholder="Email" name="email" aria-label="Email (required)" aria-required="true" disabled />
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - required</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <input type="email" placeholder="Email (Required)" name="email" aria-label="Email (required)" aria-required="true" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA Label - error</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <input type="email" placeholder="Email" name="email" aria-label="Email" aria-invalid="true" aria-describedby="invalid-aria-label"/>
+                        <div aria-live="polite" id="invalid-aria-label">
+                            <p>Please Enter a valid Email Address</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA Label - small</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <input type="email" placeholder="Email" name="email" aria-label="Email"/>
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - disabled - small</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <input type="email" placeholder="Email" name="email" aria-label="Email (required)" aria-required="true" disabled />
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - required - small</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <input type="email" placeholder="Email (Required)" name="email" aria-label="Email (required)" aria-required="true" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA Label - error - small</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <input type="email" placeholder="Email" name="email" aria-label="Email" aria-invalid="true" aria-describedby="invalid-aria-label-small"/>
+                        <div aria-live="polite" id="invalid-aria-label-small">
+                            <p>Please Enter a valid Email Address</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

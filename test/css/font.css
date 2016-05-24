@@ -1,0 +1,22 @@
+@font-face {
+            font-family: "vq-icon-font";
+            font-style: normal;
+            font-weight: normal;
+            src: url('../../src/fonts/vq-icon-font.eot');
+            src: url('../../src/fonts/vq-icon-font.eot?#iefix') format('embedded-opentype'),
+                url('../../src/fonts/vq-icon-font.woff') format('woff'),
+                url('../../src/fonts/vq-icon-font.ttf') format('truetype'),
+                url('../../src/fonts/vq-icon-font.svg#vq-icon-font') format('svg');
+            }
+
+.spinner[role=img][aria-label] {
+    background-image: url("https://ir.ebaystatic.com/cr/v/c1/spinner30x30.svg");
+}
+
+.skin-nosvg .spinner[role=img][aria-label] {
+    background-image: url("https://secureir.ebaystatic.com/pictures/skin/gif/spinner.gif");
+}
+
+.skin-nosvg .spinner--large[role=img][aria-label] {
+    background-image: url("https://secureir.ebaystatic.com/pictures/skin/gif/spinner@2x.gif");
+}
