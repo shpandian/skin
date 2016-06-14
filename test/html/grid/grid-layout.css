@@ -1,0 +1,13 @@
+.center_content{
+  margin: 0 auto;
+}
+.box{
+  background-color: white;
+  text-align: center;
+  padding: 16px 0;
+  margin: 16px 0 0 0;
+  height: calc(33vh - 16px);
+}
+.left_hand_nav{
+  height: 100vh;
+}

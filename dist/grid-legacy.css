@@ -1,0 +1,43 @@
+/**
+ *The inline-block fix will be needed for
+ * ie10
+ */
+.skin-legacy {
+  /**
+     * General fix for flex wrapping
+     */
+}
+.skin-legacy .grid__cell {
+  /**
+         * Fix for margins in Android
+         */
+  overflow: hidden;
+}
+.skin-legacy .grid__group--wrap {
+  display: table;
+  table-layout: fixed;
+}
+.skin-legacy .grid__group--wrap .grid__cell {
+  display: table-cell;
+  display: inline-block;
+  vertical-align: top;
+}
+.ie9 .grid__group {
+  display: table;
+  table-layout: fixed;
+  font-size: 0;
+}
+.ie9 .grid__group--full {
+  font-size: 0.875rem;
+}
+.ie9 .grid__cell {
+  font-size: 0.875rem;
+  display: table-cell;
+  vertical-align: top;
+}
+.ie9 .grid__cell--grow {
+  display: table-cell;
+}
+.ie9 .grid__group--wrap .grid__cell {
+  display: inline-block;
+}

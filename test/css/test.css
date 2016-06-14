@@ -14,7 +14,7 @@ body > header > h1,
 body > div > h2 {
     font-weight: bold;
 }
-body > div > div:not(.dialog) {
+body > div > div:not(.dialog):not(.card):not(.grid__group) {
     border: 1px solid #aaa;
     margin-bottom: 8px;
     padding: 8px;

@@ -9,9 +9,22 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
-        <link rel="stylesheet" type="text/css" href="../../css/grid.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/grid/grid-full.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/grid/grid-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/test.css">
+        <script src="../../js/querystring.js"></script>
     </head>
-    <body class="skin-large">
+    <body>
+         <header>
+            <h1>Grid</h1>
+            <form>
+                <input id="skin-large" type="checkbox" name="skin-large">
+                <label for="skin-large">skin-large</label>
+                <input id="skin-legacy" type="checkbox" name="skin-legacy">
+                <label for="skin-large">skin-legacy</label>
+                <input type="submit" value="Apply" />
+            </form>
+        </header>
         <div class="grid">
             <div class="card card--primary card--hero card--no-gutters card--collapse-top">
                 <img src="../../images/hero.jpg" alt="" style="max-width: 100%" />
