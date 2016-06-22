@@ -157,9 +157,9 @@
     <p>Certain bundles are also available via CDN:</p>
     <ul id="cdn_list">
         <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/skin.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/skin.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/grid.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/grid.css</a></li>
         <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/core.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/core.css</a></li>
         <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/combo.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/combo.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/grid/grid-core.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/grid/grid-core.css</a></li>
     </ul>
     <p>Currently, we do not host individual modules on CDN. If you require this, let us know!</p>
 
@@ -1577,10 +1577,11 @@
 
     <h3>Nested Grid</h3>
     <p>
-    	There are a small number of rules that apply to the <span class="highlight">.grid .grid</span> selector and the
-    	<span class="highlight">.grid .grid .grid__group</span> selector.  In order for nesting to work properly
+    	The grid__cell element's proportions are relative to their parent container. 
+    	A few rules exist for the <span class="highlight">.grid .grid</span> selector and the
+    	<span class="highlight">.grid .grid > .grid__group</span> selector.  So, in order for nesting to work properly
     	<span class="highlight">.grid__group</span> elements should have a direct parent that is a
-    	<span class="highlight">.grid</span> element.  In other works do not place a <span class="highlight">.grid__group</span>
+    	<span class="highlight">.grid</span> element.  In other words, you should not place a <span class="highlight">.grid__group</span>
     	directly inside a <span class="highlight">.grid__cell</span>.
     </p>
     <div class="grid grid--ignore-nesting demo">
