@@ -1,0 +1,216 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Checkbox - Solo</title>
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../../css/test.css">
+        <script src="../../js/querystring.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Checkbox - Solo</h1>
+            <form>
+                <input id="skin-large" type="checkbox" name="skin-large">
+                <label for="skin-large">skin-large</label>
+                <input id="skin-legacy" type="checkbox" name="skin-legacy">
+                <label for="skin-legacy">skin-legacy</label>
+                <input type="submit" value="Apply" />
+            </form>
+        </header>
+        <div>
+
+            <h2>Solo Inline Checkbox</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkbox">
+                        <input id="signin1" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin1">Inline</label>
+                    </span>
+                </form>
+            </div>
+
+            <h2>Flipped Solo Inline Checkbox</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkbox checkbox--flipped">
+                        <input id="signin2" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin2"><span>Inline</span></label>
+                    </span>
+                </form>
+            </div>
+
+            <h2>Solo Block Checkbox</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkbox">
+                        <input id="signin3" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin3">Block</label>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Flipped Solo Block Checkbox</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkbox checkbox--flipped">
+                        <input id="signin4" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin4"><span>Block</span></label>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Solo Checkbox Mix</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkbox">
+                        <input id="signin5a" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5a">Inline</label>
+                    </span>
+                    <span class="checkbox">
+                        <input id="signin5b" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5b">Inline</label>
+                    </span>
+                    <div class="checkbox">
+                        <input id="signin5c" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5c">Block</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="signin5d" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5d">Block</label>
+                    </div>
+                    <span class="checkbox">
+                        <input id="signin5e" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5e">Inline</label>
+                    </span>
+                    <span class="checkbox">
+                        <input id="signin5f" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5f">Inline</label>
+                    </span>
+                </form>
+            </div>
+
+
+            <h2>Disabled Checkbox</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkbox">
+                        <input id="signin6" type="checkbox" value="sign in" name="signin" disabled />
+                        <label for="signin6">Inline</label>
+                    </span>
+                </form>
+            </div>
+
+            <!--
+            <h2>Solo Horizontal Checkboxes (deprecated method)</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkboxes">
+                        <input id="signin1a" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin1a">Toggle</label>
+                    </span>
+                    <span class="checkboxes">
+                        <input id="signin1b" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin1b">Toggle</label>
+                    </span>
+                    <span class="checkboxes">
+                        <input id="signin1c" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin1c">Toggle</label>
+                    </span>
+                </form>
+            </div>
+
+
+
+            <h2>Flipped Solo Horizontal Checkboxes (not supported)</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkboxes checkboxes--flipped">
+                        <input id="signin1a" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin1a">Toggle</label>
+                    </span>
+                    <span class="checkboxes checkboxes--flipped">
+                        <input id="signin1b" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin1b">Toggle</label>
+                    </span>
+                    <span class="checkboxes checkboxes--flipped">
+                        <input id="signin1c" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin1c">Toggle</label>
+                    </span>
+                </form>
+            </div>
+
+            <h2>Solo Vertical Checkboxes (deprecated method)</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkboxes">
+                        <input id="signin3a" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin3a">Toggle</label>
+                    </div>
+                    <div class="checkboxes">
+                        <input id="signin3b" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin3b">Toggle</label>
+                    </div>
+                    <div class="checkboxes">
+                        <input id="signin3c" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin3c">Toggle</label>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Flipped Solo Vertical Checkboxes (not supported)</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkboxes">
+                        <input id="signin4a" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin4a">Toggle</label>
+                    </div>
+                    <div class="checkboxes">
+                        <input id="signin4b" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin4b">Toggle</label>
+                    </div>
+                    <div class="checkboxes">
+                        <input id="signin4c" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin4c">Toggle</label>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Solo Checkbox with Disconnected Label</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkbox">
+                        <input id="signin8a" type="checkbox" value="sign in" name="signin" />
+                        <span></span>
+                        <span>-</span><span>-</span><span>-</span>
+                        <label for="signin8a">Toggle</label>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Solo Checkbox (deprecated method) with Disconnected Label</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkboxes">
+                        <input id="signin7a" type="checkbox" value="sign in" name="signin" />
+                        <span></span>
+                        <span>-</span><span>-</span><span>-</span>
+                        <label for="signin7a">Toggle</label>
+                    </div>
+                </form>
+            </div>
+
+            -->
+
+        </div>
+    </body>
+</html>

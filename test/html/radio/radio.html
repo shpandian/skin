@@ -1,4 +1,6 @@
 <!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9]>
 <html class="ie9" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
@@ -26,55 +28,121 @@
             </form>
         </header>
         <div>
-            <h2>Radio Horizontal</h2>
+            <h2>Horizontal</h2>
             <div class="test">
                 <form>
                     <div class="radios">
                         <fieldset>
                             <legend>Legend</legend>
                             <span>
-                                <input type="radio" name="radiogroup1" id="radiogroup1-option1" value="option1" />
-                                <label for="radiogroup1-option1">Option 1</label>
+                                <input type="radio" name="radiogroup1" id="radiogroup1-optiona" value="option1" />
+                                <label for="radiogroup1-optiona">Option 1</label>
                             </span>
                             <span>
-                                <input type="radio" name="radiogroup1" id="radiogroup1-option2" value="option2" />
-                                <label for="radiogroup1-option2">Option 2</label>
+                                <input type="radio" name="radiogroup1" id="radiogroup1-optionb" value="option2" />
+                                <label for="radiogroup1-optionb">Option 2</label>
                             </span>
                             <span>
-                                <input type="radio" name="radiogroup1" id="radiogroup1-option3" value="option3" disabled />
-                                <label for="radiogroup1-option3">Option 3 (disabled)</label>
+                                <input type="radio" name="radiogroup1" id="radiogroup1-optionc" value="option3" />
+                                <label for="radiogroup1-optionc">Option 3</label>
                             </span>
                         </fieldset>
                     </div>
                 </form>
             </div>
 
-            <!-- test disabled - see issue #302 -->
-            <h2>Radio Vertical</h2>
-            <div>
+            <h2>Vertical</h2>
+            <div class="test">
                 <form>
                     <div class="radios">
                         <fieldset>
                             <legend>Legend</legend>
                             <div>
-                                <input id="radiolist1-input1" type="radio" value="1" name="radiolist1" />
-                                <span/>
-                                <label for="radiolist1-input1">Option 1</label>
+                                <input id="radiolist3-inputa" type="radio" value="1" name="radiolist1" />
+                                <label for="radiolist3-inputa">Option 1</label>
                             </div>
                             <div>
-                                <input id="radiolist1-input2" type="radio" value="2" name="radiolist1" />
-                                <span/>
-                                <label for="radiolist1-input2">Option 2</label>
+                                <input id="radiolist3-inputb" type="radio" value="2" name="radiolist1" />
+                                <label for="radiolist3-inputb">Option 2</label>
                             </div>
                             <div>
-                                <input id="radiolist1-input3" type="radio" value="3" name="radiolist1" disabled />
-                                <span/>
-                                <label for="radiolist1-input3">Option 3 (disabled)</label>
+                                <input id="radiolist3-inputc" type="radio" value="3" name="radiolist1" />
+                                <label for="radiolist3-inputc">Option 3</label>
                             </div>
                         </fieldset>
                     </form>
                 </div>
             </div>
+
+            <h2>Flipped Horizontal</h2>
+            <div class="test">
+                <form>
+                    <div class="radios radios--flipped">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <span>
+                                <input type="radio" name="radiogroup1" id="radiogroup2-optiona" value="option1" />
+                                <label for="radiogroup2-optiona"><span>Option 1</span></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radiogroup1" id="radiogroup2-optionb" value="option2" />
+                                <label for="radiogroup2-optionb"><span>Option 2</span></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radiogroup1" id="radiogroup2-optionc" value="option3" />
+                                <label for="radiogroup2-optionc"><span>Option 3</span></label>
+                            </span>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Flipped Vertical</h2>
+            <div class="test">
+                <form>
+                    <div class="radios radios--flipped">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <div>
+                                <input id="radiolist4-inputa" type="radio" value="1" name="radiolist1" />
+                                <label for="radiolist4-inputa"><span>Option 1</span></label>
+                            </div>
+                            <div>
+                                <input id="radiolist4-inputb" type="radio" value="2" name="radiolist1" />
+                                <label for="radiolist4-inputb"><span>Option 2</span></label>
+                            </div>
+                            <div>
+                                <input id="radiolist4-inputc" type="radio" value="3" name="radiolist1" />
+                                <label for="radiolist4-inputc"><span>Option 3</span></label>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <h2>Disabled</h2>
+            <div class="test">
+                <form>
+                    <div class="radios">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <span>
+                                <input type="radio" name="radiogroup" id="radiogroup3-optiona" value="option1" disabled />
+                                <label for="radiogroup5-optiona">Option 1</label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radiogroup" id="radiogroup3-optionb" value="option2" disabled />
+                                <label for="radiogroup5-optionb">Option 2</label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radiogroup3" id="radiogroup3-optionc" value="option3" disabled />
+                                <label for="radiogroup5-optionc">Option 3</label>
+                            </span>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </body>
 </html>

@@ -121,6 +121,54 @@
                     </ul>
                 </div>
             </div>
+
+            <h2>Menu - Flyout</h2>
+            <div class="test">
+                <div class="menu menu--flyout">
+                    <button aria-expanded="true" aria-haspopup="true" id="default_button" aria-controls="default_flyout" type="button" class="btn btn--fluid">Default</button>
+                    <div role="menu" id="default_flyout" aria-labelledby="default_button">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Default - collapsed</h2>
+            <div class="test">
+                <div class="menu">
+                    <button aria-expanded="false" aria-haspopup="true" id="default_button" aria-controls="default_flyout" type="button" class="btn btn--fluid">Default</button>
+                    <div role="menu" id="default_flyout" aria-labelledby="default_button">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Faux - flyout</h2>
+            <div class="test">
+                <div class="menu menu--faux menu--flyout">
+                    <button class="btn btn--fluid" type="button" aria-controls="faux_flyout_1" aria-expanded="true">Faux</button>
+                    <ul id="faux_flyout_1">
+                        <li><a href="http://www.ebay.com" class="menu__selected">Page 1<span class="clipped"> - selected</span></a></li>
+                        <li><a href="http://www.ebay.com">Page 2</a></li>
+                        <li><a href="http://www.ebay.com">Page 3</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Default - collapsed</h2>
+            <div class="test">
+                <div class="menu">
+                    <button aria-expanded="false" aria-haspopup="true" id="default_button" aria-controls="default_flyout" type="button" class="btn btn--fluid">Default</button>
+                    <div role="menu" id="default_flyout" aria-labelledby="default_button">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

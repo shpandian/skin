@@ -1,5 +1,5 @@
 /*!
-Skin v2.5.2
+Skin v2.5.3
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -1696,6 +1696,12 @@ a[href][role=button]:not([href|=javascript]).btn--fluid {
   -webkit-transform: translate3d(-100%, 0, 0);
           transform: translate3d(-100%, 0, 0);
 }
+.menu-flyout {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
 .menu > button[type=button].btn {
   color: #000;
   font-size: 1.125rem;
@@ -1743,6 +1749,15 @@ a[href][role=button]:not([href|=javascript]).btn--fluid {
   margin-right: 1rem;
   float: right;
 }
+.menu--flyout {
+  position: relative;
+}
+.menu--flyout > button[type=button].btn[aria-expanded="true"] + [role=menu] {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
 .menu.menu--faux > button[type=button].btn {
   font-weight: 300;
 }
@@ -1788,6 +1803,12 @@ a[href][role=button]:not([href|=javascript]).btn--fluid {
   margin-right: 1rem;
   float: right;
 }
+.menu.menu--faux.menu--flyout > button[type=button].btn[aria-expanded="true"] + ul {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
 .form {
   margin: 1rem auto;
 }
@@ -1829,70 +1850,55 @@ a[href][role=button]:not([href|=javascript]).btn--fluid {
 .form--small .textbox--search::before {
   top: 0.625rem;
 }
-.checkboxes > fieldset > span {
-  margin: 0 1.625rem 1rem 0;
-}
-.checkboxes > fieldset > div {
-  margin-bottom: .625rem;
-}
+.checkbox label,
 .checkboxes label {
   font-weight: normal;
 }
-.checkboxes legend {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  padding-bottom: .5rem;
-}
-.checkboxes fieldset {
-  border: 0;
-}
-.checkboxes input[type=checkbox] {
+.checkbox input[type="checkbox"],
+.checkboxes input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   z-index: 2;
 }
-.checkboxes input[type=checkbox][disabled] + label,
-.checkboxes input[type=checkbox][disabled] + span,
-.checkboxes input[type=checkbox][disabled] + span + label {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
-}
-.checkboxes input[type=checkbox] + label,
-.checkboxes input[type=checkbox] + span {
+.checkbox input[type="checkbox"] + label,
+.checkboxes input[type="checkbox"] + label,
+.checkbox input[type="checkbox"] + span,
+.checkboxes input[type="checkbox"] + span {
   position: relative;
   padding-left: 1.5rem;
   font-size: 0.875rem;
   color: #555555;
 }
-.checkboxes input[type=checkbox] + label::before,
-.checkboxes input[type=checkbox] + span::before {
+.checkbox input[type="checkbox"] + label::before,
+.checkboxes input[type="checkbox"] + label::before,
+.checkbox input[type="checkbox"] + span::before,
+.checkboxes input[type="checkbox"] + span::before {
   font-family: "vq-icon-font";
   position: absolute;
   display: block;
   font-size: 1rem;
   top: 0;
   left: 0;
+  content: "\e62c";
   color: #cccccc;
 }
-.checkboxes input[type="checkbox"] + label::before,
-.checkboxes input[type="checkbox"] + span::before {
-  content: "\e62c";
+.checkbox input[type="checkbox"][disabled] + label,
+.checkboxes input[type="checkbox"][disabled] + label,
+.checkbox input[type="checkbox"][disabled] + span,
+.checkboxes input[type="checkbox"][disabled] + span,
+.checkbox input[type="checkbox"][disabled] + span ~ label,
+.checkboxes input[type="checkbox"][disabled] + span ~ label {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
+.checkbox input[type="checkbox"]:checked + label::before,
 .checkboxes input[type="checkbox"]:checked + label::before,
-.checkboxes input[type="checkbox"]:checked + span::before {
-  font-family: "vq-icon-font";
-  position: absolute;
-  display: block;
-  font-size: 1rem;
-  top: 0;
-  left: 0;
-  color: #0654ba;
-}
-.checkboxes input[type="checkbox"]:checked + label::before,
+.checkbox input[type="checkbox"]:checked + span::before,
 .checkboxes input[type="checkbox"]:checked + span::before {
   content: "\e62a";
   -webkit-animation: bounce 0.3s;
           animation: bounce 0.3s;
+  color: #0654ba;
 }
 @-webkit-keyframes bounce {
   0%,
@@ -1916,9 +1922,45 @@ a[href][role=button]:not([href|=javascript]).btn--fluid {
             transform: scale(1.2);
   }
 }
+.checkbox input[type="checkbox"]:focus + label::before,
 .checkboxes input[type="checkbox"]:focus + label::before,
+.checkbox input[type="checkbox"]:focus + span::before,
 .checkboxes input[type="checkbox"]:focus + span::before {
   outline: 1px dotted #767676;
+}
+.checkbox--flipped input[type="checkbox"] + label > span,
+.checkboxes--flipped input[type="checkbox"] + label > span,
+.checkbox--flipped input[type="checkbox"] + span > span,
+.checkboxes--flipped input[type="checkbox"] + span > span {
+  float: left;
+}
+.checkbox--flipped input[type="checkbox"] + label::before,
+.checkboxes--flipped input[type="checkbox"] + label::before,
+.checkbox--flipped input[type="checkbox"] + span::before,
+.checkboxes--flipped input[type="checkbox"] + span::before {
+  margin-left: 0.5rem;
+}
+span.checkbox--flipped {
+  display: inline-block;
+}
+.checkboxes fieldset {
+  border: 0;
+}
+.checkboxes legend {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+}
+.checkboxes fieldset > span {
+  margin: 0 1.625rem 1rem 0;
+}
+.checkboxes fieldset > div {
+  margin-bottom: .625rem;
+}
+.checkboxes--flipped fieldset > span {
+  display: inline-block;
+  margin-bottom: 0;
+  /* keeps parity with non-flipped */
 }
 .listbox {
   line-height: 1;
@@ -2011,64 +2053,53 @@ a[href][role=button]:not([href|=javascript]).btn--fluid {
 .radios > fieldset > div {
   margin-bottom: .625rem;
 }
-.radios label {
-  font-weight: normal;
+.radios fieldset {
+  border: 0;
 }
 .radios legend {
   font-size: 1rem;
   margin-bottom: 1rem;
   padding-bottom: .5rem;
 }
-.radios fieldset {
-  border: 0;
+.radios label {
+  font-weight: normal;
 }
-.radios input[type=radio] {
+.radios input[type="radio"] {
   position: absolute;
   opacity: 0;
   z-index: 2;
 }
-.radios input[type=radio][disabled] + label,
-.radios input[type=radio][disabled] + span,
-.radios input[type=radio][disabled] + span + label {
+.radios input[type="radio"][disabled] + label,
+.radios input[type="radio"][disabled] + span,
+.radios input[type="radio"][disabled] + span + label,
+.radios input[type="radio"][disabled] + span ~ label {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
-.radios input[type=radio] + label,
-.radios input[type=radio] + span {
+.radios input[type="radio"] + label,
+.radios input[type="radio"] + span {
   position: relative;
   padding-left: 1.5rem;
   font-size: 0.875rem;
   color: #555555;
 }
-.radios input[type=radio] + label::before,
-.radios input[type=radio] + span::before {
-  font-family: "vq-icon-font";
-  position: absolute;
-  display: block;
-  font-size: 1rem;
-  top: 0;
-  left: 0;
-  color: #cccccc;
-}
 .radios input[type="radio"] + label::before,
 .radios input[type="radio"] + span::before {
-  content: "\e62b";
-}
-.radios input[type="radio"]:checked + label::before,
-.radios input[type="radio"]:checked + span::before {
   font-family: "vq-icon-font";
   position: absolute;
   display: block;
   font-size: 1rem;
   top: 0;
   left: 0;
-  color: #0654ba;
+  content: "\e62b";
+  color: #cccccc;
 }
 .radios input[type="radio"]:checked + label::before,
 .radios input[type="radio"]:checked + span::before {
   content: "\e62d";
   -webkit-animation: bounce 0.3s;
           animation: bounce 0.3s;
+  color: #0654ba;
 }
 @keyframes bounce {
   0%,
@@ -2084,6 +2115,19 @@ a[href][role=button]:not([href|=javascript]).btn--fluid {
 .radios input[type="radio"]:focus + label::before,
 .radios input[type="radio"]:focus + span::before {
   outline: 1px dotted #767676;
+}
+.radios--flipped fieldset > span {
+  display: inline-block;
+  margin-bottom: 0;
+  /* keep parity with non-flipped */
+}
+.radios--flipped input[type="radio"] + label > span,
+.radios--flipped input[type="radio"] + span > span {
+  float: left;
+}
+.radios--flipped input[type="radio"] + label::before,
+.radios--flipped input[type="radio"] + span::before {
+  margin-left: 0.5rem;
 }
 .switch {
   position: relative;

@@ -156,10 +156,10 @@
     <h3 id="install_cdn">CDN</h3>
     <p>Certain bundles are also available via CDN:</p>
     <ul id="cdn_list">
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/skin.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/skin.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/core.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/core.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/combo.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/combo.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/grid/grid-core.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.2/css/grid/grid-core.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.3/css/skin.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.3/css/skin.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.3/css/core.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.3/css/core.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.3/css/combo.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.3/css/combo.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.3/css/grid/grid-core.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.5.3/css/grid/grid-core.css</a></li>
     </ul>
     <p>Currently, we do not host individual modules on CDN. If you require this, let us know!</p>
 
@@ -641,25 +641,26 @@
 
 <section id="checkbox" aria-labelledby="checkbox_heading">
     <h2 id="checkbox_heading">Checkbox</h2>
-    <p>Checkboxes allow the user to select zero or more options in a group. A <span class="highlight">fieldset</span> and <span class="highlight">legend</span> are <strong>required</strong>.</p>
+    <p>Checkboxes allow the user to select multiple options from a group of choices.</p>
+    <p>In order to create the correct grouping semantics, <span class="highlight">fieldset</span> and <span class="highlight">legend</span> tags are <strong>required</strong> for checkbox groups.</p>
 
     <h3>Vertical Checkboxes</h3>
-    <p>Wrap each checkbox and label in a <span class="highlight">div</span> to stack vertically. A <span class="highlight">disabled</span> checkbox will be styled appropriately.</p>
+    <p>Wrap each checkbox and label in a <span class="highlight">div</span> to stack vertically.</p>
     <div class="demo">
         <div class="checkboxes">
             <fieldset>
                 <legend>Vertical Checkboxes</legend>
                 <div>
-                    <input id="checkbox-choice1" type="checkbox" value="1" name="checbox1" />
-                    <label for="checkbox-choice1" class="custom-checkbox">Choice 1</label>
+                    <input id="vertical-checkbox-1" type="checkbox" value="1" name="vertical" />
+                    <label for="vertical-checkbox-1">Choice 1</label>
                 </div>
                 <div>
-                    <input id="checkbox-choice2" type="checkbox" value="2" name="checbox1" />
-                    <label for="checkbox-choice2" class="custom-checkbox">Choice 2</label>
+                    <input id="vertical-checkbox-2" type="checkbox" value="2" name="vertical" />
+                    <label for="vertical-checkbox-2">Choice 2</label>
                 </div>
                 <div>
-                    <input id="checkbox-choice3" type="checkbox" value="3" name="checbox1" disabled/>
-                    <label for="checkbox-choice3" class="custom-checkbox">Disabled Choice 3</label>
+                    <input id="vertical-checkbox-3" type="checkbox" value="3" name="vertical" />
+                    <label for="vertical-checkbox-3">Choice 3</label>
                 </div>
             </fieldset>
         </div>
@@ -669,16 +670,16 @@
     <span class="nt">&lt;fieldset&gt;</span>
         <span class="nt">&lt;legend&gt;</span>Vertical Checkboxes<span class="nt">&lt;/legend&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice1&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;choices&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice1&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice2&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Choice 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;choices&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice2&quot;</span><span class="nt">&gt;</span>Choice 2<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-choice3&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="na">disabled</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-choice3&quot;</span> <span class="na">class=</span><span class="s">&quot;custom-checkbox&quot;</span><span class="nt">&gt;</span>Disabled Choice 3<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice3&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;choices&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice3&quot;</span><span class="nt">&gt;</span>Choice 3<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -691,16 +692,16 @@
             <fieldset>
                 <legend>Horizontal checkboxes</legend>
                 <span>
-                    <input id="checkbox-inline-choice1" type="checkbox" value="1" name="checbox1" />
-                    <label for="checkbox-inline-choice1">Choice 1</label>
+                    <input id="horizontal-checkbox-1" type="checkbox" value="1" name="horizontal" />
+                    <label for="horizontal-checkbox-1">Choice 1</label>
                 </span>
                 <span>
-                    <input id="checkbox-inline-choice2" type="checkbox" value="2" name="checbox1" />
-                    <label for="checkbox-inline-choice2">Choice 2</label>
+                    <input id="horizontal-checkbox-2" type="checkbox" value="2" name="horizontal" />
+                    <label for="horizontal-checkbox-2">Choice 2</label>
                 </span>
                 <span>
-                    <input id="checkbox-inline-choice3" type="checkbox" value="3" name="checbox1" />
-                    <label for="checkbox-inline-choice3">Choice 3</label>
+                    <input id="horizontal-checkbox-3" type="checkbox" value="3" name="horizontal" />
+                    <label for="horizontal-checkbox-3">Choice 3</label>
                 </span>
             </fieldset>
         </div>
@@ -710,38 +711,67 @@
     <span class="nt">&lt;fieldset&gt;</span>
         <span class="nt">&lt;legend&gt;</span>Horizontal checkboxes<span class="nt">&lt;/legend&gt;</span>
         <span class="nt">&lt;span&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice1&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;choices&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice1&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;span&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice2&quot;</span><span class="nt">&gt;</span>Choice 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;choices&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice2&quot;</span><span class="nt">&gt;</span>Choice 2<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;span&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice3&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice3&quot;</span><span class="nt">&gt;</span>Choice 3<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice3&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;choices&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice3&quot;</span><span class="nt">&gt;</span>Choice 3<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
-    <h3>Solo Checkbox</h3>
-    <p>Sometimes a checkbox may exist on it's own, without a fieldset or legend.</p>
+    <h3>Ungrouped Checkbox</h3>
+    <p>For checkboxes not belonging to any group, use the <span class="highlight">checkbox</span> class. <span class="highlight">Fieldset</span> and <span class="highlight">legend</span> tags are ommitted.</p>
+    <p><strong>TIP:</strong> You may also wish to consider using a <a href="#switch">switch</a> control for this use-case.</p>
 
     <div class="demo">
-        <div class="checkboxes">
-           <span>
-                <input id="single-checkbox" type="checkbox" value="1" name="single checkbox" />
-                <label for="single-checkbox">Single checkbox</label>
-            </span>
+        <div class="checkbox">
+            <input id="solo-checkbox-1" type="checkbox" value="1" name="solo" />
+            <label for="solo-checkbox-1">Ungrouped checkbox</label>
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkboxes&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span&gt;</span>
-         <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;checkbox-inline-choice1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;checbox1&quot;</span> <span class="nt">/&gt;</span>
-         <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;checkbox-inline-choice1&quot;</span><span class="nt">&gt;</span>Choice 1<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;/span&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;solo&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice&quot;</span><span class="nt">&gt;</span>Ungrouped checkbox<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
+
+    <h3>Flipped Checkbox</h3>
+    <p>Use the <span class="highlight">checkboxes--flipped</span> or <span class="highlight">checkbox--flipped</span> modifier to flip the label and checkbox positions for grouped or ungrouped checkboxes respectively.</p>
+    <p>Please note the additional span element (inside the label) that is required for flipped checkboxes.</p>
+
+    <div class="demo">
+        <div class="checkbox checkbox--flipped">
+            <input id="solo-checkbox-flipped-1" type="checkbox" value="1" name="flipped" />
+            <label for="solo-checkbox-flipped-1"><span>Flipped checkbox</span></label>
+        </div>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox checkbox--flipped&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;flipped&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Flipped checkbox<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
+
+    <h3>Disabled Checkbox</h3>
+    <p>Use the <span class="highlight">disabled</span> attribute to disable any checkbox input.</p>
+    <div class="demo">
+        <div class="checkbox">
+            <input id="disabled-checkbox-1" type="checkbox" value="1" name="disabled" disabled />
+            <label for="disabled-checkbox-1">Disabled checkbox</label>
+        </div>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;choice&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;disabled&quot;</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;choice&quot;</span><span class="nt">&gt;</span>Disabled checkbox<span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
@@ -2755,17 +2785,22 @@
 <section id="menu" aria-labelledby="menu_heading">
     <h2 id="menu_heading">Menu</h2>
 
-    <p>A menu follows the principal of <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">progressive disclosure</a> by keeping advanced functionality hidden from view until it's button is activated.</p>
-    <p>When adding a menu to the page, you have two choices: selecting a menu item can either update the page <strong>without</strong> a full page reload, <em>or</em> it can reload the <strong>entire</strong> page (we call this our Faux Menu); be sure to use the correct version for your needs!</p>
-    <p><strong>NOTE:</strong> Menus are not form controls. If you wish to submit form data, please consider <a href="#listbox">Listbox</a> instead.</p>
+    <p>A menu follows the principal of <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">progressive disclosure</a>, it keeps secondary navigation or functionality hidden from view until needed. <strong>NOTE: </strong>Menus are <strong>not</strong> form controls. If you wish to submit form data, please consider <a href="#listbox">Listbox</a> instead.</p>
+    <p>There are two choices when adding a menu to the page: selecting a menu item can either update the page <strong>without</strong> a full page reload, <em>or</em> it can reload the <strong>entire</strong> page (see 'Faux Menu' section below for more details); be sure to use the correct version for your needs!</p>
+    <p>All menus expand <em>inline</em> by default, pushing down all page content below the menu. Use the <span class="highlight">menu--flyout</span> modifier to <em>overlay</em> the page content instead.</p>
 
-    <h3>Default Menu</h3>
-    <p>Apply role <span class="highlight">menuitem</span> on each menu item.</p>
-
-    <div class="demo">
-        <div class="menu">
-            <button aria-expanded="false" aria-haspopup="true" id="menu_button_0" aria-controls="menu_flyout_0" type="button" class="btn btn--fluid">Zoom</button>
-            <div role="menu" id="menu_flyout_0" aria-labelledby="menu_button_0">
+    <div>
+        <div class="menu" style="display: inline-block;">
+            <button aria-expanded="false" aria-haspopup="true" id="menu_button_0" aria-controls="menu_items_0a" type="button" class="btn btn--fluid">Inline Menu</button>
+            <div role="menu" id="menu_items_0a" aria-labelledby="menu_button_0">
+                <div role="menuitem" tabindex="-1">Zoom in</div>
+                <div role="menuitem" tabindex="-1">Zoom out</div>
+                <div role="menuitem" tabindex="-1">Reset</div>
+            </div>
+        </div>
+        <div class="menu menu--flyout" style="display: inline-block; vertical-align: top;">
+            <button aria-expanded="false" aria-haspopup="true" id="menu_button_0" aria-controls="menu_items_0b" type="button" class="btn btn--fluid">Flyout Menu</button>
+            <div role="menu" id="menu_items_0b" aria-labelledby="menu_button_0">
                 <div role="menuitem" tabindex="-1">Zoom in</div>
                 <div role="menuitem" tabindex="-1">Zoom out</div>
                 <div role="menuitem" tabindex="-1">Reset</div>
@@ -2773,10 +2808,26 @@
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+    <p>All subsequent examples below use the <span class="highlight">menu--flyout</span> modifier.</p>
+
+    <h3>Default Menu</h3>
+    <p>Apply role <span class="highlight">menuitem</span> on each menu item.</p>
+
+    <div class="demo">
+        <div class="menu menu--flyout">
+            <button aria-expanded="false" aria-haspopup="true" id="menu_button_0" aria-controls="menu_items_0c" type="button" class="btn btn--fluid">Zoom</button>
+            <div role="menu" id="menu_items_0c" aria-labelledby="menu_button_0">
+                <div role="menuitem" tabindex="-1">Zoom in</div>
+                <div role="menuitem" tabindex="-1">Zoom out</div>
+                <div role="menuitem" tabindex="-1">Reset</div>
+            </div>
+        </div>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu menu--flyout&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_button&quot;</span>
-            <span class="na">aria-controls=</span><span class="s">&quot;menu_flyout&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--fluid&quot;</span><span class="nt">&gt;</span>Zoom<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_flyout&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu_button&quot;</span><span class="nt">&gt;</span>
+            <span class="na">aria-controls=</span><span class="s">&quot;menu_items&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--fluid&quot;</span><span class="nt">&gt;</span>Zoom<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_items&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu_button&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Zoom in<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Zoom out<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Reset<span class="nt">&lt;/div&gt;</span>
@@ -2788,9 +2839,9 @@
     <p>Apply role <span class="highlight">menuitemradio</span> on each menu item.</p>
 
     <div class="demo">
-        <div class="menu">
-            <button aria-expanded="false" aria-haspopup="true" id="menu_button_1" aria-controls="menu_flyout_1" type="button" class="btn btn--fluid">Sort</button>
-            <div role="menu" id="menu_flyout_1" aria-labelledby="menu_button_1">
+        <div class="menu menu--flyout">
+            <button aria-expanded="false" aria-haspopup="true" id="menu_button_1" aria-controls="menu_items_1" type="button" class="btn btn--fluid">Sort</button>
+            <div role="menu" id="menu_items_1" aria-labelledby="menu_button_1">
                 <div role="menuitemradio" aria-checked="true" tabindex="-1">Best Match</div>
                 <div role="menuitemradio" aria-checked="false" tabindex="-1">Time: ending soonest</div>
                 <div role="menuitemradio" aria-checked="false" tabindex="-1">Time: newly listed</div>
@@ -2799,10 +2850,10 @@
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu menu--flyout&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_button&quot;</span>
-            <span class="na">aria-controls=</span><span class="s">&quot;menu_flyout&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--fluid&quot;</span><span class="nt">&gt;</span>Sort<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_flyout&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu_button&quot;</span><span class="nt">&gt;</span>
+            <span class="na">aria-controls=</span><span class="s">&quot;menu_items&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--fluid&quot;</span><span class="nt">&gt;</span>Sort<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_items&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu_button&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Best Match<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Time: ending soonest<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemradio&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Time: newly listed<span class="nt">&lt;/div&gt;</span>
@@ -2815,9 +2866,9 @@
     <p>Apply role <span class="highlight">menuitemcheckbox</span> on each menu item.</p>
 
     <div class="demo">
-        <div class="menu">
-            <button aria-expanded="false" aria-haspopup="true" id="menu_button_2" aria-controls="menu_flyout_2" type="button" class="btn btn--fluid">Show</button>
-            <div role="menu" id="menu_flyout_2" aria-labelledby="menu_button_2">
+        <div class="menu menu--flyout">
+            <button aria-expanded="false" aria-haspopup="true" id="menu_button_2" aria-controls="menu_items_2" type="button" class="btn btn--fluid">Show</button>
+            <div role="menu" id="menu_items_2" aria-labelledby="menu_button_2">
                 <div role="menuitemcheckbox" aria-checked="true" tabindex="-1">Grid Lines</div>
                 <div role="menuitemcheckbox" aria-checked="true" tabindex="-1">Page Breaks</div>
                 <div role="menuitemcheckbox" aria-checked="false" tabindex="-1">Rules</div>
@@ -2825,10 +2876,10 @@
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu menu--flyout&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_button&quot;</span>
-            <span class="na">aria-controls=</span><span class="s">&quot;menu_flyout&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--fluid&quot;</span><span class="nt">&gt;</span>Show<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_flyout&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu_button&quot;</span><span class="nt">&gt;</span>
+            <span class="na">aria-controls=</span><span class="s">&quot;menu_items&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--fluid&quot;</span><span class="nt">&gt;</span>Show<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">id=</span><span class="s">&quot;menu_items&quot;</span> <span class="na">aria-labelledby=</span><span class="s">&quot;menu_button&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemcheckbox&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Grid Lines<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemcheckbox&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;true&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Page Breaks<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;menuitemcheckbox&quot;</span> <span class="na">aria-checked=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>Rules<span class="nt">&lt;/div&gt;</span>
@@ -2837,12 +2888,12 @@
     </code></pre></figure>
 
     <h3>Faux Menu</h3>
-    <p>A list of hyperlinks. No ARIA roles are required. Use class <span class="highlight">menu__selected</span> to denote current hyperlink.</p>
+    <p>A list of hyperlinks. No ARIA roles are required. Use class <span class="highlight">menu__selected</span> to denote current hyperlink where applicable.</p>
 
     <div class="demo">
-        <div class="menu menu--faux">
-            <button class="btn btn--fluid" type="button" aria-controls="fauxmenu_flyout_1" aria-expanded="false">Featured</button>
-            <ul id="fauxmenu_flyout_1">
+        <div class="menu menu--faux menu--flyout">
+            <button class="btn btn--fluid" type="button" aria-controls="fauxmenu_items_1" aria-expanded="false">Featured</button>
+            <ul id="fauxmenu_items_1">
                 <li><a class="menu__selected" href="http://www.ebay.com">Featured<span class="clipped"> - selected</span></a></li>
                 <li><a href="http://www.ebay.com">Fashion</a></li>
                 <li><a href="http://www.ebay.com">Home &amp; Garden</a></li>
@@ -2850,10 +2901,10 @@
             </ul>
         </div>
     </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu menu--faux&quot;</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu menu--faux menu--flyout&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn--fluid&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span>
-            <span class="na">aria-controls=</span><span class="s">&quot;fauxmenu_flyout&quot;</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;fauxmenu_flyout&quot;</span><span class="nt">&gt;</span>
+            <span class="na">aria-controls=</span><span class="s">&quot;fauxmenu_items&quot;</span> <span class="na">aria-expanded=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;fauxmenu_items&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;menu__selected&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;clipped&quot;</span><span class="nt">&gt;</span> - selected<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ebay.com&quot;</span><span class="nt">&gt;</span>Fashion<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -2866,7 +2917,8 @@
 
 <section id="radio" aria-labelledby="radio_heading">
     <h2 id="radio_heading">Radio</h2>
-    <p>Radio buttons allow the user to select only one option from a group. A <span class="highlight">fieldset</span> and <span class="highlight">legend</span> are <strong>required</strong>.</p>
+    <p>Radio buttons allow the user to select a single option from a group of choices.</p>
+    <p>In order to create the correct grouping semantics, <span class="highlight">fieldset</span> and <span class="highlight">legend</span> tags are always <strong>required</strong> for radio buttons.</p>
 
     <h3>Vertical Radios</h3>
     <p>Wrap each radio and label in a <span class="highlight">div</span> element to stack vertically.</p>
@@ -2875,16 +2927,16 @@
             <fieldset>
                 <legend>Vertical Radios</legend>
                 <div>
-                    <input id="radiolist1-input1" type="radio" value="1" name="radiolist1" />
-                    <label for="radiolist1-input1">Input 1</label>
+                    <input id="radiogroup1-option1" name="radiogroup1" type="radio" value="1" />
+                    <label for="radiogroup1-option1">Option 1</label>
                 </div>
                 <div>
-                    <input id="radiolist1-input2" type="radio" value="2" name="radiolist1" />
-                    <label for="radiolist1-input2">Input 2</label>
+                    <input id="radiogroup1-option2" name="radiogroup1" type="radio" value="2" />
+                    <label for="radiogroup1-option2">Option 2</label>
                 </div>
                 <div>
-                    <input id="radiolist1-input3" type="radio" value="3" name="radiolist1" disabled/>
-                    <label for="radiolist1-input3">Disabled Input 3</label>
+                    <input id="radiogroup1-option3" name="radiogroup1" type="radio" value="3" />
+                    <label for="radiogroup1-option3">Option 3</label>
                 </div>
             </fieldset>
         </div>
@@ -2894,38 +2946,38 @@
     <span class="nt">&lt;fieldset&gt;</span>
         <span class="nt">&lt;legend&gt;</span>Vertical Radios<span class="nt">&lt;/legend&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input1&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input1&quot;</span><span class="nt">&gt;</span>Input 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;option1&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option1&quot;</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input2&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input2&quot;</span><span class="nt">&gt;</span>Input 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;option2&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option2&quot;</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;radiolist1-input3&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">name=</span><span class="s">&quot;radiolist1&quot;</span> <span class="na">disabled</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiolist1-input3&quot;</span><span class="nt">&gt;</span>Disabled Input 3<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;option3&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option3&quot;</span><span class="nt">&gt;</span>Option 3<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
     <h3>Horizontal Radios</h3>
-    <p>Wrap each radio and label in a span element to align horizontally.</p>
+    <p>Wrap each radio and label in a <span class="highlight">span</span> element to align horizontally.</p>
     <div class="demo">
         <div class="radios">
             <fieldset>
                 <legend>Horizontal Radios</legend>
                 <span>
-                    <input type="radio" name="radiogroup1" id="radiogroup1-option1" value="option1" />
-                    <label for="radiogroup1-option1" >Option 1</label>
+                    <input type="radio" name="radiogroup2" id="radiogroup2-option1" value="1" />
+                    <label for="radiogroup2-option1" >Option 1</label>
                 </span>
                 <span>
-                    <input type="radio" name="radiogroup1" id="radiogroup1-option2" value="option2" />
-                    <label for="radiogroup1-option2">Option 2</label>
+                    <input type="radio" name="radiogroup2" id="radiogroup2-option2" value="2" />
+                    <label for="radiogroup2-option2">Option 2</label>
                 </span>
                 <span>
-                    <input type="radio" name="radiogroup1" id="radiogroup1-option3" value="option3"  />
-                    <label for="radiogroup1-option3">Option 3</label>
+                    <input type="radio" name="radiogroup2" id="radiogroup2-option3" value="3"  />
+                    <label for="radiogroup2-option3">Option 3</label>
                 </span>
             </fieldset>
         </div>
@@ -2935,17 +2987,92 @@
     <span class="nt">&lt;fieldset&gt;</span>
         <span class="nt">&lt;legend&gt;</span>Horizontal Radios<span class="nt">&lt;/legend&gt;</span>
         <span class="nt">&lt;span&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option1&quot;</span> <span class="na">value=</span><span class="s">&quot;option1&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option1&quot;</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">id=</span><span class="s">&quot;option1&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option1&quot;</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;span&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option2&quot;</span> <span class="na">value=</span><span class="s">&quot;option2&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option2&quot;</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">id=</span><span class="s">&quot;option2&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option2&quot;</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;span&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup1&quot;</span> <span class="na">id=</span><span class="s">&quot;radiogroup1-option3&quot;</span> <span class="na">value=</span><span class="s">&quot;option3&quot;</span>  <span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radiogroup1-option3&quot;</span><span class="nt">&gt;</span>Option 3<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">id=</span><span class="s">&quot;option3&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span>  <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option3&quot;</span><span class="nt">&gt;</span>Option 3<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
+
+    <h3>Flipped Radios</h3>
+    <p>Use the <span class="highlight">radios--flipped</span> modifier class to swap over the label and radio button positions.</p>
+    <p>Please note the additional span element (inside of the label) that is required for flipped radios.</p>
+    <div class="demo">
+        <div class="radios radios--flipped">
+            <fieldset>
+                <legend>Flipped Radios</legend>
+                <span>
+                    <input type="radio" name="radiogroup3" id="radiogroup3-option1" value="1" />
+                    <label for="radiogroup3-option1"><span>Option 1</span></label>
+                </span>
+                <span>
+                    <input type="radio" name="radiogroup3" id="radiogroup3-option2" value="2" />
+                    <label for="radiogroup3-option2"><span>Option 2</span></label>
+                </span>
+                <span>
+                    <input type="radio" name="radiogroup3" id="radiogroup3-option3" value="3"  />
+                    <label for="radiogroup3-option3"><span>Option 3</span></label>
+                </span>
+            </fieldset>
+        </div>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radios radios--flipped&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset&gt;</span>
+        <span class="nt">&lt;legend&gt;</span>Flipped Radios<span class="nt">&lt;/legend&gt;</span>
+        <span class="nt">&lt;span&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">id=</span><span class="s">&quot;option1&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option1&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Option 1<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+        <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">id=</span><span class="s">&quot;option2&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option2&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Option 2<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+        <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">id=</span><span class="s">&quot;option3&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span>  <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option3&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Option 3<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+        <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
+
+    <h3>Disabled Radios</h3>
+    <p>Use the <span class="highlight">disabled</span> attribute to disable any radio button input.</p>
+    <div class="demo">
+        <div class="radios">
+            <fieldset>
+                <legend>Disabled Radios</legend>
+                <div>
+                    <input id="radiogroup4-option1" name="radiogroup4" type="radio" value="1" disabled />
+                    <label for="radiogroup4-option1">Option 1</label>
+                </div>
+                <div>
+                    <input id="radiogroup4-option2" name="radiogroup4" type="radio" value="2" disabled />
+                    <label for="radiogroup4-option2">Option 2</label>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radios&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset&gt;</span>
+        <span class="nt">&lt;legend&gt;</span>Disabled Radios<span class="nt">&lt;/legend&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;option1&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option1&quot;</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;option2&quot;</span> <span class="na">name=</span><span class="s">&quot;radiogroup&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;option2&quot;</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>

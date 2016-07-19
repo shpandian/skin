@@ -1,4 +1,6 @@
 <!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9]>
 <html class="ie9" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
@@ -7,7 +9,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Checkbox</title>
+        <title>Checkbox - Groups</title>
         <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
         <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
         <link rel="stylesheet" type="text/css" href="../../css/font.css">
@@ -16,75 +18,193 @@
     </head>
     <body>
         <header>
-            <h1>Checkbox</h1>
+            <h1>Checkbox - Groups</h1>
             <form>
                 <input id="skin-large" type="checkbox" name="skin-large">
                 <label for="skin-large">skin-large</label>
                 <input id="skin-legacy" type="checkbox" name="skin-legacy">
-                <label for="skin-large">skin-legacy</label>
+                <label for="skin-legacy">skin-legacy</label>
                 <input type="submit" value="Apply" />
             </form>
         </header>
         <div>
-            <h2>Checkbox Horizontal</h2>
+            <h2>Horizontal Checkbox Group</h2>
             <div class="test">
                 <form>
                     <div class="checkboxes">
                         <fieldset>
                             <legend>Legend</legend>
                             <span>
-                                <input id="checkbox-inline-choice1" type="checkbox" value="1" name="checbox1" />
-                                <label for="checkbox-inline-choice1">Option 1</label>
+                                <input id="checkbox-inline-choice1" type="checkbox" value="1" name="checkbox1" />
+                                <label for="checkbox-inline-choice1"><span>Option 1<span></label>
                             </span>
                             <span>
-                                <input id="checkbox-inline-choice2" type="checkbox" value="2" name="checbox1" />
-                                <label for="checkbox-inline-choice2">Option 2</label>
+                                <input id="checkbox-inline-choice2" type="checkbox" value="2" name="checkbox1" />
+                                <label for="checkbox-inline-choice2"><span>Option 2<span></label>
                             </span>
                             <span>
-                                <input id="checkbox-inline-choice3" type="checkbox" value="3" name="checbox1" disabled />
-                                <label for="checkbox-inline-choice3">Option 3 (disabled)</label>
+                                <input id="checkbox-inline-choice3" type="checkbox" value="3" name="checkbox1" />
+                                <label for="checkbox-inline-choice3"><span>Option 3<span></label>
                             </span>
                         </fieldset>
                     </div>
                 </form>
             </div>
 
-            <!-- test disabled - see issue #302 -->
-            <h2>Checkbox Vertical</h2>
+            <h2>Flipped Horizontal Checkbox Group</h2>
+            <div class="test">
+                <form>
+                    <div class="checkboxes checkboxes--flipped">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <span>
+                                <input id="checkbox-inline-choice1c" type="checkbox" value="1" name="checkbox1" />
+                                <label for="checkbox-inline-choice1c"><span>Option 1</span></label>
+                            </span>
+                            <span>
+                                <input id="checkbox-inline-choice2c" type="checkbox" value="2" name="checkbox1" />
+                                <label for="checkbox-inline-choice2c"><span>Option 2</span></label>
+                            </span>
+                            <span>
+                                <input id="checkbox-inline-choice3c" type="checkbox" value="3" name="checkbox1" />
+                                <label for="checkbox-inline-choice3c"><span>Option 3</span></label>
+                            </span>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Vertical Checkbox Group</h2>
+            <div class="test">
+                <form>
+                    <div class="checkboxes">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <div>
+                                <input id="checkbox-choice1" type="checkbox" value="1" name="checkbox1" />
+                                <label for="checkbox-choice1" class="custom-checkbox"><span>Option 1</span></label>
+                            </div>
+                            <div>
+                                <input id="checkbox-choice2" type="checkbox" value="2" name="checkbox1" />
+                                <label for="checkbox-choice2" class="custom-checkbox"><span>Option 2</span></label>
+                            </div>
+                            <div>
+                                <input id="checkbox-choice3" type="checkbox" value="3" name="checkbox1" />
+                                <label for="checkbox-choice3" class="custom-checkbox"><span>Option 3</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Flipped Vertical Checkbox Group</h2>
+            <div class="test">
+                <form>
+                    <div class="checkboxes checkboxes--flipped">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <div>
+                                <input id="checkbox-choice1d" type="checkbox" value="1" name="checkbox1" />
+                                <label for="checkbox-choice1d" class="custom-checkbox"><span>Option 1</span></label>
+                            </div>
+                            <div>
+                                <input id="checkbox-choice2d" type="checkbox" value="2" name="checkbox1" />
+                                <label for="checkbox-choice2d" class="custom-checkbox"><span>Option 2</span></label>
+                            </div>
+                            <div>
+                                <input id="checkbox-choice3d" type="checkbox" value="3" name="checkbox1" />
+                                <label for="checkbox-choice3d" class="custom-checkbox"><span>Option 3</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Disabled Checkboxes</h2>
+            <div class="test">
+                <form>
+                    <div class="checkboxes">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <span>
+                                <input id="checkbox-inline-choice4a" type="checkbox" value="1" name="checkbox1" disabled />
+                                <label for="checkbox-inline-choice4a"><span>Option 1<span></label>
+                            </span>
+                            <span>
+                                <input id="checkbox-inline-choice4b" type="checkbox" value="2" name="checkbox1" disabled />
+                                <label for="checkbox-inline-choice4b"><span>Option 2<span></label>
+                            </span>
+                            <span>
+                                <input id="checkbox-inline-choice4c" type="checkbox" value="3" name="checkbox1" disabled />
+                                <label for="checkbox-inline-choice4c"><span>Option 3<span></label>
+                            </span>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <!--
+
+            <h2>Horizontal Checkbox Group with Disconnected Labels</h2>
+            <div class="test">
+                <form>
+                    <div class="checkboxes">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <span>
+                                <input id="checkbox-inline-choice1b" type="checkbox" value="1" name="checkbox1" />
+                                <span></span>
+                                <span>-</span><span>-</span><span>-</span>
+                                <label for="checkbox-inline-choice1b">Option 1</label>
+                            </span>
+                            <span>
+                                <input id="checkbox-inline-choice2b" type="checkbox" value="2" name="checkbox1" />
+                                <span></span>
+                                <span>-</span><span>-</span><span>-</span>
+                                <label for="checkbox-inline-choice2b">Option 2</label>
+                            </span>
+                            <span>
+                                <input id="checkbox-inline-choice3b" type="checkbox" value="3" name="checkbox1" />
+                                <span></span>
+                                <span>-</span><span>-</span><span>-</span>
+                                <label for="checkbox-inline-choice3b">Option3</label>
+                            </span>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Vertical Checkbox Group with Disconnected Labels</h2>
             <div>
                 <form>
                     <div class="checkboxes">
                         <fieldset>
                             <legend>Legend</legend>
                             <div>
-                                <input id="checkbox-choice1" type="checkbox" value="1" name="checbox1" />
-                                <span/>
-                                <label for="checkbox-choice1" class="custom-checkbox">Option 1</label>
+                                <input id="checkbox-choice1b" type="checkbox" value="1" name="checkbox1" />
+                                <span></span>
+                                <span>-</span><span>-</span><span>-</span>
+                                <label for="checkbox-choice1b" class="custom-checkbox">Option 1</label>
                             </div>
                             <div>
-                                <input id="checkbox-choice2" type="checkbox" value="2" name="checbox1" />
-                                <span/>
-                                <label for="checkbox-choice2" class="custom-checkbox">Option 2</label>
+                                <input id="checkbox-choice2b" type="checkbox" value="2" name="checkbox1" />
+                                <span></span>
+                                <span>-</span><span>-</span><span>-</span>
+                                <label for="checkbox-choice2b" class="custom-checkbox">Option 2</label>
                             </div>
                             <div>
-                                <input id="checkbox-choice3" type="checkbox" value="3" name="checbox1" disabled />
-                                <span/>
-                                <label for="checkbox-choice3" class="custom-checkbox">Option 3 (disabled)</label>
+                                <input id="checkbox-choice3b" type="checkbox" value="3" name="checkbox1" />
+                                <span></span>
+                                <span>-</span><span>-</span><span>-</span>
+                                <label for="checkbox-choice3b" class="custom-checkbox">Option 3</label>
                             </div>
                         </fieldset>
                     </div>
                 </form>
             </div>
 
-            <h2>Checkbox Standalone</h2>
-            <div class="test">
-                <form class="form">
-                    <div class="checkboxes">
-                        <input id="signin" type="checkbox" value="sign in" name="signin" />
-                        <label for="signin">Toggle</label>
-                    </div>
-                </form>
-            </div>
+            -->
+
         </div>
     </body>
 </html>
