@@ -1,4 +1,6 @@
 <!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9]>
 <html class="ie9" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
@@ -7,7 +9,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Menu</title>
+        <title>Menu - Collapsed</title>
         <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
         <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
         <link rel="stylesheet" type="text/css" href="../../css/font.css">
@@ -16,21 +18,22 @@
     </head>
     <body>
         <header>
-            <h1>Menu</h1>
+            <h1>Menu - Collapsed</h1>
             <form>
                 <input id="skin-large" type="checkbox" name="skin-large">
                 <label for="skin-large">skin-large</label>
                 <input id="skin-legacy" type="checkbox" name="skin-legacy">
-                <label for="skin-large">skin-legacy</label>
+                <label for="skin-legacy">skin-legacy</label>
                 <input type="submit" value="Apply" />
             </form>
         </header>
         <div>
-            <h2>Default - collapsed</h2>
+
+            <h2>Default Button</h2>
             <div class="test">
                 <div class="menu">
-                    <button aria-expanded="false" aria-haspopup="true" id="default_button" aria-controls="default_flyout" type="button" class="btn btn--fluid">Default</button>
-                    <div role="menu" id="default_flyout" aria-labelledby="default_button">
+                    <button class="btn" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
                         <div role="menuitem" tabindex="-1">Item 1</div>
                         <div role="menuitem" tabindex="-1">Item 2</div>
                         <div role="menuitem" tabindex="-1">Item 3</div>
@@ -38,47 +41,11 @@
                 </div>
             </div>
 
-            <h2>Single Select - collapsed</h2>
+            <h2>Small Button</h2>
             <div class="test">
                 <div class="menu">
-                    <button aria-expanded="false" aria-haspopup="true" id="single_button" aria-controls="single_flyout" type="button" class="btn btn--fluid">Single-select</button>
-                    <div role="menu" id="single_flyout" aria-labelledby="single_button">
-                        <div role="menuitemradio" aria-checked="true" tabindex="-1">Radio 1</div>
-                        <div role="menuitemradio" aria-checked="false" tabindex="-1">Radio 2</div>
-                        <div role="menuitemradio" aria-checked="false" tabindex="-1">Radio 3</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2>Multi Select - collapsed</h2>
-            <div class="test">
-                <div class="menu">
-                    <button aria-expanded="false" aria-haspopup="true" id="multi_button" aria-controls="multi_flyout" type="button" class="btn btn--fluid">Multi-select</button>
-                    <div role="menu" id="multi_flyout" aria-labelledby="multi_button">
-                        <div role="menuitemcheckbox" aria-checked="true" tabindex="-1">Checkbox 1</div>
-                        <div role="menuitemcheckbox" aria-checked="true" tabindex="-1">Checkbox 2</div>
-                        <div role="menuitemcheckbox" aria-checked="false" tabindex="-1">Checkbox 3</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2>Faux - collapsed</h2>
-            <div class="test">
-                <div class="menu menu--faux" id="fauxmenu1">
-                    <button class="btn btn--fluid" type="button" aria-controls="faux_flyout" aria-expanded="false">Faux</button>
-                    <ul id="faux_flyout">
-                        <li><a href="http://www.ebay.com" class="menu__selected">Page 1<span class="clipped"> - selected</span></a></li>
-                        <li><a href="http://www.ebay.com">Page 2</a></li>
-                        <li><a href="http://www.ebay.com">Page 3</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <h2>Default - expanded</h2>
-            <div class="test">
-                <div class="menu">
-                    <button aria-expanded="true" aria-haspopup="true" id="default_button_1" aria-controls="default_flyout_1" type="button" class="btn btn--fluid">Default</button>
-                    <div role="menu" id="default_flyout_1" aria-labelledby="default_button_1">
+                    <button class="btn btn--small" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
                         <div role="menuitem" tabindex="-1">Item 1</div>
                         <div role="menuitem" tabindex="-1">Item 2</div>
                         <div role="menuitem" tabindex="-1">Item 3</div>
@@ -86,47 +53,11 @@
                 </div>
             </div>
 
-            <h2>Single Select - expanded</h2>
+            <h2>Medium Button</h2>
             <div class="test">
                 <div class="menu">
-                    <button aria-expanded="true" aria-haspopup="true" id="single_button_1" aria-controls="single_flyout_1" type="button" class="btn btn--fluid">Single-select</button>
-                    <div role="menu" class="menu" id="single_flyout_1" aria-labelledby="single_button_1">
-                        <div role="menuitemradio" aria-checked="true" tabindex="-1">Radio 1</div>
-                        <div role="menuitemradio" aria-checked="false" tabindex="-1">Radio 2</div>
-                        <div role="menuitemradio" aria-checked="false" tabindex="-1">Radio 3</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2>Multi Select - expanded</h2>
-            <div class="test">
-                <div class="menu">
-                    <button aria-expanded="true" aria-haspopup="true" id="multi_button_1" aria-controls="multi_flyout_1" type="button" class="btn btn--fluid">Multi-select</button>
-                    <div role="menu" id="multi_flyout_1" aria-labelledby="multi_button_1">
-                        <div role="menuitemcheckbox" aria-checked="true" tabindex="-1">Checkbox 1</div>
-                        <div role="menuitemcheckbox" aria-checked="true" tabindex="-1">Checkbox 2</div>
-                        <div role="menuitemcheckbox" aria-checked="false" tabindex="-1">Checkbox 3</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2>Faux - expanded</h2>
-            <div class="test">
-                <div class="menu menu--faux">
-                    <button class="btn btn--fluid" type="button" aria-controls="faux_flyout_1" aria-expanded="true">Faux</button>
-                    <ul id="faux_flyout_1">
-                        <li><a href="http://www.ebay.com" class="menu__selected">Page 1<span class="clipped"> - selected</span></a></li>
-                        <li><a href="http://www.ebay.com">Page 2</a></li>
-                        <li><a href="http://www.ebay.com">Page 3</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <h2>Menu - Flyout</h2>
-            <div class="test">
-                <div class="menu menu--flyout">
-                    <button aria-expanded="true" aria-haspopup="true" id="default_button" aria-controls="default_flyout" type="button" class="btn btn--fluid">Default</button>
-                    <div role="menu" id="default_flyout" aria-labelledby="default_button">
+                    <button class="btn btn--medium" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
                         <div role="menuitem" tabindex="-1">Item 1</div>
                         <div role="menuitem" tabindex="-1">Item 2</div>
                         <div role="menuitem" tabindex="-1">Item 3</div>
@@ -134,11 +65,11 @@
                 </div>
             </div>
 
-            <h2>Default - collapsed</h2>
+            <h2>Large Button</h2>
             <div class="test">
                 <div class="menu">
-                    <button aria-expanded="false" aria-haspopup="true" id="default_button" aria-controls="default_flyout" type="button" class="btn btn--fluid">Default</button>
-                    <div role="menu" id="default_flyout" aria-labelledby="default_button">
+                    <button class="btn btn--large" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
                         <div role="menuitem" tabindex="-1">Item 1</div>
                         <div role="menuitem" tabindex="-1">Item 2</div>
                         <div role="menuitem" tabindex="-1">Item 3</div>
@@ -146,29 +77,82 @@
                 </div>
             </div>
 
-            <h2>Faux - flyout</h2>
-            <div class="test">
-                <div class="menu menu--faux menu--flyout">
-                    <button class="btn btn--fluid" type="button" aria-controls="faux_flyout_1" aria-expanded="true">Faux</button>
-                    <ul id="faux_flyout_1">
-                        <li><a href="http://www.ebay.com" class="menu__selected">Page 1<span class="clipped"> - selected</span></a></li>
-                        <li><a href="http://www.ebay.com">Page 2</a></li>
-                        <li><a href="http://www.ebay.com">Page 3</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <h2>Default - collapsed</h2>
+            <h2>Primary Button</h2>
             <div class="test">
                 <div class="menu">
-                    <button aria-expanded="false" aria-haspopup="true" id="default_button" aria-controls="default_flyout" type="button" class="btn btn--fluid">Default</button>
-                    <div role="menu" id="default_flyout" aria-labelledby="default_button">
+                    <button class="btn btn--medium btn--primary" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
                         <div role="menuitem" tabindex="-1">Item 1</div>
                         <div role="menuitem" tabindex="-1">Item 2</div>
                         <div role="menuitem" tabindex="-1">Item 3</div>
                     </div>
                 </div>
             </div>
+
+            <h2>Secondary Button</h2>
+            <div class="test">
+                <div class="menu">
+                    <button class="btn btn--medium btn--secondary" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Fluid Button</h2>
+            <div class="test">
+                <div class="menu">
+                    <button class="btn btn--medium btn--fluid" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>DIV, DIV (margin broken until 2.6.0)</h2>
+            <div class="test">
+                <div class="menu">
+                    <button class="btn" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <button class="btn" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>SPAN, SPAN</h2>
+            <div class="test">
+                <span class="menu">
+                    <button class="btn" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </span>
+                <span class="menu">
+                    <button class="btn" aria-expanded="false" aria-haspopup="true" type="button">Menu</button>
+                    <div role="menu">
+                        <div role="menuitem" tabindex="-1">Item 1</div>
+                        <div role="menuitem" tabindex="-1">Item 2</div>
+                        <div role="menuitem" tabindex="-1">Item 3</div>
+                    </div>
+                </span>
+            </div>
+
         </div>
     </body>
 </html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Form - Alignment</title>
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/grid/grid-full.css">
+        <link rel="stylesheet" type="text/css" href="../../../dist/grid/grid-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../../css/test.css">
+        <script src="../../js/querystring.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Form - Alignment</h1>
+            <form>
+                <input id="skin-large" type="checkbox" name="skin-large">
+                <label for="skin-large">skin-large</label>
+                <input id="skin-legacy" type="checkbox" name="skin-legacy">
+                <label for="skin-legacy">skin-legacy</label>
+                <input type="submit" value="Apply" />
+            </form>
+        </header>
+        <div>
+
+            <p class="emphasis"><strong>NOTE:</strong> Textbox &amp; Listbox alignment is currently broken due to mismatched vertical margins. Changing the margins in a patch release would risk breaking changes to sites, therefore the fix will go into next minor release (v2.6.0).</p>
+
+            <h2>Textbox &amp; Listbox - Top Label (broken - see note)</h2>
+            <div class="grid test">
+                <div class="grid__group">
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="textbox">
+                            <label for="email_0">Email</label>
+                            <input id="email_0" type="email" placeholder="yourname@domain.com" name="email1" />
+                        </div>
+                    </div>
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="listbox">
+                            <label for="size_0">Size</label>
+                            <select id="size_0">
+                                <option value="1">Small</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Large</option>
+                                <option value="4">Extra Large</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <h2>Textbox &amp; Listbox - Top Label, Small (broken - see note)</h2>
+            <div class="grid test">
+                <div class="grid__group">
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="textbox textbox--small">
+                            <label for="email_1">Email</label>
+                            <input id="email_1" type="email" placeholder="yourname@domain.com" name="email1" />
+                        </div>
+                    </div>
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="listbox listbox--small">
+                            <label for="size_1">Size</label>
+                            <select id="size_1">
+                                <option value="1">Small</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Large</option>
+                                <option value="4">Extra Large</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Textbox &amp; Listbox - Side Label (broken - see note)</h2>
+            <div class="grid test">
+                <div class="grid__group">
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="textbox textbox--side-label">
+                            <label for="email_0">Email</label>
+                            <input id="email_0" type="email" placeholder="yourname@domain.com" name="email1" />
+                        </div>
+                    </div>
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="listbox listbox--side-label">
+                            <label for="size_0">Size</label>
+                            <select id="size_0">
+                                <option value="1">Small</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Large</option>
+                                <option value="4">Extra Large</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Textbox &amp; Listbox - Side Label, Small (broken - see note)</h2>
+            <div class="grid test">
+                <div class="grid__group">
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="textbox textbox--small textbox--side-label">
+                            <label for="email_1">Email</label>
+                            <input id="email_1" type="email" placeholder="yourname@domain.com" name="email1" />
+                        </div>
+                    </div>
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="listbox listbox--small listbox--side-label">
+                            <label for="size_1">Size</label>
+                            <select id="size_1">
+                                <option value="1">Small</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Large</option>
+                                <option value="4">Extra Large</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="emphasis"><strong>NOTE:</strong> Default Button &amp; Menu alignment is currently broken due to mismatched font-sizes. Changing the font-sizes in a patch release would risk breaking changes to sites, therefore the fix will go into next minor release (v2.6.0).</p>
+            <h2>Button &amp; Menu - Default</h2>
+            <div class="grid test">
+                <div class="grid__group">
+                    <div class="grid__cell grid__cell--one-half">
+                        <button type="button" class="btn btn--fluid btn--primary">Button</button>
+                    </div>
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="menu">
+                            <button class="btn btn--fluid btn--primary btn--large" aria-expanded="false" aria-haspopup="true" id="default_button_1" aria-controls="default_1" type="button">Menu</button>
+                            <div role="menu" id="default_1" aria-labelledby="default_button_1">
+                                <div role="menuitem" tabindex="-1">Item 1</div>
+                                <div role="menuitem" tabindex="-1">Item 2</div>
+                                <div role="menuitem" tabindex="-1">Item 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Button &amp; Menu - Small</h2>
+            <div class="grid test">
+                <div class="grid__group">
+                    <div class="grid__cell grid__cell--one-half">
+                        <button type="button" class="btn btn--fluid btn--primary btn--small">Button</button>
+                    </div>
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="menu">
+                            <button class="btn btn--fluid btn--primary btn--small" aria-expanded="false" aria-haspopup="true" id="default_button_1" aria-controls="default_1" type="button">Menu</button>
+                            <div role="menu" id="default_1" aria-labelledby="default_button_1">
+                                <div role="menuitem" tabindex="-1">Item 1</div>
+                                <div role="menuitem" tabindex="-1">Item 2</div>
+                                <div role="menuitem" tabindex="-1">Item 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Button &amp; Menu - Medium</h2>
+            <div class="grid test">
+                <div class="grid__group">
+                    <div class="grid__cell grid__cell--one-half">
+                        <button type="button" class="btn btn--fluid btn--primary">Button</button>
+                    </div>
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="menu">
+                            <button class="btn btn--fluid btn--primary btn--medium" aria-expanded="false" aria-haspopup="true" id="default_button_1" aria-controls="default_1" type="button">Menu</button>
+                            <div role="menu" id="default_1" aria-labelledby="default_button_1">
+                                <div role="menuitem" tabindex="-1">Item 1</div>
+                                <div role="menuitem" tabindex="-1">Item 2</div>
+                                <div role="menuitem" tabindex="-1">Item 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Button &amp; Menu - Large</h2>
+            <div class="grid test">
+                <div class="grid__group">
+                    <div class="grid__cell grid__cell--one-half">
+                        <button type="button" class="btn btn--fluid btn--primary btn--large">Button</button>
+                    </div>
+                    <div class="grid__cell grid__cell--one-half">
+                        <div class="menu">
+                            <button class="btn btn--fluid btn--primary btn--large" aria-expanded="false" aria-haspopup="true" id="default_button_1" aria-controls="default_1" type="button">Menu</button>
+                            <div role="menu" id="default_1" aria-labelledby="default_button_1">
+                                <div role="menuitem" tabindex="-1">Item 1</div>
+                                <div role="menuitem" tabindex="-1">Item 2</div>
+                                <div role="menuitem" tabindex="-1">Item 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>

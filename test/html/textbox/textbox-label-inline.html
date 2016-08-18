@@ -1,4 +1,6 @@
 <!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9]>
 <html class="ie9" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
@@ -7,7 +9,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Textbox - inline label</title>
+        <title>Textbox - Side Label</title>
         <link rel="stylesheet" type="text/css" href="../../../dist/skin.css">
         <link rel="stylesheet" type="text/css" href="../../../dist/skin-legacy.css">
         <link rel="stylesheet" type="text/css" href="../../css/font.css">
@@ -16,54 +18,54 @@
     </head>
     <body>
         <header>
-            <h1>Textbox - inline label</h1>
+            <h1>Textbox - Side Label</h1>
             <form>
                 <input id="skin-large" type="checkbox" name="skin-large">
                 <label for="skin-large">skin-large</label>
                 <input id="skin-legacy" type="checkbox" name="skin-legacy">
-                <label for="skin-large">skin-legacy</label>
+                <label for="skin-legacy">skin-legacy</label>
                 <input type="submit" value="Apply" />
             </form>
         </header>
         <div>
 
             <!-- test disabled - see issue #302 -->
-            <h2>Inline label</h2>
+            <h2>Side Label</h2>
             <div class="test">
                 <form class="form" novalidate>
-                    <div class="textbox textbox--inline">
-                        <label for="inline">Email</label>
-                        <input id="inline" type="email" placeholder="placeholder text" name="inline" />
+                    <div class="textbox textbox--side-label">
+                        <label for="default">Email</label>
+                        <input id="default" type="email" placeholder="placeholder text" name="inline" />
                     </div>
                 </form>
             </div>
 
-            <h2>Inline label - disabled</h2>
+            <h2>Side Label - disabled</h2>
             <div class="test">
                 <form class="form">
-                    <div class="textbox textbox--inline">
-                        <label for="inline-disabled">Email</label>
-                        <input id="inline-disabled" type="email" placeholder="placeholder text" name="inline-disabled" disabled />
+                    <div class="textbox textbox--side-label">
+                        <label for="disabled">Email</label>
+                        <input id="disabled" type="email" placeholder="placeholder text" name="inline-disabled" disabled />
                     </div>
                 </form>
             </div>
 
-            <h2>Inline label - required</h2>
+            <h2>Side Label - required</h2>
             <div class="test">
                 <form class="form">
-                    <div class="textbox textbox--inline">
-                        <label for="email6">Email (Required)</label>
-                        <input id="email6" type="email" placeholder="placeholder text" name="email6" aria-required="true" />
+                    <div class="textbox textbox--side-label">
+                        <label for="required">Email (Required)</label>
+                        <input id="required" type="email" placeholder="placeholder text" name="email6" aria-required="true" />
                     </div>
                 </form>
             </div>
 
-            <h2>Inline label - error</h2>
+            <h2>Side Label - error</h2>
             <div class="test">
                 <form class="form">
-                    <div class="textbox textbox--inline">
-                        <label for="EmailinputError2">Email</label>
-                        <input id="EmailinputError2" type="email" placeholder="placeholder text" name="email" aria-invalid="true" aria-describedby="invalid-inline-label" />
+                    <div class="textbox textbox--side-label">
+                        <label for="error">Email</label>
+                        <input id="error" type="email" placeholder="placeholder text" name="email" aria-invalid="true" aria-describedby="invalid-inline-label" />
                         <div aria-live="polite" id="invalid-inline-label">
                             <p>Please Enter a valid Email Address</p>
                         </div>
@@ -71,42 +73,42 @@
                 </form>
             </div>
 
-            <h2>Inline label - small</h2>
+            <h2>Side Label - small</h2>
             <div class="test">
                 <form class="form" novalidate>
-                    <div class="textbox textbox--small textbox--inline">
-                        <label for="inline">Email</label>
-                        <input id="inline" type="email" placeholder="placeholder text" name="inline" />
+                    <div class="textbox textbox--small textbox--side-label">
+                        <label for="small">Email</label>
+                        <input id="small" type="email" placeholder="placeholder text" name="inline" />
                     </div>
                 </form>
             </div>
 
-            <h2>Inline label - small - disabled</h2>
+            <h2>Side Label - small - disabled</h2>
             <div class="test">
                 <form class="form">
-                    <div class="textbox textbox--small textbox--inline">
-                        <label for="inline-disabled">Email</label>
-                        <input id="inline-disabled" type="email" placeholder="placeholder text" name="inline-disabled" disabled />
+                    <div class="textbox textbox--small textbox--side-label">
+                        <label for="small_disabled">Email</label>
+                        <input id="small_disabled" type="email" placeholder="placeholder text" name="inline-disabled" disabled />
                     </div>
                 </form>
             </div>
 
-            <h2>Inline label - small - required</h2>
+            <h2>Side Label - small - required</h2>
             <div class="test">
                 <form class="form">
-                    <div class="textbox textbox--small textbox--inline">
-                        <label for="email6">Email (Required)</label>
-                        <input id="email6" type="email" placeholder="placeholder text" name="email6" aria-required="true" />
+                    <div class="textbox textbox--small textbox--side-label">
+                        <label for="small_required">Email (Required)</label>
+                        <input id="small_required" type="email" placeholder="placeholder text" name="email6" aria-required="true" />
                     </div>
                 </form>
             </div>
 
-            <h2>Inline label - small - error</h2>
+            <h2>Side Label - small - error</h2>
             <div class="test">
                 <form class="form">
-                    <div class="textbox textbox--small textbox--inline">
-                        <label for="EmailinputError2">Email</label>
-                        <input id="EmailinputError2" type="email" placeholder="placeholder text" name="email" aria-invalid="true" aria-describedby="invalid-inline-label" />
+                    <div class="textbox textbox--small textbox--side-label">
+                        <label for="small_error">Email</label>
+                        <input id="small_error" type="email" placeholder="placeholder text" name="email" aria-invalid="true" aria-describedby="invalid-inline-label" />
                         <div aria-live="polite" id="invalid-inline-label">
                             <p>Please Enter a valid Email Address</p>
                         </div>
@@ -114,12 +116,22 @@
                 </form>
             </div>
 
-            <h2>Inline Label text wrapped to two lines (skin-large only)</h2>
-            <div class="test">
+            <h2>Side Label Wrapped (skin-large only)</h2>
+            <div class="test skin-large">
                 <form class="form" novalidate>
                     <div class="textbox textbox--inline-wrap">
-                        <label for="email-wrappedtext">Please make sure to enter a valid email ID Please make to enter a valid email ID</label>
-                        <input id="email-wrappedtext" type="email" placeholder="placeholder text" name="email-wrappedtext" />
+                        <label for="wrapped">Please make sure to enter a valid email ID Please make to enter a valid email ID</label>
+                        <input id="wrapped" type="email" placeholder="placeholder text" name="email-wrappedtext" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Side Label - Long Label</h2>
+            <div class="test">
+                <form class="form" novalidate>
+                    <div class="textbox textbox--side-label">
+                        <label for="long">This is a long title and it overlaps This is a long title and it overlaps This is a long title and it overlaps This is a long title and it overlaps This is a long title and it overlaps This is a long title and it overlaps This is a long title and it overlaps This is a long title and it overlaps This is a long title and it overlaps</label>
+                        <input id="long" type="email" placeholder="placeholder text" name="inline" />
                     </div>
                 </form>
             </div>
