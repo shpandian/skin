@@ -1,5 +1,5 @@
 /*!
-Skin v2.5.5
+Skin v2.5.6
 Copyright 2015 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -656,6 +656,17 @@ input[type=reset][disabled].btn {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
+button[type][aria-disabled=true].btn--pagination,
+input[type=submit][aria-disabled=true].btn--pagination,
+input[type=reset][aria-disabled=true].btn--pagination {
+  background-color: #cccccc;
+  background-image: none;
+  border: none;
+  color: #767676;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default;
+}
 button[type].btn--icon,
 input[type=submit].btn--icon,
 input[type=reset].btn--icon,
@@ -857,6 +868,9 @@ a[href][role=button]:not([href|=javascript]).btn--primary:active {
 button[type][disabled].btn--primary,
 input[type=submit][disabled].btn--primary,
 input[type=reset][disabled].btn--primary,
+button[type][aria-disabled=true].btn--pagination.btn--primary,
+input[type=submit][aria-disabled=true].btn--pagination.btn--primary,
+input[type=reset][aria-disabled=true].btn--pagination.btn--primary,
 a[aria-disabled=true][href]:not([role]):not([href|=javascript]).btn--primary,
 a[aria-disabled=true][href][role=button]:not([href|=javascript]).btn--primary {
   color: #ffffff;
@@ -919,6 +933,9 @@ a[href][role=button]:not([href|=javascript]).btn--secondary:active {
 button[type][disabled].btn--secondary,
 input[type=submit][disabled].btn--secondary,
 input[type=reset][disabled].btn--secondary,
+button[type][aria-disabled=true].btn--pagination.btn--secondary,
+input[type=submit][aria-disabled=true].btn--pagination.btn--secondary,
+input[type=reset][aria-disabled=true].btn--pagination.btn--secondary,
 a[aria-disabled=true][href]:not([role]):not([href|=javascript]).btn--secondary,
 a[aria-disabled=true][href][role=button]:not([href|=javascript]).btn--secondary {
   background-color: rgba(240, 238, 236, 0.5);
