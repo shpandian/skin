@@ -1,0 +1,134 @@
+/*  to use local fonts in src/fonts, test page CSS must to override CDN
+    @font-face paths defined in dist/skin.css */
+@font-face {
+    font-family: "vq-icon-font";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../src/fonts/vq-icon-font.eot');
+    src: url('../../src/fonts/vq-icon-font.eot?#iefix') format('embedded-opentype'),
+        url('../../src/fonts/vq-icon-font.woff') format('woff'),
+        url('../../src/fonts/vq-icon-font.ttf') format('truetype'),
+        url('../../src/fonts/vq-icon-font.svg#vq-icon-font') format('svg');
+}
+.spinner[role=img][aria-label] {
+    background-image: url("https://ir.ebaystatic.com/cr/v/c1/spinner30x30.svg");
+}
+.skin-legacy .spinner[role=img][aria-label] {
+    background-image: url("https://secureir.ebaystatic.com/pictures/skin/gif/spinner.gif");
+}
+.skin-legacy .spinner--large[role=img][aria-label] {
+    background-image: url("https://secureir.ebaystatic.com/pictures/skin/gif/spinner@2x.gif");
+}
+
+html > body {
+    background-color: #333;
+}
+body > header  {
+    background-color: #555;
+    box-sizing: border-box;
+    color: #fff;
+    overflow: auto;
+    padding: 1rem;
+    width: 100%;
+}
+body > header h1 {
+    float: left;
+}
+body > header form {
+    display: none;
+    float: right;
+}
+body > header form input[type=checkbox] {
+    margin-right: 0.25rem;
+}
+body > header form label {
+    margin-right: 0.75rem;
+}
+body > div[role=main] {
+    position: relative;
+}
+body > div[role=main] > h2 {
+    color: #eee;
+    padding: 1rem;
+}
+div.test {
+    background-color: #f0eeec;
+}
+
+div.test--nobg {
+    background-color: transparent;
+}
+
+/* Guidelines */
+
+.skin-guide div.test {
+    outline: 1px dotted red;
+}
+.guide {
+    border-left: 1px dotted red;
+    display: none;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    position: fixed;
+    width: 1px;
+}
+.skin-guide .guide {
+    display: block;
+}
+.guide--left {
+    left: 1rem;
+}
+.guide--right {
+    right: 1rem;
+}
+
+/* show form controls on large screens */
+@media (min-width: 600px) {
+    body > header form {
+        display: block;
+    }
+}
+
+.home {
+    background-color: #f0eeec;
+    font-size: 20px;
+}
+
+.index {
+    background-color: #f0eeec;
+}
+.index ol {
+    margin: 0;
+    padding: 0;
+}
+.index li {
+    display: inline-block;
+
+    margin: 1rem 0;
+}
+.index li a {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+}
+.index li iframe {
+    height: 225px;
+    width: 400px;
+}
+
+/* grids */
+
+.center_content {
+  margin: 0 auto;
+}
+.box {
+  background-color: white;
+  text-align: center;
+  padding: 16px 0;
+  margin: 16px 0 0 0;
+  height: calc(33vh - 16px);
+}
+.left_hand_nav {
+  height: 100vh;
+}

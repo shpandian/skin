@@ -1,0 +1,79 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>Button - Invalid</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../static/test.css">
+        <script src="../static/test.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Button - Invalid</h1>
+        </header>
+        <div role="main">
+
+            <!-- <p>The following buttons and anchors should fail the selector tests. They should remain unstyled and should <strong>not</strong> look like Skin buttons.</p> -->
+
+            <h2>Button, Invalid No Type</h2>
+            <div class="test">
+                <button class="btn">Button</button>
+            </div>
+
+            <h2>Faux, Invalid No Modifier</h2>
+            <div class="test">
+                <a class="btn" href="http://www.ebay.com">Faux</a>
+            </div>
+
+            <h2>Faux, Invalid No Href</h2>
+            <div class="test">
+                <a class="btn btn--faux">Faux</a>
+            </div>
+
+            <h2>Faux, Invalid JavaScript Href</h2>
+            <div class="test">
+                <a class="btn btn--faux" href="javascript">Faux</a>
+            </div>
+
+            <h2>Hijax, Invalid No Modfifier</h2>
+            <div class="test">
+                <a class="btn" role="button" href="http://www.ebay.com">Hijax</a>
+            </div>
+
+            <h2>Hijax, Invalid No Role</h2>
+            <div class="test">
+                <a class="btn btn--hijax" href="http://www.ebay.com">Hijax</a>
+            </div>
+
+            <h2>Hijax, Invalid No Href</h2>
+            <div class="test">
+                <a role="button" class="btn btn--hijax">Hijax</a>
+            </div>
+
+            <h2>Hijax, Invalid JavaScript Href</h2>
+            <div class="test">
+                <a role="button" class="btn btn--hijax" href="javascript">Hijax</a>
+            </div>
+
+            <p>The following anchors have no class and are styled by core typography. They should <strong>not</strong> look like buttons.</p>
+
+            <h2>Link, Default</h2>
+            <div class="test">
+                <a href="http://www.ebay.com">Link</a>
+            </div>
+
+            <h2>Link, Paragraph</h2>
+            <div class="test">
+                <p>Looking for deals? Visit <a href="http://www.ebay.com">link</a> for all your shopping needs.</p>
+            </div>
+        </div>
+    </body>
+</html>

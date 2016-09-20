@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Checkbox - Solo</title>
+        <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../static/test.css">
+        <script src="../static/test.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Checkbox - Solo</h1>
+        </header>
+        <div role="main">
+
+            <h2>SPAN</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkbox">
+                        <input id="signin1" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin1">Inline</label>
+                    </span>
+                </form>
+            </div>
+
+            <h2>DIV</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkbox">
+                        <input id="signin3" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin3">Block</label>
+                    </div>
+                </form>
+            </div>
+
+            <h2>SPAN - Flipped</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkbox checkbox--flipped">
+                        <input id="signin2" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin2"><span>Inline</span></label>
+                    </span>
+                </form>
+            </div>
+
+            <h2>DIV - Flipped</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="checkbox checkbox--flipped">
+                        <input id="signin4" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin4"><span>Block</span></label>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Mix</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkbox">
+                        <input id="signin5a" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5a">Inline</label>
+                    </span>
+                    <span class="checkbox">
+                        <input id="signin5b" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5b">Inline</label>
+                    </span>
+                    <div class="checkbox">
+                        <input id="signin5c" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5c">Block</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="signin5d" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5d">Block</label>
+                    </div>
+                    <span class="checkbox">
+                        <input id="signin5e" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5e">Inline</label>
+                    </span>
+                    <span class="checkbox">
+                        <input id="signin5f" type="checkbox" value="sign in" name="signin" />
+                        <label for="signin5f">Inline</label>
+                    </span>
+                </form>
+            </div>
+
+            <h2>Disabled</h2>
+            <div class="test">
+                <form class="form">
+                    <span class="checkbox">
+                        <input id="signin6" type="checkbox" value="sign in" name="signin" disabled />
+                        <label for="signin6">Inline</label>
+                    </span>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>

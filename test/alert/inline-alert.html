@@ -1,0 +1,125 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Inline Alert</title>
+        <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../static/test.css">
+        <script src="../static/test.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Inline Alert</h1>
+        </header>
+        <div role="main">        
+            <h2>Non-wrapped text</h2>
+            <div class="test">
+                <div class="inline-alert inline-alert--priority" role="region" aria-label="Priority">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="inline-alert inline-alert--confirm" role="region" aria-label="Confirmation">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="inline-alert inline-alert--info" role="region" aria-label="Information">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+
+            <h2>Non-wrapped text with link</h2>
+            <div class="test">
+                <div class="inline-alert inline-alert--priority" role="region" aria-label="Priority">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+                <div class="inline-alert inline-alert--confirm" role="region" aria-label="Confirmation">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+                <div class="inline-alert inline-alert--info" role="region" aria-label="Information">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+            </div>
+
+            <h2>Wrapped text</h2>
+            <div class="test">
+                <div class="inline-alert inline-alert--priority" role="region" aria-label="Priority">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="inline-alert inline-alert--confirm" role="region" aria-label="Confirmation">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="inline-alert inline-alert--info" role="region" aria-label="Information">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <h2>Wrapped text with link</h2>
+            <div class="test">
+                <div class="inline-alert inline-alert--priority" role="region" aria-label="Priority">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+                <div class="inline-alert inline-alert--confirm" role="region" aria-label="Confirmation">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+                <div class="inline-alert inline-alert--info" role="region" aria-label="Information">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+            </div>
+
+            <h2>Multi-paragraph</h2>
+            <div class="test">
+                <div class="inline-alert inline-alert--priority" role="region" aria-label="Priority">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="inline-alert inline-alert--confirm" role="region" aria-label="Confirmation">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="inline-alert inline-alert--info" role="region" aria-label="Information">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+
+            <h2>Multi-paragraph with link</h2>
+            <div class="test">
+                <div class="inline-alert inline-alert--priority" role="region" aria-label="Priority">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+                <div class="inline-alert inline-alert--confirm" role="region" aria-label="Confirmation">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+                <div class="inline-alert inline-alert--info" role="region" aria-label="Information">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements</a></p>
+                </div>
+            </div>
+
+            <h2>Long Word Break (with max-width set)</h2>
+            <div class="test">
+                <div class="inline-alert inline-alert--confirm" role="region" aria-label="Confirmation" style="width:300px;">
+                    <p>We got your request. We're checking the info you gave us, and we'll email you at abcdefghijklmnopqrstuvwxyz@abcdefghijklmnopqrstuvwxyz.com in a few minutes with the results.</p>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

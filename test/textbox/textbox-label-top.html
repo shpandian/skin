@@ -1,0 +1,112 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Textbox - Top Label</title>
+        <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../static/test.css">
+        <script src="../static/test.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Textbox - Top Label</h1>
+        </header>
+        <div role="main">
+            <h2>Top Label</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <label for="email1">Email Address</label>
+                        <input id="email1" type="email" placeholder="placeholder text" name="email1" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Top Label - Disabled</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <label for="email5">Email</label>
+                        <input id="email5" type="email" placeholder="placeholder text" name="email5" disabled />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Top Label - Required</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <label for="email6">Email (Required)</label>
+                        <input id="email6" type="email" placeholder="placeholder text" name="email6" aria-required="true" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Top Label - Error</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox">
+                        <label for="EmailinputError1">Email</label>
+                        <input id="EmailinputError1" type="email" placeholder="placeholder text" name="email" aria-invalid="true" aria-describedby="invalid-block-label" />
+                        <div aria-live="polite" id="invalid-block-label">
+                            <p>Please Enter a valid Email Address</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h2>Top Label - Small</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <label for="email1">Email Address</label>
+                        <input id="email1" type="email" placeholder="placeholder text" name="email1" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Top Label - Small - Disabled</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <label for="email5">Email</label>
+                        <input id="email5" type="email" placeholder="placeholder text" name="email5" disabled />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Top Label - Small - Required</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <label for="email6">Email (Required)</label>
+                        <input id="email6" type="email" placeholder="placeholder text" name="email6" aria-required="true" />
+                    </div>
+                </form>
+            </div>
+
+            <h2>Top Label - Small - Error</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="textbox textbox--small">
+                        <label for="email1">Email Address</label>
+                        <input id="email1" type="email" placeholder="placeholder text" name="email1" aria-invalid="true" aria-describedby="invalid-block-label-small" />
+                        <div aria-live="polite" id="invalid-block-label-small">
+                            <p>Please Enter a valid Email Address</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>

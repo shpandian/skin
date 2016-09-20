@@ -1,0 +1,113 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Listbox - ARIA Label</title>
+        <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../../dist/skin-legacy.css">
+        <link rel="stylesheet" type="text/css" href="../../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../static/test.css">
+        <script src="../static/test.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Listbox - ARIA Label</h1>
+        </header>
+        <div role="main">
+            <h2>ARIA label</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="listbox listbox--no-label">
+                        <select id="size-selection" aria-label="Choose a size">
+                            <option value="0">Choose a size</option>
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="4">Extra Large</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - disabled</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="listbox listbox--no-label listbox--disabled">
+                        <select id="size-selection" aria-label="Choose a size" disabled>
+                            <option value="0">Choose a size</option>
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="4">Extra Large</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - Error</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="listbox listbox--no-label">
+                        <select id="size-selection" aria-invalid="true" aria-label="Choose a size">
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="4">Extra Large</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - small</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="listbox listbox--small listbox--no-label">
+                        <select id="size-selection" aria-label="Choose a size">
+                            <option value="0">Choose a size</option>
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="4">Extra Large</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - small - disabled</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="listbox listbox--small listbox--no-label listbox--disabled">
+                        <select id="size-selection" aria-label="Choose a size" disabled>
+                            <option value="0">Choose a size</option>
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="4">Extra Large</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <h2>ARIA label - small - error</h2>
+            <div class="test">
+                <form class="form">
+                    <div class="listbox listbox--small listbox--no-label">
+                        <select id="size-selection" aria-invalid="true" aria-label="Choose a size">
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="4">Extra Large</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

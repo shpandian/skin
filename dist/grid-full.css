@@ -530,7 +530,7 @@
 .grid .grid > hr {
   border: none;
   height: 1px;
-  background-color: #eeeeee;
+  background-color: #eee;
   width: calc(100% - 48px);
   position: relative;
   right: 8px;
