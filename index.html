@@ -43,6 +43,7 @@
                     <li><a href="#grid">Grid <sup>BETA</sup></a></li>
                     <li><a href="#less">Less</a></li>
                     <li><a href="#listbox">Listbox</a></li>
+                    <li><a href="#marketsans">Market Sans</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#normalize">Normalize</a></li>
                     <li><a href="#radio">Radio</a></li>
@@ -84,6 +85,7 @@
                     <li><a href="#grid">Grid <sup>BETA</sup></a></li>
                     <li><a href="#less">Less</a></li>
                     <li><a href="#listbox">Listbox</a></li>
+                    <li><a href="#marketsans">Market Sans</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#normalize">Normalize</a></li>
                     <li><a href="#radio">Radio</a></li>
@@ -174,11 +176,11 @@
     <p>The entire set of modules will result in a large CSS file-size. Therefore we recommend specifying modules on a per-need basis:</p>
     <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
     </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"skin-ebay/less"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"skin-ebay/core"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"skin-ebay/button"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"skin-ebay/iconfont"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"skin-ebay/grid"</span><span class="w">
+        </span><span class="s2">"skin-ebay/grid"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"skin-ebay/less"</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
     </span></code></pre></figure>
@@ -200,6 +202,7 @@
         <li><a href="#icon">skin-ebay/icon</a></li>
         <li><a href="#less">skin-ebay/less</a>*</li>
         <li><a href="#listbox">skin-ebay/listbox</a></li>
+        <li><a href="#marketsans">skin-ebay/marketsans</a></li>
         <li><a href="#menu">skin-ebay/menu</a></li>
         <li><a href="#normalize">skin-ebay/normalize</a></li>
         <li><a href="#radio">skin-ebay/radio</a></li>
@@ -214,14 +217,13 @@
     <p><sup>*</sup> The <span class="highlight">skin-ebay/less</span> module requires the additional <a href="https://www.npmjs.com/package/lasso-less">lasso-less</a> plugin in your app package.json dependencies.</p>
 
     <h3 id="install_cdn">CDN</h3>
-    <p>Certain bundles are also available via CDN:</p>
+    <p>All modules &amp; bundles are also available via eBay CDN servers, for example:</p>
     <ul id="cdn_list">
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/skin.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/core.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/combo.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/combo.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/grid-core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/grid-core.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/skin.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/core.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/combo.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/combo.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/grid-core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/grid-core.min.css</a></li>
     </ul>
-    <p>Currently, we do not host individual modules on CDN. If you require this, let us know!</p>
 
 </section>
 
@@ -255,11 +257,10 @@
 
 <section id="alert" aria-labelledby="alert_heading">
     <h2 id="alert_heading">Alert</h2>
-    <p><a href="#page-alert">Page alerts</a>, <a href="#inline-alert">inline alerts</a> and <a href="#flyout-alert">flyout alerts</a> typically appear as the direct result of some user interaction.</p>
-    <p>Alerts may be rendered by the server on initial page load (use <span class="highlight">role=region</span>) or rendered by the client any time after page load (use <span class="highlight">role=alert</span>). It is also possible that an alert may be rendered by the server and then modified or re-used by the client (use <span class="highlight">role=alert</span>).</p>
+    <p>All users* need clear feedback to understand what’s blocking them from progress, when they’ve been successful or simply when there’s more information available to shop and sell successfully. An alert focuses on reducing cognitive load and making the next steps in the journey clear.</p>
     <p>An alert may have one of three possible levels: <span class="highlight">priority</span>, <span class="highlight">confirmation</span>, or <span class="highlight">information</span>.</p>
-
     <p>Dependencies: <span class="highlight">skin-ebay/iconfont</span>.</p>
+    <p style="font-size: 12px">*If an alert is rendered on the client and/or updated on the client, the entire alert must be wrapped with an additional div or span containing attribute <span class="highlight">aria-live="polite"</span>. This wrapper is necessary in order for assistive technology to detect &amp; announce a subtree change.</p>
 
     <h3>Alert Modifiers</h3>
     <p>Available base classes are <span class="highlight">page-alert</span>, <span class="highlight">inline-alert</span> or <span class="highlight">flyout-alert</span>. Modifiers exist for alert level &amp; clickable action. One modifier of each type may be applied.</p>
@@ -281,13 +282,13 @@
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--priority"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--priority"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Something went wrong. Please try again.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>You just completed the task.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--information"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Information"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--information"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Information"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Here's a tip to help you be successful at your task.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
@@ -306,11 +307,11 @@
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation page-alert--cta"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation page-alert--cta"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Invoke alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
     <span class="nt">&lt;p&gt;</span>Congrats! You are the highest bidder!<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation page-alert--cta"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation page-alert--cta"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"clipped"</span><span class="nt">&gt;</span>Invoke alert<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
     <span class="nt">&lt;p&gt;</span>Congrats! You are the highest bidder!<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -326,7 +327,7 @@
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--information page-alert--close"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--information page-alert--close"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
     <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas non dolor velsagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. dolor vl sagittis.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -356,14 +357,14 @@
     </div>
 
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"skin-large"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--priority"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--priority"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>Something went wrong. Please try again.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation page-alert--cta"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation page-alert--cta"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Invoke alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;p&gt;</span>You just completed the task.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--information page-alert--close page-alert--multi-line"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Information"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--information page-alert--close page-alert--multi-line"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Information"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;p&gt;</span>We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete your listing. We may have information in our product catalog that can help you complete<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>Use fewer refinements<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
@@ -386,13 +387,13 @@
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inline-alert inline-alert--priority"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inline-alert inline-alert--priority"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Something went wrong. Please try again.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inline-alert inline-alert--confirmation"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inline-alert inline-alert--confirmation"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>You just completed the task.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inline-alert inline-alert--information"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Information"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inline-alert inline-alert--information"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Information"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Here's a tip to help you be successful at your task.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
@@ -426,15 +427,15 @@
     </div>
 
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"skin-large"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--priority flyout-alert--top-right flyout-alert--close"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--priority flyout-alert--top-right flyout-alert--close"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;p&gt;</span>We had trouble connecting to PayPal. Please make your payment later.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--confirmation flyout-alert--top-left flyout-alert--close"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--confirmation flyout-alert--top-left flyout-alert--close"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;p&gt;</span>Congrats! You are currently the high bidder, but you are close to getting outbid.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--information flyout-alert--right-middle flyout-alert--close"</span> <span class="na">role=</span><span class="s">"region|alert"</span> <span class="na">aria-label=</span><span class="s">"Information"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--information flyout-alert--right-middle flyout-alert--close"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Information"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;p&gt;</span>We could not find any items that match your search. Try expanding your search to find more items.<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>Use fewer refinements.<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
@@ -477,7 +478,7 @@
         </span>
     </div>
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"skin-large"</span> <span class="na">style=</span><span class="s">"position: relative;"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bubblehelp"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bubblehelp"</span> <span class="na">aria-live=</span><span class="s">"polite"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn icon-information"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-label=</span><span class="s">"Information"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--information flyout-alert--close flyout-alert--top-left"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
@@ -541,65 +542,38 @@
 
 <section id="button" aria-labelledby="button_heading">
     <h2 id="button_heading">Button</h2>
-    <p>Buttons are used to trigger form actions (e.g. submit, reset) <em>or</em> JavaScript actions (e.g. open an overlay or menu).</p>
-    <p>There are two tags for creating buttons: <span class="highlight">&lt;button&gt;</span> (supports inner HTML) and <span class="highlight">&lt;input&gt;</span> (supports inner text only). Outside of forms, the <span class="highlight">&lt;button&gt;</span> tag is always recommended. When using the <span class="highlight">&lt;button&gt;</span> tag remember to <strong>always</strong> specify the <span class="highlight">type</span> attribute. The value can be <span class="highlight">button</span>, <span class="highlight">reset</span> or <span class="highlight">submit</span> (default).</p>
-    <p>Anchor tags are used exclusively to navigate URLs and therefore the <span class="highlight">href</span> attribute must always contain a valid URL ('javascript' is <strong>not</strong> a valid URL). Anchor tags can be styled to <em>appear</em> like buttons (see 'Faux Button' section below), but they always behave like links.</p>
+    <p>A button may be used to submit a form, reset a form or trigger any custom action via a JavaScript click event (e.g. to fetch new results, open a dialog or expand a menu).</p>
+    <p>A button may be created using the <span class="highlight">input</span> tag or <span class="highlight">button</span> tag. In some special cases, an <span class="highlight">anchor</span> tag may be used to create a link that appears <em>visually</em> like a button (see the <a href="#button_faux">Faux Button</a> section below for more details).</p>
 
     <h3 id="button_mods">Button Modifiers</h3>
-    <p>The base class for all buttons is <span class="highlight">btn</span>. Modifier classes exist for hierarchy, size, width and action behaviour. One modifier of each type may be applied.</p>
+    <p>The <span class="highlight">btn</span> base class is <strong>required</strong> for every button. Optional modifier classes exist for hierarchy, size, width and action behaviour. One modifier of each type may be applied.</p>
 
-    <h3>Primary Button</h3>
-    <p>To indicate that a button represents a primary action, use the <span class="highlight">.btn--primary</span> hierarchy modifier.</p>
+    <h3>Button Hierarchy</h3>
+    <p>The default button hierarchy is <span class="highlight">regular</span> and requires no class modifier.</p>
+    <p>For primary or secondary buttons, use the <span class="highlight">.btn--primary</span> or <span class="highlight">.btn--secondary</span> hierarchy modifiers.</p>
     <div class="demo">
-        <button class="btn btn--primary" type="button">Buy it Now</button>
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn" type="button">Regular</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Regular<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--secondary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/button&gt;</span>
     </code></pre></figure>
 
-    <h3>Regular Button</h3>
-    <p>The default button type is regular, no hierarchy modifier is necessary.</p>
+    <h3>Button Size</h3>
+    <p>The default button size is <span class="highlight">medium</span> and requires no class modifier.</p>
+    <p>For small or large buttons, use the <span class="highlight">.btn--small</span> or <span class="highlight">.btn--large</span> size modifiers.</p>
     <div class="demo">
-        <button class="btn" type="button">Buy it Now</button>
+        <button class="btn btn--small" type="button">Small</button>
+        <button class="btn" type="button">Medium</button>
+        <button class="btn btn--large" type="button">Large</button>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
-    </code></pre></figure>
-
-    <h3>Secondary Button</h3>
-    <p>To indicate that a button represents a secondary action, use the <span class="highlight">.btn--secondary</span> hierarchy modifier.</p>
-    <div class="demo">
-        <button class="btn btn--secondary" type="button">Buy it Now</button>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--secondary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
-    </code></pre></figure>
-
-    <h3>Small Button</h3>
-    <p>For smaller buttons use the <span class="highlight">.btn--small</span> size modifier.</p>
-    <div class="demo">
-        <button class="btn btn--small" type="button">Buy it Now</button>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--small"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
-    </code></pre></figure>
-
-    <h3>Medium Button</h3>
-    <p>The default button size is medium, no size modifier is necessary.</p>
-    <div class="demo">
-        <button class="btn" type="button">Buy it Now</button>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
-    </code></pre></figure>
-
-    <h3>Large Button</h3>
-    <p>For larger buttons, use the <span class="highlight">.btn--large</span> size modifier.</p>
-    <div class="demo">
-        <button class="btn btn--large" type="button">Buy it Now</button>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--large"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--small"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Medium<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--large"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/button&gt;</span>
     </code></pre></figure>
 
     <h3>Fluid Button</h3>
@@ -611,9 +585,9 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--fluid"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
     </code></pre></figure>
 
-    <h3>Faux Button</h3>
-    <p>Links can be styled to <em>look</em> like buttons, whilst still behaving like links. You should only do this for prominent 'call to action' type links, e.g. 'Start Shopping', 'Take me There', etc.</p>
-    <p>Please use the <span class="highlight">btn--faux</span> modifier class in this case. The <span class="highlight">href</span> attribute must always contain a valid URL destination.</p>
+    <h3 id="button_faux">Faux Button</h3>
+    <p>A faux button is an anchor tag styled to appear <em>visually</em> as a button. Faux buttons should only be used for prominent call-to-action links, e.g. 'Start Shopping', 'Take me There', etc.</p>
+    <p>The <span class="highlight">btn--faux</span> modifier class is <strong>required</strong>. The <span class="highlight">href</span> attribute must always contain a valid URL ('javascript' is not a valid URL).</p>
     <div class="demo">
         <a class="btn btn--faux" href="http://www.ebay.com">Shop Now</a>
     </div>
@@ -622,8 +596,8 @@
     </code></pre></figure>
 
     <h3>Hijaxed Faux Button</h3>
-    <p>A faux button can have it's link behaviour progressively enhanced into button behaviour. For example, a link might open the destination URL inside of an overlay instead of leaving the page. Because AJAX is typically used, this technique is often referred to as 'hijax', i.e. hijaxing a link or form submision.</p>
-    <p>Please use the <span class="highlight">btn--hijax</span> modifier class in this case. The <span class="highlight">href</span> attribute must always contain a valid fallback URL. A role of <span class="highlight">button</span> must also be specified.</p>
+    <p>A faux button can have it's link behaviour progressively enhanced into button behaviour. For example, the link might be enhanced to open the destination URL inside of an overlay instead of leaving the page. Because AJAX is typically used, this technique is often referred to as 'hijax' (i.e. hi-jacking a link).</p>
+    <p>The <span class="highlight">btn--hijax</span> modifier class is <strong>required</strong>. The <span class="highlight">href</span> attribute must always contain a valid fallback URL. A role of <span class="highlight">button</span> is <strong>required</strong>.</p>
     <div class="demo">
         <a class="btn btn--hijax" href="http://www.ebay.com" role="button">View Item</a>
     </div>
@@ -632,123 +606,73 @@
     </code></pre></figure>
 
     <h3>Disabled Button</h3>
-    <p>To disable a button, apply the <span class="highlight">disabled</span> attribute.</p>
+    <p>The <span class="highlight">disabled</span> attribute is <strong>required</strong> to fully disable a button.</p>
     <div class="demo">
         <button class="btn" type="button" disabled>Buy it Now</button>
+        <input class="btn" type="button" value="Buy it Now" disabled />
     </div>
 
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">disabled</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"Buy it Now"</span> <span class="na">disabled</span> <span class="nt">/&gt;</span>
     </code></pre></figure>
 
-    <p>To mark an anchor tag as disabled, apply the <span class="highlight">aria-disabled</span> state. Apply a negative <span class="highlight">tabindex</span> attribute to prevent keyboard focus. Use javascript to prevent default click behaviour.</p>
+    <h3>Disabled Faux Button</h3>
+    <p>Remove the <span class="highlight">href</span> attribute to fully disable a faux button.</p>
     <div class="demo">
-        <a class="btn btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Buy it Now</a>
+        <a class="btn btn--faux">Buy it Now</a>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--faux"</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span> <span class="na">aria-disabled=</span><span class="s">"true"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/a&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--faux"</span><span class="nt">&gt;</span>Buy it Now<span class="nt">&lt;/a&gt;</span>
     </code></pre></figure>
 
-    <p>In the case of pagination buttons which frequently toggle state (e.g. in carousels, search results, etc.), we want to convey a disabled state but still allow keyboard focus. Doing so greatly simplifies focus management use-cases and edge-cases.</p>
-    <p>Use the <span class="highlight">btn--pagination</span> modifier and <span class="highlight">aria-disabled</span> attribute.</p>
-
+    <h3>Partially Disabled Button</h3>
+    <p>Partially disabled buttons are visually and aurally identifiable as disabled, but remain keyboard focusable. Partially disabled buttons can vastly simplify keyboard focus management logic in situations where the button may frequently toggle back and forth between enabled and disabled (e.g. pagination or carousel bookend buttons).</p>
+    <p>The <span class="highlight">aria-disabled</span> state is <strong>required</strong> for partially disabled buttons.</p>
     <div class="demo">
-        <button class="btn btn--pagination icon-chevron-left" type="button" aria-disabled="true" aria-label="Previous"></button>
-        <button class="btn btn--pagination icon-chevron-right" type="button" aria-disabled="true" aria-label="Next"></button>
+        <button class="btn icon-chevron-left" type="button" aria-disabled="true" aria-label="Previous"></button>
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn icon-chevron-right" type="button" aria-disabled="true" aria-label="Next"></button>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"demo"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--pagination icon-chevron-left"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-disabled=</span><span class="s">"true"</span> <span class="na">aria-label=</span><span class="s">"Previous"</span><span class="nt">&gt;&lt;/button&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--pagination icon-chevron-right"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-disabled=</span><span class="s">"true"</span> <span class="na">aria-label=</span><span class="s">"Next"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-    </code></pre></figure>
-
-    <h3>Button Group</h3>
-    <p>Wrap a series of buttons inside a <span class="highlight">.btn-group</span> component.</p>
-    <div class="demo">
-        <div class="btn-group">
-            <button class="btn btn--primary btn--small" type="button">Add to cart</button>
-            <button class="btn btn--primary btn--small" type="button">Buy It Now</button>
-        </div>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--primary btn--small"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Add to cart<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--primary btn--small"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Buy It Now<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn icon-chevron-left"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-disabled=</span><span class="s">"true"</span> <span class="na">aria-label=</span><span class="s">"Previous"</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="c">&lt;!-- pagination buttons --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn icon-chevron-right"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-disabled=</span><span class="s">"true"</span> <span class="na">aria-label=</span><span class="s">"Next"</span><span class="nt">&gt;&lt;/button&gt;</span>
     </code></pre></figure>
 
     <h3>Icon Buttons</h3>
-    <p>Use any of the available <a href="#icon">icon fonts</a> to create an icon button.</p>
-    <p>An icon on a button that contains no visible text is deemed a critical icon. An <span class="highlight">aria-label</span> <strong>must</strong> be provided to identify the purpose of the control.</p>
+    <p>Use any of the available <a href="#icon">icon fonts</a> to display an icon on a button.</p>
+    <p>An icon on a button with no text is deemed a critical icon. An <span class="highlight">aria-label</span> property is <strong>required</strong>.</p>
     <div class="demo">
         <button class="btn icon-menu" aria-label="Menu" type="button"></button>
+        <button class="btn icon-settings" aria-label="Settings" type="button"></button>
     </div>
 
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn icon-menu"</span> <span class="na">aria-label=</span><span class="s">"Menu"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn icon-settings"</span> <span class="na">aria-label=</span><span class="s">"Settings"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
     </code></pre></figure>
 
-    <p>Icons are considered non-critical if the button contains inner text. No aria-label is necessary.</p>
+    <p>An icon on a button with text is deemed a non-critical icon, and no aria-label is necessary.</p>
     <div class="demo">
-        <button class="btn btn--small icon-menu" type="button">Menu</button>
-        <a href="http://www.ebay.com" class="btn btn--faux btn--small icon-settings">Settings</a>
+        <button class="btn icon-menu" type="button">Menu</button>
+        <a href="http://www.ebay.com" class="btn btn--faux icon-settings">Settings</a>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--small icon-menu"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Menu<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span> <span class="na">class=</span><span class="s">"btn btn--faux btn--small icon-settings"</span><span class="nt">&gt;</span>Settings<span class="nt">&lt;/a&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn icon-menu"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Menu<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span> <span class="na">class=</span><span class="s">"btn btn--faux icon-settings"</span><span class="nt">&gt;</span>Settings<span class="nt">&lt;/a&gt;</span>
     </code></pre></figure>
 
-    <h3>Actionable Icon Buttons</h3>
-    <p>Use modifier class <span class="highlight">btn--states</span> to apply actionable icon states for hover, focus, active &amp; disabled.</p>
-    <p>The recommended actionable icons are as follows:</p>
-    <div class="demo">
-        <button type="button" class="btn btn--states icon-arrow-down" aria-label="arrow-down"></button>
-        <button type="button" class="btn btn--states icon-arrow-up" aria-label="arrow-up"></button>
-        <button type="button" class="btn btn--states icon-cart" aria-label="cart"></button>
-        <button type="button" class="btn btn--states icon-chevron-down" aria-label="chevron down"></button>
-        <button type="button" class="btn btn--states icon-chevron-up" aria-label="chevron up"></button>
-        <button type="button" class="btn btn--states icon-chevron-left" aria-label="chevron left"></button>
-        <button type="button" class="btn btn--states icon-chevron-right" aria-label="chevron right"></button>
-        <button type="button" class="btn btn--states icon-clock" aria-label="clock"></button>
-        <button type="button" class="btn btn--states icon-close" aria-label="close"></button>
-        <button type="button" class="btn btn--states icon-settings" aria-label="gear"></button>
-        <button type="button" class="btn btn--states icon-mail" aria-label="mail"></button>
-        <button type="button" class="btn btn--states icon-mail-open" aria-label="mail opened"></button>
-        <button type="button" class="btn btn--states icon-notifications" aria-label="notifications"></button>
-        <button type="button" class="btn btn--states icon-profile" aria-label="profile"></button>
-        <button type="button" class="btn btn--states icon-trash" aria-label="trash"></button>
-        <button type="button" class="btn btn--states icon-view-grid" aria-label="view-gallery"></button>
-        <button type="button" class="btn btn--states icon-view-detail" aria-label="view-detail"></button>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-arrow-down"</span> <span class="na">aria-label=</span><span class="s">"arrow-down"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-arrow-up"</span> <span class="na">aria-label=</span><span class="s">"arrow-up"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-cart"</span> <span class="na">aria-label=</span><span class="s">"cart"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-chevron-down"</span> <span class="na">aria-label=</span><span class="s">"chevron down"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-chevron-up"</span> <span class="na">aria-label=</span><span class="s">"chevron up"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-chevron-left"</span> <span class="na">aria-label=</span><span class="s">"chevron left"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-chevron-right"</span> <span class="na">aria-label=</span><span class="s">"chevron right"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-clock"</span> <span class="na">aria-label=</span><span class="s">"clock"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-close"</span> <span class="na">aria-label=</span><span class="s">"close"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-settings"</span> <span class="na">aria-label=</span><span class="s">"gear"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-mail"</span> <span class="na">aria-label=</span><span class="s">"mail"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-mail-open"</span> <span class="na">aria-label=</span><span class="s">"mail opened"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-notifications"</span> <span class="na">aria-label=</span><span class="s">"notifications"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-profile"</span> <span class="na">aria-label=</span><span class="s">"profile"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-trash"</span> <span class="na">aria-label=</span><span class="s">"trash"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-view-grid"</span> <span class="na">aria-label=</span><span class="s">"view-gallery"</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--states icon-view-detail"</span> <span class="na">aria-label=</span><span class="s">"view-detail"</span><span class="nt">&gt;&lt;/button&gt;</span>
-    </code></pre></figure>
-
-    <p><strong>TIP</strong>: Anchor tags can also be used to create actionable icon buttons. Don't forget to apply <span class="highlight">.btn--faux</span> or <span class="highlight">.btn--hijax</span> modifiers.</p>
-
-    <h3>Submit &amp; Reset Buttons</h3>
+    <h3>Form Submit &amp; Reset Buttons</h3>
     <p>For form submit &amp; reset buttons, use class <span class="highlight">.btn</span> and any desired modifiers.</p>
     <div class="demo">
-        <input class="btn btn--small" type="reset" value="Reset" />
-        <input class="btn btn--small btn--primary" type="submit" value="Submit" />
+        <input class="btn" type="reset" value="Reset" />
+        <input class="btn btn--primary" type="submit" value="Submit" />
     </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"btn btn--small"</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="na">value=</span><span class="s">"Reset"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"btn btn--small btn--primary"</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span> <span class="nt">/&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="na">value=</span><span class="s">"Reset"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
     </code></pre></figure>
 
 </section>
@@ -757,7 +681,7 @@
     <h2 id="card_heading">Card</h2>
     <p>A card forms the content layer in the eBay Design System <a href="http://dsl.corp.ebay.com/components/cards">topography</a> of background layer, content layer &amp; content. This system requires that the background layer (typically the HTML body tag) have zero margin and padding. The card content layer is responsible for creating all necessary margin &amp; padding.</p>
     <p>There are three types of card: <a href="#card-regular">Regular Card</a>, <a href="#card-primary">Primary Card</a> &amp; <a href="#card-full">Full Page Card</a>.</p>
-    <p>All cards use a nested <span class="highlight">card__cell</span> element to denote the inner content of the card block. Any content placed outside of this cell will be full-bleed (i.e. edge to edge). See <a href="#card-hero">Hero Card</a> section below for more information. If using a grid system inside of the card (typical on large screens), <span class="highlight">card__cell</span> can be replaced with the grid system's container class.</p>
+    <p>All cards use a nested <span class="highlight">card__cell</span> element to denote the inner content of the card block. Any content placed outside of this cell will be full-bleed (i.e. edge to edge). See <a href="#card-hero">Hero Card</a> section below for more information.</p>
 
     <p><strong>NOTE:</strong> in all card examples below we use a fixed-height div to simulate Skin's default grey background layer.</p>
 
@@ -880,46 +804,61 @@
     </code></pre></figure>
 
     <h3 id="card-dialog">Dialog Cards</h3>
-    <p>Regular cards and primary cards can also be used inside of any <span class="highlight">dialog</span> block.</p>
-    <p>To create a full content layer inside of a dialog, apply the <span class="highlight">dialog--card</span> modifier.</p>
+    <p>Cards can also be used inside of any <span class="highlight">dialog</span>.</p>
 
     <div class="demo">
-        <button class="btn btn--primary btn--small dialog-button" type="button" aria-controls="dialog-card" data-dialog={"transitionDurationMs":"175"}>Full Page Dialog Card</button>
-        <div role="dialog" class="dialog dialog--card" id="dialog-card" aria-labelledby="dialog-card-title" aria-hidden="true">
+        <button class="btn btn--primary btn--small dialog-button" type="button" aria-controls="dialog-card" data-dialog={"transitionDurationMs":"175"}>Dialog with Cards</button>
+        <div role="dialog" class="dialog" id="dialog-card" aria-labelledby="dialog-card-title" aria-hidden="true">
             <div role="document">
                  <header>
                     <button class="dialog__close dialog__close--icon" aria-label="Close dialog" type="button"></button>
-                    <h2 id="dialog-card-title">Dialog with Full Card</h2>
+                    <h2 id="dialog-card-title">Dialog with Cards</h2>
                 </header>
                 <div>
-                    <div class="dialog__cell">
-                        <h3>Heading</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.</p>
-                        <h3>Heading</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.</p>
+                    <div class="card card--primary">
+                        <div class="card__cell">
+                            <h2>Title</h2>
+                            <h3>Heading</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.</p>
+                            <h3>Heading</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__cell">
+                            <h3>Heading</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.</p>
+                            <h3>Heading</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog dialog--card"</span> <span class="na">id=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"dialog-card"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-card-title"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
          <span class="nt">&lt;header&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"dialog-title"</span><span class="nt">&gt;</span>Dialog with Full Card<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"dialog-card-title"</span><span class="nt">&gt;</span>Dialog with Cards<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
         <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__cell"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;h3&gt;</span>Heading<span class="nt">&lt;/h3&gt;</span>
-                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.<span class="nt">&lt;/p&gt;</span>
-                <span class="nt">&lt;h3&gt;</span>Heading<span class="nt">&lt;/h3&gt;</span>
-                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card card--primary"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card__cell"</span><span class="nt">&gt;</span>
+                    <span class="c">&lt;!-- card content --&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card__cell"</span><span class="nt">&gt;</span>
+                    <span class="c">&lt;!-- card content --&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
+
+     <p>To create a full content layer inside of a dialog, apply the <span class="highlight">dialog--card</span> modifier to the dialog block.</p>
 
 </section>
 
@@ -2776,12 +2715,13 @@
     <div class="demo">
         <div class="grid color-grid">
             <div class="grid__group grid__group--no-gutters">
-                <div class="grid__cell grid__cell--1of6 color-grid__jet">@color-core-gray-jet;</div>
-                <div class="grid__cell grid__cell--1of6 color-grid__davys">@color-core-gray-davys;</div>
-                <div class="grid__cell grid__cell--1of6 color-grid__dim">@color-core-gray-dim;</div>
-                <div class="grid__cell grid__cell--1of6 color-grid__spanish">@color-core-gray-spanish;</div>
-                <div class="grid__cell grid__cell--1of6 color-grid__silver">@color-core-gray-silver;</div>
-                <div class="grid__cell grid__cell--1of6 color-grid__gainsboro">@color-core-gray-gainsboro;</div>
+                <div class="grid__cell grid__cell--1of7 color-grid__jet">@color-core-gray-jet;</div>
+                <div class="grid__cell grid__cell--1of7 color-grid__davys">@color-core-gray-davys;</div>
+                <div class="grid__cell grid__cell--1of7 color-grid__dim">@color-core-gray-dim;</div>
+                <div class="grid__cell grid__cell--1of7 color-grid__spanish">@color-core-gray-spanish;</div>
+                <div class="grid__cell grid__cell--1of7 color-grid__silver">@color-core-gray-silver;</div>
+                <div class="grid__cell grid__cell--1of7 color-grid__gainsboro">@color-core-gray-gainsboro;</div>
+                <div class="grid__cell grid__cell--1of7 color-grid__light">@color-core-gray-light;</div>
             </div>
             <div class="grid__group grid__group--no-gutters">
                 <div class="grid__cell grid__cell--1of6 color-grid__orange">@color-core-orange;</div>
@@ -3130,6 +3070,24 @@
     <span class="nt">&lt;/select&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
+</section>
+
+<section id="marketsans" aria-labelledby="marketsans_heading">
+    <h2 id="marketsans_heading">Market Sans</h2>
+    <p>Market Sans is a new and exclusive typeface developed specifically for eBay. This module downloads and installs the typeface directly from the eBay CDN servers. The typeface can then be referenced via the <span class="highlight">'Market Sans'</span> font-family name.</p>
+
+    <div class="demo" style="font-size: 36px; font-family: 'Market Sans', 'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif;">
+        ABCDEDGHIJKLMNOPQRSTUVWXYZ<br/>
+        abcdefghijklmnopqrstuvwxyz
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style&gt;</span>
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="nl">font-family</span><span class="p">:</span>  <span class="s2">'Market Sans'</span><span class="p">,</span> <span class="s2">'Helvetica Neue'</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">Roboto</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+    </code></pre></figure>
+
+    <p><strong>TIP:</strong> The Market Sans font-family, and all fallbacks, can also be applied using the Less variable <span class="highlight">@font-family-market-sans</span>.</p>
 </section>
 
 <section id="menu" aria-labelledby="menu_heading">

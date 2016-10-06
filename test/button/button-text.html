@@ -23,6 +23,7 @@
 
             <h2>Default</h2>
             <div class="test">
+                <input type="button" class="btn" value="Input"/>
                 <button type="button" class="btn">Button</button>
                 <a class="btn btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -30,6 +31,7 @@
 
             <h2>Primary</h2>
             <div class="test">
+                <input type="button" class="btn btn--primary" value="Input"/>
                 <button type="button" class="btn btn--primary">Button</button>
                 <a class="btn btn--primary btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--primary btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -37,6 +39,7 @@
 
             <h2>Secondary</h2>
             <div class="test">
+                <input type="button" class="btn btn--secondary" value="Input"/>
                 <button type="button" class="btn btn--secondary">Button</button>
                 <a class="btn btn--secondary btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--secondary btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -44,6 +47,7 @@
 
             <h2>Default - small</h2>
             <div class="test">
+                <input type="button" class="btn btn--small" value="Input"/>
                 <button type="button" class="btn btn--small">Button</button>
                 <a class="btn btn--small btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--small btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -51,6 +55,7 @@
 
             <h2>Primary - small</h2>
             <div class="test">
+                <input type="button" class="btn btn--primary btn--small" value="Input"/>
                 <button type="button" class="btn btn--primary btn--small">Button</button>
                 <a class="btn btn--primary btn--small btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--primary btn--small btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -58,6 +63,7 @@
 
             <h2>Secondary - small</h2>
             <div class="test">
+                <input type="button" class="btn btn--secondary btn--small" value="Input"/>
                 <button type="button" class="btn btn--secondary btn--small" type="button">Button</button>
                 <a class="btn btn--secondary btn--small btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--secondary btn--small btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -65,6 +71,7 @@
 
             <h2>Default - large</h2>
             <div class="test">
+                <input type="button" class="btn btn--large" value="Input"/>
                 <button type="button" class="btn btn--large">Button</button>
                 <a class="btn btn--large btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--large btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -72,6 +79,7 @@
 
             <h2>Primary - large</h2>
             <div class="test">
+                <input type="button" class="btn btn--primary btn--large" value="Input"/>
                 <button type="button" class="btn btn--primary btn--large">Button</button>
                 <a class="btn btn--primary btn--large btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--primary btn--large btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -79,34 +87,63 @@
 
             <h2>Secondary - large</h2>
             <div class="test">
+                <input type="button" class="btn btn--secondary btn--large" value="Input"/>
                 <button type="button" class="btn btn--secondary btn--large" type="button">Button</button>
                 <a class="btn btn--secondary btn--large btn--faux" href="http://www.ebay.com">Faux</a>
                 <a class="btn btn--secondary btn--large btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
             </div>
 
-            <h2>Default - disabled</h2>
+            <h2>Default - Fully disabled</h2>
             <div class="test">
+                <input type="button" class="btn" value="Input" disabled/>
                 <button type="button" class="btn" disabled>Button</button>
-                <a class="btn btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Faux</a>
-                <a class="btn btn--hijax" href="http://www.ebay.com" aria-disabled="true" role="button" tabindex="-1">Hijax</a>
+                <a class="btn btn--faux">Faux</a>
+                <a class="btn btn--hijax" role="button">Hijax</a>
             </div>
 
-            <h2>Primary - disabled</h2>
+            <h2>Default - Partially disabled</h2>
             <div class="test">
+                <input type="button" class="btn" value="Input" aria-disabled="true"/>
+                <button type="button" class="btn" aria-disabled="true">Button</button>
+                <a class="btn btn--faux" href="http://www.ebay.com" aria-disabled="true">Faux</a>
+                <a class="btn btn--hijax" href="http://www.ebay.com" aria-disabled="true" role="button">Hijax</a>
+            </div>
+
+            <h2>Primary - Fully disabled</h2>
+            <div class="test">
+                <input type="button" class="btn btn--primary" value="Input" disabled/>
                 <button type="button" class="btn btn--primary" disabled>Button</button>
                 <a class="btn btn--primary btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Faux</a>
                 <a class="btn btn--primary btn--hijax" href="http://www.ebay.com" aria-disabled="true" tabindex="-1" role="button">Hijax</a>
             </div>
 
-            <h2>Secondary - disabled</h2>
+            <h2>Primary - Partially disabled</h2>
             <div class="test">
+                <input type="button" class="btn btn--primary" value="Input" aria-disabled="true"/>
+                <button type="button" class="btn btn--primary" aria-disabled="true">Button</button>
+                <a class="btn btn--primary btn--faux" href="http://www.ebay.com" aria-disabled="true">Faux</a>
+                <a class="btn btn--primary btn--hijax" href="http://www.ebay.com" aria-disabled="true" role="button">Hijax</a>
+            </div>
+
+            <h2>Secondary - Fully disabled</h2>
+            <div class="test">
+                <input type="button" class="btn btn--secondary" value="Input" disabled/>
                 <button type="button" class="btn btn--secondary" disabled>Button</button>
                 <a class="btn btn--secondary btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Faux</a>
                 <a class="btn btn--secondary btn--hijax" href="http://www.ebay.com" aria-disabled="true" tabindex="-1" role="button">Hijax</a>
             </div>
 
+            <h2>Secondary - Partially disabled</h2>
+            <div class="test">
+                <input type="button" class="btn btn--secondary" value="Input" aria-disabled="true"/>
+                <button type="button" class="btn btn--secondary" aria-disabled="true">Button</button>
+                <a class="btn btn--secondary btn--faux" href="http://www.ebay.com" aria-disabled="true">Faux</a>
+                <a class="btn btn--secondary btn--hijax" href="http://www.ebay.com" aria-disabled="true" role="button">Hijax</a>
+            </div>
+
             <h2>Small - disabled</h2>
             <div class="test">
+                <input type="button" class="btn btn--small" value="Input" disabled/>
                 <button type="button" class="btn btn--small" disabled>Button</button>
                 <a class="btn btn--small btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Faux</a>
                 <a class="btn btn--small btn--hijax" href="http://www.ebay.com" aria-disabled="true" tabindex="-1" role="button">Hijax</a>
@@ -114,6 +151,7 @@
 
             <h2>Large - disabled</h2>
             <div class="test">
+                <input type="button" class="btn btn--large" value="Input" disabled/>
                 <button type="button" class="btn btn--large" disabled>Button</button>
                 <a class="btn btn--large btn--faux" href="http://www.ebay.com" aria-disabled="true" tabindex="-1">Faux</a>
                 <a class="btn btn--large btn--hijax" href="http://www.ebay.com" aria-disabled="true" tabindex="-1" role="button">Hijax</a>
@@ -122,6 +160,7 @@
             <h2>Group - default</h2>
             <div class="test">
                 <div class="btn-group">
+                    <input type="button" class="btn" value="Input" />
                     <button type="button" class="btn">Button</button>
                     <a class="btn btn--faux" href="http://www.ebay.com">Faux</a>
                     <a class="btn btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -131,6 +170,7 @@
             <h2>Group - small</h2>
             <div class="test">
                 <div class="btn-group">
+                    <input type="button" class="btn btn--small" value="Input" />
                     <button type="button" class="btn btn--small">Button</button>
                     <a class="btn btn--small btn--faux" href="http://www.ebay.com">Faux</a>
                     <a class="btn btn--small btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -140,6 +180,7 @@
             <h2>Group - large</h2>
             <div class="test">
                 <div class="btn-group">
+                    <input type="button" class="btn btn--large" value="Input" />
                     <button type="button" class="btn btn--large">Button</button>
                     <a class="btn btn--large btn--faux" href="http://www.ebay.com">Faux</a>
                     <a class="btn btn--large btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
@@ -148,49 +189,42 @@
 
             <h2>Fluid</h2>
             <div class="test">
+                <input type="button" class="btn btn--fluid" value="Input" />
                 <button type="button" class="btn btn--fluid">Button</button>
+                <a class="btn btn--faux btn--fluid" href="http://www.ebay.com">Faux</a>
+                <a class="btn btn--hijax btn--fluid" href="http://www.ebay.com" role="button">Hijax</a>
             </div>
 
-            <h2>Fluid - disabled</h2>
+            <h2>Fluid, Small</h2>
             <div class="test">
-                <button type="button" class="btn btn--fluid" disabled>Button</button>
+                <input type="button" class="btn btn--fluid btn--small" value="Input" />
+                <button type="button" class="btn btn--fluid btn--small">Button</button>
+                <a class="btn btn--faux btn--fluid btn--small" href="http://www.ebay.com">Faux</a>
+                <a class="btn btn--hijax btn--fluid btn--small" href="http://www.ebay.com" role="button">Hijax</a>
             </div>
 
-            <h2>Form Submit</h2>
+            <h2>Fluid, Large</h2>
+            <div class="test">
+                <input type="button" class="btn btn--fluid btn--large" value="Input" />
+                <button type="button" class="btn btn--fluid btn--large">Button</button>
+                <a class="btn btn--faux btn--fluid btn--large" href="http://www.ebay.com">Faux</a>
+                <a class="btn btn--hijax btn--fluid btn--large" href="http://www.ebay.com" role="button">Hijax</a>
+            </div>
+
+            <h2>Form Submit &amp; Reset</h2>
             <div class="test">
                 <input type="submit" class="btn" value="Submit" />
-            </div>
-
-            <h2>Form Reset</h2>
-            <div class="test">
                 <input type="reset" class="btn" value="Reset" />
             </div>
 
             <h2>Link Button</h2>
             <div class="test">
-                <button type="button" href="http://www.ebay.com" class="btn btn--link">Button</button>
+                <button type="button" class="btn btn--link">Button</button>
             </div>
-
-            <h2>Fluid, Small</h2>
-            <div class="test">
-                <button type="button" class="btn btn--fluid btn--small">Button</button>
-            </div>
-
-            <h2>Fluid, Large</h2>
-            <div class="test">
-                <button type="button" class="btn btn--fluid btn--large">Button</button>
-            </div>
-
-            <h2>Paginator - aria-disabled</h2>
-            <div class="test">
-                <button type="button" class="btn btn--pagination" aria-disabled="true">Default</button>
-                <button type="button" class="btn btn--primary btn--pagination" aria-disabled="true">Primary</button>
-                <button type="button" class="btn btn--secondary btn--pagination" aria-disabled="true">Secondary</button>
-            </div>
-
 
             <h2>50% Width (box-sizing test)</h2>
             <div class="test">
+                <input type="button" class="btn" value="Input" style="width: 50%;"/>
                 <button type="button" class="btn" style="width: 50%;">Button</button>
                 <a class="btn btn--faux" href="http://www.ebay.com" style="width: 50%;">Faux</a>
                 <a class="btn btn--hijax" href="http://www.ebay.com" role="button" style="width: 50%;">Hijax</a>

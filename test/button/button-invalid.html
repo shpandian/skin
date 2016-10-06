@@ -21,21 +21,9 @@
         </header>
         <div role="main">
 
-            <!-- <p>The following buttons and anchors should fail the selector tests. They should remain unstyled and should <strong>not</strong> look like Skin buttons.</p> -->
-
-            <h2>Button, Invalid No Type</h2>
-            <div class="test">
-                <button class="btn">Button</button>
-            </div>
-
             <h2>Faux, Invalid No Modifier</h2>
             <div class="test">
                 <a class="btn" href="http://www.ebay.com">Faux</a>
-            </div>
-
-            <h2>Faux, Invalid No Href</h2>
-            <div class="test">
-                <a class="btn btn--faux">Faux</a>
             </div>
 
             <h2>Faux, Invalid JavaScript Href</h2>
@@ -43,19 +31,19 @@
                 <a class="btn btn--faux" href="javascript">Faux</a>
             </div>
 
+            <h2>Faux, Critical Icon Button, Invalid No Modifier</h2>
+            <div class="test">
+                <a class="btn icon-menu" href="http://www.ebay.com"></a>
+            </div>
+
+            <h2>Faux, Critical Icon Button, Invalid JavaScript Href</h2>
+            <div class="test">
+                <a class="btn btn--faux icon-menu" href="javascript"></a>
+            </div>
+
             <h2>Hijax, Invalid No Modfifier</h2>
             <div class="test">
                 <a class="btn" role="button" href="http://www.ebay.com">Hijax</a>
-            </div>
-
-            <h2>Hijax, Invalid No Role</h2>
-            <div class="test">
-                <a class="btn btn--hijax" href="http://www.ebay.com">Hijax</a>
-            </div>
-
-            <h2>Hijax, Invalid No Href</h2>
-            <div class="test">
-                <a role="button" class="btn btn--hijax">Hijax</a>
             </div>
 
             <h2>Hijax, Invalid JavaScript Href</h2>
@@ -63,16 +51,49 @@
                 <a role="button" class="btn btn--hijax" href="javascript">Hijax</a>
             </div>
 
-            <p>The following anchors have no class and are styled by core typography. They should <strong>not</strong> look like buttons.</p>
-
-            <h2>Link, Default</h2>
+            <h2>Hijax, Invalid No Role</h2>
             <div class="test">
-                <a href="http://www.ebay.com">Link</a>
+                <a class="btn btn--hijax" href="http://www.ebay.com">Hijax</a>
             </div>
 
-            <h2>Link, Paragraph</h2>
+            <h2>Hijax, Critical Icon Button - No Modifier</h2>
             <div class="test">
-                <p>Looking for deals? Visit <a href="http://www.ebay.com">link</a> for all your shopping needs.</p>
+                <a class="btn icon-menu" href="http://www.ebay.com" role="button"></a>
+            </div>
+
+            <h2>Hijax, Critical Icon Button - Invalid JavaScript Href</h2>
+            <div class="test">
+                <a class="btn btn--hijax icon-menu" href="javascript" role="button"></a>
+            </div>
+
+            <h2>Hijax, Critical Icon Button - No Role</h2>
+            <div class="test">
+                <a class="btn btn--hijax icon-menu" href="http://www.ebay.com"></a>
+            </div>
+
+            <h2>Critical Icon Button - No Base</h2>
+            <div class="test">
+                <button class="icon-menu" aria-label="menu"></button>
+            </div>
+
+            <h2>Primary Button, Invalid No Base</h2>
+            <div class="test">
+                <button class="btn--primary" type="button">Button</button>
+            </div>
+
+            <h2>Secondary Button, Invalid No Base</h2>
+            <div class="test">
+                <button class="btn--secondary" type="button">Button</button>
+            </div>
+
+            <h2>Small Button, Invalid No Base</h2>
+            <div class="test">
+                <button class="btn--small" type="button">Button</button>
+            </div>
+
+            <h2>Large Button, Invalid No Base</h2>
+            <div class="test">
+                <button class="btn--large" type="button">Button</button>
             </div>
         </div>
     </body>
