@@ -219,10 +219,10 @@
     <h3 id="install_cdn">CDN</h3>
     <p>All modules &amp; bundles are also available via eBay CDN servers, for example:</p>
     <ul id="cdn_list">
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/skin.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/core.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/combo.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/combo.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/grid-core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.1/css/grid-core.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/skin.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/core.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/combo.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/combo.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/grid-core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/grid-core.min.css</a></li>
     </ul>
 
 </section>
@@ -263,12 +263,11 @@
     <p style="font-size: 12px">*If an alert is rendered on the client and/or updated on the client, the entire alert must be wrapped with an additional div or span containing attribute <span class="highlight">aria-live="polite"</span>. This wrapper is necessary in order for assistive technology to detect &amp; announce a subtree change.</p>
 
     <h3>Alert Modifiers</h3>
-    <p>Available base classes are <span class="highlight">page-alert</span>, <span class="highlight">inline-alert</span> or <span class="highlight">flyout-alert</span>. Modifiers exist for alert level &amp; clickable action. One modifier of each type may be applied.</p>
+    <p>Available base classes are <span class="highlight">page-alert</span>, <span class="highlight">inline-alert</span> or <span class="highlight">flyout-alert</span>. Modifiers exist for alert level, multi-line, &amp; clickable action. One modifier of each type may be applied.</p>
 
     <h3 id="page-alert">Page Alert</h3>
     <p>A page alert appears prominently at the top of the page.</p>
     <p>Use the <span class="highlight">page-alert--priority</span>, <span class="highlight">page-alert--confirmation</span>, or <span class="highlight">page-alert--information</span> modifier classes depending on the level of alert required.</p>
-    <p>If page alert text is longer than a single line, please apply the <span class="highlight">.page-alert--multi-line</span> modifier class to ensure correct alignment of text and icon.</p>
 
     <div class="demo">
         <div class="page-alert page-alert--priority" role="region" aria-label="Priority">
@@ -281,7 +280,6 @@
             <p>Here's a tip to help you be successful at your task.</p>
         </div>
     </div>
-
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--priority"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Something went wrong. Please try again.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -292,6 +290,9 @@
     <span class="nt">&lt;p&gt;</span>Here's a tip to help you be successful at your task.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
+
+    <p><strong>TIP:</strong> If page alert text is longer than a single line, please apply the <span class="highlight">.page-alert--multi-line</span> modifier class to ensure correct vertical alignment of text and icon.</p>
+
 
     <h4>Call-to-Action Page Alert</h4>
     <p>Use the <span class="highlight">page-alert--cta</span> modifier for any page alert with a button or link call-to-action.</p>
@@ -336,7 +337,7 @@
     <h4>Page Alert 7+</h4>
 
     <p>For screens sizes over 7", leverage the <span class="highlight">skin-large</span> class to display a larger, more prominent page alert.</p>
-    <p>Notice the use of <span class="highlight">.page-alert--multi-line</span> on the last example. It ensures that multi-line text is aligned to top of icon. <strong>NOTE:</strong> we have hardcoded this class here, but in general you may want to apply this class dynamically based on a pre-determined character count.</p>
+    <p>Notice the use of the <span class="highlight">.page-alert--multi-line</span> modifier on the last example. It ensures that multi-line text is aligned to top of icon. We have hardcoded this class here, but in general you may want to apply this class dynamically based on a pre-determined character count.</p>
 
     <div class="demo skin-large">
         <div class="page-alert page-alert--priority" role="region" aria-label="Priority">
@@ -400,7 +401,8 @@
 
     <h3 id="flyout-alert">Flyout Alert</h3>
     <p>Flyout alerts are available on large, 7+ screens only. Like inline alerts, they call out a specific section or element of the page.</p>
-    <p>Content order of flyout alerts is important. To avoid reading-order and tabbing-order accessibility issues, the flyout element should be placed adjacent in the DOM to the page section or element of interest.</p>
+    <p>Content order of flyout alerts is important! To avoid reading-order and tabbing-order accessibility issues, the flyout element should be placed adjacent in the DOM to the page section or element it points to.</p>
+        <p>Flyout alerts are absolutely positioned by default. The flyout will be positioned relatively to the nearest ancestor with <span class="highlight">position:relative</span>.</p>
     <p>Use the <span class="highlight">flyout-alert--priority</span>, <span class="highlight">flyout-alert--confirmation</span>, or <span class="highlight">flyout-alert--information</span> modifier classes depending on the level of alert required.</p>
     <p>The flyout pointer can be positioned using any one of the following modifier classes: <span class="highlight">flyout-alert--top-left</span>, <span class="highlight">flyout-alert--top-center</span>, <span class="highlight">flyout-alert--top-right</span>, <span class="highlight">flyout-alert--bottom-right</span>, <span class="highlight">flyout-alert--bottom-center</span>, <span class="highlight">flyout-alert--bottom-left</span>, <span class="highlight">flyout-alert--left-middle</span> or <span class="highlight">flyout-alert--right-middle</span>.</p>
 
@@ -442,52 +444,55 @@
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
+    <p><strong>TIP</strong>: If you require a fixed position flyout, apply modifier class <span class="highlight">flyout-alert--fixed</span>.</p>
 
-
-    <h4>Flyout Alert on Hover (Tooltip)</h4>
-    <p>Flyout alerts are absolutely positioned by default. The flyout will be positioned relatively to the nearest ancestor with <span class="highlight">position:relative</span>. If you require a fixed position flyout, apply modifier class <span class="highlight">flyout-alert--fixed</span>.</p>
-    <p><strong>NOTE:</strong> In the example below we use a JavaScript plugin to fine-tune absolute positioning and hide/show behaviour.</p>
-    <p>Use <span class="highlight">role="tooltip"</span> and <span class="highlight">aria-describedby</span> to create a 'tooltip' for assistive technology.</p>
+    <h4>Tooltip <sup>EXPERIMENTAL</sup></h4>
+    <p>A flyout-alert can be used as the overlay of a <a href="https://ebay.gitbooks.io/mindpatterns/content/disclosure/tooltip.html">Tooltip</a> pattern.</p>
+    <p>Tooltip length is typically restricted to one or two sentences. Links inside of tooltips are discouraged.</p>
+    <p>Apply modifier class <span class="highlight">tooltip--expanded</span> to the widget to display the overlay.</p>
     <div class="demo skin-large">
-        <div>
-            <span class="tooltip"><a href="http://www.ebay.com" aria-describedby="tooltip-0">www.ebay.com</a></span>
-            <div id="tooltip-0" class="flyout-alert flyout-alert--information flyout-alert--top-left" role="tooltip" aria-hidden="true">
-                <p>We could not find any items that match your search. Try expanding your search to find more items.</p>
-                <p><a href="http://www.ebay.com">Use fewer refinements.</a></p>
-            </div>
-        </div>
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"skin-large"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tooltip"</span> <span class="na">style=</span><span class="s">"position:relative;"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span> <span class="na">aria-describedby=</span><span class="s">"tooltip-0"</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/span&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tooltip-0"</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--information flyout-alert--top-left"</span> <span class="na">role=</span><span class="s">"tooltip"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>We could not find any items that match your search. Try expanding your search to find more items.<span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>Use fewer refinements.<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-    </code></pre></figure>
-
-    <h4>Flyout Alert on Click (Bubble-Help)</h4>
-    <p>The container requires <span class="highlight">position:relative</span> in order to position the flyout relatively to the interactive click element.</p>
-    <div class="demo skin-large">
-        <span class="bubblehelp">
-            <button class="btn icon-information" type="button" aria-label="Information" aria-expanded="false"></button>
-            <div class="flyout-alert flyout-alert--information flyout-alert--close flyout-alert--top-left" aria-hidden="true">
-                <button aria-label="Dismiss" type="button"></button>
-                <p>We could not find any items that match your search. Try expanding your search to find more items.</p>
+        <span class="tooltip">
+            <button accesskey="s" onclick="alert('You clicked settings. Good for you.');" class="tooltip__trigger btn btn--small icon-settings" aria-describedby="tooltip-0" aria-label="Settings"></button>
+            <div id="tooltip-0" class="tooltip__overlay flyout-alert flyout-alert--information flyout-alert--bottom-left" role="tooltip">
+                <p>Use Access Key 'S' to display settings.</p>
             </div>
         </span>
     </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"skin-large"</span> <span class="na">style=</span><span class="s">"position: relative;"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bubblehelp"</span> <span class="na">aria-live=</span><span class="s">"polite"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn icon-information"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-label=</span><span class="s">"Information"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;&lt;/button&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flyout-alert flyout-alert--information flyout-alert--close flyout-alert--top-left"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;p&gt;</span>We could not find any items that match your search. Try expanding your search to find more items.<span class="nt">&lt;/p&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tooltip"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">accesskey=</span><span class="s">"s"</span> <span class="na">class=</span><span class="s">"tooltip__trigger btn btn--small icon-settings"</span> <span class="na">aria-describedby=</span><span class="s">"tooltip-0"</span> <span class="na">aria-label=</span><span class="s">"Settings"</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tooltip-0"</span> <span class="na">class=</span><span class="s">"tooltip__overlay flyout-alert flyout-alert--information flyout-alert--bottom-left"</span> <span class="na">role=</span><span class="s">"tooltip"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Use Access Key 'S' to display settings.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
+    </code></pre></figure>
+    <p><strong>NOTE:</strong> This example uses a simple jQuery <a href="https://github.com/ianmcburnie/jquery-tooltip">tooltip plugin</a> to toggle the <span class="highlight">tooltip--expanded</span> class on hover and focus.</p>
+
+    <h4>Bubble-Help <sup>EXPERIMENTAL</sup></h4>
+    <p>A flyout-alert can be used as the overlay of a <a href="https://ebay.gitbooks.io/mindpatterns/content/disclosure/bubblehelp.html">Bubble Help</a> pattern.</p>
+    <p>Bubble Help length is typically restricted to one or two paragraphs. Links inside of Bubble Helps are allowed.</p>
+    <p>Apply an <span class="highlight">aria-expanded</span> state of true to the help button to display the overlay.</p>
+    <div class="demo skin-large">
+        <span class="bubblehelp">
+            <button class="btn icon-information bubblehelp__trigger" type="button" aria-label="Help" aria-expanded="false"></button>
+            <span class="bubblehelp__live-region" aria-live="polite" role="status">
+                <div class="bubblehelp__overlay flyout-alert flyout-alert--information flyout-alert--close flyout-alert--top-left">
+                    <p>Here's a tip to help you be successful at your task:</p>
+                    <p><a href="http://www.ebay.com">Use fewer refinements.</a></p>
+                </div>
+            </span>
+        </span>
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bubblehelp"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn icon-information bubblehelp__trigger"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-label=</span><span class="s">"Help"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bubblehelp__live-region"</span> <span class="na">aria-live=</span><span class="s">"polite"</span> <span class="na">role=</span><span class="s">"status"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bubblehelp__overlay flyout-alert flyout-alert--information flyout-alert--close flyout-alert--top-left"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Here's a tip to help you be successful at your task:<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>Use fewer refinements.<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
     </code></pre></figure>
-
+    <p><strong>NOTE:</strong> This example uses a simple <a href="https://github.com/ianmcburnie/jquery-click-flyout">click-flyout plugin</a> to toggle the aria-expanded state of the button when clicked.</p>
 </section>
 
 <section id="atom" aria-labelledby="atom_heading">
@@ -3077,7 +3082,7 @@
     <p>Market Sans is a new and exclusive typeface developed specifically for eBay. This module downloads and installs the typeface directly from the eBay CDN servers. The typeface can then be referenced via the <span class="highlight">'Market Sans'</span> font-family name.</p>
 
     <div class="demo" style="font-size: 36px; font-family: 'Market Sans', 'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif;">
-        ABCDEDGHIJKLMNOPQRSTUVWXYZ<br/>
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
         abcdefghijklmnopqrstuvwxyz
     </div>
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style&gt;</span>
