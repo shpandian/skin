@@ -219,10 +219,10 @@
     <h3 id="install_cdn">CDN</h3>
     <p>All modules &amp; bundles are also available via eBay CDN servers, for example:</p>
     <ul id="cdn_list">
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/skin.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/core.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/combo.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/combo.min.css</a></li>
-        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/grid-core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.2/css/grid-core.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.3/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.3/css/skin.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.3/css/core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.3/css/core.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.3/css/combo.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.3/css/combo.min.css</a></li>
+        <li><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.3/css/grid-core.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.3/css/grid-core.min.css</a></li>
     </ul>
 
 </section>
@@ -257,10 +257,10 @@
 
 <section id="alert" aria-labelledby="alert_heading">
     <h2 id="alert_heading">Alert</h2>
-    <p>All users* need clear feedback to understand what’s blocking them from progress, when they’ve been successful or simply when there’s more information available to shop and sell successfully. An alert focuses on reducing cognitive load and making the next steps in the journey clear.</p>
+    <p>All users* need clear feedback to understand what’s blocking them from progress; either when they’ve been successful or simply when there’s more information available to shop and sell successfully. An alert focuses on reducing cognitive load and making the next steps in the journey clear.</p>
     <p>An alert may have one of three possible levels: <span class="highlight">priority</span>, <span class="highlight">confirmation</span>, or <span class="highlight">information</span>.</p>
     <p>Dependencies: <span class="highlight">skin-ebay/iconfont</span>.</p>
-    <p style="font-size: 12px">*If an alert is rendered on the client and/or updated on the client, the entire alert must be wrapped with an additional div or span containing attribute <span class="highlight">aria-live="polite"</span>. This wrapper is necessary in order for assistive technology to detect &amp; announce a subtree change.</p>
+    <p style="font-size: 12px">*If an alert is rendered on the client and/or updated on the client, the entire alert must be wrapped with an additional div or span. This div or span must contain attributes <span class="highlight">role="status"</span> &amp; <span class="highlight">aria-live="polite"</span>. This 'live-region' wrapper is necessary in order for assistive technology to detect &amp; announce a subtree change.</p>
 
     <h3>Alert Modifiers</h3>
     <p>Available base classes are <span class="highlight">page-alert</span>, <span class="highlight">inline-alert</span> or <span class="highlight">flyout-alert</span>. Modifiers exist for alert level, multi-line, &amp; clickable action. One modifier of each type may be applied.</p>
@@ -293,9 +293,24 @@
 
     <p><strong>TIP:</strong> If page alert text is longer than a single line, please apply the <span class="highlight">.page-alert--multi-line</span> modifier class to ensure correct vertical alignment of text and icon.</p>
 
+    <h4>Dismissable Page Alert</h4>
+    <p>Use the <span class="highlight">page-alert--close</span> modifier for any dismissable page alert. The button that dismisses the page alert must be the first element in the alert.</p>
+
+    <div class="demo">
+        <div class="page-alert page-alert--information page-alert--close" role="region" aria-label="Confirmation">
+            <button aria-label="Dismiss alert" type="button"></button>
+            <p>Here's a tip to help you be successful at your task.</p>
+        </div>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--information page-alert--close"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas non dolor velsagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. dolor vl sagittis.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
 
     <h4>Call-to-Action Page Alert</h4>
-    <p>Use the <span class="highlight">page-alert--cta</span> modifier for any page alert with a button or link call-to-action.</p>
+    <p>Use the <span class="highlight">page-alert--cta</span> modifier for any page alert with a call-to-action command. The link or button that performs the call to action must be the first element in the alert.</p>
 
     <div class="demo">
         <div class="page-alert page-alert--confirmation page-alert--cta" role="region" aria-label="Priority">
@@ -315,22 +330,6 @@
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--confirmation page-alert--cta"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Priority"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"clipped"</span><span class="nt">&gt;</span>Invoke alert<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
     <span class="nt">&lt;p&gt;</span>Congrats! You are the highest bidder!<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-    </code></pre></figure>
-
-    <h4>Dismissable Page Alert</h4>
-    <p>Use the <span class="highlight">page-alert--close</span> modifier for any dismissable page alert.</p>
-
-    <div class="demo">
-        <div class="page-alert page-alert--information page-alert--close" role="region" aria-label="Confirmation">
-            <button aria-label="Dismiss alert" type="button"></button>
-            <p>Here's a tip to help you be successful at your task.</p>
-        </div>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-alert page-alert--information page-alert--close"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Confirmation"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Dismiss alert"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas non dolor velsagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. dolor vl sagittis.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
@@ -591,8 +590,8 @@
     </code></pre></figure>
 
     <h3 id="button_faux">Faux Button</h3>
-    <p>A faux button is an anchor tag styled to appear <em>visually</em> as a button. Faux buttons should only be used for prominent call-to-action links, e.g. 'Start Shopping', 'Take me There', etc.</p>
-    <p>The <span class="highlight">btn--faux</span> modifier class is <strong>required</strong>. The <span class="highlight">href</span> attribute must always contain a valid URL ('javascript' is not a valid URL).</p>
+    <p>A faux button is an anchor tag styled to appear <em>visually</em> as a button. Faux buttons should be used sparingly, and only for prominent call-to-action links, e.g. 'Start Shopping', 'Take me There', etc.</p>
+    <p>The <span class="highlight">btn--faux</span> modifier class is <strong>required</strong>. The <span class="highlight">href</span> attribute must always contain a valid URL. A value of "javascript" (or any such variant) is <strong>not</strong> a valid URL.</p>
     <div class="demo">
         <a class="btn btn--faux" href="http://www.ebay.com">Shop Now</a>
     </div>
@@ -602,7 +601,8 @@
 
     <h3>Hijaxed Faux Button</h3>
     <p>A faux button can have it's link behaviour progressively enhanced into button behaviour. For example, the link might be enhanced to open the destination URL inside of an overlay instead of leaving the page. Because AJAX is typically used, this technique is often referred to as 'hijax' (i.e. hi-jacking a link).</p>
-    <p>The <span class="highlight">btn--hijax</span> modifier class is <strong>required</strong>. The <span class="highlight">href</span> attribute must always contain a valid fallback URL. A role of <span class="highlight">button</span> is <strong>required</strong>.</p>
+    <p>The <span class="highlight">btn--hijax</span> modifier class and <span class="highlight">button</span> role are both <strong>required</strong>.<p>
+        <p>The <span class="highlight">href</span> attribute must always contain a valid fallback URL. A value of "javascript" (or any such variant) is <strong>not</strong> a valid URL.</p>
     <div class="demo">
         <a class="btn btn--hijax" href="http://www.ebay.com" role="button">View Item</a>
     </div>
@@ -610,8 +610,17 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--hijax"</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>View Item<span class="nt">&lt;/a&gt;</span>
     </code></pre></figure>
 
+    <h3 id="faux_link">Faux Link</h3>
+    <p>A faux link is a button tag styled to appear <em>visually</em> as a link. <strong>Warning:</strong> We do not encourage this use case, because it can cause confusion for our users. Users typically expect something that looks like a link to open a new URL, rather than running a JavaScript action.</p>
+    <div class="demo skin-large">
+        <button class="faux-link" type="button">Add to watch list</button>
+    </div>
+
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"faux-link"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Add to watch list<span class="nt">&lt;/button&gt;</span>
+    </code></pre></figure>
+
     <h3>Disabled Button</h3>
-    <p>The <span class="highlight">disabled</span> attribute is <strong>required</strong> to fully disable a button.</p>
+    <p>The <span class="highlight">disabled</span> attribute is <strong>required</strong> to fully disable any button.</p>
     <div class="demo">
         <button class="btn" type="button" disabled>Buy it Now</button>
         <input class="btn" type="button" value="Buy it Now" disabled />
@@ -622,7 +631,7 @@
     </code></pre></figure>
 
     <h3>Disabled Faux Button</h3>
-    <p>Remove the <span class="highlight">href</span> attribute to fully disable a faux button.</p>
+    <p>Remove the <span class="highlight">href</span> attribute to fully disable an anchor tag.</p>
     <div class="demo">
         <a class="btn btn--faux">Buy it Now</a>
     </div>
@@ -4101,9 +4110,15 @@
         <tbody>
             <tr>
                 <td>.clearfix</td>
-                <td>Clear floats</td>
+                <td>Clear floated elements</td>
                 <td>.clipped</td>
                 <td>Element visible to screen reader only</td>
+            </tr>
+            <tr>
+                <td>.clipped--stealth</td>
+                <td>Clipped element becomes visible on focus (modifier)</td>
+                <td>.image-wrapper</td>
+                <td>Vertically and horizontally center an image</td>
             </tr>
             <tr>
                 <td>.fluid-image</td>
@@ -4112,10 +4127,8 @@
                 <td>Image will scale up and down</td>
             </tr>
             <tr>
-                <td>.image-wrapper</td>
-                <td>Vertically and horizontally center an image</td>
                 <td>.truncate</td>
-                <td>Truncate single-line text</td>
+                <td colspan="3">Truncate single-line text</td>
             </tr>
         </tbody>
     </table>
