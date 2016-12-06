@@ -1,30 +1,30 @@
-.skin-legacy .spinner[role=img][aria-label] {
+.skin-legacy .spinner[role="img"][aria-label] {
   -webkit-animation: none;
           animation: none;
-  background-image: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner.gif");
+  background-image: url("https://ir.ebaystatic.com/pictures/skin/gif/spinner.gif");
   display: inline-block;
 }
-.skin-legacy .spinner--large[role=img][aria-label] {
-  background-image: url("//secureir.ebaystatic.com/pictures/skin/gif/spinner@2x.gif");
+.skin-legacy .spinner--large[role="img"][aria-label] {
+  background-image: url("https://ir.ebaystatic.com/pictures/skin/gif/spinner@2x.gif");
 }
-.skin-legacy .tabs div[role=tablist] {
+.skin-legacy .tabs div[role="tablist"] {
   display: table;
   width: 100%;
 }
-.skin-legacy .tabs div[role=tab] {
+.skin-legacy .tabs div[role="tab"] {
   display: table-cell;
   border-bottom: 0.125rem solid #ffffff;
 }
-.skin-legacy .tabs div[role=tab][aria-selected=true] {
+.skin-legacy .tabs div[role="tab"][aria-selected="true"] {
   border-bottom-color: #333333;
 }
-.skin-legacy .tabs.tabs--two div[role=tab] {
+.skin-legacy .tabs.tabs--two div[role="tab"] {
   width: 50%;
 }
-.skin-legacy .tabs.tabs--three div[role=tab] {
+.skin-legacy .tabs.tabs--three div[role="tab"] {
   width: 33.33333333%;
 }
-.skin-legacy .tabs.tabs--four div[role=tab] {
+.skin-legacy .tabs.tabs--four div[role="tab"] {
   width: 25%;
 }
 .skin-legacy .tabs > div:last-child {
@@ -50,20 +50,20 @@
 .skin-legacy .tabs--faux.tabs--four > ul > li {
   width: 25%;
 }
-.skin-legacy .tabs--hijax ul[role=tablist] {
+.skin-legacy .tabs--hijax ul[role="tablist"] {
   display: table;
   width: 100%;
 }
-.skin-legacy .tabs--hijax li[role=tab] {
+.skin-legacy .tabs--hijax li[role="tab"] {
   display: table-cell;
   border-bottom: 0.125rem solid #ffffff;
 }
-.skin-legacy .tabs--hijax li[role=tab][aria-selected=true] {
+.skin-legacy .tabs--hijax li[role="tab"][aria-selected="true"] {
   border-bottom: 0.125rem solid #333333;
   -webkit-transition: color 0.1s ease;
   transition: color 0.1s ease;
 }
-.skin-legacy .tabs--hijax li[role=tab][aria-selected=true] > a[role=presentation] {
+.skin-legacy .tabs--hijax li[role="tab"][aria-selected="true"] > a[role="presentation"] {
   color: #333333;
   font-weight: 400;
 }

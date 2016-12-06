@@ -35,11 +35,11 @@
 .list-nav > ol:first-child > li:first-child > a span::before {
   font-family: "vq-icon-font";
   position: absolute;
-  font-size: .714rem;
+  font-size: 0.714rem;
   display: inline-block;
   text-align: center;
   content: "\e609";
-  left: .7rem;
+  left: 0.7rem;
   color: #dddddd;
 }
 .list-nav > ol:first-child > li:nth-child(2) {
@@ -61,11 +61,11 @@
 .list-nav > ol:first-child > li > button span::before {
   font-family: "vq-icon-font";
   position: absolute;
-  font-size: .714rem;
+  font-size: 0.714rem;
   display: inline-block;
   text-align: center;
   content: "\e609";
-  left: .7rem;
+  left: 0.7rem;
   color: #cccccc;
 }
 .list-nav > ol:first-child > li > span {
@@ -109,14 +109,14 @@
 .list-nav > ol:last-child > li > button > span::after {
   font-family: "vq-icon-font";
   position: absolute;
-  font-size: .714rem;
+  font-size: 0.714rem;
   display: inline-block;
   text-align: center;
   content: "\e606";
-  right: .5rem;
+  right: 0.5rem;
   color: #cccccc;
 }
 .list-nav > ol:last-child > li:last-child a > span,
 .list-nav > ol:last-child > li:last-child button > span {
-  border-bottom: none;
+  border-bottom: 0;
 }

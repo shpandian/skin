@@ -528,7 +528,7 @@
  * probably needs to be renamed
  */
 .grid .grid > hr {
-  border: none;
+  border: 0;
   height: 1px;
   background-color: #eeeeee;
   width: calc(100% - 48px);
