@@ -117,6 +117,18 @@ div.test--nobg {
     width: 400px;
 }
 
+.children-bottom > * {
+   vertical-align: bottom;
+}
+
+.children-middle > * {
+   vertical-align: middle;
+}
+
+.children-top > * {
+   vertical-align: top;
+}
+
 /* grids */
 
 .center_content {

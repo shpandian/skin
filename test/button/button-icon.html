@@ -1,17 +1,10 @@
 <!doctype html>
-<!--[if lt IE 9]>
-<html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if IE 9]>
-<html class="ie9" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!-->
 <html lang="en">
-<!--<![endif]-->
     <head>
         <meta charset="utf-8" />
         <title>Button - Icon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
-        <link rel="stylesheet" type="text/css" href="../../dist/skin-legacy.css">
         <link rel="stylesheet" type="text/css" href="../static/test.css">
         <script src="../static/test.js"></script>
     </head>
@@ -22,101 +15,87 @@
         <div role="main">
 
             <h2>Critical icon</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn btn--states icon-menu" aria-label="menu"></button>
-                <a class="btn btn--states icon-menu btn--faux" href="http://www.ebay.com" aria-label="menu"></a>
-                <a class="btn btn--states icon-menu btn--hijax" href="http://www.ebay.com" aria-label="menu" role="button"></a>
+                <a class="btn btn--states icon-menu" href="http://www.ebay.com" aria-label="menu"></a>
             </div>
 
             <h2>Critical icon, Disabled</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-menu" aria-label="menu" disabled></button>
-                <a class="btn icon-menu btn--faux" aria-label="menu"></a>
-                <a class="btn icon-menu btn--hijax" aria-label="menu" role="button"></a>
+                <a class="btn icon-menu" aria-label="menu"></a>
             </div>
 
             <h2>Critical icon, Partially Disabled</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-menu" aria-label="menu" aria-disabled="true"></button>
-                <a class="btn icon-menu btn--faux" href="http://www.ebay.com" aria-label="menu" aria-disabled="true"></a>
-                <a class="btn icon-menu btn--hijax" href="http://www.ebay.com" aria-label="menu" aria-disabled="true" role="button"></a>
+                <a class="btn icon-menu" href="http://www.ebay.com" aria-label="menu" aria-disabled="true"></a>
             </div>
 
             <h2>Non-critical icon</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close">Button</button>
-                <a class="btn icon-close btn--faux" href="http://www.ebay.com">Faux</a>
-                <a class="btn icon-close btn--hijax" href="http://www.ebay.com" role="button">Hijax</a>
+                <a class="btn icon-close" href="http://www.ebay.com">Anchor</a>
             </div>
 
             <h2>Non-critical icon, Primary</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close btn--primary">Button</button>
-                <a class="btn icon-close btn--faux btn--primary" href="http://www.ebay.com">Faux</a>
-                <a class="btn icon-close btn--hijax btn--primary" href="http://www.ebay.com" role="button">Hijax</a>
+                <a class="btn icon-close btn--primary" href="http://www.ebay.com">Anchor</a>
             </div>
 
             <h2>Non-critical icon, Secondary</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close btn--secondary">Button</button>
-                <a class="btn icon-close btn--faux btn--secondary" href="http://www.ebay.com">Faux</a>
-                <a class="btn icon-close btn--hijax btn--secondary" href="http://www.ebay.com" role="button">Hijax</a>
+                <a class="btn icon-close btn--secondary" href="http://www.ebay.com">Anchor</a>
             </div>
 
             <h2>Non-critical icon, Disabled</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close" disabled>Button</button>
-                <a class="btn icon-close btn--faux">Faux</a>
-                <a class="btn icon-close btn--hijax"role="button">Hijax</a>
+                <a class="btn icon-close">Anchor</a>
             </div>
 
             <h2>Non-critical icon, Partially Disabled</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close" aria-disabled="true">Button</button>
-                <a class="btn icon-close btn--faux" href="http://www.ebay.com" aria-disabled="true">Faux</a>
-                <a class="btn icon-close btn--hijax" href="http://www.ebay.com" aria-disabled="true" role="button">Hijax</a>
+                <a class="btn icon-close" href="http://www.ebay.com" aria-disabled="true">Anchor</a>
             </div>
 
             <h2>Non-critical icon, Primary, Disabled</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close btn--primary" disabled>Button</button>
-                <a class="btn icon-close btn--faux btn--primary">Faux</a>
-                <a class="btn icon-close btn--hijax btn--primary" role="button">Hijax</a>
+                <a class="btn icon-close btn--primary">Anchor</a>
             </div>
 
             <h2>Non-critical icon, Primary, Partially Disabled</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close btn--primary" aria-disabled="true">Button</button>
-                <a class="btn icon-close btn--faux btn--primary" href="http://www.ebay.com" aria-disabled="true">Faux</a>
-                <a class="btn icon-close btn--hijax btn--primary" href="http://www.ebay.com" aria-disabled="true" role="button">Hijax</a>
+                <a class="btn icon-close btn--primary" href="http://www.ebay.com" aria-disabled="true">Anchor</a>
             </div>
 
             <h2>Non-critical icon, Secondary, Disabled</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close btn--secondary" disabled>Button</button>
-                <a class="btn icon-close btn--faux btn--secondary">Faux</a>
-                <a class="btn icon-close btn--hijax btn--secondary"role="button">Hijax</a>
+                <a class="btn icon-close btn--secondary">Anchor</a>
             </div>
 
             <h2>Non-critical icon, Secondary, Partially Disabled</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn icon-close btn--secondary" aria-disabled="true">Button</button>
-                <a class="btn icon-close btn--faux btn--secondary" href="http://www.ebay.com" aria-disabled="true">Faux</a>
-                <a class="btn icon-close btn--hijax btn--secondary" href="http://www.ebay.com" aria-disabled="true" role="button">Hijax</a>
+                <a class="btn icon-close btn--secondary" href="http://www.ebay.com" aria-disabled="true">Anchor</a>
             </div>
 
             <h2>Non-critical icon small</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn btn--small icon-close">Button</button>
-                <a class="btn btn--small btn--faux icon-close " href="http://www.ebay.com">Faux</a>
-                <a class="btn btn--small btn--hijax icon-close" href="http://www.ebay.com" role="button">Hijax</a>
+                <a class="btn btn--small icon-close " href="http://www.ebay.com">Anchor</a>
             </div>
 
             <h2>Non-critical icon large</h2>
-            <div class="test">
+            <div class="test children-middle">
                 <button type="button" class="btn btn--large icon-close">Button</button>
-                <a class="btn btn--large btn--faux icon-close " href="http://www.ebay.com">Faux</a>
-                <a class="btn btn--large btn--hijax icon-close" href="http://www.ebay.com" role="button">Hijax</a>
+                <a class="btn btn--large icon-close " href="http://www.ebay.com">Anchor</a>
             </div>
 
         </div>
