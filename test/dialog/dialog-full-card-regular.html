@@ -8,13 +8,13 @@
     </head>
     <body>
         <div class="test">
-            <div role="dialog" class="dialog" id="dialog" aria-labelledby="dialog-title" aria-hidden="false">
-                <div role="document">
-                    <header>
+            <div role="dialog" class="dialog" id="dialog" aria-labelledby="dialog-title">
+                <div class="dialog__window dialog__window--full" role="document">
+                    <header class="dialog__header">
+                        <h2 class="dialog__title" id="dialog-title">Full Dialog with Regular Card</h2>
                         <button class="dialog__close dialog__close--icon" type="button" aria-label="Close Dialog"></button>
-                        <h2 id="dialog-title">Full Dialog with Regular Card</h2>
                     </header>
-                    <div>
+                    <div class="dialog__body">
                         <div class="card">
                             <div class="card__cell">
                                 <h3>Heading</h3>

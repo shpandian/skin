@@ -96,7 +96,7 @@
             </nav>
         </header>
         <div>
-            <div role="main">
+            <div id="main" role="main">
                 <section id="intro" aria-labelledby="intro_heading">
     <h2 id="intro_heading">Intelligent CSS Components</h2>
     <div class="grid">
@@ -207,7 +207,7 @@
 
     <h3 id="install_cdn">CDN Bundle</h3>
     <p>A single bundle, containing the full collection of modules and adaptors (see next section), is also available via CDN:</p>
-    <p><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.7.0/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.7.0/css/skin.min.css</a></p>
+    <p><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.0/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.0/css/skin.min.css</a></p>
 
 </section>
 
@@ -721,14 +721,14 @@
     <p>Cards can also be used inside of any <span class="highlight">dialog</span>.</p>
 
     <div class="demo">
-        <button class="btn btn--primary btn--small dialog-button" type="button" aria-controls="dialog-card" data-dialog={"transitionDurationMs":"175"}>Dialog with Cards</button>
-        <div role="dialog" class="dialog" id="dialog-card" aria-labelledby="dialog-card-title" aria-hidden="true">
-            <div role="document">
-                 <header>
+        <button class="btn btn--primary btn--small dialog-button" type="button" data-jquery-dialog-button-for="dialog-card">Dialog with Cards</button>
+        <div role="dialog" class="dialog" id="dialog-card" aria-labelledby="dialog-card-title" hidden data-jquery-dialog-transition-out-duration="175">
+            <div class="dialog__window" role="document">
+                <header class="dialog__header">
+                    <h2 class="dialog__title" id="dialog-card-title">Dialog with Cards</h2>
                     <button class="dialog__close dialog__close--icon" aria-label="Close dialog" type="button"></button>
-                    <h2 id="dialog-card-title">Dialog with Cards</h2>
                 </header>
-                <div>
+                <div class="dialog__body">
                     <div class="card card--primary">
                         <div class="card__cell">
                             <h2>Title</h2>
@@ -748,16 +748,17 @@
                     </div>
                 </div>
             </div>
+            <div class="dialog__mask"></div>
         </div>
     </div>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"dialog-card"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-card-title"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
-         <span class="nt">&lt;header&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"dialog-card"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-card-title"</span> <span class="na">hidden</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__window"</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"dialog__title"</span> <span class="na">id=</span><span class="s">"dialog-card-title"</span><span class="nt">&gt;</span>Dialog with Cards<span class="nt">&lt;/h2&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"dialog-card-title"</span><span class="nt">&gt;</span>Dialog with Cards<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
-        <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__body"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card card--primary"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card__cell"</span><span class="nt">&gt;</span>
                     <span class="c">&lt;!-- card content --&gt;</span>
@@ -769,6 +770,7 @@
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__mask"</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
@@ -937,48 +939,145 @@
     </ul>
 </section>
 
-<section id="dialog" aria-labelledby="dialog_heading">
+<section aria-labelledby="dialog_heading" id="dialog">
     <h2 id="dialog_heading">Dialog</h2>
     <p>A dialog is a child window spawned by the main web page or application.</p>
-    <p>The main body of the dialog forms the background layer, and has zero margin and padding by default (similar to the body tag). Content may be placed directly onto the background layer, inside of a <span class="highlight">dialog__cell</span> element. Alternatively a content layer can be created using the <a href="#card">card module</a> and/or <a href="#grid">grid module</a>.</p>
-    <p>Skin dialogs are always modal, meaning that mouse, <a href="https://github.com/ianmcburnie/jquery-keyboard-trap">keyboard</a> &amp; <a href="https://github.com/ianmcburnie/jquery-screenreader-trap">screen reader</a> interactions with the dialog's parent window must be prevented while the dialog is open.</p>
-    <p>A dialog must always be labelled using the <span class="highlight">aria-labelledby</span> or <span class="highlight">aria-label</span> properties, and must contain at least one focusable, interactive element.</p>
+    <p>This window forms a new background layer in our design system topography, and has zero margin and padding by default.</p>
+    <p>Content may be placed directly onto this background layer, inside of a <span class="highlight">dialog__cell</span> element. Alternatively, a content layer can be created using the <a href="#card">card module</a> and/or <a href="#grid">grid module</a>.</p>
+    <p>A dialog must remain in a <span class="highlight">hidden</span> state for all users and devices until called upon.</p>
+    <!--<p>Skin dialogs are always modal, meaning that mouse, <a href="https://github.com/ianmcburnie/jquery-keyboard-trap">keyboard</a> &amp; <a href="https://github.com/ianmcburnie/jquery-screenreader-trap">screen reader</a> interactions with the dialog's parent window must be prevented while the dialog is open. A dialog must always be labelled using the <span class="highlight">aria-labelledby</span> or <span class="highlight">aria-label</span> properties, and must contain at least one focusable, interactive element.</p>-->
+    <p>All dialogs have support for <em>optional</em> CSS transition effects. See <a href="#dialog-transitions">dialog transitions</a> section for more details.</p>
 
-    <h3 id="dialog-default">Full-Page Dialog</h3>
-    <p>On small screens the default dialog is full-page.</p>
+    <h3 id="dialog-lightbox">Lightbox Dialog</h3>
+    <p>The default dialog is a lightbox.</p>
+    <p>The lightbox will be centered vertically and it's height will grow with it's content. To instead align the lightbox to the top of the screen, use the <span class="highlight">dialog__window--top</span> modifier.</p>
+    <div class="demo skin-large">
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="lightbox-1">Lightbox</button>
+        <div role="dialog" class="dialog" id="lightbox-1" aria-labelledby="lightbox-1-title" hidden data-jquery-dialog-transition-out-duration="0">
+            <div class="dialog__window" role="document">
+                <header class="dialog__header">
+                    <h2 class="dialog__title" id="lightbox-1-title">Dialog Title</h2>
+                    <button class="dialog__close dialog__close--icon" aria-label="Close dialog" type="button"></button>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">hidden</span> <span class="na">role=</span><span class="s">"dialog"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__window"</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"dialog__title"</span> <span class="na">id=</span><span class="s">"dialog-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__body"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__cell"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__mask"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
+
+    <h3 id="dialog-panel">Panel Dialog</h3>
+    <p>Panel dialogs fill 80% of the available screen width.</p>
+    <p>Use the <span class="highlight">dialog__window--left</span> or <span class="highlight">dialog__window--right</span> modifier to create a panel on the left or right edge of the screen.</p>
+    <div class="demo skin-large">
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="panel-1">Panel Left</button>
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="panel-2">Panel Right</button>
+        <div role="dialog" class="dialog" id="panel-1" aria-labelledby="panel-1-title" hidden data-jquery-dialog-transition-out-duration="0">
+            <div class="dialog__window dialog__window--left" role="document">
+                <header class="dialog__header">
+                    <h2 class="dialog__title" id="panel-1-title">Dialog Title</h2>
+                    <button class="dialog__close dialog__close--icon" type="button" aria-label="Close dialog"></button>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+        <div role="dialog" class="dialog" id="panel-2" aria-labelledby="panel-2-title" hidden data-jquery-dialog-transition-out-duration="0">
+            <div class="dialog__window dialog__window--right" role="document">
+                <header class="dialog__header">
+                    <button class="dialog__close dialog__close--icon" type="button" aria-label="Close dialog"></button>
+                    <h2 class="dialog__title" id="panel-2-title">Dialog Title</h2>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">hidden</span> <span class="na">role=</span><span class="s">"dialog"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__window dialog__window--left"</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span><span class="nt">&gt;&lt;/button&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"dialog__title"</span> <span class="na">id=</span><span class="s">"dialog-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__body"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__cell"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__mask"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
+
+    <h3 id="dialog-fullscreen">Fullscreen Dialog</h3>
+    <p>Apply the <span class="highlight">dialog__window--full</span> modifier to create a fullscreen dialog.</p>
     <p>For a close button with text (e.g. "Cancel", "Done") use class <span class="highlight">dialog__close</span> and apply inner text.</p>
     <p>For a close button with default icon ('X'), use modifier class <span class="highlight">dialog__close--icon</span> and apply aria-label.</p>
-    <p>Transition duration: 150ms.</p>
 
-    <div class="demo">
-        <button class="btn btn--primary dialog-button" type="button" aria-controls="dialog-0" data-dialog={"transitionDurationMs":"175"}>Full-Page</button>
-        <div role="dialog" class="dialog" id="dialog-0" aria-labelledby="dialog-0-title" aria-hidden="true">
-            <div role="document">
-                <header>
+    <div class="demo skin-large">
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="fullscreen-1">Fullscreen</button>
+        <div role="dialog" class="dialog" id="fullscreen-1" aria-labelledby="fullscreen-1-title" hidden data-jquery-dialog-transition-out-duration="0">
+            <div class="dialog__window dialog__window--full" role="document">
+                <header class="dialog__header">
+                    <h2 class="dialog__title" id="fullscreen-1-title">Dialog Title</h2>
                     <button class="dialog__close dialog__close--icon" aria-label="Close dialog" type="button"></button>
-                    <h2 id="dialog-0-title">Dialog Title</h2>
                 </header>
-                <div>
+                <div class="dialog__body">
                     <div class="dialog__cell">
                         <h2>Heading</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <p><a href="http://www.ebay.com">www.ebay.com</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;header&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">hidden</span> <span class="na">role=</span><span class="s">"dialog"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__window dialog__window--full dialog__window--fade"</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"dialog__title"</span> <span class="na">id=</span><span class="s">"dialog-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
             <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"dialog-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;/header&gt;</span>
-        <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__body"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__cell"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
-                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span class="nt">&lt;/p&gt;</span>
                 <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
@@ -986,261 +1085,249 @@
 <span class="nt">&lt;/div&gt;</span>
     </code></pre></figure>
 
-    <h3 id="dialog-multi">Multi-Step Dialog</h3>
-    <p>The multi-step dialog adds support for back button.</p>
+    <h4 id="dialog-subpage">Fullscreen Sub-Page</h4>
+    <p>In the header, replace the close button with a back button to create a subpage dialog.</p>
     <p>For a back button with text (e.g. "Back") use class <span class="highlight">dialog__back</span> and apply inner text.</p>
-    <p>For a back button with default icon ("&lt;") use modifier class <span class="highlight">dialog__back-icon</span> and apply aria-label.</p>
-    <p>Transition duration: 150ms.</p>
+    <p>For a back button with default icon ("&lt;") use modifier class <span class="highlight">dialog__back--icon</span> and apply aria-label.</p>
 
-    <div class="demo">
-        <button class="btn btn--primary dialog-button" type="button" aria-controls="dialog-multi-0" data-dialog={"transitionDurationMs":"175"}>Multi-Step</button>
-        <div role="dialog" class="dialog" id="dialog-multi-0" aria-labelledby="dialog-multi" aria-hidden="true">
-            <div role="document">
-                <header>
+    <div class="demo skin-large">
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="subpage-0">Sub-Page</button>
+        <div role="dialog" class="dialog" id="subpage-0" aria-labelledby="subpage-0-title" hidden data-jquery-dialog-transition-out-duration="0">
+            <div class="dialog__window dialog__window--full" role="document">
+                <header class="dialog__header">
+                    <button class="dialog__back dialog__back--icon" aria-label="Back" type="button"></button>
+                    <h2 class="dialog__title" id="subpage-0-title">Dialog Title</h2>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Back"</span> <span class="na">class=</span><span class="s">"dialog__back dialog__back--icon"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"dialog__title"</span> <span class="na">id=</span><span class="s">"subpage-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+    </code></pre></figure>
+
+    <h4 id="dialog-multi">Fullscreen Multi-Step</h4>
+    <p>In the header, use a back button and a close button to create a multi-step dialog.</p>
+    <div class="demo skin-large">
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="dialog-multi-0">Multi-Step</button>
+        <div role="dialog" class="dialog" id="dialog-multi-0" aria-labelledby="dialog-multi" hidden data-jquery-dialog-transition-out-duration="0">
+            <div class="dialog__window dialog__window--full" role="document">
+                <header class="dialog__header">
                     <button class="dialog__back dialog__back--icon" type="button" aria-label="Back"></button>
-                    <h2 id="dialog-multi-0-title">Dialog Title</h2>
+                    <h2 class="dialog__title" id="dialog-multi-0-title">Dialog Title</h2>
                     <button class="dialog__close" type="button">Done</button>
                 </header>
-                <div>
+                <div class="dialog__body">
                     <div class="dialog__cell">
                         <h2>Heading</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <p><a href="http://www.ebay.com">www.ebay.com</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;header&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__back dialog__back--icon"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-label=</span><span class="s">"Back"</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"dialog-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Done<span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;/header&gt;</span>
-        <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__cell"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
-                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.<span class="nt">&lt;/p&gt;</span>
-                <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__back dialog__back--icon"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-label=</span><span class="s">"Back"</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"dialog__title"</span> <span class="na">id=</span><span class="s">"dialog-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Done<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
     </code></pre></figure>
 
-    <h3 id="dialog-search">Search Dialog</h3>
-    <p>The search dialog is a full page dialog with search form.</p>
-    <p>Transition duration: 150ms.</p>
-
-    <div class="demo">
-        <button class="btn btn--primary dialog-button" type="button" aria-controls="dialog-search-0" data-dialog={"transitionDurationMs":"175"}>Search</button>
-        <div role="dialog" class="dialog" id="dialog-search-0" aria-label="search" aria-hidden="true">
-            <div role="document">
-                <header>
+    <h4 id="dialog-search">Fullscreen Search</h4>
+    <p>In the header, add a search form to create a search dialog.</p>
+    <div class="demo skin-large">
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="dialog-search-0" >Search</button>
+        <div role="dialog" class="dialog" id="dialog-search-0" aria-label="search" hidden data-jquery-dialog-transition-out-duration="0">
+            <div class="dialog__window dialog__window--full" role="document">
+                <header class="dialog__header">
                      <form class="dialog__search">
                          <button type="submit" aria-label="Search"></button>
                          <input name="search" type="text" aria-label="Search" placeholder="search" autofocus />
                      </form>
                     <button class="dialog__close dialog__close--icon" aria-label="Close dialog" type="button"></button>
                 </header>
-                <div>
+                <div class="dialog__body">
                     <!-- content goes here -->
                 </div>
             </div>
         </div>
     </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"dialog"</span> <span class="na">aria-label=</span><span class="s">"search"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;header&gt;</span>
-             <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"dialog__search"</span><span class="nt">&gt;</span>
-                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;&lt;/button&gt;</span>
-                 <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-label=</span><span class="s">"Search"</span> <span class="na">placeholder=</span><span class="s">"search"</span> <span class="na">autofocus</span> <span class="nt">/&gt;</span>
-             <span class="nt">&lt;/form&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
-        <span class="nt">&lt;/header&gt;</span>
-        <span class="nt">&lt;div&gt;</span>
-            <span class="c">&lt;!-- content goes here --&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-    </code></pre></figure>
-
-    <h3 id="dialog-lightbox">Lightbox Dialog</h3>
-    <p>On large screens the default dialog is a lightbox. A height must be specified.</p>
-    <p>Small screens require the <span class="highlight">dialog--lightbox</span> modifier.</p>
-    <p>Transition duration: 150ms.</p>
-
-    <div class="demo">
-        <button class="btn btn--primary dialog-button" type="button" aria-controls="dialog-1" data-dialog={"transitionDurationMs":"175"}>Lightbox</button>
-        <div class="skin-large">
-            <div role="dialog" class="dialog" id="dialog-1" aria-labelledby="dialog-1-title" aria-hidden="true">
-                <div role="document" style="height:66%;">
-                    <header>
-                        <button class="dialog__close dialog__close--icon" aria-label="Close dialog" type="button"></button>
-                        <h2 id="dialog-1-title">Dialog Title</h2>
-                    </header>
-                    <div>
-                        <div class="dialog__cell">
-                            <h2>Heading</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
-                            <p><a href="http://www.ebay.com">www.ebay.com</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"skin-large"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"document"</span> <span class="na">style=</span><span class="s">"height:66%;"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;header&gt;</span>
-                <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
-                <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"dialog-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
-            <span class="nt">&lt;/header&gt;</span>
-            <span class="nt">&lt;div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__cell"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
-                    <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.<span class="nt">&lt;/p&gt;</span>
-                    <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-    </code></pre></figure>
-
-    <h3 id="dialog-subpage">Sub-Page Dialog</h3>
-    <p>The sub-page dialog slides in from the right and is intended for small screens only.</p>
-    <p>The sub-page dialog require a separate mask block. The mask block must immediately follow the dialog block.</p>
-    <p>Transition duration: 350ms.</p>
-
-    <div class="demo">
-        <button class="btn btn--primary dialog-button" type="button" aria-controls="subpage-0" data-dialog={"transitionDurationMs":"375"}>Sub-Page</button>
-        <div role="dialog" class="dialog dialog--subpage" id="subpage-0" aria-labelledby="subpage-0-title" aria-hidden="true">
-            <div role="document">
-                <header>
-                    <button class="dialog__back dialog__back--icon" aria-label="Back" type="button"></button>
-                    <h2 id="subpage-0-title">Dialog Title</h2>
-                </header>
-                <div>
-                    <div class="dialog__cell">
-                        <h2>Heading</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
-                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="dialog__mask"></div>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog dialog--subpage"</span> <span class="na">aria-labelledby=</span><span class="s">"subpage-title"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;header&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">aria-label=</span><span class="s">"Back"</span> <span class="na">class=</span><span class="s">"dialog__back dialog__back--icon"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"subpage-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
-        <span class="nt">&lt;/header&gt;</span>
-        <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__cell"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
-                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.<span class="nt">&lt;/p&gt;</span>
-                <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__mask"</span><span class="nt">&gt;&lt;/div&gt;</span>
-    </code></pre></figure>
-
-    <h3 id="dialog-panel">Panel Dialog</h3>
-    <p>Panel dialogs offer additional UI controls and should not completely draw the user’s attention from the current task.</p>
-    <p>Panel dialogs slide in from the left or right of the screen to fill 80% of the available space.</p>
-    <p>Panel dialogs require a separate mask block. The mask block must immediately follow the dialog block.</p>
-    <p>Transition duration: 350ms.</p>
-    <div class="demo">
-        <button class="btn btn--primary dialog-button" type="button" aria-controls="panel-0" data-dialog={"transitionDurationMs":"375"}>Left Panel</button>
-        <button class="btn btn--primary dialog-button" type="button" aria-controls="panel-1" data-dialog={"transitionDurationMs":"375"}>Right Panel</button>
-        <div role="dialog" class="dialog dialog--panel-left" id="panel-0" aria-labelledby="panel-0-title" aria-hidden="true">
-            <div role="document">
-                <header>
-                    <button class="dialog__close dialog__close--icon" type="button" aria-label="Close dialog"></button>
-                    <h2 id="panel-0-title">Dialog Title</h2>
-                </header>
-                <div>
-                    <div class="dialog__cell">
-                        <h2>Heading</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
-                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="dialog__mask"></div>
-        <div role="dialog" class="dialog dialog--panel-right" id="panel-1" aria-labelledby="panel-1-title" aria-hidden="true">
-            <div role="document">
-                <header>
-                    <button class="dialog__close dialog__close--icon" type="button" aria-label="Close dialog"></button>
-                    <h2 id="panel-1-title">Dialog Title</h2>
-                </header>
-                <div>
-                    <div class="dialog__cell">
-                        <h2>Heading</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.</p>
-                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="dialog__mask"></div>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog dialog--panel-left"</span> <span class="na">aria-labelledby=</span><span class="s">"panel-0-title"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;header&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span><span class="nt">&gt;&lt;/button&gt;</span>
-            <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"panel-0-title"</span><span class="nt">&gt;</span>Dialog Title<span class="nt">&lt;/h2&gt;</span>
-        <span class="nt">&lt;/header&gt;</span>
-        <span class="nt">&lt;div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__cell"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
-                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id.<span class="nt">&lt;/p&gt;</span>
-                <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>www.ebay.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__mask"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"dialog__search"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;&lt;/button&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-label=</span><span class="s">"Search"</span> <span class="na">placeholder=</span><span class="s">"search"</span> <span class="na">autofocus</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"dialog__close dialog__close--icon"</span> <span class="na">aria-label=</span><span class="s">"Close dialog"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
     </code></pre></figure>
 
     <h3 id="dialog-transitions">Dialog Transitions</h3>
-    <p>Hide/show transitions require JavaScript. See commented example code below for further details.</p>
+    <p>Skin currently supports two types of dialog transition: fade and slide.<p>
+    <p>Because CSS cannot transition an element to and from <span class="highlight">hidden</span> (i.e. "display:none"), we require two temporary classes - <span class="highlight">dialog--transition-in</span> and <span class="highlight">dialog--transition-out</span> - to help prime the CSS transition in and out respectively.</p>
+    <p>The commented jQuery sample below shows the required sequence of events.</p>
 
     <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#dialog-open'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// set dialog display to block to enable CSS transitions on the element</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'.dialog'</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">'display'</span><span class="p">,</span> <span class="s1">'block'</span><span class="p">);</span>
+    <span class="c1">// Add the transition-in state. The CSS transition wont be triggered yet.</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.dialog'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'dialog--transition-in'</span><span class="p">);</span>
 
-    <span class="c1">// after a short delay, set aria-hidden to false to trigger opening transition</span>
+    <span class="c1">// Create a small, hardcoded delay for "breathing-room" (Chrome and Firefox seem to need this)</span>
     <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">'.dialog'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'aria-hidden'</span><span class="p">,</span> <span class="s1">'false'</span><span class="p">);</span>
-    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="c1">// Remove the "hidden" property. This will immediately trigger the CSS transition.</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'.dialog'</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+        <span class="c1">// Cleanup the transition-in state.</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'.dialog'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">'dialog--transition-in'</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">16</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">$</span><span class="p">(</span><span class="s1">'#dialog-close'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// set aria-hidden to true to trigger CSS closing transition</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'.dialog'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'aria-hidden'</span><span class="p">,</span> <span class="s1">'true'</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#dialog-close'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">transitionOutDuration</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Add the transition-out state. This will immediately trigger the transition out.</span>
+    <span class="nx">$dialog</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'dialog--transition-out'</span><span class="p">);</span>
 
-    <span class="c1">// remember to set dialog display to none after CSS transition</span>
-    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">'.dialog'</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">'display'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">);</span>
-    <span class="p">},</span> <span class="nx">transitionDuration</span><span class="p">);</span>
+    <span class="c1">// Listen for transitionend event</span>
+    <span class="nx">$dialogWindow</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">'transitionend'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// After the transition is done, we can safely add the "hidden" property.</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'.dialog'</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+        <span class="c1">// Cleanup the transition-out state.</span>
+        <span class="nx">$dialog</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">'dialog--transition-out'</span><span class="p">);</span>
+    <span class="p">});</span>
 <span class="p">});</span>
     </code></pre></figure>
+    <p>From the code sample, you should see that a CSS transition can be triggered using a combination of the <span class="highlight">hidden</span> property, and the transient <span class="highlight">dialog--transition-in</span> &amp; <span class="highlight">dialog--transition-out</span> helper modifiers.</p>
 
-    <p><strong>Note:</strong> <span class="highlight">transitionDuration</span> varies for each type of dialog.</p>
+    <h4>Fade Transition</h4>
+    <p>Any dialog window and mask can be faded in and out, using the <span class="highlight">dialog__window--fade</span> and <span class="highlight">dialog__mask--fade</span> modifiers.</p>
+    <p>The default fade duration is 16ms.<p>
+    <div class="demo skin-large">
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="lightbox-fade">Lightbox Fade</button>
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="fullscreen-fade">Fullscreen Fade</button>
+        <div role="dialog" class="dialog" id="lightbox-fade" aria-labelledby="lightbox-fade-title" hidden data-jquery-dialog-transitions-enabled="true">
+            <div class="dialog__window dialog__window--fade" role="document">
+                <header class="dialog__header">
+                    <h2 class="dialog__title" id="lightbox-1-title">Dialog Title</h2>
+                    <button class="dialog__close dialog__close--icon" aria-label="Close dialog" type="button"></button>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask dialog__mask--fade"></div>
+        </div>
+        <div role="dialog" class="dialog" id="fullscreen-fade" aria-labelledby="fullscreen-fade-title" hidden data-jquery-dialog-transitions-enabled="true">
+            <div class="dialog__window dialog__window--full dialog__window--fade" role="document">
+                <header class="dialog__header">
+                    <h2 class="dialog__title" id="fullscreen-fade-title">Dialog Title</h2>
+                    <button class="dialog__close dialog__close--icon" aria-label="Close dialog" type="button"></button>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask dialog__mask--fade"></div>
+        </div>
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">hidden</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__window dialog__window--fade"</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- header --&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__body"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- body --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__mask dialog__mask--fade"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
+
+    <h4>Slide Transition</h4>
+    <p>Any panel or fullscreen dialog can slide in and out, using the <span class="highlight">dialog__window--slide-left</span> or <span class="highlight">dialog__window--slide-right</span> modifier.</p>
+    <p>The slide transition duration is 32ms. An accompanying <span class="highlight">dialog__mask--fade-slow</span> modifier can be applied to a dialog panel's mask. This slower fade matches the 32ms of the slide transition.<p>
+    <div class="demo skin-large">
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="panel-left-slide">Panel Left Slide</button>
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="panel-right-slide">Panel Right Slide</button>
+        <button class="btn btn--primary dialog-button" type="button" data-jquery-dialog-button-for="subpage-slide">Sub Page Slide</button>
+
+        <div role="dialog" class="dialog" id="panel-left-slide" aria-labelledby="panel-left-slide-title" hidden data-jquery-dialog-transitions-enabled="true">
+            <div class="dialog__window dialog__window--left dialog__window--slide-right" role="document">
+                <header class="dialog__header">
+                    <h2 class="dialog__title" id="panel-left-slide-title">Dialog Title</h2>
+                    <button class="dialog__close dialog__close--icon" type="button" aria-label="Close dialog"></button>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask dialog__mask--fade-slow"></div>
+        </div>
+        <div role="dialog" class="dialog" id="panel-right-slide" aria-labelledby="panel-right-slide-title" hidden data-jquery-dialog-transitions-enabled="true">
+            <div class="dialog__window dialog__window--right dialog__window--slide-left" role="document">
+                <header class="dialog__header">
+                    <button class="dialog__close dialog__close--icon" type="button" aria-label="Close dialog"></button>
+                    <h2 class="dialog__title" id="panel-right-slide-title">Dialog Title</h2>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask dialog__mask--fade-slow"></div>
+        </div>
+        <div role="dialog" class="dialog" id="subpage-slide" aria-labelledby="subpage-0-title" hidden data-jquery-dialog-transitions-enabled="true">
+            <div class="dialog__window dialog__window--full dialog__window--slide-left" role="document">
+                <header class="dialog__header">
+                    <button class="dialog__back dialog__back--icon" aria-label="Back" type="button"></button>
+                    <h2 class="dialog__title" id="subpage-0-title">Dialog Title</h2>
+                </header>
+                <div class="dialog__body">
+                    <div class="dialog__cell">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><a href="http://www.ebay.com">www.ebay.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog__mask dialog__mask--fade-slow"></div>
+        </div>
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">class=</span><span class="s">"dialog"</span> <span class="na">id=</span><span class="s">"panel-left-slide"</span> <span class="na">aria-labelledby=</span><span class="s">"dialog-title"</span> <span class="na">hidden</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__window dialog__window--left dialog__window--slide-right"</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"dialog__header"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- header --&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__body"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- body --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dialog__mask dialog__mask--fade-slow"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre></figure>
+
 </section>
 
 <section id="field" aria-labelledby="field_heading">
@@ -1999,7 +2086,7 @@
 
     <h3>CDN</h3>
     <p>The grid system is also available via CDN:</p>
-    <p><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.7.0/css/grid-full.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.7.0/css/grid-full.min.css</a></p>
+    <p><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.0/css/grid-full.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.0/css/grid-full.min.css</a></p>
 
 	<h3>Basic Grid</h3>
 	<ul>

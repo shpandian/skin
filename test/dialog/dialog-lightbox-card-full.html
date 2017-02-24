@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
     </head>
-    <body class="skin-large">
+    <body>
         <div class="test">
-            <div role="dialog" class="dialog dialog--card" id="dialog" aria-labelledby="dialog-title" aria-hidden="false">
-                <div role="document">
-                    <header>
+            <div role="dialog" class="dialog" id="dialog" aria-labelledby="dialog-title">
+                <div class="dialog__window dialog__window--card" role="document">
+                    <header class="dialog__header">
+                        <h2 class="dialog__title" id="dialog-title">Lightbox with Full Card</h2>
                         <button class="dialog__close dialog__close--icon" type="button" aria-label="Close Dialog"></button>
-                        <h2 id="dialog-title">Lightbox with Full Card</h2>
                     </header>
-                    <div>
+                    <div class="dialog__body">
                         <div class="dialog__cell">
                             <h3>Heading</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis molestie erat, ut adipiscing risus blandit vel. Vivamus luctus elementum lorem, eu sodales velit sagittis id. Donec a est ligula, eget volutpat augue. Morbi ante nunc, venenatis vel mollis ut, viverra vehicula turpis. Etiam pulvinar dui dignissim sapien gravida ut congue libero ultrices. Mauris sapien sem, molestie sit amet aliquet ac, aliquet quis lorem. Cras ipsum lectus, tincidunt ac dictum in, imperdiet vitae est. Integer feugiat interdum dolor commodo dapibus. Etiam pellentesque mi eget quam malesuada vel suscipit ipsum ullamcorper. Suspendisse potenti.</p>
@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div>
+            <div class="dialog__mask"></div>
         </div>
     </body>
 </html>
