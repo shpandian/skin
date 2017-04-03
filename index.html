@@ -38,6 +38,7 @@
                     <li><a href="#marketsans">Market Sans</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#normalize">Normalize</a></li>
+                    <li><a href="#pagination">Pagination</a></li>
                     <li><a href="#radio">Radio</a></li>
                     <li><a href="#spinner">Spinner</a></li>
                     <li><a href="#switch">Switch</a></li>
@@ -79,6 +80,7 @@
                     <li><a href="#marketsans">Market Sans</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#normalize">Normalize</a></li>
+                    <li><a href="#pagination">Pagination <sup class="beta">BETA</sup></a></li>
                     <li><a href="#radio">Radio</a></li>
                     <li><a href="#spinner">Spinner</a></li>
                     <li><a href="#switch">Switch</a></li>
@@ -194,6 +196,7 @@
         <li>skin-ebay/marketsans</li>
         <li>skin-ebay/menu</li>
         <li>skin-ebay/normalize</li>
+        <li>skin-ebay/pagination</li>
         <li>skin-ebay/radio</li>
         <li>skin-ebay/spinner</li>
         <li>skin-ebay/switch</li>
@@ -207,7 +210,7 @@
 
     <h3 id="install_cdn">CDN Bundle</h3>
     <p>A single bundle, containing the full collection of modules and adaptors (see next section), is also available via CDN:</p>
-    <p><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.0/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.0/css/skin.min.css</a></p>
+    <p><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.1/css/skin.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.1/css/skin.min.css</a></p>
 
 </section>
 
@@ -2086,7 +2089,7 @@
 
     <h3>CDN</h3>
     <p>The grid system is also available via CDN:</p>
-    <p><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.0/css/grid-full.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.0/css/grid-full.min.css</a></p>
+    <p><a href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.1/css/grid-full.min.css">http://ir.ebaystatic.com/cr/v/c1/skin/v2.8.1/css/grid-full.min.css</a></p>
 
 	<h3>Basic Grid</h3>
 	<ul>
@@ -3880,7 +3883,7 @@
         <span class="menu menu--flyout menu--grow">
             <button class="btn btn--primary" aria-expanded="false" aria-haspopup="true" id="menu_grow_button" aria-controls="menu_grow_items" type="button">Options</button>
             <div role="menu" id="menu_grow_items" aria-labelledby="menu_grow_button">
-                <div role="menuitem" tabindex="-1">Item 1</div>
+                <div role="menuitem" tabindex="-1">Item 1 - Lorem ipsum dolor sit amet</div>
                 <div role="menuitem" tabindex="-1">Item 2</div>
                 <div role="menuitem" tabindex="-1">Item 3</div>
             </div>
@@ -3890,7 +3893,7 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"menu menu--flyout menu--grow"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">id=</span><span class="s">"menu_button"</span> <span class="na">aria-controls=</span><span class="s">"menu_items"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Options<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">id=</span><span class="s">"menu_items"</span> <span class="na">aria-labelledby=</span><span class="s">"menu_button"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Item 1 - Lorem ipsum dolor sit amet<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
@@ -3903,7 +3906,7 @@
         <span class="menu menu--flyout menu--grow-reverse">
             <button class="btn btn--primary" aria-expanded="false" aria-haspopup="true" id="menu_grow_button_2" aria-controls="menu_grow_items_2" type="button">Options</button>
             <div role="menu" id="menu_grow_items_2" aria-labelledby="menu_grow_button_2">
-                <div role="menuitem" tabindex="-1">Item 1</div>
+                <div role="menuitem" tabindex="-1">Item 1 - Lorem ipsum dolor sit amet</div>
                 <div role="menuitem" tabindex="-1">Item 2</div>
                 <div role="menuitem" tabindex="-1">Item 3</div>
             </div>
@@ -3913,7 +3916,7 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"menu menu--flyout menu--grow-reverse"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">id=</span><span class="s">"menu_button"</span> <span class="na">aria-controls=</span><span class="s">"menu_items"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Options<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">id=</span><span class="s">"menu_items"</span> <span class="na">aria-labelledby=</span><span class="s">"menu_button"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Item 1 - Lorem ipsum dolor sit amet<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
@@ -3927,6 +3930,201 @@
     <p>Normalize imports the latest <a href="http://necolas.github.io/normalize.css/">Normalize.css</a>.</p>
     <blockquote><i>"Normalize.css makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing."</i></blockquote>
     <p>Normalize is included with the <a href="#core">core bundle</a>.</p>
+</section>
+
+<section id="pagination">
+    <h2 id="pagination_heading">Pagination <sup class="beta">BETA</sup></h2>
+    <p>Pagination allows a user to navigate back and forwards through a URL based dataset, or jump directly to any specific URL in that set.</p>
+    <p>Pagination links may update the results immediately on the client via AJAX, or on the server via a full page reload. In both cases, the browser's URL will be updated. For more information, please refer to the <a href="https://ebay.gitbooks.io/mindpatterns/content/navigation/pagination.html">pagination pattern</a>.</p>
+
+    <svg hidden>
+        <symbol id="svg-icon-chevron-light-left" viewBox="0 0 24 32">
+            <path d="M28.176 1.327c-0.468-0.468-1.249-0.468-1.717 0l-14.049 14.049c-0.234 0.234-0.39 0.546-0.39 0.859s0.156 0.624 0.39 0.859l13.581 13.581c0.234 0.234 0.546 0.39 0.859 0.39s0.624-0.156 0.859-0.39c0.468-0.468 0.468-1.249 0-1.717l-12.722-12.722 13.19-13.19c0.468-0.468 0.468-1.249 0-1.717z"></path>
+        </symbol>
+        <symbol id="svg-icon-chevron-light-right" viewBox="0 0 24 32">
+            <path d="M12.41 1.327c0.468-0.468 1.249-0.468 1.717 0l14.049 14.049c0.234 0.234 0.39 0.546 0.39 0.859s-0.156 0.624-0.39 0.859l-13.581 13.581c-0.234 0.234-0.546 0.39-0.859 0.39s-0.624-0.156-0.859-0.39c-0.468-0.468-0.468-1.249 0-1.717l12.722-12.722-13.19-13.19c-0.468-0.468-0.468-1.249 0-1.717z"></path>
+        </symbol>
+    </svg>
+    <div class="demo">
+        <nav class="pagination" aria-labelledby="pagination-heading" role="navigation">
+            <span aria-live="polite" role="status">
+                <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
+            </span>
+            <a aria-disabled="true" class="pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
+                <svg aria-labelledby="pagination-previous-title" role="img">
+                    <title id="pagination-previous-title">Previous Page</title>
+                    <use xlink:href="#svg-icon-chevron-light-left"></use>
+                </svg>
+            </a>
+            <ol class="pagination__list">
+                <li>
+                    <a aria-current="page" href="http://www.ebay.com/sch/i.html?_nkw=guitars" class="pagination__item">1</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2" class="pagination__item">2</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3" class="pagination__item">3</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=4" class="pagination__item">4</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=5" class="pagination__item">5</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=6" class="pagination__item">6</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=7" class="pagination__item">7</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=8" class="pagination__item">8</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=9" class="pagination__item">9</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=10" class="pagination__item">10</a>
+                </li>
+            </ol>
+            <a class="pagination__next" href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2">
+                <svg aria-labelledby="pagination-next-title" role="img">
+                    <title id="pagination-next-title">Next Page</title>
+                    <use xlink:href="#svg-icon-chevron-light-right"></use>
+                </svg>
+            </a>
+        </nav>
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">aria-labelledby=</span><span class="s">"pagination-heading"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">aria-live=</span><span class="s">"polite"</span> <span class="na">role=</span><span class="s">"status"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"clipped"</span> <span class="na">id=</span><span class="s">"pagination-heading"</span><span class="nt">&gt;</span>Results Pagination - Page 1<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">aria-disabled=</span><span class="s">"true"</span> <span class="na">class=</span><span class="s">"pagination__previous"</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;svg</span> <span class="na">aria-labelledby=</span><span class="s">"pagination-previous-title"</span> <span class="na">role=</span><span class="s">"img"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;title</span> <span class="na">id=</span><span class="s">"pagination-previous-title"</span><span class="nt">&gt;</span>Previous Page<span class="nt">&lt;/title&gt;</span>
+            <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#svg-icon-chevron-light-left"</span><span class="nt">&gt;&lt;/use&gt;</span>
+        <span class="nt">&lt;/svg&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"pagination__list"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">aria-current=</span><span class="s">"page"</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars"</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars&amp;_pgn=2"</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars&amp;_pgn=3"</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        ...
+    <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"pagination__next"</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars&amp;_pgn=2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;svg</span> <span class="na">aria-labelledby=</span><span class="s">"pagination-next-title"</span> <span class="na">role=</span><span class="s">"img"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;title</span> <span class="na">id=</span><span class="s">"pagination-next-title"</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/title&gt;</span>
+            <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#svg-icon-chevron-light-right"</span><span class="nt">&gt;&lt;/use&gt;</span>
+        <span class="nt">&lt;/svg&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+    </code></pre></figure>
+    <p><strong>NOTE:</strong> The heading need only be wrapped in an ARIA live-region if client-side pagination is implemented (i.e. partial page updates).</p>
+
+    <h3 id="pagination-fluid">Fluid Pagination</h3>
+    <p>Apply the <span class="highlight">pagination__list--fluid</span> modifier class to fill all available horizontal space. Horizontal space will be distributed around each pagination item as necessary.</p>
+
+    <div class="demo">
+        <nav class="pagination" aria-labelledby="pagination-heading" role="navigation">
+            <span aria-live="polite" role="status">
+                <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
+            </span>
+            <a aria-disabled="true" class="pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
+                <svg aria-labelledby="pagination-previous-title" role="img">
+                    <title id="pagination-previous-title">Previous Page</title>
+                    <use xlink:href="#svg-icon-chevron-light-left"></use>
+                </svg>
+            </a>
+            <ol class="pagination__list pagination__list--fluid">
+                <li>
+                    <a aria-current="page" href="http://www.ebay.com/sch/i.html?_nkw=guitars" class="pagination__item">1</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2" class="pagination__item">2</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3" class="pagination__item">3</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=4" class="pagination__item">4</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=5" class="pagination__item">5</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=6" class="pagination__item">6</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=7" class="pagination__item">7</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=8" class="pagination__item">8</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=9" class="pagination__item">9</a>
+                </li>
+                <li>
+                    <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=10" class="pagination__item">10</a>
+                </li>
+            </ol>
+            <a class="pagination__next" href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2">
+                <svg aria-labelledby="svg-icon-chevron-light-right-title" role="img">
+                    <title id="svg-icon-chevron-light-right-title">Next Page</title>
+                    <use xlink:href="#svg-icon-chevron-light-right"></use>
+                </svg>
+            </a>
+        </nav>
+    </div>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">aria-labelledby=</span><span class="s">"pagination-heading"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">aria-live=</span><span class="s">"polite"</span> <span class="na">role=</span><span class="s">"status"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"clipped"</span> <span class="na">id=</span><span class="s">"pagination-heading"</span><span class="nt">&gt;</span>Results Pagination - Page 1<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">aria-disabled=</span><span class="s">"true"</span> <span class="na">class=</span><span class="s">"pagination__previous"</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;svg</span> <span class="na">aria-labelledby=</span><span class="s">"pagination-previous-title"</span> <span class="na">role=</span><span class="s">"img"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;title</span> <span class="na">id=</span><span class="s">"pagination-previous-title"</span><span class="nt">&gt;</span>Previous Page<span class="nt">&lt;/title&gt;</span>
+            <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#svg-icon-chevron-light-left"</span><span class="nt">&gt;&lt;/use&gt;</span>
+        <span class="nt">&lt;/svg&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"pagination__list pagination__list--fluid"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">aria-current=</span><span class="s">"page"</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars"</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars&amp;_pgn=2"</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars&amp;_pgn=3"</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        ...
+    <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"pagination__next"</span> <span class="na">href=</span><span class="s">"http://www.ebay.com/sch/i.html?_nkw=guitars&amp;_pgn=2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;svg</span> <span class="na">aria-labelledby=</span><span class="s">"pagination-next-title"</span> <span class="na">role=</span><span class="s">"img"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;title</span> <span class="na">id=</span><span class="s">"pagination-next-title"</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/title&gt;</span>
+            <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#svg-icon-chevron-light-right"</span><span class="nt">&gt;&lt;/use&gt;</span>
+        <span class="nt">&lt;/svg&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+    </code></pre></figure>
+
+    <h3 id="pagination-svg">Pagination SVG</h3>
+    <p>Pagination requires the following inline SVG symbols:</p>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;svg</span> <span class="na">hidden</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;symbol</span> <span class="na">id=</span><span class="s">"svg-icon-chevron-light-left"</span> <span class="na">viewBox=</span><span class="s">"0 0 24 32"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M28.176 1.327c-0.468-0.468-1.249-0.468-1.717 0l-14.049 14.049c-0.234 0.234-0.39 0.546-0.39 0.859s0.156 0.624 0.39 0.859l13.581 13.581c0.234 0.234 0.546 0.39 0.859 0.39s0.624-0.156 0.859-0.39c0.468-0.468 0.468-1.249 0-1.717l-12.722-12.722 13.19-13.19c0.468-0.468 0.468-1.249 0-1.717z"</span><span class="nt">&gt;&lt;/path&gt;</span>
+    <span class="nt">&lt;/symbol&gt;</span>
+    <span class="nt">&lt;symbol</span> <span class="na">id=</span><span class="s">"svg-icon-chevron-light-right"</span> <span class="na">viewBox=</span><span class="s">"0 0 24 32"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M12.41 1.327c0.468-0.468 1.249-0.468 1.717 0l14.049 14.049c0.234 0.234 0.39 0.546 0.39 0.859s-0.156 0.624-0.39 0.859l-13.581 13.581c-0.234 0.234-0.546 0.39-0.859 0.39s-0.624-0.156-0.859-0.39c-0.468-0.468-0.468-1.249 0-1.717l12.722-12.722-13.19-13.19c-0.468-0.468-0.468-1.249 0-1.717z"</span><span class="nt">&gt;&lt;/path&gt;</span>
+    <span class="nt">&lt;/symbol&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+    </code></pre></figure>
+
 </section>
 
 <section id="radio" aria-labelledby="radio_heading">
@@ -4199,7 +4397,7 @@
     </code></pre></figure>
     <p><strong>TIP</strong>: If you'd prefer to create your tabs from a list of anchors (i.e. progressive enhancement) instead of divs, please see the 'Hijax Tabs' at the end of this section.</p>
 
-    <h3>Faux Tabs</h3>
+    <h3 id="tabs-faux">Faux Tabs</h3>
     <p>If you only wish to create a set of links that are styled visually like tabs, with no additional behaviour, please use a simple list of links. No ARIA is required.</p>
     <p>The <span class="highlight">tabs--faux</span> modifier class must be applied. The <span class="highlight">tabs__selected</span> class is used to visually denote the current tab; <span class="highlight">clipped</span> text is used to denote it aurally.</p>
 
@@ -4207,7 +4405,7 @@
         <div class="tabs tabs--faux">
             <ul>
                 <li class="tabs__selected">
-                    <a href="#">Page 1<span class="clipped"> - selected</span></a>
+                    <a href="#">Page 1<span class="clipped"> - Current Page</span></a>
                 </li>
                 <li>
                     <a href="http://www.ebay.com">Page 2</a>
@@ -4224,7 +4422,7 @@
     <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tabs tabs--faux"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabs__selected"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Page 1<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"clipped"</span><span class="nt">&gt;</span> - selected<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Page 1<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"clipped"</span><span class="nt">&gt;</span> - Current Page<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ebay.com"</span><span class="nt">&gt;</span>Page 2<span class="nt">&lt;/a&gt;</span>

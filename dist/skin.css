@@ -1,5 +1,5 @@
 /*!
-Skin v2.8.0
+Skin v2.8.1
 Copyright 2017 eBay! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/eBay/skin/blob/master/LICENSE.txt"
@@ -2105,18 +2105,20 @@ span.menu {
 }
 span.menu--grow div[role="menu"],
 span.menu--grow-reverse div[role="menu"] {
-  min-width: calc(130%);
+  min-width: calc(100%);
+  width: auto;
+  max-width: calc(150%);
 }
 span.menu--grow div[role^="menuitem"],
 span.menu--grow-reverse div[role^="menuitem"] {
-  white-space: normal;
+  white-space: nowrap;
 }
 span.menu--grow div[aria-checked="true"]::before,
 span.menu--grow-reverse div[aria-checked="true"]::before {
   margin-left: 0.5rem;
 }
 span.menu--grow-reverse div[role="menu"] {
-  left: -30%;
+  right: 0;
 }
 .menu--wrap div[role^="menuitem"] {
   white-space: normal;
@@ -2835,6 +2837,91 @@ a:not([href^="javascript"]).tile.tile--visit:visited {
 button.tile {
   background-color: transparent;
   padding: 0;
+}
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px 0;
+}
+.pagination svg {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 0;
+  width: 1em;
+}
+.pagination__list {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* csslint ignore:start */
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  /* csslint ignore:end */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.pagination__next,
+.pagination__previous {
+  color: #555555;
+  padding: 8px 8px 8px 0;
+}
+.pagination__next:visited,
+.pagination__previous:visited {
+  color: #555555;
+}
+.pagination__next:focus,
+.pagination__previous:focus,
+.pagination__next:hover,
+.pagination__previous:hover {
+  color: rgba(153, 153, 153, 0.9);
+}
+.pagination__next[aria-disabled="true"],
+.pagination__previous[aria-disabled="true"] {
+  color: #cccccc;
+}
+.pagination__next:not([aria-disabled="true"]):focus,
+.pagination__previous:not([aria-disabled="true"]):focus,
+.pagination__next:not([aria-disabled="true"]):hover,
+.pagination__previous:not([aria-disabled="true"]):hover {
+  color: rgba(153, 153, 153, 0.9);
+}
+.pagination__next svg,
+.pagination__previous svg {
+  width: 1.2685546875em;
+}
+.pagination__item:first-child {
+  margin-left: 8px;
+}
+.pagination__item:last-child {
+  margin-right: 8px;
+}
+.pagination__item {
+  display: inline-block;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+.pagination__item:focus,
+.pagination__item:hover {
+  text-decoration: underline;
+}
+.pagination__item[aria-current="page"] {
+  background-color: #eeeeee;
+  color: #333333;
+  font-weight: 500;
+  line-height: 16px;
+}
+a.pagination__item {
+  color: #555555;
+}
+.pagination__list--fluid {
+  width: 100%;
+}
+[hidden] {
+  display: none;
 }
 .skin-large h1 {
   font-weight: 200;
