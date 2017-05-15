@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Icon Button</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
+        <link rel="stylesheet" type="text/css" href="../static/test.css">
+        <script src="../static/test.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Icon Button</h1>
+        </header>
+        <div role="main">
+
+            <h2>font-icon</h2>
+            <div class="test">
+                <button type="button" class="icon-btn">
+                    <span aria-label="menu" class="icon icon--menu" role="img"></span>
+                </button>
+                <a class="icon-btn" href="http://www.ebay.com">
+                    <span aria-label="Menu" class="icon icon--menu" role="img"></span>
+                </a>
+                <button type="button" class="icon-btn">
+                    <span aria-label="information" class="icon icon--information" role="img"></span>
+                </button>
+                <a class="icon-btn" href="http://www.ebay.com">
+                    <span aria-label="information" class="icon icon--information" role="img"></span>
+                </a>
+            </div>
+
+            <h2>svg-icon</h2>
+            <div class="test">
+                <button type="button" class="icon-btn">
+                    <svg aria-label="menu" role="img"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-menu"></use></svg>
+                </button>
+                <a class="icon-btn" href="http://www.ebay.com">
+                    <svg><title>Menu</title><use xlink:href="../../dist/icons-ds4.svg#svg-icon-menu"></use></svg>
+                </a>
+                <button type="button" class="icon-btn">
+                    <svg aria-label="information" role="img"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-information"></use></svg>
+                </button>
+                <a class="icon-btn" href="http://www.ebay.com">
+                    <svg><title>information</title><use xlink:href="../../dist/icons-ds4.svg#svg-icon-information"></use></svg>
+                </a>
+            </div>
+
+            <h2>font-icon, Disabled</h2>
+            <div class="test">
+                <button type="button" class="icon-btn" aria-label="menu" disabled>
+                    <span aria-hidden="true" class="icon icon--menu"></span>
+                </button>
+                <a class="icon-btn">
+                    <span aria-label="Menu" class="icon icon--menu" role="img"></span>
+                </a>
+                <button type="button" class="icon-btn" aria-label="information" disabled>
+                    <span aria-hidden="true" class="icon icon--information"></span>
+                </button>
+                <a class="icon-btn">
+                    <span aria-label="information" class="icon icon--information" role="img"></span>
+                </a>
+            </div>
+
+            <h2>svg-icon, Disabled</h2>
+            <div class="test">
+                <button type="button" class="icon-btn" aria-label="menu" disabled>
+                    <svg><use xlink:href="../../dist/icons-ds4.svg#svg-icon-menu"></use></svg>
+                </button>
+                <a class="icon-btn">
+                    <svg><use xlink:href="../../dist/icons-ds4.svg#svg-icon-menu"></use></svg>
+                </a>
+                <button type="button" class="icon-btn" aria-label="information" disabled>
+                    <svg><use xlink:href="../../dist/icons-ds4.svg#svg-icon-information"></use></svg>
+                </button>
+                <a class="icon-btn">
+                    <svg><use xlink:href="../../dist/icons-ds4.svg#svg-icon-information"></use></svg>
+                </a>
+            </div>
+
+            <h2>font-icon, Partially Disabled</h2>
+            <div class="test">
+                <button type="button" class="icon-btn" aria-label="menu" aria-disabled="true">
+                    <span aria-hidden="true" class="icon icon--menu"></span>
+                </button>
+                <a class="icon-btn" href="http://www.ebay.com" aria-disabled="true">
+                    <span aria-label="Menu" class="icon icon--menu" role="img"></span>
+                </a>
+                <button type="button" class="icon-btn" aria-label="information" aria-disabled="true">
+                    <span aria-hidden="true" class="icon icon--information"></span>
+                </button>
+                <a class="icon-btn" href="http://www.ebay.com" aria-disabled="true">
+                    <span aria-label="information" class="icon icon--information" role="img"></span>
+                </a>
+            </div>
+
+            <h2>svg-icon, Partially Disabled</h2>
+            <div class="test">
+                <button type="button" class="icon-btn" aria-label="menu" aria-disabled="true">
+                    <svg><use xlink:href="../../dist/icons-ds4.svg#svg-icon-menu"></use></svg>
+                </button>
+                <a class="icon-btn" href="http://www.ebay.com" aria-disabled="true">
+                    <svg><use xlink:href="../../dist/icons-ds4.svg#svg-icon-menu"></use></svg>
+                </a>
+                <button type="button" class="icon-btn" aria-label="information" aria-disabled="true">
+                    <svg><use xlink:href="../../dist/icons-ds4.svg#svg-icon-information"></use></svg>
+                </button>
+                <a class="icon-btn" href="http://www.ebay.com" aria-disabled="true">
+                    <svg><use xlink:href="../../dist/icons-ds4.svg#svg-icon-information"></use></svg>
+                </a>
+            </div>
+
+        </div>
+    </body>
+</html>

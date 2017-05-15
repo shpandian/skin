@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Button - Icon</title>
+        <title>Button - Text + Icon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../dist/skin.css">
         <link rel="stylesheet" type="text/css" href="../static/test.css">
@@ -10,92 +10,316 @@
     </head>
     <body>
         <header>
-            <h1>Button - Icon</h1>
+            <h1>Button - Text + Icon</h1>
         </header>
         <div role="main">
 
-            <h2>Critical icon</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn btn--states icon-menu" aria-label="menu"></button>
-                <a class="btn btn--states icon-menu" href="http://www.ebay.com" aria-label="menu"></a>
+            <h2>Non-critical font-icon</h2>
+            <div class="test">
+                <button type="button" class="btn">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn" href="http://www.ebay.com">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
             </div>
 
-            <h2>Critical icon, Disabled</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-menu" aria-label="menu" disabled></button>
-                <a class="btn icon-menu" aria-label="menu"></a>
+            <h2>Non-critical svg-icon</h2>
+            <div class="test">
+                <button type="button" class="btn">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn" href="http://www.ebay.com">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
             </div>
 
-            <h2>Critical icon, Partially Disabled</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-menu" aria-label="menu" aria-disabled="true"></button>
-                <a class="btn icon-menu" href="http://www.ebay.com" aria-label="menu" aria-disabled="true"></a>
+            <h2>Non-critical font-icon, Primary</h2>
+            <div class="test">
+                <button type="button" class="btn btn--primary">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn btn--primary" href="http://www.ebay.com">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
             </div>
 
-            <h2>Non-critical icon</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close">Button</button>
-                <a class="btn icon-close" href="http://www.ebay.com">Anchor</a>
+            <h2>Non-critical svg-icon, Primary</h2>
+            <div class="test">
+                <button type="button" class="btn btn--primary">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn btn--primary" href="http://www.ebay.com">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
             </div>
 
-            <h2>Non-critical icon, Primary</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close btn--primary">Button</button>
-                <a class="btn icon-close btn--primary" href="http://www.ebay.com">Anchor</a>
+            <h2>Non-critical font-icon, Secondary</h2>
+            <div class="test">
+                <button type="button" class="btn btn--secondary">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn btn--secondary" href="http://www.ebay.com">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
             </div>
 
-            <h2>Non-critical icon, Secondary</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close btn--secondary">Button</button>
-                <a class="btn icon-close btn--secondary" href="http://www.ebay.com">Anchor</a>
+            <h2>Non-critical svg-icon, Secondary</h2>
+            <div class="test">
+                <button type="button" class="btn btn--secondary">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn btn--secondary" href="http://www.ebay.com">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
             </div>
 
-            <h2>Non-critical icon, Disabled</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close" disabled>Button</button>
-                <a class="btn icon-close">Anchor</a>
+            <h2>Non-critical font-icon, Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn" disabled>
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
             </div>
 
-            <h2>Non-critical icon, Partially Disabled</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close" aria-disabled="true">Button</button>
-                <a class="btn icon-close" href="http://www.ebay.com" aria-disabled="true">Anchor</a>
+            <h2>Non-critical svg-icon, Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn" disabled>
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
             </div>
 
-            <h2>Non-critical icon, Primary, Disabled</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close btn--primary" disabled>Button</button>
-                <a class="btn icon-close btn--primary">Anchor</a>
+            <h2>Non-critical font-icon, Partially Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn" aria-disabled="true">
+                    <span class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn" href="http://www.ebay.com" aria-disabled="true">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
             </div>
 
-            <h2>Non-critical icon, Primary, Partially Disabled</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close btn--primary" aria-disabled="true">Button</button>
-                <a class="btn icon-close btn--primary" href="http://www.ebay.com" aria-disabled="true">Anchor</a>
+            <h2>Non-critical svg-icon, Partially Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn" aria-disabled="true">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn" href="http://www.ebay.com" aria-disabled="true">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
             </div>
 
-            <h2>Non-critical icon, Secondary, Disabled</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close btn--secondary" disabled>Button</button>
-                <a class="btn icon-close btn--secondary">Anchor</a>
+            <h2>Non-critical font-icon, Primary, Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--primary" disabled>
+                    <span class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn btn--primary">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
             </div>
 
-            <h2>Non-critical icon, Secondary, Partially Disabled</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn icon-close btn--secondary" aria-disabled="true">Button</button>
-                <a class="btn icon-close btn--secondary" href="http://www.ebay.com" aria-disabled="true">Anchor</a>
+            <h2>Non-critical svg-icon, Primary, Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--primary" disabled>
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn btn--primary">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
             </div>
 
-            <h2>Non-critical icon small</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn btn--small icon-close">Button</button>
-                <a class="btn btn--small icon-close " href="http://www.ebay.com">Anchor</a>
+            <h2>Non-critical font-icon, Primary, Partially Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--primary" aria-disabled="true">
+                    <span class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn btn--primary" href="http://www.ebay.com" aria-disabled="true">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
             </div>
 
-            <h2>Non-critical icon large</h2>
-            <div class="test children-middle">
-                <button type="button" class="btn btn--large icon-close">Button</button>
-                <a class="btn btn--large icon-close " href="http://www.ebay.com">Anchor</a>
+            <h2>Non-critical svg-icon, Primary, Partially Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--primary" aria-disabled="true">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn btn--primary" href="http://www.ebay.com" aria-disabled="true">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
+            </div>
+
+            <h2>Non-critical font-icon, Secondary, Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--secondary" disabled>
+                    <span class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn btn--secondary">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
+            </div>
+
+            <h2>Non-critical svg-icon, Secondary, Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--secondary" disabled>
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn btn--secondary">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
+            </div>
+
+            <h2>Non-critical font-icon, Secondary, Partially Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--secondary" aria-disabled="true">
+                    <span class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn btn--secondary" href="http://www.ebay.com" aria-disabled="true">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
+            </div>
+
+            <h2>Non-critical svg-icon, Primary, Partially Disabled</h2>
+            <div class="test">
+                <button type="button" class="btn btn--secondary" aria-disabled="true">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn btn--secondary" href="http://www.ebay.com" aria-disabled="true">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
+            </div>
+
+            <h2>Non-critical font-icon small</h2>
+            <div class="test">
+                <button type="button" class="btn btn--small">
+                    <span class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn btn--small" href="http://www.ebay.com">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
+            </div>
+
+            <h2>Non-critical svg-icon small</h2>
+            <div class="test">
+                <button type="button" class="btn btn--small">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn btn--small" href="http://www.ebay.com">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
+            </div>
+
+            <h2>Non-critical font-icon large</h2>
+            <div class="test">
+                <button type="button" class="btn btn--large">
+                    <span class="icon icon--close"></span>
+                    <span>Button</span>
+                </button>
+                <a class="btn btn--large" href="http://www.ebay.com">
+                    <span aria-hidden="true" class="icon icon--close"></span>
+                    <span>Anchor</span>
+                </a>
+            </div>
+
+            <h2>Non-critical svg-icon large</h2>
+            <div class="test">
+                <button type="button" class="btn btn--large">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Button</span>
+                    </span>
+                </button>
+                <a class="btn btn--large" href="http://www.ebay.com">
+                    <span class="btn__cell">
+                        <svg class="btn__icon"><use xlink:href="../../dist/icons-ds4.svg#svg-icon-close"></use></svg>
+                        <span>Anchor</span>
+                    </span>
+                </a>
             </div>
 
         </div>

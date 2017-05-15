@@ -30,25 +30,17 @@
 
             <h2>Icon Font</h2>
             <div class="test">
-                <span class="textbox textbox--icon-start">
-                    <span aria-hidden="true" class="textbox__icon icon-mail"></span>
+                <span class="textbox">
+                    <span aria-hidden="true" class="textbox__icon icon icon--mail"></span>
                     <input class="textbox__control" type="text" placeholder="placeholder text" />
                 </span>
             </div>
 
-            <!-- SVG Symbol Definition -->
-            <svg style="display: none;">
-                <symbol id="mail-icon" viewBox="0 0 36 24">
-                    <path d="M35.98 5.776c0-0.078 0-0.078 0-0.156s-0.078-0.078-0.078-0.156c0 0 0 0 0-0.078 0 0 0 0 0 0 0-0.078-0.078-0.078-0.156-0.078 0 0-0.078-0.078-0.078-0.078-0.078 0-0.078 0-0.156-0.078-0.078 0-0.078 0-0.156 0 0 0 0 0-0.078 0h-29.971c0 0 0 0-0.078 0s-0.078 0-0.156 0-0.078 0-0.156 0.078c-0.078 0-0.078 0.078-0.078 0.078-0.078 0-0.078 0.078-0.156 0.078 0 0 0 0 0 0 0 0.078 0 0.078 0 0.078 0 0.078-0.078 0.078-0.078 0.156s0 0.078 0 0.156c0 0 0 0.078 0 0.078v20.215c0 0.39 0.312 0.78 0.78 0.78h29.971c0.39 0 0.781-0.312 0.781-0.78v-20.215c-0.078 0-0.078 0-0.156-0.078zM20.293 16.937l-12.8-10.302h25.6l-12.8 10.302zM6.088 25.366v-17.873l13.58 10.927c0 0 0.078 0.078 0.156 0.078 0.156 0.078 0.312 0.156 0.468 0.156s0.312-0.078 0.468-0.156l13.737-11.005v17.873h-28.41z"></path>
-                </symbol>
-            </svg>
-
             <h2>Icon SVG</h2>
             <div class="test">
-                <span class="textbox textbox--icon-start">
-                    <svg class="textbox__icon mail-icon" height="12" width="15">
-                        <!-- Use the SVG Symbol -->
-                        <use xlink:href="#mail-icon"></use>
+                <span class="textbox">
+                    <svg class="textbox__icon">
+                        <use xlink:href="../../dist/icons-ds4.svg#svg-icon-mail"></use>
                     </svg>
                     <input class="textbox__control" type="text" placeholder="placeholder text" />
                 </span>

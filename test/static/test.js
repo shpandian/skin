@@ -5,8 +5,6 @@ function createForm(header) {
     var guideLabel = document.createElement('label');
     var skinLargeCheckbox = document.createElement('input');
     var skinLargeLabel = document.createElement('label');
-    var skinLegacyCheckbox = document.createElement('input');
-    var skinLegacyLabel = document.createElement('label');
 
     guideCheckbox.setAttribute('type', 'checkbox');
     guideCheckbox.id = 'skin-guide';
@@ -20,12 +18,6 @@ function createForm(header) {
     skinLargeLabel.innerText = 'skin-large';
     skinLargeLabel.setAttribute('for', 'skin-large');
 
-    skinLegacyCheckbox.setAttribute('type', 'checkbox');
-    skinLegacyCheckbox.id = 'skin-legacy';
-    skinLegacyCheckbox.name = 'skin-legacy';
-    skinLegacyLabel.innerText = 'skin-legacy';
-    skinLegacyLabel.setAttribute('for', 'skin-legacy');
-
     submitButton.setAttribute('type', 'submit');
     submitButton.setAttribute('value', 'Apply');
 
@@ -34,9 +26,6 @@ function createForm(header) {
 
     form.appendChild(skinLargeCheckbox);
     form.appendChild(skinLargeLabel);
-
-    form.appendChild(skinLegacyCheckbox);
-    form.appendChild(skinLegacyLabel);
 
     form.appendChild(submitButton);
     header.appendChild(form);
@@ -68,12 +57,6 @@ window.setTimeout(function() {
         newClassList.push('skin-large');
         h1.innerText += " - skin-large";
         document.getElementById('skin-large').checked = true;
-    }
-
-    if (h1 && queryString.indexOf('skin-legacy=on') != -1 ) {
-        newClassList.push('skin-legacy');
-        h1.innerText += " - skin-legacy";
-        document.getElementById('skin-legacy').checked = true;
     }
 
     if (queryString.indexOf('skin-guide=on') != -1 ) {
