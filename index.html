@@ -8,13 +8,21 @@
         <link type="text/css" rel="stylesheet" href="docs.css"/>
     </head>
     <body>
+        <script>
+            if (document.body.clientWidth > 600) {
+                document.body.classList.add('skin-large');
+            }
+        </script>
         <!-- header_small visible to small screens only -->
         <header id="header_small">
             <div class="menu menu--faux" id="faux_menu">
-                <button class="btn btn--fluid" type="button" aria-expanded="false">
-                    <h1>
+                <button class="btn btn--large menu__btn btn--fluid" type="button" aria-expanded="false">
+                    <h1 class="btn__cell">
                         <span role="img" aria-label="eBay"></span>
                         <span>Skin</span>
+                        <svg aria-hidden="true" class="btn__icon menu__icon" focusable="false">
+                            <use xlink:href="#svg-icon-arrow-down"></use>
+                        </svg>
                     </h1>
                 </button>
                 <ul>
@@ -54,7 +62,7 @@
             </div>
         </header>
         <!-- header_large visible to large screens only -->
-        <header id="header_large">
+        <header id="header_large" hidden>
             <h1>
                 <a href="#">
                     <span role="img" aria-label="eBay"></span>
@@ -4083,7 +4091,7 @@
     <p>Use the <span class="highlight">page-notice--priority</span>, <span class="highlight">page-notice--confirmation</span>, or <span class="highlight">page-notice--information</span> block modifiers depending on the relevant status.</p>
     <p>By default, the text will vertically align to the <em>top</em> of the status icon. To vertically align text with the <em>middle</em> of status icon, use the <span class="highlight">.page-notice__cell--align-middle</span> element modifier. This modifier is appropriate for short, single-line notices.</p>
 
-    <div class="demo skin-large">
+    <div class="demo">
         <section aria-labelledby="error-status" class="page-notice page-notice--priority" role="region" style="margin-top: 0">
             <h4 aria-label="Error notice" class="page-notice__status" id="error-status">
                 <svg aria-hidden="true" focusable="false">
@@ -4152,7 +4160,7 @@
     <h4>Dismissable Page Notice</h4>
     <p>Append a <span class="highlight">page-notice__close</span> button to create a dismissable page notice.</p>
 
-    <div class="demo skin-large">
+    <div class="demo">
         <section aria-labelledby="information-status" class="page-notice page-notice--information" role="region" style="margin: 0;">
             <h5 aria-label="Information notice" class="page-notice__status" id="information-status">
                 <svg aria-hidden="true" focusable="false">
@@ -4191,7 +4199,7 @@
     <p>Use an anchor or button tag to create a 'call-to-action' page notice tile.</p>
     <p><strong>IMPORTANT</strong>: A call-to-action can only have <strong>one</strong> action, i.e. a link or button tag cannot contain any nested links or buttons.
 
-    <div class="demo skin-large">
+    <div class="demo">
         <span aria-labelledby="confirmation-notice" role="region">
             <a href="http://www.ebay.com" class="page-notice page-notice--confirmation page-notice--fluid">
                 <h5 aria-label="Confirmation notice" class="page-notice__status" id="confirmation-status">
@@ -4229,7 +4237,7 @@
     <h3 id="inline-notice">Inline Notice</h3>
     <p>An inline-level notice is typically located near a form field or user interface control.</p>
     <p>Use the <span class="highlight">inline-notice--priority</span>, <span class="highlight">inline-notice--confirmation</span>, or <span class="highlight">inline-notice--information</span> modifier classes depending on the required status level.</p>
-    <div class="demo skin-large">
+    <div class="demo">
         <div class="inline-notice inline-notice--priority" style="margin-top: 0">
             <span aria-label="Priority" class="inline-notice__status" role="img">
                 <svg aria-hidden="true" focusable="false">
@@ -4300,7 +4308,7 @@
     <p>Flyout notices are absolutely positioned by default. The flyout will be positioned relatively to the nearest ancestor with <span class="highlight">position:relative</span>.</p>
     <p>The flyout pointer can be positioned using any one of the following elements: <span class="highlight">flyout-notice__pointer-top-left</span>, <span class="highlight">flyout-notice__pointer-top-center</span>, <span class="highlight">flyout-notice__pointer-top-right</span>, <span class="highlight">flyout-notice__pointer-bottom-right</span>, <span class="highlight">flyout-notice__pointer-bottom-center</span>, <span class="highlight">flyout-notice__pointer-bottom-left</span>, <span class="highlight">flyout-notice__pointer-left</span> or <span class="highlight">flyout-notice__pointer-right</span>.</p>
 
-    <div class="demo skin-large">
+    <div class="demo">
         <div style="height:80px">
             <div class="flyout-notice flyout-notice--priority">
                 <span class="flyout-notice__cell">
@@ -4382,7 +4390,7 @@
     <h4>Tooltip <sup class="beta">BETA</sup></h4>
     <p>A flyout-notice can be used as the overlay of a <a href="https://ebay.gitbooks.io/mindpatterns/content/disclosure/tooltip.html">Tooltip</a> pattern.</p>
     <p>Apply modifier class <span class="highlight">tooltip--expanded</span> to the widget to display the overlay.</p>
-    <div class="demo skin-large">
+    <div class="demo">
         <span class="tooltip">
             <button accesskey="s" aria-label="Settings" onclick="notice('You clicked settings. Good for you.');" class="tooltip__host icon-btn" aria-describedby="tooltip-0">
                 <svg aria-hidden="true" class="svg-icon" focusable="false">
@@ -4420,7 +4428,7 @@
     <h4>Bubble-Help <sup class="beta">BETA</sup></h4>
     <p>A flyout-notice can be used as the overlay of a <a href="https://ebay.gitbooks.io/mindpatterns/content/disclosure/bubblehelp.html">Bubble Help</a> pattern.</p>
     <p>Apply an <span class="highlight">aria-expanded</span> state of true to the help button to display the overlay.</p>
-    <div class="demo skin-large">
+    <div class="demo">
         <span class="bubblehelp">
             <button aria-label="Help" class="icon-btn bubblehelp__host" type="button" aria-expanded="false">
                 <svg aria-hidden="true" class="svg-icon" focusable="false">
