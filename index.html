@@ -14,8 +14,8 @@
             }
         </script>
         <!-- header_small visible to small screens only -->
-        <header id="header_small">
-            <div class="menu menu--faux" id="faux_menu">
+        <header class="banner" id="header-small" role="banner">
+            <div class="menu menu--faux" id="faux-menu">
                 <button class="btn btn--large menu__btn btn--fluid" type="button" aria-expanded="false">
                     <h1 class="btn__cell">
                         <span role="img" aria-label="eBay"></span>
@@ -62,51 +62,59 @@
             </div>
         </header>
         <!-- header_large visible to large screens only -->
-        <header id="header_large" hidden>
+        <header class="banner" id="header-large" hidden role="banner">
             <h1>
                 <a href="#">
                     <span role="img" aria-label="eBay"></span>
                     <span>Skin</span>
                 </a>
             </h1>
-            <nav aria-labelledby="modules_heading" role="navigation">
-                <h2 id="start_heading">Getting Started</h2>
-                <ul>
-                    <li><a href="#install">Install</a></li>
-                    <li><a href="#bundles">Bundles</a></li>
-                    <li><a href="#adapters">Adapters</a></li>
-                    <li><a href="#svg">SVG</a></li>
-                </ul>
-                <h2 id="fonts_heading">Fonts</h2>
-                <ul>
-                    <li><a href="#iconfont">Icon Font</a></li>
-                    <li><a href="#marketsans">Market Sans</a></li>
-                </ul>
-                <h2 id="modules_heading">Components</h2>
-                <ul>
-                    <li><a href="#button">Button</a></li>
-                    <li><a href="#card">Card</a></li>
-                    <li><a href="#checkbox">Checkbox</a></li>
-                    <li><a href="#dialog">Dialog</a></li>
-                    <li><a href="#icon">Icon</a></li>
-                    <li><a href="#iconbutton">Icon Button</a></li>
-                    <li><a href="#field">Field <sup class="beta">BETA</sup></a></li>
-                    <li><a href="#global">Global</a></li>
-                    <li><a href="#grid">Grid</a></li>
-                    <li><a href="#less">Less</a></li>
-                    <li><a href="#listbox">Listbox</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#normalize">Normalize</a></li>
-                    <li><a href="#notice">Notice</a></li>
-                    <li><a href="#pagination">Pagination <sup class="beta">BETA</sup></a></li>
-                    <li><a href="#radio">Radio</a></li>
-                    <li><a href="#spinner">Spinner</a></li>
-                    <li><a href="#switch">Switch</a></li>
-                    <li><a href="#tab">Tab</a></li>
-                    <li><a href="#textbox">Textbox</a></li>
-                    <li><a href="#tile">Tile</a></li>
-                    <li><a href="#utility">Utility</a></li>
-                </ul>
+            <nav role="navigation">
+                <h2 id="start-heading">Getting Started</h2>
+                <div>
+                    <ul>
+                        <li class="grid__cell grid__cell--one-half"><a href="#install">Install</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#bundles">Bundles</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#adapters">Adapters</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#svg">SVG</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="fonts-heading">Fonts</h2>
+                <div>
+                    <ul>
+                        <li class="grid__cell grid__cell--one-half"><a href="#iconfont">Icon Font</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#marketsans">Market Sans</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="modules-heading">Components</h2>
+                <div>
+                    <ul>
+                        <li class="grid__cell grid__cell--one-half"><a href="#button">Button</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#card">Card</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#checkbox">Checkbox</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#dialog">Dialog</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#icon">Icon</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#iconbutton">Icon Button</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#field">Field</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#global">Global</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#grid">Grid</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#less">Less</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#listbox">Listbox</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#menu">Menu</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#normalize">Normalize</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#notice">Notice</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#pagination">Pagination</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#radio">Radio</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#spinner">Spinner</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#switch">Switch</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#tab">Tab</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#textbox">Textbox</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#tile">Tile</a></li>
+                        <li class="grid__cell grid__cell--one-half"><a href="#utility">Utility</a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
         <div>
@@ -189,7 +197,7 @@
     </span></code></pre></figure>
 
     <p>Skin provides the following modules:</p>
-    <ul class="skin-module-list"></a>
+    <ul class="cols cols--two" id="module-list"></a>
         <li>skin-ebay/alert</li>
         <li>skin-ebay/button</li>
         <li>skin-ebay/card</li>
@@ -2279,15 +2287,15 @@
 	<div class="grid">
 		<div class="grid__group grid__group--no-gutters grid__group--wrap">
 			<div class="grid__cell grid__cell--one-third">
-				<h3 class="body1">For all Screens</h3>
+				<h3>For all Screens</h3>
 				<p>By using our grid system pages can be made to adapt to any screen size. It uses media queries in order to change the layout. However, builds will be included for <em>both adaptive and responsive use cases</em>.</p>
 			</div>
 			<div class="grid__cell grid__cell--one-third">
-				<h3 class="body1">Consistent Design</h3>
+				<h3>Consistent Design</h3>
 				<p>The large and medium grid layouts are based on fractions of sixteen; the small grid is fractions of eight. Each grid cell has a percentage width with fixed "gutters". Having fixed spacing allows for consistent rhythm in our vertical and horizontal spacing.</p>
 			</div>
 			<div class="grid__cell grid__cell--one-third">
-				<h3 class="body1">Customizable</h3>
+				<h3>Customizable</h3>
 				<p>Currently the maximum width of a layout is 1280 pixels, but this system can easily be customized to fit all needs.</p>
 			</div>
 		</div>
@@ -3084,7 +3092,7 @@
 
     <h3>Core Icons</h3>
     <div class="demo">
-        <ul id="icon" class="icons">
+        <ul id="icons-core" class="icon-list cols cols--two">
             <li>
                 <span class="icon icon--menu"></span>
             </li>
@@ -3183,7 +3191,7 @@
 
     <h3>Null Icons</h3>
     <div class="demo">
-        <ul class="icons">
+        <ul id="icons-null" class="icon-list cols cols--two">
             <li>
                 <span class="icon icon--cart-null"></span>
             </li>
@@ -3216,7 +3224,7 @@
 
     <h3>Editing Icons</h3>
     <div class="demo">
-        <ul id="icon-editing" class="icons">
+        <ul id="icon-editing" class="icon-list cols cols--two">
             <li>
                 <span class="icon icon--bold"></span>
             </li>
@@ -3264,7 +3272,7 @@
 
     <h3>Selling Icons</h3>
     <div class="demo">
-        <ul id="icon-selling" class="icons">
+        <ul id="icon-selling" class="icon-list cols cols--two">
             <li><span class="icon icon--requested-total"></span></li>
             <li><span class="icon icon--relisted"></span></li>
             <li><span class="icon icon--second-chance"></span></li>
@@ -3284,7 +3292,7 @@
 
     <h3>Misc Icons</h3>
     <div class="demo">
-        <ul id="icon-misc" class="icons">
+        <ul id="icon-misc" class="icon-list cols cols--two">
             <li>
                 <span class="icon icon--chevron-up-disabled"></span>
             </li>
@@ -5120,7 +5128,7 @@
     <p>Our utility module is <strong>not</strong> intended as a <em>general-purpose</em> library of utility classes (i.e. it is not <a href="https://funcssion.com">Funcssion</a>!).</p>
     <p>Utility is included with the <a href="#core">core bundle</a>.</p>
 
-    <table class="table-stripe cntContainer skin-table-atoms">
+    <table class="table-stripe">
         <caption class="clipped">Utility Classes</caption>
         <thead>
             <tr>
