@@ -14,315 +14,326 @@
         </header>
         <div role="main">
 
-            <h2>Two</h2>
+            <h2>Two - SPANs</h2>
             <div class="test">
-                <div class="tabs">
-                    <div role="tablist">
-                        <div aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
-                        <div aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2"><span>Tab 2</span></div>
+                <span class="tabs">
+                    <div class="tabs__items" role="tablist">
+                        <div aria-controls="panel1" class="tabs__item" role="tab" aria-selected="true" id="tab1" tabindex="0">
+                            <span>Tab 1</span>
+                        </div>
+                        <div aria-controls="panel2" class="tabs__item" role="tab" aria-selected="false" id="tab2">
+                            <span>Tab 2</span>
+                        </div>
                     </div>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
+                    <div class="tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">
+                            Lorem ipsum dolor sit amet.
+                        </div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">
+                            Lorem ipsum dolor sit amet.
+                        </div>
                     </div>
-                </div>
-                <br />
-                <div class="tabs tabs--faux">
-                    <ul>
-                        <li class="tabs__selected">
-                            <a href="http://www.ebay.com">Faux 1<span class="clipped"> - selected</span></a>
+                </span>
+                <span class="fake-tabs">
+                    <ul class="fake-tabs__items">
+                        <li class="fake-tabs__item fake-tabs__item--current">
+                            <a aria-current="page" href="http://www.ebay.com">
+                                Fake 1<span class="clipped"> - current page</span>
+                            </a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 2</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 2</a>
                         </li>
                     </ul>
-                    <div>
-                        Content
+                    <div class="fake-tabs__content">
+                        Lorem ipsum dolor sit amet.
                     </div>
-                </div>
-                <br />
-                <div class="tabs tabs--hijax">
-                    <ul role="tablist">
-                        <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
+                </span>
+                <span class="hijax-tabs">
+                    <ul class="hijax-tabs__items" role="tablist">
+                        <li aria-controls="panel1" class="hijax-tabs__item hijax-tabs__item--current" role="tab" aria-selected="true" id="tab1" tabindex="0">
                             <a role="presentation">Hijax 1</a>
                         </li>
-                        <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
+                        <li aria-controls="panel2" class="hijax-tabs__item" role="tab" aria-selected="false" id="tab2">
                             <a role="presentation">Hijax 2</a>
                         </li>
                     </ul>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
+                    <div class="hijax-tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
                     </div>
-                </div>
+                </span>
             </div>
 
-            <h2>Three</h2>
+            <h2>Three - SPANs</h2>
             <div class="test">
-                <div class="tabs">
-                    <div role="tablist">
-                        <div aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
-                        <div aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2"><span>Tab 2</span></div>
-                        <div aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3"><span>Tab 3</span></div>
+                <span class="tabs">
+                    <div class="tabs__items" role="tablist">
+                        <div aria-controls="panel1" class="tabs__item" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
+                        <div aria-controls="panel2" class="tabs__item" role="tab" aria-selected="false" id="tab2"><span>Tab 2</span></div>
+                        <div aria-controls="panel3" class="tabs__item" role="tab" aria-selected="false" id="tab3"><span>Tab 3</span></div>
                     </div>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">panel content goes here</div>
+                    <div class="tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">Lorem ipsum dolor sit amet.</div>
                     </div>
-                </div>
-                <br />
-                <div class="tabs tabs--faux">
-                    <ul>
-                        <li class="tabs__selected">
-                            <a href="http://www.ebay.com">Faux 1<span class="clipped"> - selected</span></a>
+                </span>
+                <span class="fake-tabs">
+                    <ul class="fake-tabs__items">
+                        <li class="fake-tabs__item fake-tabs__item--current">
+                            <a aria-current="page" href="http://www.ebay.com">Fake 1<span class="clipped"> - selected</span></a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 2</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 2</a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 3</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 3</a>
                         </li>
                     </ul>
-                    <div>
-                        Content
+                    <div class="fake-tabs__content">
+                        Lorem ipsum dolor sit amet.
                     </div>
-                </div>
-                <br />
-                <div class="tabs tabs--hijax">
-                    <ul role="tablist">
-                        <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
+                </span>
+                <span class="hijax-tabs">
+                    <ul class="hijax-tabs__items" role="tablist">
+                        <li aria-controls="panel1" class="hijax-tabs__item hijax-tabs__item--current" role="tab" tabindex="0" aria-selected="true" id="tab1">
                             <a role="presentation">Hijax 1</a>
                         </li>
-                        <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
+                        <li aria-controls="panel2" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab2">
                             <a role="presentation">Hijax 2</a>
                         </li>
-                        <li aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
+                        <li aria-controls="panel3" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab3">
                             <a role="presentation">Hijax 3</a>
                         </li>
                     </ul>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">panel content goes here</div>
+                    <div class="hijax-tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">Lorem ipsum dolor sit amet.</div>
                     </div>
-                </div>
+                </span>
             </div>
 
-            <h2>Four</h2>
+            <h2>Four - SPANs</h2>
             <div class="test">
-                <div class="tabs">
-                    <div role="tablist">
-                        <div aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
-                        <div aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2"><span>Tab 2</span></div>
-                        <div aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3"><span>Tab 3</span></div>
-                        <div aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4"><span>Tab 4</span></div>
+                <span class="tabs">
+                    <div class="tabs__items" role="tablist">
+                        <div aria-controls="panel1" class="tabs__item" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
+                        <div aria-controls="panel2" class="tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab2"><span>Tab 2</span></div>
+                        <div aria-controls="panel3" class="tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab3"><span>Tab 3</span></div>
+                        <div aria-controls="panel4" class="tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab4"><span>Tab 4</span></div>
                     </div>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">panel content goes here</div>
-                        <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">panel content goes here</div>
+                    <div class="tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">Lorem ipsum dolor sit amet.</div>
                     </div>
-                </div>
-                <br />
-                <div class="tabs tabs--faux">
-                    <ul>
-                        <li class="tabs__selected">
-                            <a href="http://www.ebay.com">Faux 1<span class="clipped"> - selected</span></a>
+                </span>
+                <span class="fake-tabs">
+                    <ul class="fake-tabs__items">
+                        <li class="fake-tabs__item fake-tabs__item--current">
+                            <a aria-current="page" href="http://www.ebay.com">Fake 1<span class="clipped"> - selected</span></a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 2</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 2</a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 3</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 3</a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 4</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 4</a>
                         </li>
                     </ul>
-                    <div>
-                        Content
+                    <div class="fake-tabs__content">
+                        Lorem ipsum dolor sit amet.
                     </div>
-                </div>
-                <br />
-                <div class="tabs tabs--hijax">
-                    <ul role="tablist">
-                        <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
+                </span>
+                <span class="hijax-tabs">
+                    <ul class="hijax-tabs__items" role="tablist">
+                        <li aria-controls="panel1" class="hijax-tabs__item hijax-tabs__item--current" role="tab" tabindex="0" aria-selected="true" id="tab1">
                             <a role="presentation">Hijax 1</a>
                         </li>
-                        <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
+                        <li aria-controls="panel2" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab2">
                             <a role="presentation">Hijax 2</a>
                         </li>
-                        <li aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
+                        <li aria-controls="panel3" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab3">
                             <a role="presentation">Hijax 3</a>
                         </li>
-                        <li aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4">
+                        <li aria-controls="panel4" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab4">
                             <a role="presentation">Hijax 4</a>
                         </li>
                     </ul>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">panel content goes here</div>
-                        <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">panel content goes here</div>
+                    <div class="hijax-tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">Lorem ipsum dolor sit amet.</div>
                     </div>
-                </div>
+                </span>
             </div>
-            <h2>Two - Legacy</h2>
+
+            <h2>Two - DIVS</h2>
             <div class="test">
-                <div class="tabs tabs--two">
-                    <div role="tablist">
-                        <div aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
-                        <div aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2"><span>Tab 2</span></div>
+                <div class="tabs">
+                    <div class="tabs__items" role="tablist">
+                        <div aria-controls="panel1" class="tabs__item" role="tab" aria-selected="true" id="tab1" tabindex="0">
+                            <span>Tab 1</span>
+                        </div>
+                        <div aria-controls="panel2" class="tabs__item" role="tab" aria-selected="false" id="tab2">
+                            <span>Tab 2</span>
+                        </div>
                     </div>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
+                    <div class="tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">
+                            Lorem ipsum dolor sit amet.
+                        </div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">
+                            Lorem ipsum dolor sit amet.
+                        </div>
                     </div>
                 </div>
-                <br/>
-                <div class="tabs tabs--faux tabs--two">
-                    <ul>
-                        <li class="tabs__selected">
-                            <a href="http://www.ebay.com">Faux 1<span class="clipped"> - selected</span></a>
+                <div class="fake-tabs">
+                    <ul class="fake-tabs__items">
+                        <li class="fake-tabs__item fake-tabs__item--current">
+                            <a aria-current="page" href="http://www.ebay.com">
+                                Fake 1<span class="clipped"> - current page</span>
+                            </a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 2</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 2</a>
                         </li>
                     </ul>
-                    <div>
-                        Content
+                    <div class="fake-tabs__content">
+                        Lorem ipsum dolor sit amet.
                     </div>
                 </div>
-                <br/>
-                <div class="tabs tabs--hijax tabs--two">
-                    <ul role="tablist">
-                        <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
+                <div class="hijax-tabs">
+                    <ul class="hijax-tabs__items" role="tablist">
+                        <li aria-controls="panel1" class="hijax-tabs__item hijax-tabs__item--current" role="tab" aria-selected="true" id="tab1" tabindex="0">
                             <a role="presentation">Hijax 1</a>
                         </li>
-                        <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
+                        <li aria-controls="panel2" class="hijax-tabs__item" role="tab" aria-selected="false" id="tab2">
                             <a role="presentation">Hijax 2</a>
                         </li>
                     </ul>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                    </div>
-                </div>
-            </div>
-            <h2>Three - legacy</h2>
-            <div class="test">
-                <div class="tabs tabs--three">
-                    <div role="tablist">
-                        <div aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
-                        <div aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2"><span>Tab 2</span></div>
-                        <div aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3"><span>Tab 3</span></div>
-                    </div>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">panel content goes here</div>
-                    </div>
-                </div>
-                <br/>
-                <div class="tabs tabs--faux tabs--three">
-                    <ul>
-                        <li class="tabs__selected">
-                            <a href="http://www.ebay.com">Faux 1<span class="clipped"> - selected</span></a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 2</a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 3</a>
-                        </li>
-                    </ul>
-                    <div>
-                        Content
-                    </div>
-                </div>
-                <br/>
-                <div class="tabs tabs--hijax tabs--three">
-                    <ul role="tablist">
-                        <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
-                            <a role="presentation">Hijax 1</a>
-                        </li>
-                        <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
-                            <a role="presentation">Hijax 2</a>
-                        </li>
-                        <li aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
-                            <a role="presentation">Hijax 3</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">panel content goes here</div>
+                    <div class="hijax-tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
                     </div>
                 </div>
             </div>
 
-            <h2>Four - legacy</h2>
+            <h2>Three - DIVs</h2>
             <div class="test">
-                <div class="tabs tabs--four">
-                    <div role="tablist">
-                        <div aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
-                        <div aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2"><span>Tab 2</span></div>
-                        <div aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3"><span>Tab 3</span></div>
-                        <div aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4"><span>Tab 4</span></div>
+                <div class="tabs">
+                    <div class="tabs__items" role="tablist">
+                        <div aria-controls="panel1" class="tabs__item" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
+                        <div aria-controls="panel2" class="tabs__item" role="tab" aria-selected="false" id="tab2"><span>Tab 2</span></div>
+                        <div aria-controls="panel3" class="tabs__item" role="tab" aria-selected="false" id="tab3"><span>Tab 3</span></div>
                     </div>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">panel content goes here</div>
-                        <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">panel content goes here</div>
+                    <div class="tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">Lorem ipsum dolor sit amet.</div>
                     </div>
                 </div>
-                <br/>
-                <div class="tabs tabs--faux tabs--four">
-                    <ul>
-                        <li class="tabs__selected">
-                            <a href="http://www.ebay.com">Faux 1<span class="clipped"> - selected</span></a>
+                <div class="fake-tabs">
+                    <ul class="fake-tabs__items">
+                        <li class="fake-tabs__item fake-tabs__item--current">
+                            <a aria-current="page" href="http://www.ebay.com">Fake 1<span class="clipped"> - selected</span></a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 2</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 2</a>
                         </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 3</a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com">Faux 4</a>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 3</a>
                         </li>
                     </ul>
-                    <div>
-                        Content
+                    <div class="fake-tabs__content">
+                        Lorem ipsum dolor sit amet.
                     </div>
                 </div>
-                <br/>
-                <div class="tabs tabs--hijax tabs--four">
-                    <ul role="tablist">
-                        <li aria-controls="panel1" role="tab" tabindex="0" aria-selected="true" id="tab1">
+                <div class="hijax-tabs">
+                    <ul class="hijax-tabs__items" role="tablist">
+                        <li aria-controls="panel1" class="hijax-tabs__item hijax-tabs__item--current" role="tab" tabindex="0" aria-selected="true" id="tab1">
                             <a role="presentation">Hijax 1</a>
                         </li>
-                        <li aria-controls="panel2" role="tab" tabindex="-1" aria-selected="false" id="tab2">
+                        <li aria-controls="panel2" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab2">
                             <a role="presentation">Hijax 2</a>
                         </li>
-                        <li aria-controls="panel3" role="tab" tabindex="-1" aria-selected="false" id="tab3">
+                        <li aria-controls="panel3" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab3">
                             <a role="presentation">Hijax 3</a>
                         </li>
-                        <li aria-controls="panel4" role="tab" tabindex="-1" aria-selected="false" id="tab4">
-                            <a role="presentation">Hijax 4</a>
-                        </li>
                     </ul>
-                    <div>
-                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">panel content goes here</div>
-                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">panel content goes here</div>
-                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">panel content goes here</div>
-                        <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">panel content goes here</div>
+                    <div class="hijax-tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">Lorem ipsum dolor sit amet.</div>
                     </div>
                 </div>
             </div>
+
+            <h2>Four - DIVs</h2>
+            <div class="test">
+                <div class="tabs">
+                    <div class="tabs__items" role="tablist">
+                        <div aria-controls="panel1" class="tabs__item" role="tab" tabindex="0" aria-selected="true" id="tab1"><span>Tab 1</span></div>
+                        <div aria-controls="panel2" class="tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab2"><span>Tab 2</span></div>
+                        <div aria-controls="panel3" class="tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab3"><span>Tab 3</span></div>
+                        <div aria-controls="panel4" class="tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab4"><span>Tab 4</span></div>
+                    </div>
+                    <div class="tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+                <div class="fake-tabs">
+                    <ul class="fake-tabs__items">
+                        <li class="fake-tabs__item fake-tabs__item--current">
+                            <a aria-current="page" href="http://www.ebay.com">Fake 1<span class="clipped"> - selected</span></a>
+                        </li>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 2</a>
+                        </li>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 3</a>
+                        </li>
+                        <li class="fake-tabs__item">
+                            <a href="http://www.ebay.com">Fake 4</a>
+                        </li>
+                    </ul>
+                    <div class="fake-tabs__content">
+                        Lorem ipsum dolor sit amet.
+                    </div>
+                </div>
+                <div class="hijax-tabs">
+                    <ul class="hijax-tabs__items" role="tablist">
+                        <li aria-controls="panel1" class="hijax-tabs__item hijax-tabs__item--current" role="tab" tabindex="0" aria-selected="true" id="tab1">
+                            <a role="presentation">Hijax 1</a>
+                        </li>
+                        <li aria-controls="panel2" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab2">
+                            <a role="presentation">Hijax 2</a>
+                        </li>
+                        <li aria-controls="panel3" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab3">
+                            <a role="presentation">Hijax 3</a>
+                        </li>
+                        <li aria-controls="panel4" class="hijax-tabs__item" role="tab" tabindex="-1" aria-selected="false" id="tab4">
+                            <a role="presentation">Hijax 4</a>
+                        </li>
+                    </ul>
+                    <div class="hijax-tabs__content">
+                        <div id="panel1" role="tabpanel" aria-hidden="false" aria-labelledby="tab1">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel2" role="tabpanel" aria-hidden="true" aria-labelledby="tab2">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel3" role="tabpanel" aria-hidden="true" aria-labelledby="tab3">Lorem ipsum dolor sit amet.</div>
+                        <div id="panel4" role="tabpanel" aria-hidden="true" aria-labelledby="tab4">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </body>
 </html>
