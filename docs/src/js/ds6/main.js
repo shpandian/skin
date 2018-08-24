@@ -235,6 +235,7 @@ function fixTheSidebar() {
     }
 }
 
+
 window.addEventListener('resize', debounce(function() {
     // re-run matchMedia on resize
     mm = window.matchMedia(mobileMediaQuery);
